@@ -1,0 +1,41 @@
+# File đề bài: Không đưa lên repo
+2026.HW04.*
+
+# Prompt log: Repo sẽ public lúc nộp, prompt log chỉ có trong file zip nộp Moodle (tools/package.py tự thêm)
+prompt_log.md
+prompt_log.pdf
+
+# Ghi chú nháp cá nhân: Không nộp
+_NOTES.md
+
+# Node, Playwright: Thư viện, kết quả tạm, report mặc định (report nộp bài để trong reports/)
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+# Trạng thái đăng nhập (token) do Playwright lưu
+.auth/
+
+# File tạm của Word / Excel khi đang mở
+~$*
+
+# Video (video demo để trên YouTube)
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+# Ngoại lệ: Video Playwright đính kèm trong HTML report là một phần của report
+!reports/**/*.webm
+
+# File zip nộp Moodle
+*.zip
+*.zip.*
+HW04_submit/
+
+# Python cache của tools/
+__pycache__/
+
+# Git log xuất khi đóng gói (chỉ có trong file nộp)
+git_log.txt
