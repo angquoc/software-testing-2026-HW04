@@ -1,0 +1,14 @@
+{
+  "name": "<project-name>",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "<phiên bản, ví dụ 1.65.0>",
+    "@types/node": "<phiên bản>",
+    "typescript": "<phiên bản>"
+  }
+}

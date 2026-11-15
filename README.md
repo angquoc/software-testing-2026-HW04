@@ -18,7 +18,7 @@ Repo: https://github.com/angquoc/software-testing-2026-HW04
 | `playwright.config.ts` | 3 project `chrome`, `edge`, `firefox`; HTML reporter có "Run by: 23120061" + timestamp ISO |
 | `reports/` | HTML report của Playwright: Mỗi feature trên mỗi trình duyệt một report (`reports/<feature>/<trình duyệt>/index.html`), có "Run by: 23120061" và timestamp ISO ở tiêu đề và ở từng test |
 | `bugs/` | Bug report, liên kết tới GitHub Issues của nhóm, ảnh trang Issues |
-| `skills/` | Agent Skill |
+| `skills/` | Agent Skill `playwright-automation`: Sinh và bảo trì script Playwright data-driven, đa trình duyệt, đi từng bước |
 | `demo/` | Kết quả chạy Agent Skill trong video demo |
 | `forms/` | [AI-02] Audit Report, [AI-03] Disclosure, [AI-05] Privacy Checklist |
 | `tools/` | `run.mjs` (chạy 1 feature trên 1 hoặc 3 trình duyệt), script hỗ trợ (xuất prompt log, xuất PDF, đóng gói) |
