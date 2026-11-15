@@ -27,6 +27,7 @@ VN_TZ = timezone(timedelta(hours=7))
 # Danh sách trắng: chỉ các phiên này thuộc HW04 (session id đầy đủ)
 SESSIONS = [
     "27ccb594-33fb-4161-bb0b-3de1364349ab",  # 15/11/2026: đọc đề, chốt quyết định, dựng khung HW04 (phiên điều phối)
+    "051b68d8-99bd-448b-a46f-f52b2cd6f033",  # 15/11/2026: dùng skill playwright-automation làm FR-17 (phiên làm bài, D14)
 ]
 
 # Ghi chú của sinh viên cho từng phiên (8 ký tự đầu của session id), hiển thị dưới tiêu đề mỗi mục
