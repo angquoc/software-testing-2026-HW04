@@ -12,17 +12,27 @@ Repo: https://github.com/angquoc/software-testing-2026-HW04
 | Đường dẫn | Nội dung |
 |---|---|
 | `report.md` / `report.pdf` | Báo cáo chính: Báo cáo automation, review và gap analysis script AI sinh, Agent Skill, AI Critique, Disclosure, AI Audit Report |
-| `features/` | Mỗi feature một thư mục: Test case được chọn, bản AI nguyên văn (`ai_raw/`), bản review có bảng "Thay đổi so với bản AI", test case không tự động hóa được |
-| `reports/` | HTML report của Playwright: Mỗi feature trên mỗi trình duyệt một report, có "Run by: 23120061" và timestamp ISO |
+| `WORKFLOW.md` | Quy trình làm bài: Các bước, cách chạy, quy ước commit |
+| `features/` | Mỗi feature một thư mục: Test case được chọn, bản AI nguyên văn (`ai_raw/`), bản review có bảng "Thay đổi so với bản AI", kết quả chạy, test case không tự động hóa được |
+| `tests/` | Script Playwright (`*.spec.ts`) và file dữ liệu (`data/*.json`, `*.csv`) của từng feature; `support/` (fixture gắn "Run by", URL) |
+| `playwright.config.ts` | 3 project `chrome`, `edge`, `firefox`; HTML reporter có "Run by: 23120061" + timestamp ISO |
+| `reports/` | HTML report của Playwright: Mỗi feature trên mỗi trình duyệt một report (`reports/<feature>/<trình duyệt>/index.html`), có "Run by: 23120061" và timestamp ISO ở tiêu đề và ở từng test |
 | `bugs/` | Bug report, liên kết tới GitHub Issues của nhóm, ảnh trang Issues |
 | `skills/` | Agent Skill |
 | `demo/` | Kết quả chạy Agent Skill trong video demo |
 | `forms/` | [AI-02] Audit Report, [AI-03] Disclosure, [AI-05] Privacy Checklist |
-| `tools/` | Script hỗ trợ (xuất prompt log, xuất PDF, đóng gói) |
+| `tools/` | `run.mjs` (chạy 1 feature trên 1 hoặc 3 trình duyệt), script hỗ trợ (xuất prompt log, xuất PDF, đóng gói) |
 | `git_log.txt` | Git commit log (chỉ có trong file nộp) |
 | `prompt_log.md` / `.pdf` | Prompt log có timestamp (chỉ có trong file nộp, không đưa lên repo) |
 
-Script Playwright (TypeScript), file dữ liệu và cấu hình: Cập nhật khi dựng xong dự án.
+## Chạy test
+
+Cần Node 24 và 3 server EShop đang chạy (backend 3000, Web 5173, Admin 5174). Chi tiết ở `WORKFLOW.md` mục 4.
+
+```
+npm install
+node tools/run.mjs A all        # FR-01 trên Chrome, Edge, Firefox (B: FR-07, C: FR-17)
+```
 
 ## Feature đã chọn
 

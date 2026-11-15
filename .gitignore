@@ -39,3 +39,6 @@ __pycache__/
 
 # Git log xuất khi đóng gói (chỉ có trong file nộp)
 git_log.txt
+
+# Report của test mẫu kiểm khung dự án (0.7), không nộp
+reports/_smoke/

@@ -1,0 +1,16 @@
+{
+  "name": "software-testing-2026-hw04",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HW04 Automation Testing on EShop (Playwright, TypeScript)",
+  "scripts": {
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "run:feature": "node tools/run.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "@types/node": "24.19.1",
+    "typescript": "6.0.3"
+  }
+}
