@@ -43,8 +43,8 @@ Công cụ: Playwright Test 1.65.0 (TypeScript), Playwright HTML reporter, Node 
 
 | Phiên | Làm gì |
 |---|---|
-| Phiên làm bài | Làm các bước của từng feature và của Agent Skill theo tài liệu này |
-| Phiên điều phối | Theo dõi tiến độ, xuất prompt log, chạy server EShop, kiểm tra phiên làm bài không đọc file bị cấm. Phiên làm bài **không** chạy script xuất prompt log |
+| Phiên làm bài | Dùng skill `playwright-automation` làm các bước của từng feature theo tài liệu này. **Không** sửa file trong `skills/` và `.claude/skills/`, **không** chạy script xuất prompt log |
+| Phiên điều phối | Theo dõi tiến độ, xuất prompt log, chạy server EShop, kiểm tra phiên làm bài không đọc file bị cấm. Nhận ý kiến của sinh viên về skill, sửa skill, đồng bộ sang `.claude/skills/`, đưa commit message |
 
 ### 1.5 Phiên làm bài được đọc và không được đọc
 
@@ -246,7 +246,8 @@ Repo của nhóm: https://github.com/angquoc/software-testing-2026-HW02-group. Q
 
 - Skill `playwright-automation`, nguồn chính ở `skills/playwright-automation/`; skill làm theo đúng các bước ở mục 3 (dẫn AI từng bước, dữ liệu ở file riêng, đa trình duyệt, bảo trì script). Chỗ skill và tài liệu này khác nhau thì tài liệu này ưu tiên.
 - Sau mỗi lần sửa skill: Chép sang `D:\Dang\Test\.claude\skills\` và kiểm tra bằng `diff -r`.
-- Thứ tự (D7): Viết skill, dùng skill làm feature thứ nhất và sửa skill theo những gì gặp, rồi quay video dùng skill trọn một feature khác (D14).
+- Thứ tự (D7, D14): Viết skill, dùng skill làm FR-17 (feature C) và sửa skill theo những gì gặp, rồi quay video dùng skill trọn FR-01 (feature A).
+- Sửa skill trong lúc làm FR-17: Sinh viên chuyển ý kiến về skill cho phiên điều phối; phiên điều phối sửa skill và đồng bộ. Phiên làm bài đọc lại file skill vừa sửa trước khi làm tiếp (nội dung skill đã nạp trước đó không tự cập nhật).
 
 ---
 
