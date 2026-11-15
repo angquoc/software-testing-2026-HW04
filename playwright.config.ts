@@ -33,6 +33,8 @@ export default defineConfig({
         title: `Run by: ${STUDENT_ID} | ${runStartedAt} | ${runLabel}`,
       },
     ],
+    // Kết quả dạng máy đọc được, để soạn 03_results.md từ đúng lần chạy (không thay HTML report).
+    ['json', { outputFile: `${reportDir}/results.json` }],
   ],
 
   use: {

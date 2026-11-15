@@ -189,7 +189,9 @@ Mục 4. `03_results.md` ghi: Ngày giờ (khớp timestamp trong report), phiê
 | Test mẫu kiểm khung | `node tools/run.mjs smoke all` | `reports/_smoke/` (không nộp) |
 
 - Mỗi lần chạy `tools/run.mjs` ghi đè report cũ của đúng feature và trình duyệt đó.
-- Report có "Run by: 23120061 | <ISO> | <feature> x <trình duyệt>" ở **tiêu đề**, và "Run by: 23120061 | <ISO>" ở **annotation** của từng test (D9).
+- Report có "Run by: 23120061 | <ISO> | <feature> x <trình duyệt>" ở **tiêu đề**, và "Run by: 23120061 | <ISO>" ở **annotation** của từng test (D9). Annotation `Browser` ghi tên và phiên bản trình duyệt.
+- Cạnh `index.html` có `results.json` (JSON reporter) để tóm tắt kết quả vào `03_results.md` bằng script, không chép tay.
+- `<feature>` của `tools/run.mjs` là tên thư mục trong `tests/` hoặc tiền tố của nó (`A`, `B`, `C`).
 - Khi test fail, report kèm **ảnh chụp** và **trace** (D9). Không quay video.
 
 ---
@@ -242,7 +244,7 @@ Repo của nhóm: https://github.com/angquoc/software-testing-2026-HW02-group. Q
 
 ## 7. Agent Skill
 
-- Nguồn chính ở `skills/`; skill làm theo đúng các bước ở mục 3 (dẫn AI từng bước, dữ liệu ở file riêng, đa trình duyệt, bảo trì script).
+- Skill `playwright-automation`, nguồn chính ở `skills/playwright-automation/`; skill làm theo đúng các bước ở mục 3 (dẫn AI từng bước, dữ liệu ở file riêng, đa trình duyệt, bảo trì script). Chỗ skill và tài liệu này khác nhau thì tài liệu này ưu tiên.
 - Sau mỗi lần sửa skill: Chép sang `D:\Dang\Test\.claude\skills\` và kiểm tra bằng `diff -r`.
 - Thứ tự (D7): Viết skill, dùng skill làm feature thứ nhất và sửa skill theo những gì gặp, rồi quay video dùng skill trọn một feature khác (D14).
 
