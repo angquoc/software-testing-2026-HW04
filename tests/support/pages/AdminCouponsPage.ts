@@ -88,6 +88,11 @@ export class AdminCouponsPage {
     return this.bodyRows.filter({ has: this.page.getByRole('cell', { name: code, exact: true }) });
   }
 
+  // Nút "Xóa" của một dòng (cột "Hành động", snapshot_coupons.txt).
+  deleteButton(row: Locator): Locator {
+    return row.getByRole('button', { name: 'Xóa', exact: true });
+  }
+
   async columnIndex(column: string): Promise<number> {
     await this.columnHeaders.first().waitFor();
     const names = (await this.columnHeaders.allInnerTexts()).map((s) => s.trim());
