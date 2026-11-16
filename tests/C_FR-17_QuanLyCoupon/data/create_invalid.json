@@ -11,7 +11,7 @@
       "rowCountUnchanged": true,
       "existingRow": null,
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (code bắt buộc), FR-22 (thông báo lỗi trên nút submit), FR-21 (tiếng Việt, quy ước chuỗi kỹ thuật của SV); HW02 TC-CPN-30 (ERR1, KQ-KH-GD)"
@@ -35,7 +35,7 @@
         "maxUsesPerUser": { "text": "1 lần" }
       },
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (code duy nhất), FR-09 bảng mã mẫu (SAVE10), FR-22, FR-21; HW02 TC-CPN-32 (ERR2, dòng SAVE10 cũ giữ nguyên)",
@@ -53,7 +53,7 @@
       "rowCountUnchanged": true,
       "existingRow": null,
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": ["A01"],
     "oracle": "SRS FR-17 (discount_value dương); A01 (phần trăm tối đa 100); FR-22, FR-21; HW02 TC-CPN-37 (ERR17)"
@@ -70,7 +70,7 @@
       "rowCountUnchanged": true,
       "existingRow": null,
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (discount_value dương), FR-22, FR-21; HW02 TC-CPN-38 (ERR6)",
@@ -88,7 +88,7 @@
       "rowCountUnchanged": true,
       "existingRow": null,
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (discount_value dương), FR-22, FR-21; HW02 TC-CPN-39 (ERR6)",
@@ -106,7 +106,7 @@
       "rowCountUnchanged": true,
       "existingRow": null,
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (min_order_amount >= 0), FR-22, FR-21; HW02 TC-CPN-41 (ERR9)",
@@ -124,7 +124,7 @@
       "rowCountUnchanged": true,
       "existingRow": null,
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (expired_at bắt buộc), FR-22, FR-21; HW02 TC-CPN-43 (ERR7)"
@@ -141,7 +141,7 @@
       "rowCountUnchanged": true,
       "existingRow": null,
       "checkAfterReload": true,
-      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null", "error", "failed", "invalid", "required"] }
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (max_uses_per_user >= 1), FR-22, FR-21; HW02 TC-CPN-44 (ERR11)",

@@ -26,7 +26,7 @@
       "outcome": "created",
       "row": {
         "code": { "text": "FR17TC02" },
-        "type": null,
+        "type": { "notEmpty": true, "notText": "Phần trăm" },
         "discountValue": { "money": 50000 },
         "minOrderAmount": { "money": 300000 },
         "expiredAt": { "text": "2099-12-31" },
@@ -36,7 +36,7 @@
     },
     "assumptions": [],
     "oracle": "SRS FR-17 (type percent/fixed), FR-21 (₫); HW02 TC-CPN-02 (OUT1, cột \"Giá trị\" 50,000 ₫)",
-    "note": "Cột \"Loại\" chưa khẳng định (CH-01)"
+    "note": "Cột \"Loại\" của mã fixed: Không rỗng, khác \"Phần trăm\" (CH-data-01 b)"
   },
   {
     "id": "TC-CPN-10",

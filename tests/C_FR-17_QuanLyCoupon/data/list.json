@@ -16,7 +16,7 @@
         },
         {
           "code": { "text": "BIGBUY" },
-          "type": null,
+          "type": { "notEmpty": true, "notText": "Phần trăm" },
           "discountValue": { "money": 50000 },
           "minOrderAmount": { "money": 500000 },
           "expiredAt": { "text": "2099-12-31" },
@@ -24,7 +24,7 @@
         },
         {
           "code": { "text": "VIP100" },
-          "type": null,
+          "type": { "notEmpty": true, "notText": "Phần trăm" },
           "discountValue": { "money": 100000 },
           "minOrderAmount": { "money": 300000 },
           "expiredAt": { "text": "2099-12-31" },
@@ -42,7 +42,7 @@
     },
     "assumptions": ["A18"],
     "oracle": "SRS FR-17 (Admin xem danh sách mã), FR-09 bảng mã giảm giá mẫu, FR-21 (đơn vị tiền); HW02 TC-CPN-50 (OUT5, 7 cột, EXPIRED hiện chữ \"Hết hạn\" theo A18)",
-    "note": "Chạy ngay sau reset, trước mọi test tạo mã. Cột \"Loại\" của mã fixed chưa khẳng định (CH-01)"
+    "note": "Chạy ngay sau reset, trước mọi test tạo mã. Cột \"Loại\" của mã fixed: Không rỗng, khác \"Phần trăm\" (CH-data-01 b)"
   },
   {
     "id": "TC-CPN-93",
@@ -55,7 +55,7 @@
       "moneyPattern": "^\\d{1,3}([.,]\\d{3})* ?₫$"
     },
     "assumptions": [],
-    "oracle": "SRS FR-21: Luôn dùng ký hiệu ₫ với định dạng phân cách hàng nghìn; HW02 TC-CPN-93; dấu phân cách theo CH-03 (b) của bước select",
-    "note": "Cột \"Giá trị\" chỉ xét mã loại fixed (mã phần trăm hiện %). Vị trí ₫ và dấu cách theo CH-02"
+    "oracle": "SRS FR-21: Luôn dùng ký hiệu ₫ với định dạng phân cách hàng nghìn; HW02 TC-CPN-93; dấu phân cách theo CH-select-03 (b)",
+    "note": "Cột \"Giá trị\" chỉ xét mã loại fixed (mã phần trăm hiện %). Vị trí ₫ và dấu cách theo CH-data-02 (a)"
   }
 ]
