@@ -9,7 +9,7 @@ export type CellExpectation =
   | { notEmpty: true; notText: string }
   | null;
 
-const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+export const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // Ô tiền: Nhóm 3 chữ số ngăn bằng "," hoặc "." (CH-select-03 b), "₫" sau số, có hoặc không có một dấu cách (CH-data-02 a).
 export function moneyRegExp(amount: number): RegExp {
@@ -17,17 +17,24 @@ export function moneyRegExp(amount: number): RegExp {
   return new RegExp(`^${grouped} ?₫$`);
 }
 
-export async function expectCell(cell: Locator, exp: CellExpectation, label: string): Promise<void> {
+// soft: true dùng expect.soft (CH-script-02 b): Ô sai được ghi lại, test chạy tiếp để liệt kê đủ các ô sai.
+export async function expectCell(
+  cell: Locator,
+  exp: CellExpectation,
+  label: string,
+  opts: { soft?: boolean } = {},
+): Promise<void> {
   if (exp === null) return;
+  const check = expect.configure({ soft: opts.soft ?? false });
   if ('text' in exp) {
-    await expect(cell, label).toHaveText(exp.text);
+    await check(cell, label).toHaveText(exp.text);
   } else if ('textIgnoreCase' in exp) {
-    await expect(cell, label).toHaveText(new RegExp(`^${escapeRegExp(exp.textIgnoreCase)}$`, 'i'));
-    if (exp.noDescendant) await expect(cell.locator(exp.noDescendant), `${label}: không có phần tử <${exp.noDescendant}>`).toHaveCount(0);
+    await check(cell, label).toHaveText(new RegExp(`^${escapeRegExp(exp.textIgnoreCase)}$`, 'i'));
+    if (exp.noDescendant) await check(cell.locator(exp.noDescendant), `${label}: không có phần tử <${exp.noDescendant}>`).toHaveCount(0);
   } else if ('money' in exp) {
-    await expect(cell, label).toHaveText(moneyRegExp(exp.money));
+    await check(cell, label).toHaveText(moneyRegExp(exp.money));
   } else {
-    await expect(cell, `${label}: không rỗng`).not.toHaveText(/^\s*$/);
-    await expect(cell, `${label}: khác "${exp.notText}"`).not.toHaveText(exp.notText);
+    await check(cell, `${label}: không rỗng`).not.toHaveText(/^\s*$/);
+    await check(cell, `${label}: khác "${exp.notText}"`).not.toHaveText(exp.notText);
   }
 }

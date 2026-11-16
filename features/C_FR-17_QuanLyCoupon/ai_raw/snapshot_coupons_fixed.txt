@@ -1,0 +1,85 @@
+# Snapshot 2026-11-16T06:31:10.730Z | chrome 157.0.8103.52
+# URL: http://localhost:5174/ | Title: frontend-admin | Setup: C:/Users/Lenovo/AppData/Local/Temp/claude/1ee42ba0f2ad5af7/051b68d8-99bd-448b-a46f-f52b2cd6f033/scratchpad/snap_coupons_fixed.mjs
+
+## ARIA
+- heading "EShop Admin" [level=1]
+- list:
+  - listitem: Dashboard
+  - listitem: Danh mục
+  - listitem: Sản phẩm
+  - listitem: Mã Giảm Giá
+  - listitem: Đơn hàng
+  - listitem: Người dùng
+  - listitem: Đăng xuất
+- heading "Quản lý Mã Giảm Giá" [level=2]
+- heading "Tạo mã giảm giá mới" [level=3]
+- 'textbox "Mã coupon (VD: SAVE10)"'
+- combobox:
+  - option "Phần trăm (%)"
+  - option "Số tiền cố định (₫)" [selected]
+- 'spinbutton "Số tiền (VD: 50000)"'
+- spinbutton "Đơn tối thiểu (₫)": "0"
+- textbox:
+  - /placeholder: Ngày hết hạn
+- spinbutton "Số lần dùng tối đa/người": "1"
+- button "Tạo mã"
+- table:
+  - rowgroup:
+    - row "Mã Loại Giá trị Đơn tối thiểu Hết hạn Giới hạn/người Hành động":
+      - columnheader "Mã"
+      - columnheader "Loại"
+      - columnheader "Giá trị"
+      - columnheader "Đơn tối thiểu"
+      - columnheader "Hết hạn"
+      - columnheader "Giới hạn/người"
+      - columnheader "Hành động"
+  - rowgroup:
+    - row "SAVE10 Phần trăm 10% 300,000 ₫ 2099-12-31 1 lần Xóa":
+      - cell "SAVE10"
+      - cell "Phần trăm"
+      - cell "10%"
+      - cell "300,000 ₫"
+      - cell "2099-12-31"
+      - cell "1 lần"
+      - cell "Xóa":
+        - button "Xóa"
+    - row "BIGBUY Cố định 50,000 ₫ 500,000 ₫ 2099-12-31 1 lần Xóa":
+      - cell "BIGBUY"
+      - cell "Cố định"
+      - cell "50,000 ₫"
+      - cell "500,000 ₫"
+      - cell "2099-12-31"
+      - cell "1 lần"
+      - cell "Xóa":
+        - button "Xóa"
+    - row "VIP100 Cố định 100,000 ₫ 300,000 ₫ 2099-12-31 2 lần Xóa":
+      - cell "VIP100"
+      - cell "Cố định"
+      - cell "100,000 ₫"
+      - cell "300,000 ₫"
+      - cell "2099-12-31"
+      - cell "2 lần"
+      - cell "Xóa":
+        - button "Xóa"
+    - row "EXPIRED Phần trăm 20% 100,000 ₫ Hết hạn 1 lần Xóa":
+      - cell "EXPIRED"
+      - cell "Phần trăm"
+      - cell "20%"
+      - cell "100,000 ₫"
+      - cell "Hết hạn"
+      - cell "1 lần"
+      - cell "Xóa":
+        - button "Xóa"
+
+## Phần tử tương tác
+input placeholder="Mã coupon (VD: SAVE10)" required
+select  text="Phần trăm (%) Số tiền cố định (₫)"
+input type="number" placeholder="Số tiền (VD: 50000)" required
+input type="number" placeholder="Đơn tối thiểu (₫)" text="0"
+input type="date" placeholder="Ngày hết hạn" required
+input type="number" placeholder="Số lần dùng tối đa/người" min="1" text="1"
+button  text="Tạo mã"
+button  text="Xóa"
+button  text="Xóa"
+button  text="Xóa"
+button  text="Xóa"

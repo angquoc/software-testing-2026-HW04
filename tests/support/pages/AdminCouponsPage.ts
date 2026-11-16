@@ -15,12 +15,29 @@ export const COLUMN_OF = {
   maxUsesPerUser: 'Giới hạn/người',
 } as const;
 
+// Giá trị gõ vào 6 ô của form "Tạo mã giảm giá mới": Chuỗi đúng như gõ, "" là để trống, ngày dạng yyyy-mm-dd.
+export type CouponInput = {
+  code: string;
+  typeOption: string;
+  discountValue: string;
+  minOrderAmount: string;
+  expiredAt: string;
+  maxUsesPerUser: string;
+};
+
 // Page object của trang "Quản lý Mã Giảm Giá" (Web Admin). Chỉ gói selector và thao tác; assertion nằm trong spec.
 export class AdminCouponsPage {
   readonly heading: Locator;
   readonly table: Locator;
   readonly columnHeaders: Locator;
   readonly bodyRows: Locator;
+  readonly codeInput: Locator;
+  readonly typeSelect: Locator;
+  readonly discountInput: Locator;
+  readonly minOrderInput: Locator;
+  readonly expiredAtInput: Locator;
+  readonly maxUsesInput: Locator;
+  readonly createButton: Locator;
 
   constructor(readonly page: Page) {
     this.heading = page.getByRole('heading', { name: 'Quản lý Mã Giảm Giá', level: 2 });
@@ -28,6 +45,15 @@ export class AdminCouponsPage {
     this.columnHeaders = this.table.getByRole('columnheader');
     // Dòng dữ liệu là dòng có ô thường (cell); dòng tiêu đề chỉ có columnheader.
     this.bodyRows = this.table.getByRole('row').filter({ has: page.getByRole('cell') });
+    // Form "Tạo mã giảm giá mới" (snapshot_coupons.txt, snapshot_coupons_fixed.txt).
+    this.codeInput = page.getByPlaceholder('Mã coupon (VD: SAVE10)', { exact: true });
+    this.typeSelect = page.getByRole('combobox');
+    // Placeholder của ô giá trị đổi theo loại đang chọn.
+    this.discountInput = page.getByPlaceholder(/^(Giá trị % \(VD: 10\)|Số tiền \(VD: 50000\))$/);
+    this.minOrderInput = page.getByPlaceholder('Đơn tối thiểu (₫)', { exact: true });
+    this.expiredAtInput = page.getByPlaceholder('Ngày hết hạn', { exact: true });
+    this.maxUsesInput = page.getByPlaceholder('Số lần dùng tối đa/người', { exact: true });
+    this.createButton = page.getByRole('button', { name: 'Tạo mã', exact: true });
   }
 
   // Mở Web Admin (đã đăng nhập nhờ storageState) rồi vào menu "Mã Giảm Giá".
@@ -47,7 +73,18 @@ export class AdminCouponsPage {
     await this.openFromMenu();
   }
 
-  rowByCode(code: string): Locator {
+  // Điền 6 ô; chọn Loại trước ô Giá trị vì placeholder của ô Giá trị đổi theo loại. fill() xóa giá trị có sẵn rồi gõ.
+  async fillForm(input: CouponInput): Promise<void> {
+    await this.codeInput.fill(input.code);
+    await this.typeSelect.selectOption({ label: input.typeOption });
+    await this.discountInput.fill(input.discountValue);
+    await this.minOrderInput.fill(input.minOrderAmount);
+    await this.expiredAtInput.fill(input.expiredAt);
+    await this.maxUsesInput.fill(input.maxUsesPerUser);
+  }
+
+  // Dòng có ô đúng bằng mã (chuỗi: So đúng; biểu thức chính quy: Theo biểu thức, ví dụ không phân biệt hoa thường).
+  rowByCode(code: string | RegExp): Locator {
     return this.bodyRows.filter({ has: this.page.getByRole('cell', { name: code, exact: true }) });
   }
 
