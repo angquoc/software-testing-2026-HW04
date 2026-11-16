@@ -30,9 +30,16 @@ type InvalidCase = {
 };
 
 // Các dòng chữ không rỗng của trang, để tìm chữ mới xuất hiện sau khi bấm "Tạo mã".
+// Bỏ chữ trong bảng mã: Dòng mới của bảng (khi hệ thống tạo nhầm) không phải thông báo.
+// Đọc chữ của trang và của bảng trong cùng một lần evaluate, để bảng không đổi giữa hai lần đọc.
 async function pageLines(page: Page): Promise<string[]> {
-  const text = await page.locator('body').innerText();
-  return text.split('\n').map((s) => s.trim()).filter(Boolean);
+  const [bodyText, tableText] = await page.evaluate(() => [
+    document.body.innerText,
+    Array.from(document.querySelectorAll('table'), (t) => t.innerText).join('\n'),
+  ]);
+  const split = (t: string) => t.split('\n').map((s) => s.trim()).filter(Boolean);
+  const tableLines = new Set(split(tableText));
+  return split(bodyText).filter((l) => !tableLines.has(l));
 }
 
 test.describe('FR-17 Create coupon with invalid data', () => {
@@ -78,23 +85,25 @@ test.describe('FR-17 Create coupon with invalid data', () => {
       if (absentRow) await expect(absentRow, 'Trước khi bấm: Chưa có mã này').toHaveCount(0);
 
       await coupons.fillForm(c.input);
+      // Bong bóng: Ô vi phạm không hợp lệ theo validity ngay trước khi bấm (trình duyệt chặn gửi form).
+      // Đọc trước khi bấm, vì sau khi tạo thành công form tự xóa và ô Giá trị trống (required) cũng không hợp lệ.
+      const field = inputOf[exp.violatedField];
+      const bubble = await field.evaluate((e: HTMLInputElement) => !e.validity.valid);
       const linesBefore = new Set(await pageLines(page));
       await coupons.createButton.click();
 
-      // Chờ thông báo ở một trong 3 nơi: Bong bóng (validity của ô vi phạm), hộp thoại, chữ mới trên trang.
-      const field = inputOf[exp.violatedField];
-      const bubble = () => field.evaluate((e: HTMLInputElement) => !e.validity.valid);
+      // Chờ thông báo ở một trong 3 nơi: Bong bóng, hộp thoại, chữ mới trên trang (ngoài bảng).
       const newLines = async () => (await pageLines(page)).filter((l) => !linesBefore.has(l));
       if (exp.message.required) {
         await expect
           .configure({ soft: true })
-          .poll(async () => (await bubble()) || dialogs.length > 0 || (await newLines()).length > 0, {
+          .poll(async () => bubble || dialogs.length > 0 || (await newLines()).length > 0, {
             message: 'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang',
           })
           .toBe(true);
       }
       const lines = await newLines();
-      const channels = [(await bubble()) ? 'bong bóng' : '', dialogs.length ? 'hộp thoại' : '', lines.length ? 'chữ trên trang' : '']; // inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test
+      const channels = [bubble ? 'bong bóng' : '', dialogs.length ? 'hộp thoại' : '', lines.length ? 'chữ trên trang' : '']; // inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test
       test.info().annotations.push({ type: 'Message', description: channels.filter(Boolean).join(', ') || 'không có' });
       if (lines.length) test.info().annotations.push({ type: 'Page text', description: lines.join(' | ') });
 
@@ -106,6 +115,11 @@ test.describe('FR-17 Create coupon with invalid data', () => {
       const button = await coupons.createButton.boundingBox();
       for (const line of lines) {
         const el = page.getByText(line, { exact: true }).first();
+        // Không tìm được phần tử (chữ bị tách qua nhiều phần tử): Ghi lỗi soft, bỏ qua bước đo, không chờ boundingBox.
+        if ((await el.count()) === 0) {
+          expect.soft(false, `Chữ trên trang "${line}": Không định vị được phần tử chứa thông báo (xem ảnh trong report)`).toBe(true);
+          continue;
+        }
         await expect.soft(el, `Chữ trên trang "${line}": Không chứa chuỗi cấm`).not.toHaveText(forbidden);
         if (exp.message.aboveSubmitIfInPage) {
           // FR-22: Thông báo nằm trên nút "Tạo mã".
