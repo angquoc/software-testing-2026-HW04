@@ -19,7 +19,9 @@ Bước này là của **sinh viên**. AI hỗ trợ khi được nhờ: Chạy 
    - **Hệ thống sai đặc tả**: Assertion đúng với đặc tả mà hệ thống làm khác. **Giữ nguyên test**, ghi để báo bug ở bước `bugs`.
    - **Chưa rõ**: Đặc tả mơ hồ; ghi câu hỏi cho sinh viên.
 3. Đề xuất sửa cho từng lỗi script, kèm loại lỗi script. Sinh viên duyệt; sửa; chạy lại.
-4. Chạy lại test vừa sửa vài lần (`--repeat-each=3`) trên trình duyệt từng fail để bắt flaky.
+4. Chạy lại test vừa sửa vài lần trên trình duyệt từng fail để bắt flaky:
+   - Test không để lại dữ liệu, hoặc dữ liệu duy nhất mỗi lần chạy: `--repeat-each=3`.
+   - Test tạo / xóa dữ liệu cố định và chỉ reset một lần mỗi lượt chạy (theo cách cô lập dữ liệu đã chốt): Không dùng `--repeat-each`, vì từ lần lặp thứ 2 test fail do dữ liệu của lần trước (mã đã tồn tại, dòng đã bị xóa). Thay bằng chạy lại **nguyên lượt** (có reset) vài lần, và ghi số lần chạy vào `02_review.md`.
 
 ## Đọc kỹ cả test qua
 
