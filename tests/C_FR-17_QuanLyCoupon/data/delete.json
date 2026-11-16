@@ -1,0 +1,27 @@
+[
+  {
+    "id": "TC-CPN-51",
+    "title": "deletes a newly created coupon and allows re-creating it",
+    "input": { "code": "FR17TC51", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "deleted",
+      "rowAbsent": "FR17TC51",
+      "otherRowsUnchanged": true,
+      "absentAfterReload": true,
+      "recreate": {
+        "outcome": "created",
+        "row": {
+          "code": { "text": "FR17TC51" },
+          "type": { "text": "Phần trăm" },
+          "discountValue": { "text": "15%" },
+          "minOrderAmount": { "money": 300000 },
+          "expiredAt": { "text": "2099-12-31" },
+          "maxUsesPerUser": { "text": "3 lần" }
+        }
+      }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (Admin xóa mã; code duy nhất chỉ xét mã còn tồn tại); HW02 TC-CPN-51 (OUT8, K7 tải lại, K8 tạo lại được)",
+    "note": "Không có hộp thoại xác nhận khi xóa (HW02 S6); nếu có thì chọn đồng ý như bước 2 của TC-CPN-51"
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "TC-CPN-50",
+    "title": "shows exactly the 4 sample coupons right after reset",
+    "expected": {
+      "rowCount": 4,
+      "columnCount": 7,
+      "rows": [
+        {
+          "code": { "text": "SAVE10" },
+          "type": { "text": "Phần trăm" },
+          "discountValue": { "text": "10%" },
+          "minOrderAmount": { "money": 300000 },
+          "expiredAt": { "text": "2099-12-31" },
+          "maxUsesPerUser": { "text": "1 lần" }
+        },
+        {
+          "code": { "text": "BIGBUY" },
+          "type": null,
+          "discountValue": { "money": 50000 },
+          "minOrderAmount": { "money": 500000 },
+          "expiredAt": { "text": "2099-12-31" },
+          "maxUsesPerUser": { "text": "1 lần" }
+        },
+        {
+          "code": { "text": "VIP100" },
+          "type": null,
+          "discountValue": { "money": 100000 },
+          "minOrderAmount": { "money": 300000 },
+          "expiredAt": { "text": "2099-12-31" },
+          "maxUsesPerUser": { "text": "2 lần" }
+        },
+        {
+          "code": { "text": "EXPIRED" },
+          "type": { "text": "Phần trăm" },
+          "discountValue": { "text": "20%" },
+          "minOrderAmount": { "money": 100000 },
+          "expiredAt": { "text": "Hết hạn" },
+          "maxUsesPerUser": { "text": "1 lần" }
+        }
+      ]
+    },
+    "assumptions": ["A18"],
+    "oracle": "SRS FR-17 (Admin xem danh sách mã), FR-09 bảng mã giảm giá mẫu, FR-21 (đơn vị tiền); HW02 TC-CPN-50 (OUT5, 7 cột, EXPIRED hiện chữ \"Hết hạn\" theo A18)",
+    "note": "Chạy ngay sau reset, trước mọi test tạo mã. Cột \"Loại\" của mã fixed chưa khẳng định (CH-01)"
+  },
+  {
+    "id": "TC-CPN-93",
+    "title": "formats money cells with the dong sign and thousands separators",
+    "expected": {
+      "moneyCells": [
+        { "column": "Giá trị", "codes": ["BIGBUY", "VIP100"] },
+        { "column": "Đơn tối thiểu", "codes": ["SAVE10", "BIGBUY", "VIP100", "EXPIRED"] }
+      ],
+      "moneyPattern": "^\\d{1,3}([.,]\\d{3})* ?₫$"
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-21: Luôn dùng ký hiệu ₫ với định dạng phân cách hàng nghìn; HW02 TC-CPN-93; dấu phân cách theo CH-03 (b) của bước select",
+    "note": "Cột \"Giá trị\" chỉ xét mã loại fixed (mã phần trăm hiện %). Vị trí ₫ và dấu cách theo CH-02"
+  }
+]

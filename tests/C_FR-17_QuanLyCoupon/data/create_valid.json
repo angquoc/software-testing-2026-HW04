@@ -1,0 +1,141 @@
+[
+  {
+    "id": "TC-CPN-01",
+    "title": "creates a percent coupon with base valid data",
+    "input": { "code": "FR17TC01", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "created",
+      "row": {
+        "code": { "text": "FR17TC01" },
+        "type": { "text": "Phần trăm" },
+        "discountValue": { "text": "15%" },
+        "minOrderAmount": { "money": 300000 },
+        "expiredAt": { "text": "2099-12-31" },
+        "maxUsesPerUser": { "text": "3 lần" }
+      },
+      "persistsAfterReload": true
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (Admin thêm mã; các trường bắt buộc), FR-21 (₫); HW02 TC-CPN-01 (OUT1, K1)"
+  },
+  {
+    "id": "TC-CPN-02",
+    "title": "creates a fixed amount coupon with base valid data",
+    "input": { "code": "FR17TC02", "typeOption": "Số tiền cố định (₫)", "discountValue": "50000", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "created",
+      "row": {
+        "code": { "text": "FR17TC02" },
+        "type": null,
+        "discountValue": { "money": 50000 },
+        "minOrderAmount": { "money": 300000 },
+        "expiredAt": { "text": "2099-12-31" },
+        "maxUsesPerUser": { "text": "3 lần" }
+      },
+      "persistsAfterReload": true
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (type percent/fixed), FR-21 (₫); HW02 TC-CPN-02 (OUT1, cột \"Giá trị\" 50,000 ₫)",
+    "note": "Cột \"Loại\" chưa khẳng định (CH-01)"
+  },
+  {
+    "id": "TC-CPN-10",
+    "title": "shows an HTML-tag code as plain text",
+    "input": { "code": "<b>FR17TC10</b>", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "created",
+      "row": {
+        "code": { "textIgnoreCase": "<b>FR17TC10</b>", "noDescendant": "b" },
+        "type": { "text": "Phần trăm" },
+        "discountValue": { "text": "15%" },
+        "minOrderAmount": { "money": 300000 },
+        "expiredAt": { "text": "2099-12-31" },
+        "maxUsesPerUser": { "text": "3 lần" }
+      },
+      "persistsAfterReload": true
+    },
+    "assumptions": [],
+    "oracle": "R15 (hiển thị an toàn, HW02 05_final_tc.md mục 12); HW02 TC-CPN-10 (OUT1, OUT3: <b>FR17TC10</b> hoặc <B>FR17TC10</B> dạng chữ, không in đậm)",
+    "note": "Ô Mã tự chuyển chữ hoa khi gõ (GH9), nên so không phân biệt hoa thường"
+  },
+  {
+    "id": "TC-CPN-14",
+    "title": "accepts a percent discount of exactly 100",
+    "input": { "code": "FR17TC14", "typeOption": "Phần trăm (%)", "discountValue": "100", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "created",
+      "row": {
+        "code": { "text": "FR17TC14" },
+        "type": { "text": "Phần trăm" },
+        "discountValue": { "text": "100%" },
+        "minOrderAmount": { "money": 300000 },
+        "expiredAt": { "text": "2099-12-31" },
+        "maxUsesPerUser": { "text": "3 lần" }
+      },
+      "persistsAfterReload": true
+    },
+    "assumptions": ["A01"],
+    "oracle": "SRS FR-17 (discount_value dương); A01 (phần trăm tối đa 100); HW02 TC-CPN-14 (EC31)",
+    "note": "Cận trên hợp lệ của phần trăm"
+  },
+  {
+    "id": "TC-CPN-19",
+    "title": "accepts a minimum order amount of 0",
+    "input": { "code": "FR17TC19", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "0", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "created",
+      "row": {
+        "code": { "text": "FR17TC19" },
+        "type": { "text": "Phần trăm" },
+        "discountValue": { "text": "15%" },
+        "minOrderAmount": { "money": 0 },
+        "expiredAt": { "text": "2099-12-31" },
+        "maxUsesPerUser": { "text": "3 lần" }
+      },
+      "persistsAfterReload": true
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (min_order_amount >= 0); HW02 TC-CPN-19 (OUT1, hiện 0 ₫)",
+    "note": "Cận dưới hợp lệ của min_order_amount. Ô có sẵn 0: Vẫn xóa rồi gõ lại"
+  },
+  {
+    "id": "TC-CPN-23",
+    "title": "accepts a past expiry date and shows it as expired",
+    "input": { "code": "FR17TC23", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2025-01-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "created",
+      "row": {
+        "code": { "text": "FR17TC23" },
+        "type": { "text": "Phần trăm" },
+        "discountValue": { "text": "15%" },
+        "minOrderAmount": { "money": 300000 },
+        "expiredAt": { "text": "Hết hạn" },
+        "maxUsesPerUser": { "text": "3 lần" }
+      },
+      "persistsAfterReload": true
+    },
+    "assumptions": ["A05", "A18"],
+    "oracle": "SRS FR-17 (expired_at bắt buộc, không giới hạn ngày); A05 (nhận ngày quá khứ), A18 (hiện chữ \"Hết hạn\"); HW02 TC-CPN-23",
+    "note": "HW02 nhập 01/31/2025"
+  },
+  {
+    "id": "TC-CPN-116",
+    "title": "accepts max uses per user of exactly 1",
+    "input": { "code": "FR17TC116", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "1" },
+    "expected": {
+      "outcome": "created",
+      "row": {
+        "code": { "text": "FR17TC116" },
+        "type": { "text": "Phần trăm" },
+        "discountValue": { "text": "15%" },
+        "minOrderAmount": { "money": 300000 },
+        "expiredAt": { "text": "2099-12-31" },
+        "maxUsesPerUser": { "text": "1 lần" }
+      },
+      "persistsAfterReload": true
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (max_uses_per_user >= 1); HW02 TC-CPN-116 (P4, LB; OUT1, hiện 1 lần)",
+    "note": "Biên dưới hợp lệ (1). Ô có sẵn 1: Gõ lại, không để mặc định (HW02)"
+  }
+]

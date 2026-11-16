@@ -1,0 +1,150 @@
+[
+  {
+    "id": "TC-CPN-30",
+    "title": "rejects an empty code",
+    "input": { "code": "", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR1",
+      "violatedField": "code",
+      "absentCode": null,
+      "rowCountUnchanged": true,
+      "existingRow": null,
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (code bắt buộc), FR-22 (thông báo lỗi trên nút submit), FR-21 (tiếng Việt, quy ước chuỗi kỹ thuật của SV); HW02 TC-CPN-30 (ERR1, KQ-KH-GD)"
+  },
+  {
+    "id": "TC-CPN-32",
+    "title": "rejects a code that duplicates sample coupon SAVE10",
+    "input": { "code": "SAVE10", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR2",
+      "violatedField": "code",
+      "absentCode": null,
+      "rowCountUnchanged": true,
+      "existingRow": {
+        "code": { "text": "SAVE10" },
+        "type": { "text": "Phần trăm" },
+        "discountValue": { "text": "10%" },
+        "minOrderAmount": { "money": 300000 },
+        "expiredAt": { "text": "2099-12-31" },
+        "maxUsesPerUser": { "text": "1 lần" }
+      },
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (code duy nhất), FR-09 bảng mã mẫu (SAVE10), FR-22, FR-21; HW02 TC-CPN-32 (ERR2, dòng SAVE10 cũ giữ nguyên)",
+    "note": "Cần SAVE10 nguyên vẹn (reset). Dòng SAVE10 phải còn đúng một dòng, đúng giá trị mẫu"
+  },
+  {
+    "id": "TC-CPN-37",
+    "title": "rejects a percent discount of 150",
+    "input": { "code": "FR17TC37", "typeOption": "Phần trăm (%)", "discountValue": "150", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR17",
+      "violatedField": "discountValue",
+      "absentCode": "FR17TC37",
+      "rowCountUnchanged": true,
+      "existingRow": null,
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": ["A01"],
+    "oracle": "SRS FR-17 (discount_value dương); A01 (phần trăm tối đa 100); FR-22, FR-21; HW02 TC-CPN-37 (ERR17)"
+  },
+  {
+    "id": "TC-CPN-38",
+    "title": "rejects a percent discount of 0",
+    "input": { "code": "FR17TC38", "typeOption": "Phần trăm (%)", "discountValue": "0", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR6",
+      "violatedField": "discountValue",
+      "absentCode": "FR17TC38",
+      "rowCountUnchanged": true,
+      "existingRow": null,
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (discount_value dương), FR-22, FR-21; HW02 TC-CPN-38 (ERR6)",
+    "note": "0 là giá trị ngay dưới miền dương"
+  },
+  {
+    "id": "TC-CPN-39",
+    "title": "rejects a fixed discount of 0",
+    "input": { "code": "FR17TC39", "typeOption": "Số tiền cố định (₫)", "discountValue": "0", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR6",
+      "violatedField": "discountValue",
+      "absentCode": "FR17TC39",
+      "rowCountUnchanged": true,
+      "existingRow": null,
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (discount_value dương), FR-22, FR-21; HW02 TC-CPN-39 (ERR6)",
+    "note": "0 là giá trị ngay dưới miền dương, với loại cố định"
+  },
+  {
+    "id": "TC-CPN-41",
+    "title": "rejects a negative minimum order amount",
+    "input": { "code": "FR17TC41", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "-1", "expiredAt": "2099-12-31", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR9",
+      "violatedField": "minOrderAmount",
+      "absentCode": "FR17TC41",
+      "rowCountUnchanged": true,
+      "existingRow": null,
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (min_order_amount >= 0), FR-22, FR-21; HW02 TC-CPN-41 (ERR9)",
+    "note": "-1 ngay dưới biên 0. Ô số có thể chặn số âm bằng bong bóng (GH2); vẫn tính là bị từ chối (A21)"
+  },
+  {
+    "id": "TC-CPN-43",
+    "title": "rejects an empty expiry date",
+    "input": { "code": "FR17TC43", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "", "maxUsesPerUser": "3" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR7",
+      "violatedField": "expiredAt",
+      "absentCode": "FR17TC43",
+      "rowCountUnchanged": true,
+      "existingRow": null,
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (expired_at bắt buộc), FR-22, FR-21; HW02 TC-CPN-43 (ERR7)"
+  },
+  {
+    "id": "TC-CPN-44",
+    "title": "rejects max uses per user of 0",
+    "input": { "code": "FR17TC44", "typeOption": "Phần trăm (%)", "discountValue": "15", "minOrderAmount": "300000", "expiredAt": "2099-12-31", "maxUsesPerUser": "0" },
+    "expected": {
+      "outcome": "rejected",
+      "reason": "ERR11",
+      "violatedField": "maxUsesPerUser",
+      "absentCode": "FR17TC44",
+      "rowCountUnchanged": true,
+      "existingRow": null,
+      "checkAfterReload": true,
+      "message": { "required": true, "aboveSubmitIfInPage": true, "forbiddenSubstrings": ["SQLITE", "constraint", "coupons.", "TypeError", "SyntaxError", "undefined", "NaN", "null"] }
+    },
+    "assumptions": [],
+    "oracle": "SRS FR-17 (max_uses_per_user >= 1), FR-22, FR-21; HW02 TC-CPN-44 (ERR11)",
+    "note": "0 ngay dưới biên 1. GH2 như TC-CPN-41"
+  }
+]
