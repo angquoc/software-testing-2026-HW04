@@ -296,11 +296,21 @@ def split_row(line: str) -> list[str]:
     return cells
 
 
+def is_change_header(line: str) -> bool:
+    """Nhận bảng thay đổi theo tên cột của mẫu changes_table.md: Có ô "Thay đổi", ô "Loại" và ô bắt đầu bằng
+    "Vì sao AI". So từng ô chứ không so chuỗi con, để bảng khác có cột "Loại" và "Vì sao chọn" (mẫu
+    selected_tc.md) không bị nhận nhầm."""
+    if not line.startswith("|"):
+        return False
+    cells = [c.strip() for c in split_row(line)]
+    return "Thay đổi" in cells and "Loại" in cells and any(c.startswith("Vì sao AI") for c in cells)
+
+
 def change_tables(text: str):
     lines = text.splitlines()
     i = 0
     while i < len(lines):
-        if lines[i].startswith("|") and "Loại" in lines[i] and "Vì sao" in lines[i] \
+        if is_change_header(lines[i]) \
                 and i + 1 < len(lines) and re.match(r"^\|[\s:|-]+\|?$", lines[i + 1]):
             header = split_row(lines[i])
             rows, j = [], i + 2
@@ -360,7 +370,7 @@ def cmd_changes(args) -> None:
                 if c_ld is not None and not r[c_ld].strip():
                     out("ERROR", where, "Thiếu lý do / căn cứ")
         if not found:
-            out("WARN", f, "Không thấy bảng 'Thay đổi so với bản AI' (cần cột Loại và Vì sao)")
+            out("WARN", f, "Không thấy bảng 'Thay đổi so với bản AI' (cần cột Thay đổi, Loại và Vì sao AI sai / bỏ sót)")
     if args.stats:
         print("\n| Loại lỗi script | " + " | ".join(VI_SAO) + " | (trống) | Tổng |")
         print("|---|" + "---|" * (len(VI_SAO) + 2))
