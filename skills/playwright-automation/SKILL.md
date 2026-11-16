@@ -62,7 +62,7 @@ Chi tiết ở `references/rules.md`. Tóm tắt:
 - **Không bao giờ sửa hay ghi đè file trong `ai_raw/`** sau khi đã giao. AI làm lại thì lưu file mới `_v2`, `_v3`, đầu file ghi lần sửa, thời gian, lý do.
 - **Bản AI của code không được chạy thử rồi sửa trước khi giao.** Trước khi giao chỉ được kiểm tĩnh (`tsc`, `check_automation.py`) và sửa lỗi tĩnh, ghi rõ đã sửa gì ở đầu file `ai_raw/`. Chạy trên giao diện thật thuộc bước `review`, để lỗi của AI hiện ra trong bảng thay đổi.
 - **HTML report và kết quả chạy chỉ đến từ lần chạy thật.** Lần chạy chính thức do sinh viên chạy. AI không tạo, không sửa file trong `reports/`; AI chỉ chạy thử để gỡ lỗi, report chạy thử để ngoài `reports/`.
-- **Chỗ đặc tả không nói:** Ghi thành câu hỏi mở có phương án đánh chữ cái. AI không tự chọn.
+- **Chỗ đặc tả không nói:** Ghi thành câu hỏi mở `CH-<bước>-nn` có phương án đánh chữ cái (`references/rules.md` mục 4). AI không tự chọn.
 - **Đăng ra ngoài** (tạo issue, bình luận) chỉ làm khi sinh viên đã duyệt nội dung và cho phép rõ ràng; mặc định đưa lệnh để sinh viên chạy.
 - **Bản review** có bảng "Thay đổi so với bản AI" (mẫu `assets/templates/changes_table.md`); ghi rõ ai phát hiện mỗi thay đổi, không đoán.
 - **AI không tự commit.** Chỉ đưa commit message và lệnh.

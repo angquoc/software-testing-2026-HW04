@@ -6,7 +6,7 @@
 ## 1. Dữ liệu
 
 - Schema đã chốt: <...>
-- Quyết định: <CH-nn: ...>
+- Quyết định: <CH-data-nn: ...>
 
 ## 2. Script
 

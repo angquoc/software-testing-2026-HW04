@@ -26,7 +26,7 @@
    - Ghi lý do cụ thể cho từng test case, không ghi chung chung.
 3. Đề xuất danh sách chọn theo tiêu chí; ghi vì sao chọn từng test case.
 4. **Kế hoạch sinh script**: Chia các test case chọn thành phần `P1`, `P2`... (mỗi phần một lượt sinh script ở bước `script`), thường theo luồng thao tác giống nhau (ví dụ: P1 đăng ký thành công, P2 lỗi từng ô, P3 biên độ dài). Mỗi phần ghi: Test case, file spec dự kiến, file dữ liệu dự kiến, dữ liệu cần chuẩn bị.
-5. Câu hỏi mở `CH-nn` (đặc tả mơ hồ ảnh hưởng tới kết quả mong đợi; test case gốc có kết quả mong đợi không đo được bằng máy).
+5. Câu hỏi mở `CH-select-nn` (đặc tả mơ hồ ảnh hưởng tới kết quả mong đợi; test case gốc có kết quả mong đợi không đo được bằng máy).
 
 ## Bản review (`01_selected_tc.md`)
 

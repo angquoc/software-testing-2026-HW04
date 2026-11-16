@@ -71,7 +71,7 @@ bugs/bug_report.md, bugs/screenshots/
 |---|---|---|---|
 | Mã test case gốc | Giữ nguyên mã của bộ test case thủ công | (có sẵn) | `TC-REG-07` |
 | `P<n>` | Phần trong kế hoạch sinh script | `select` | `P2` |
-| `CH-nn` | Câu hỏi mở cho sinh viên | Mọi bước | `CH-03` |
+| `CH-<bước>-nn` | Câu hỏi mở cho sinh viên. Tên bước nằm trong mã để người đọc biết câu trả lời thuộc bước nào; mỗi bước đánh số lại từ `01`, riêng bước `script` đánh số nối tiếp qua các phần. Nhắc lại câu hỏi của bước khác thì ghi đủ mã. File đã giao trước khi có quy ước này giữ mã cũ `CH-nn` | Mọi bước | `CH-select-02`, `CH-data-03` |
 | `GĐ-nn` | Giả định của AI | Mọi bước | `GĐ-02` |
 | `F-nn` | Test fail trong lần chạy chính thức | `run` | `F-04` |
 

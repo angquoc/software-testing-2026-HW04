@@ -15,7 +15,7 @@
 
 ## Câu hỏi cho sinh viên
 
-- CH-01: <Câu hỏi>. Phương án: a. <...>; b. <...>
+- CH-<bước>-01: <Câu hỏi>. Phương án: a. <...>; b. <...>
 
 ## Code
 
