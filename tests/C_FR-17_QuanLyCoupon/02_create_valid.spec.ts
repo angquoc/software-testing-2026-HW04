@@ -1,5 +1,6 @@
 // FR-17 P2: Thêm mã hợp lệ qua form "Tạo mã giảm giá mới". TC-CPN-01, 02, 10, 14, 19, 23, 116. Dữ liệu: data/create_valid.json.
 // Mỗi test tạo một mã riêng FR17TCnn trên DB vừa reset ở globalSetup; file chạy sau 01_list.spec.ts (workers: 1).
+// Bản sửa 1 (script_02_create_valid_v2.md): Spec tự gọi 3 kiểu assertion (CH-script-01 b, CH-script-04 b).
 import { test, expect } from '../support/fixtures';
 import cases from './data/create_valid.json';
 import { AdminCouponsPage, ADMIN_STATE, COLUMN_OF, type CouponInput } from '../support/pages/AdminCouponsPage';
@@ -52,6 +53,7 @@ test.describe('FR-17 Create coupon with valid data', () => {
       await expect(newRow, 'Sau khi tạo: Dòng mới hiện trên bảng').toBeVisible();
       await expect(coupons.bodyRows, 'Sau khi tạo: Số dòng tăng đúng 1').toHaveCount(rowsBefore + 1);
       await expectRowCells(coupons, c.input.code, c.expected.row, 'sau khi tạo');
+      const rowTextAfterCreate = (await newRow.textContent()) ?? '';
 
       if (c.expected.persistsAfterReload) {
         // K1: Tải lại (Web Admin về Dashboard, bấm lại menu), dòng vẫn còn với đúng giá trị.
@@ -59,6 +61,8 @@ test.describe('FR-17 Create coupon with valid data', () => {
         await expect(newRow, 'Sau khi tải lại: Chỉ một dòng có mã này').toHaveCount(1);
         await expect(newRow, 'Sau khi tải lại: Dòng mới hiện trên bảng').toBeVisible();
         await expect(coupons.bodyRows, 'Sau khi tải lại: Số dòng').toHaveCount(rowsBefore + 1);
+        // Chữ của cả dòng giữ nguyên như ngay sau khi tạo (giá trị đã lưu, không chỉ hiển thị tạm trên trang).
+        await expect.soft(newRow, 'Sau khi tải lại: Chữ của dòng giống ngay sau khi tạo').toHaveText(rowTextAfterCreate);
         await expectRowCells(coupons, c.input.code, c.expected.row, 'sau khi tải lại');
       }
     });
