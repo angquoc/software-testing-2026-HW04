@@ -126,8 +126,9 @@ def cmd_spec(args) -> None:
         kinds: Counter = Counter()
         for mname, n in matchers.items():
             kinds[MATCHER_TO_KIND.get(mname, GENERIC_KIND)] += n
-        if re.search(r"expect\.soft\s*\(", code):
-            kinds["Assertion mềm"] += len(re.findall(r"expect\.soft\s*\(", code))
+        # expect.soft là cách chạy (không dừng ở điểm sai đầu tiên), không phải một kiểu kiểm: Matcher đi sau nó đã được
+        # đếm theo kiểu ở trên. Chỉ báo số lần dùng, không tính vào số kiểu.
+        soft = len(re.findall(r"expect\.soft\s*\(", code))
         if re.search(r"expect\.poll\s*\(", code):
             kinds["Chờ điều kiện"] += len(re.findall(r"expect\.poll\s*\(", code))
         if re.search(r"waitForResponse\s*\(", code) and re.search(r"\.status\(\)", code):
@@ -137,7 +138,7 @@ def cmd_spec(args) -> None:
         union_kinds.update(kinds)
         union_matchers.update(matchers)
         out("INFO", f, f"{len(kinds)} kiểu assertion: " + ", ".join(f"{k} ({n})" for k, n in kinds.most_common())
-            + " | matcher: " + ", ".join(sorted(matchers)))
+            + " | matcher: " + ", ".join(sorted(matchers)) + (f" | expect.soft: {soft} lần (không tính là kiểu)" if soft else ""))
     if len(args.files) > 1:
         out("INFO", "Tổng các file", f"{len(union_kinds)} kiểu assertion: "
             + ", ".join(f"{k} ({n})" for k, n in union_kinds.most_common()))

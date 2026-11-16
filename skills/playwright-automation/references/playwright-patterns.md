@@ -118,8 +118,9 @@ Thứ tự ưu tiên (bền nhất trước):
 | Phản hồi mạng | `waitForResponse` + `expect(res.status()).toBe(...)` | Request thật sự được gửi / bị chặn |
 | Giá trị tính toán | `expect(Number(...)).toBe(...)`, `toBeCloseTo()` | Tổng tiền, giảm giá |
 | Validation trình duyệt | `expect(await input.evaluate(e => e.validity.valid)).toBe(false)` | Trình duyệt chặn gửi form |
-| Assertion mềm | `expect.soft(...)` | Kiểm nhiều điểm trong một test mà không dừng ở điểm đầu |
 | Chờ điều kiện | `expect.poll(...)`, `expect(...).toPass()` | Giá trị đổi bất đồng bộ |
+
+`expect.soft(...)` (assertion mềm: Kiểm nhiều điểm trong một test mà không dừng ở điểm sai đầu tiên) là **cách chạy**, không phải một kiểu: `expect.soft(cell).toHaveText(...)` vẫn là kiểu "Nội dung chữ". `check_automation.py spec` chỉ báo số lần dùng `expect.soft`, không tính vào số kiểu. Khi dùng `soft`, giữ assertion thường cho bước mà nếu sai thì các bước sau vô nghĩa (ví dụ "có đúng một dòng" trước khi đọc từng ô của dòng đó), để không phải chờ hết thời gian ở từng ô.
 
 Ưu tiên **web-first assertion** (`await expect(locator).toX()`), vì nó tự chờ và thử lại. Tránh `expect(await locator.textContent()).toBe(...)` (đọc một lần, dễ flaky).
 

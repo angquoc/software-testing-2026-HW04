@@ -15,6 +15,10 @@
   Cách đã dùng ghi vào phần "Căn cứ" của `ai_raw/`, vì nó giải thích vì sao AI chọn selector như vậy (cột "Vì sao AI sai" sau này).
 - Cách đăng nhập nếu feature cần (`playwright-patterns.md` mục 10).
 - Dùng API để chuẩn bị / kiểm chứng phụ không (`playwright-patterns.md` mục 12).
+- Phạm vi "≥ 3 kiểu assertion": Mỗi file spec tự gọi đủ, mỗi feature, hay toàn suite; kiểu nằm trong hàm dùng chung (`lib/`, page object) có tính cho spec gọi nó không (`playwright-patterns.md` mục 5).
+- Kiểm nhiều điểm trong một test (từng ô của một dòng, từng ô tiền): Dừng ở điểm sai đầu tiên (assertion thường) hay dùng `expect.soft` để một lần chạy liệt kê đủ các điểm sai.
+
+Các câu này áp cho **mọi phần** của feature, nên hỏi ngay trước khi viết phần đầu tiên. Hỏi sau khi đã giao phần đầu thì phần đó phải sinh lại (`_v2`) hoặc sửa ở bước `review`.
 
 Các phần sau dùng lại quyết định của phần đầu; chỉ hỏi khi phần mới có điểm khác.
 
