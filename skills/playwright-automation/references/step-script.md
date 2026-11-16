@@ -28,7 +28,7 @@ Các phần sau dùng lại quyết định của phần đầu; chỉ hỏi khi
    - Mỗi test kiểm **đủ** kết quả mong đợi của test case gốc (không chỉ điểm dễ kiểm nhất); kết quả âm kiểm cả "không xảy ra" (không chuyển trang, không tạo dữ liệu).
    - Selector theo thứ tự ưu tiên; không `waitForTimeout`; bắt hộp thoại nếu có; validation trình duyệt kiểm bằng `validity`.
    - Comment ngắn ở đầu file: Phần nào, test case nào, file dữ liệu nào.
-4. Viết `ai_raw/script_<nn>_<nội dung>.md`: Đầu file theo mẫu, mục "Căn cứ" (dữ liệu, snapshot, quyết định), mục "Giả định" `GĐ-nn` và "Câu hỏi" `CH-script-nn` (số nối tiếp qua các phần), rồi các khối code, mỗi khối có dòng `File: \`...\`` ngay trước.
+4. Viết `ai_raw/script_<nn>_<nội dung>.md`: Đầu file theo mẫu, mục "Căn cứ" (dữ liệu, snapshot, quyết định), mục "Giả định" `GĐ-nn` và "Câu hỏi" `CH-script-nn` (số nối tiếp qua các phần), rồi các khối code, mỗi khối có dòng `File: \`...\`` ngay trước. Phần này sửa file dùng chung do phần trước sinh (page object, hàm trong `lib/`) thì chép **đủ** file đó vào bản AI của phần này và ghi ở đầu file đã đổi gì; `same` với bản của phần trước sẽ báo "Đã được bản AI sau thay" thay cho lỗi.
 5. Chép nguyên văn vào `tests/`. Tự kiểm tĩnh:
    - `npx tsc --noEmit`
    - `check_automation.py spec tests/<feature>/<file>.spec.ts`

@@ -167,6 +167,7 @@ Không bắt mà test vẫn qua thì đó là assertion thiếu (câu thông bá
 - Test về chính chức năng đăng nhập / đăng ký: Thao tác qua UI trong test.
 - Feature khác cần đăng nhập sẵn: Đăng nhập qua UI trong `beforeEach` (chậm, đơn giản), hoặc đăng nhập một lần và dùng lại `storageState` cho mỗi project (nhanh; phải tách theo project nếu dùng tài khoản khác nhau mỗi trình duyệt). **Quyết định** khi sinh script đầu tiên của feature cần đăng nhập.
 - Không viết mật khẩu vào spec; để trong file dữ liệu hoặc `tests/support/` (tài khoản thử của hệ thống, không phải thông tin cá nhân).
+- Đăng nhập một lần (hay reset DB) cho **riêng một feature**: Project `setup` làm `dependencies` vẫn chạy khi lệnh chỉ lọc thư mục của feature khác. Dùng `globalSetup` chung chỉ gọi phần chuẩn bị của feature đang chạy (theo `RUN_LABEL` hoặc tham số đường dẫn), lỗi ném rõ ràng kèm log (`lessons.md`, "Rút từ lần làm thật").
 
 ## 11. Page Object Model (Quyết định)
 

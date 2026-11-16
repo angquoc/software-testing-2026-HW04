@@ -76,4 +76,7 @@
 
 ## Rút từ lần làm thật
 
-(Chưa có. Bổ sung sau feature thứ nhất: Hiện tượng, feature và ngày, nguyên nhân, cách xử lý, bước của checklist được thêm.)
+Mỗi mục: Hiện tượng, feature và ngày, nguyên nhân, cách xử lý.
+
+- **Setup project chạy cả khi lọc feature khác** (FR-17, 16/11/2026, bước `script` P1). Project `setup` khai báo làm `dependencies` của 3 trình duyệt vẫn chạy khi lệnh chỉ lọc thư mục của feature khác (`npx playwright test tests/<feature khác>/ --project=chrome`), vì Playwright luôn chạy project phụ thuộc. Phần chuẩn bị riêng của một feature (reset DB, đăng nhập) vì vậy chạy cả khi chạy feature khác, và hiện thành một test trong report của feature đó. Cách xử lý: Dùng `globalSetup` chung, trong đó chỉ gọi phần chuẩn bị của feature khi lượt chạy là feature đó (theo `RUN_LABEL` của `run.mjs` hoặc tham số đường dẫn trên dòng lệnh). Lỗi chuẩn bị ném lỗi rõ ràng kèm log, vì `globalSetup` không hiện trong report. Muốn thử nhanh thì dựng cấu hình tạm và chạy `--list`.
+- **Phần sau sửa file dùng chung của phần trước** (FR-17, 16/11/2026, bước `script` P2). P2 mở rộng page object và hàm hỗ trợ do P1 sinh, nên `check_automation.py same` với bản P1 từng báo khác. Cách xử lý: Bản AI của phần sau chép **đủ** file dùng chung đã sửa và ghi ở đầu file là đã đổi gì so với phần trước; `same` coi bản AI mới nhất (xếp theo tên file) là bản để so.

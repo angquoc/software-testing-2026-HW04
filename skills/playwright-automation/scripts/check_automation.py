@@ -101,7 +101,7 @@ def cmd_spec(args) -> None:
             out("WARN", f"{f}:{line_of(code, m.start())}", "networkidle: Chờ chung chung, dễ flaky")
         for m in re.finditer(r"\b(?:test|describe)\.only\s*\(", code):
             out("ERROR", f"{f}:{line_of(code, m.start())}", ".only còn trong code")
-        if not DATA_READ.search(code):
+        if f.endswith(".spec.ts") and not DATA_READ.search(code):
             out("WARN", f, "Không thấy đọc file dữ liệu (import .json, loadCsv, loadJson, readFileSync)")
         for decl, (o, c) in ((ARRAY_DECL, ("[", "]")), (OBJ_DECL, ("{", "}"))):
             for m in decl.finditer(code):
@@ -257,15 +257,42 @@ def norm(text: str) -> str:
     return "\n".join(line.rstrip() for line in text.replace("\r\n", "\n").split("\n")).strip("\n")
 
 
+CREATED = re.compile(r"Thời gian tạo:\s*(\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2})")
+
+
+def created_key(p: Path) -> tuple[str, str]:
+    """Thứ tự sinh của file ai_raw: Theo dòng "Thời gian tạo" ở đầu file (mẫu ai_raw_header.md), không có thì theo
+    tên. Không xếp theo tên vì bản `_v2` của phần trước có thể sinh sau phần sau."""
+    m = CREATED.search(read(str(p))[:2000])
+    return (m.group(1).replace("T", " ") if m else "", p.name)
+
+
+def later_versions(md: str) -> dict[str, str]:
+    """File code đã có bản mới hơn trong các file ai_raw cùng thư mục, sinh sau `md`. Trả về {đường dẫn code: tên
+    file ai_raw mới nhất chứa nó}. Dùng khi phần sau sửa file dùng chung do phần trước sinh (page object, hàm hỗ trợ)."""
+    here = Path(md)
+    me = created_key(here)
+    newer: dict[str, str] = {}
+    for other in sorted(here.parent.glob("*.md"), key=created_key):
+        if other.resolve() == here.resolve() or created_key(other) <= me:
+            continue
+        for path, _ in code_blocks(read(str(other))):
+            newer[path] = other.name
+    return newer
+
+
 def cmd_same(args) -> None:
     root = Path(args.root)
     for md in args.files:
         blocks = code_blocks(read(md))
         if not blocks:
             out("ERROR", md, "Không thấy khối code nào có dòng `File: \\`...\\`` ngay trước")
+        newer = later_versions(md)
         for path, body in blocks:
             target = root / path
-            if not target.exists():
+            if path in newer:
+                out("INFO", md, f"{path}: Đã được bản AI sau thay ({newer[path]}); kiểm bằng `same` với file đó")
+            elif not target.exists():
                 out("ERROR", md, f"{path}: Chưa có file trong dự án")
             elif norm(read(str(target))) == norm(body):
                 out("INFO", md, f"{path}: Giống hệt bản AI")
