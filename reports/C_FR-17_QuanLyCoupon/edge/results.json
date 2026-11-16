@@ -1,0 +1,1558 @@
+{
+  "config": {
+    "argv": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "D:\\Dang\\Test\\Homeworks\\HW04\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/C_FR-17_QuanLyCoupon/",
+      "--project=edge"
+    ],
+    "configFile": "D:\\Dang\\Test\\Homeworks\\HW04\\playwright.config.ts",
+    "rootDir": "D:/Dang/Test/Homeworks/HW04/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\support\\globalSetup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/C_FR-17_QuanLyCoupon/edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/C_FR-17_QuanLyCoupon/edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/C_FR-17_QuanLyCoupon/edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "edge",
+        "testDir": "D:\\Dang\\Test\\Homeworks\\HW04\\tests",
+        "snapshotDir": "D:\\Dang\\Test\\Homeworks\\HW04\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "video": "off",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36 Edg/158.0.8127.18",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "edge"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/C_FR-17_QuanLyCoupon/edge",
+          "open": "never",
+          "title": "Run by: 23120061 | 2026-11-17T00:29:18+07:00 | C_FR-17_QuanLyCoupon x edge"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/C_FR-17_QuanLyCoupon/edge/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "C_FR-17_QuanLyCoupon\\01_list.spec.ts",
+      "file": "C_FR-17_QuanLyCoupon/01_list.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-17 Coupon list right after reset",
+          "file": "C_FR-17_QuanLyCoupon/01_list.spec.ts",
+          "line": 18,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CPN-50: shows exactly the 4 sample coupons right after reset",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Assumption",
+                      "description": "A18 (giả định HW02)",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\01_list.spec.ts",
+                        "line": 20,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1304,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:21.263Z",
+                      "annotations": [
+                        {
+                          "type": "Assumption",
+                          "description": "A18 (giả định HW02)",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\01_list.spec.ts",
+                            "line": 20,
+                            "column": 5
+                          }
+                        },
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fffa883948a8a0e71d25-6028f42ce4d364df4930",
+              "file": "C_FR-17_QuanLyCoupon/01_list.spec.ts",
+              "line": 20,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-93: formats money cells with the dong sign and thousands separators",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 772,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:22.941Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fffa883948a8a0e71d25-726a188cbcd5ac44f7b4",
+              "file": "C_FR-17_QuanLyCoupon/01_list.spec.ts",
+              "line": 20,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C_FR-17_QuanLyCoupon\\02_create_valid.spec.ts",
+      "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-17 Create coupon with valid data",
+          "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+          "line": 30,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CPN-01: creates a percent coupon with base valid data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1828,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:23.739Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "75283813eea3d3bc4ab7-3bca0a9233a3b68b36db",
+              "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+              "line": 32,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-02: creates a fixed amount coupon with base valid data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2141,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:25.588Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "75283813eea3d3bc4ab7-d5ffcb5373143f43dd3a",
+              "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+              "line": 32,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-10: shows an HTML-tag code as plain text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2134,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:27.758Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "75283813eea3d3bc4ab7-97133e7ec178c4643811",
+              "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+              "line": 32,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-14: accepts a percent discount of exactly 100",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Assumption",
+                      "description": "A01 (giả định HW02)",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\02_create_valid.spec.ts",
+                        "line": 32,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2147,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:29.909Z",
+                      "annotations": [
+                        {
+                          "type": "Assumption",
+                          "description": "A01 (giả định HW02)",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\02_create_valid.spec.ts",
+                            "line": 32,
+                            "column": 5
+                          }
+                        },
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "75283813eea3d3bc4ab7-402228b3ccfb82d6c887",
+              "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+              "line": 32,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-19: accepts a minimum order amount of 0",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2196,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:32.072Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "75283813eea3d3bc4ab7-f1e9a895c6d42f9f0d0e",
+              "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+              "line": 32,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-23: accepts a past expiry date and shows it as expired",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Assumption",
+                      "description": "A05 (giả định HW02)",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\02_create_valid.spec.ts",
+                        "line": 32,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "Assumption",
+                      "description": "A18 (giả định HW02)",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\02_create_valid.spec.ts",
+                        "line": 32,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:34.283Z",
+                      "annotations": [
+                        {
+                          "type": "Assumption",
+                          "description": "A05 (giả định HW02)",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\02_create_valid.spec.ts",
+                            "line": 32,
+                            "column": 5
+                          }
+                        },
+                        {
+                          "type": "Assumption",
+                          "description": "A18 (giả định HW02)",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\02_create_valid.spec.ts",
+                            "line": 32,
+                            "column": 5
+                          }
+                        },
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "75283813eea3d3bc4ab7-6de599cc93b15a5375d8",
+              "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+              "line": 32,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-116: accepts max uses per user of exactly 1",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1453,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:36.429Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "75283813eea3d3bc4ab7-f26c2a2f2690bc006c9a",
+              "file": "C_FR-17_QuanLyCoupon/02_create_valid.spec.ts",
+              "line": 32,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+      "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-17 Create coupon with invalid data",
+          "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+          "line": 45,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CPN-30: rejects an empty code",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "bong bóng"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1086,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:37.911Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "bong bóng"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-6fdd92b811dfdf3596e6",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-32: rejects a code that duplicates sample coupon SAVE10",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Dialog",
+                      "description": "Lỗi: SQLITE_CONSTRAINT: UNIQUE constraint failed: coupons.code"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "hộp thoại"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2072,
+                      "error": {
+                        "message": "Error: Hộp thoại \"Lỗi: SQLITE_CONSTRAINT: UNIQUE constraint failed: coupons.code\": Không chứa chuỗi cấm\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/SQLITE|constraint|coupons\\.|TypeError|SyntaxError|undefined|NaN|null|error|failed|invalid|required/i\u001b[39m\nReceived string:      \u001b[31m\"Lỗi: \u001b[7mSQLITE\u001b[27m_CONSTRAINT: UNIQUE constraint failed: coupons.code\"\u001b[39m",
+                        "stack": "Error: Hộp thoại \"Lỗi: SQLITE_CONSTRAINT: UNIQUE constraint failed: coupons.code\": Không chứa chuỗi cấm\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/SQLITE|constraint|coupons\\.|TypeError|SyntaxError|undefined|NaN|null|error|failed|invalid|required/i\u001b[39m\nReceived string:      \u001b[31m\"Lỗi: \u001b[7mSQLITE\u001b[27m_CONSTRAINT: UNIQUE constraint failed: coupons.code\"\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:113:74",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                          "column": 74,
+                          "line": 113
+                        },
+                        "snippet": " \u001b[90m 111 |\u001b[39m       \u001b[36mconst\u001b[39m forbidden \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mRegExp\u001b[39m(exp\u001b[33m.\u001b[39mmessage\u001b[33m.\u001b[39mforbiddenSubstrings\u001b[33m.\u001b[39mmap(escapeRegExp)\u001b[33m.\u001b[39mjoin(\u001b[32m'|'\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m'i'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 112 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m msg \u001b[36mof\u001b[39m dialogs) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 113 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(msg\u001b[33m,\u001b[39m \u001b[32m`Hộp thoại \"${msg}\": Không chứa chuỗi cấm`\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoMatch(forbidden)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 114 |\u001b[39m       }\n \u001b[90m 115 |\u001b[39m       \u001b[36mconst\u001b[39m button \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m coupons\u001b[33m.\u001b[39mcreateButton\u001b[33m.\u001b[39mboundingBox()\u001b[33m;\u001b[39m\n \u001b[90m 116 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m line \u001b[36mof\u001b[39m lines) {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 74,
+                            "line": 113
+                          },
+                          "message": "Error: Hộp thoại \"Lỗi: SQLITE_CONSTRAINT: UNIQUE constraint failed: coupons.code\": Không chứa chuỗi cấm\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/SQLITE|constraint|coupons\\.|TypeError|SyntaxError|undefined|NaN|null|error|failed|invalid|required/i\u001b[39m\nReceived string:      \u001b[31m\"Lỗi: \u001b[7mSQLITE\u001b[27m_CONSTRAINT: UNIQUE constraint failed: coupons.code\"\u001b[39m\n\n \u001b[90m 111 |\u001b[39m       \u001b[36mconst\u001b[39m forbidden \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mRegExp\u001b[39m(exp\u001b[33m.\u001b[39mmessage\u001b[33m.\u001b[39mforbiddenSubstrings\u001b[33m.\u001b[39mmap(escapeRegExp)\u001b[33m.\u001b[39mjoin(\u001b[32m'|'\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m'i'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 112 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m msg \u001b[36mof\u001b[39m dialogs) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 113 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(msg\u001b[33m,\u001b[39m \u001b[32m`Hộp thoại \"${msg}\": Không chứa chuỗi cấm`\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoMatch(forbidden)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 114 |\u001b[39m       }\n \u001b[90m 115 |\u001b[39m       \u001b[36mconst\u001b[39m button \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m coupons\u001b[33m.\u001b[39mcreateButton\u001b[33m.\u001b[39mboundingBox()\u001b[33m;\u001b[39m\n \u001b[90m 116 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m line \u001b[36mof\u001b[39m lines) {\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:113:74\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:39.011Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Dialog",
+                          "description": "Lỗi: SQLITE_CONSTRAINT: UNIQUE constraint failed: coupons.code"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "hộp thoại"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-a534f-icates-sample-coupon-SAVE10-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-a534f-icates-sample-coupon-SAVE10-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-a534f-icates-sample-coupon-SAVE10-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                        "column": 74,
+                        "line": 113
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-bc3582f2679ee755d8a4",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-37: rejects a percent discount of 150",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Assumption",
+                      "description": "A01 (giả định HW02)",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                        "line": 47,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "không có"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11507,
+                      "error": {
+                        "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                        "stack": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                          "column": 12,
+                          "line": 103
+                        },
+                        "snippet": " \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 12,
+                            "line": 103
+                          },
+                          "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 95,
+                            "line": 69
+                          },
+                          "message": "Error: Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC37\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC37$/i }) })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC37 getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC37$/i }) }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC37$/i }) })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 67 |\u001b[39m       \u001b[90m// Không có dòng mới (và dòng cũ giữ nguyên nếu test case có).\u001b[39m\n \u001b[90m 68 |\u001b[39m       \u001b[36mconst\u001b[39m expectNoNewRow \u001b[33m=\u001b[39m \u001b[36masync\u001b[39m (when\u001b[33m:\u001b[39m string) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m         \u001b[36mif\u001b[39m (absentRow) \u001b[36mawait\u001b[39m expect(absentRow\u001b[33m,\u001b[39m \u001b[32m`${when}: Không có dòng mã ${exp.absentCode}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCountUnchanged) \u001b[36mawait\u001b[39m expect(coupons\u001b[33m.\u001b[39mbodyRows\u001b[33m,\u001b[39m \u001b[32m`${when}: Số dòng không đổi`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(rowsBefore)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow) {\n \u001b[90m 72 |\u001b[39m           \u001b[36mconst\u001b[39m code \u001b[33m=\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow\u001b[33m.\u001b[39mcode \u001b[36mas\u001b[39m { text\u001b[33m:\u001b[39m string })\u001b[33m.\u001b[39mtext\u001b[33m;\u001b[39m\n\u001b[2m    at expectNoNewRow (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:69:95)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:133:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:42.303Z",
+                      "annotations": [
+                        {
+                          "type": "Assumption",
+                          "description": "A01 (giả định HW02)",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "line": 47,
+                            "column": 5
+                          }
+                        },
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "không có"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-ee797-s-a-percent-discount-of-150-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-ee797-s-a-percent-discount-of-150-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-ee797-s-a-percent-discount-of-150-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                        "column": 12,
+                        "line": 103
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-d5e89f093b985df91f24",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-38: rejects a percent discount of 0",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "không có"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11371,
+                      "error": {
+                        "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                        "stack": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                          "column": 12,
+                          "line": 103
+                        },
+                        "snippet": " \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 12,
+                            "line": 103
+                          },
+                          "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 95,
+                            "line": 69
+                          },
+                          "message": "Error: Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC38\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC38$/i }) })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC38 getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC38$/i }) }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC38$/i }) })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 67 |\u001b[39m       \u001b[90m// Không có dòng mới (và dòng cũ giữ nguyên nếu test case có).\u001b[39m\n \u001b[90m 68 |\u001b[39m       \u001b[36mconst\u001b[39m expectNoNewRow \u001b[33m=\u001b[39m \u001b[36masync\u001b[39m (when\u001b[33m:\u001b[39m string) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m         \u001b[36mif\u001b[39m (absentRow) \u001b[36mawait\u001b[39m expect(absentRow\u001b[33m,\u001b[39m \u001b[32m`${when}: Không có dòng mã ${exp.absentCode}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCountUnchanged) \u001b[36mawait\u001b[39m expect(coupons\u001b[33m.\u001b[39mbodyRows\u001b[33m,\u001b[39m \u001b[32m`${when}: Số dòng không đổi`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(rowsBefore)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow) {\n \u001b[90m 72 |\u001b[39m           \u001b[36mconst\u001b[39m code \u001b[33m=\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow\u001b[33m.\u001b[39mcode \u001b[36mas\u001b[39m { text\u001b[33m:\u001b[39m string })\u001b[33m.\u001b[39mtext\u001b[33m;\u001b[39m\n\u001b[2m    at expectNoNewRow (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:69:95)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:133:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:29:55.047Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "không có"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-eea49-cts-a-percent-discount-of-0-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-eea49-cts-a-percent-discount-of-0-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-eea49-cts-a-percent-discount-of-0-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                        "column": 12,
+                        "line": 103
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-ba58c6ebdbc1ceece83b",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-39: rejects a fixed discount of 0",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "không có"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10301,
+                      "error": {
+                        "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                        "stack": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                          "column": 12,
+                          "line": 103
+                        },
+                        "snippet": " \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 12,
+                            "line": 103
+                          },
+                          "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 95,
+                            "line": 69
+                          },
+                          "message": "Error: Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC39\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC39$/i }) })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC39 getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC39$/i }) }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC39$/i }) })\u001b[22m\n\u001b[2m    13 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 67 |\u001b[39m       \u001b[90m// Không có dòng mới (và dòng cũ giữ nguyên nếu test case có).\u001b[39m\n \u001b[90m 68 |\u001b[39m       \u001b[36mconst\u001b[39m expectNoNewRow \u001b[33m=\u001b[39m \u001b[36masync\u001b[39m (when\u001b[33m:\u001b[39m string) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m         \u001b[36mif\u001b[39m (absentRow) \u001b[36mawait\u001b[39m expect(absentRow\u001b[33m,\u001b[39m \u001b[32m`${when}: Không có dòng mã ${exp.absentCode}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCountUnchanged) \u001b[36mawait\u001b[39m expect(coupons\u001b[33m.\u001b[39mbodyRows\u001b[33m,\u001b[39m \u001b[32m`${when}: Số dòng không đổi`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(rowsBefore)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow) {\n \u001b[90m 72 |\u001b[39m           \u001b[36mconst\u001b[39m code \u001b[33m=\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow\u001b[33m.\u001b[39mcode \u001b[36mas\u001b[39m { text\u001b[33m:\u001b[39m string })\u001b[33m.\u001b[39mtext\u001b[33m;\u001b[39m\n\u001b[2m    at expectNoNewRow (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:69:95)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:133:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:30:07.776Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "không có"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-b0ec2-jects-a-fixed-discount-of-0-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-b0ec2-jects-a-fixed-discount-of-0-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-b0ec2-jects-a-fixed-discount-of-0-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                        "column": 12,
+                        "line": 103
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-e71af1ad432d7f62317b",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-41: rejects a negative minimum order amount",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "không có"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11377,
+                      "error": {
+                        "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                        "stack": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                          "column": 12,
+                          "line": 103
+                        },
+                        "snippet": " \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 12,
+                            "line": 103
+                          },
+                          "message": "Error: Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\nCó thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n \u001b[90m 101 |\u001b[39m             message\u001b[33m:\u001b[39m \u001b[32m'Có thông báo: Bong bóng của trình duyệt, hộp thoại hoặc chữ mới trên trang'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 102 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 103 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 104 |\u001b[39m       }\n \u001b[90m 105 |\u001b[39m       \u001b[36mconst\u001b[39m lines \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m newLines()\u001b[33m;\u001b[39m\n \u001b[90m 106 |\u001b[39m       \u001b[36mconst\u001b[39m channels \u001b[33m=\u001b[39m [bubble \u001b[33m?\u001b[39m \u001b[32m'bong bóng'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m dialogs\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'hộp thoại'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m lines\u001b[33m.\u001b[39mlength \u001b[33m?\u001b[39m \u001b[32m'chữ trên trang'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m''\u001b[39m]\u001b[33m;\u001b[39m \u001b[90m// inline-ok: Nhãn nơi tìm thấy thông báo để ghi annotation, không phải dữ liệu test\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:103:12\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                            "column": 95,
+                            "line": 69
+                          },
+                          "message": "Error: Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC41\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC41$/i }) })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Sau khi bấm \"Tạo mã\": Không có dòng mã FR17TC41 getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC41$/i }) }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: /^FR17TC41$/i }) })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n \u001b[90m 67 |\u001b[39m       \u001b[90m// Không có dòng mới (và dòng cũ giữ nguyên nếu test case có).\u001b[39m\n \u001b[90m 68 |\u001b[39m       \u001b[36mconst\u001b[39m expectNoNewRow \u001b[33m=\u001b[39m \u001b[36masync\u001b[39m (when\u001b[33m:\u001b[39m string) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m         \u001b[36mif\u001b[39m (absentRow) \u001b[36mawait\u001b[39m expect(absentRow\u001b[33m,\u001b[39m \u001b[32m`${when}: Không có dòng mã ${exp.absentCode}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCountUnchanged) \u001b[36mawait\u001b[39m expect(coupons\u001b[33m.\u001b[39mbodyRows\u001b[33m,\u001b[39m \u001b[32m`${when}: Số dòng không đổi`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(rowsBefore)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow) {\n \u001b[90m 72 |\u001b[39m           \u001b[36mconst\u001b[39m code \u001b[33m=\u001b[39m (exp\u001b[33m.\u001b[39mexistingRow\u001b[33m.\u001b[39mcode \u001b[36mas\u001b[39m { text\u001b[33m:\u001b[39m string })\u001b[33m.\u001b[39mtext\u001b[33m;\u001b[39m\n\u001b[2m    at expectNoNewRow (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:69:95)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts:133:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:30:19.310Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "không có"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-48ce4-gative-minimum-order-amount-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-48ce4-gative-minimum-order-amount-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\C_FR-17_QuanLyCoupon\\edge\\C_FR-17_QuanLyCoupon-03_cr-48ce4-gative-minimum-order-amount-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\C_FR-17_QuanLyCoupon\\03_create_invalid.spec.ts",
+                        "column": 12,
+                        "line": 103
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-4e3bc059c40d5648c604",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-43: rejects an empty expiry date",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "bong bóng"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1273,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:30:31.910Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "bong bóng"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-3be9dedcc5900b76b976",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "TC-CPN-44: rejects max uses per user of 0",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Message",
+                      "description": "bong bóng"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1210,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:30:33.469Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Message",
+                          "description": "bong bóng"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7d1f15ab1a64a3c9b7e3-1aba2d0cc797991fe61d",
+              "file": "C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts",
+              "line": 47,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C_FR-17_QuanLyCoupon\\04_delete.spec.ts",
+      "file": "C_FR-17_QuanLyCoupon/04_delete.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-17 Delete coupon",
+          "file": "C_FR-17_QuanLyCoupon/04_delete.spec.ts",
+          "line": 27,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CPN-51: deletes a newly created coupon and allows re-creating it",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2570,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-16T17:30:34.720Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T00:29:18+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a9161abaa4486cfc6551-0fe6c0742701b0b46c8f",
+              "file": "C_FR-17_QuanLyCoupon/04_delete.spec.ts",
+              "line": 29,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-16T17:29:19.832Z",
+    "duration": 77899.635,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}
