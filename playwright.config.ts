@@ -15,6 +15,8 @@ const resultsDir = process.env.RUN_RESULTS_DIR ?? 'test-results';
 export default defineConfig({
   testDir: './tests',
   outputDir: resultsDir,
+  // Chuẩn bị theo feature trước mỗi lượt chạy (FR-17: Reset DB, đăng nhập admin lưu storageState). Xem tests/support/globalSetup.ts.
+  globalSetup: './tests/support/globalSetup.ts',
   // Dữ liệu EShop dùng chung một DB: Chạy tuần tự cho an toàn. Đổi khi chốt D10.
   fullyParallel: false,
   workers: 1,

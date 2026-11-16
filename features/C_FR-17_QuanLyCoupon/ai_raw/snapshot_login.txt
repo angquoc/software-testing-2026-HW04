@@ -1,0 +1,13 @@
+# Snapshot 2026-11-16T05:04:00.138Z | chrome 157.0.8103.52
+# URL: http://localhost:5174/ | Title: frontend-admin
+
+## ARIA
+- heading "Admin Login" [level=2]
+- textbox "Email"
+- textbox "Password"
+- button "Login"
+
+## Phần tử tương tác
+input placeholder="Email"
+input type="password" placeholder="Password"
+button  text="Login"
