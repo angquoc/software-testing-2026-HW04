@@ -149,6 +149,8 @@ Mọi spec đạt ≥ 3 kiểu assertion (`check_automation.py spec --min-assert
 
 5 test fail giống nhau trên 3 trình duyệt: TC-CPN-32 (hộp thoại lộ chuỗi `SQLITE_CONSTRAINT`, #57), TC-CPN-37 (tạo được mã 150%, khác giả định A01, #56), TC-CPN-38 (0%, #55), TC-CPN-39 (0 ₫ loại cố định, mới #114), TC-CPN-41 (đơn tối thiểu -1 ₫, mới #115).
 
+**Trace của FR-17:** Trace (`.zip`) của lần chạy chính thức không còn: Khi quay video Task 2 (18/11/2026), `tools/run.mjs` xóa thư mục `reports/C_FR-17_QuanLyCoupon/` rồi chạy lại; bước khôi phục bằng `git restore` chỉ trả lại các file đã commit, mà trace bị `.gitignore` (`*.zip`) chặn nên chưa từng được commit. HTML report, ảnh lúc fail và `results.json` của lần chạy chính thức vẫn nguyên (khôi phục từ commit); chỉ nút mở trace của 5 test fail không mở được. Trace của lần quay video không được đưa lên vì không khớp report chính thức. FR-01, FR-07 có đủ trace.
+
 Chrome tự cập nhật bản vá giữa lần chạy FR-07 (157.0.8103.52) và FR-01 (157.0.8103.79); mỗi `03_results.md` ghi đúng phiên bản của lần chạy đó (lấy từ annotation `Browser`).
 
 ---
@@ -355,16 +357,16 @@ Công cụ khai báo theo đề §8: Claude Code (Anthropic, claude-opus-5-5) l�
 | B12: FR-01 `script` P1 đến P5 | Phiên `8a6f8ed4`, C125 đến C138, 18/11/2026 | 5 spec, `RegisterPage`, `LoginPage`, `fieldByLabel`, `lib/color.ts`, reset DB | **INCOMPLETE** | `fieldByLabel` lọc mọi `div` chứa nhãn (strict mode); `recordTexts` thiếu lọc hiển thị như `newTexts` | Sinh viên **tự phát hiện 2 lỗi khi đọc bản AI**, **đổi quyết định so chữ đúng hoa thường** (CH-script-04) |
 | B13: FR-01 `review`, `run`, `bugs`, `gap` | Phiên `8a6f8ed4`, C138 đến C152, 18/11/2026 | Chạy thử 3 trình duyệt; thử làm hỏng M1 đến M8; `03_results.md`; 6 bình luận; `04_gap.md` | **VALID** | M4 cho thấy test P3 qua cả với mật khẩu hợp lệ vì #42, được ghi thành annotation "Giới hạn quan sát" | Sinh viên chọn **CH-review-01 b**, **tự chạy chính thức** |
 | B14: Phiên điều phối: Kiểm tra phiên làm bài, sửa skill, commit message, prompt log | Phiên `27ccb594`, từ C11, 16/11/2026 đến 18/11/2026 | Kiểm từng bước (`tsc`, `check_automation.py`, đối chiếu `results.json`, GitHub), 17 lần sửa skill, lệnh commit, xuất log | **INCOMPLETE** | Bắt được: Dòng bảng bị tách, commit thiếu 4 file JSON, đổi thứ tự commit, câu ghi cũ; sinh viên duyệt mọi lần sửa skill. Ước tính thời gian còn lại thường dư | Sinh viên **duyệt từng đề xuất skill**, tự commit và push |
-| B15: Kịch bản và script quay video Task 2, báo cáo này | Phiên `27ccb594`, C153 đến C157, 18/11/2026 | Kịch bản quay và lồng tiếng (sườn), `tools/demo_task2.ps1` (chỉ điều khiển thao tác: Chạy lệnh thật, mở file và report thật), `report.md`, README | **VALID** | Script chỉ thao tác, không tạo hay sửa kết quả; số liệu báo cáo đối chiếu `03_results.md`, `04_gap.md`, `changes --stats`; sinh viên đọc lại và đồng ý | Sinh viên **chọn FR-17**, **quyết định quay đoạn nào**, **tinh chỉnh lời thuyết minh** từ sườn, **tự lồng tiếng và dựng video**, chọn **điểm tự chấm** |
+| B15: Kịch bản và script quay video Task 2, báo cáo này | Phiên `27ccb594`, C153 đến C165, 18/11/2026 | Kịch bản quay và lồng tiếng (sườn), `tools/demo_task2.ps1` (chỉ điều khiển thao tác: Chạy lệnh thật, mở file và report thật), `report.md`, README, đóng gói | **INCOMPLETE** | Script chỉ thao tác, không tạo hay sửa kết quả. Nhưng bước khôi phục report sau khi quay chỉ dùng `git restore`, không tính tới trace bị `.gitignore` chặn, nên trace của lần chạy chính thức FR-17 bị mất (phát hiện khi kiểm bản tải về). Bảng mục 2 `bug_report.md` và danh sách lồng nhau vỡ khi xuất PDF, sửa sau khi sinh viên phát hiện | Sinh viên **chọn FR-17**, **quyết định quay đoạn nào**, **tinh chỉnh lời thuyết minh**, **tự lồng tiếng và dựng video**, **phát hiện bảng vỡ trong PDF**, **tải bản nộp về kiểm**, chọn **điểm tự chấm** |
 
 ### Tổng kết độ chính xác AI
 
 | Chỉ số | Số lượng | Tỉ lệ |
 |---|---|---|
 | Tổng artifact AI sinh đã audit | 15 | 100% |
-| VALID (đúng, dùng nguyên) | 4 | 26,7% |
+| VALID (đúng, dùng nguyên) | 3 | 20,0% |
 | INVALID (sai, loại bỏ) | 0 | 0,0% |
-| INCOMPLETE (chấp nhận sau khi sửa) | 11 | 73,3% |
+| INCOMPLETE (chấp nhận sau khi sửa) | 12 | 80,0% |
 
 ### Kết luận: Khi nào nên, không nên dùng AI?
 

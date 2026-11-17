@@ -37,6 +37,7 @@ Không có test fail do script, khác biệt trình duyệt hay flaky.
 
 ## 3. Ghi chú
 
+- Trace (`.zip`) của lần chạy chính thức FR-17 không còn: Khi quay video Task 2 (18/11/2026), `tools/run.mjs` xóa thư mục `reports/C_FR-17_QuanLyCoupon/` rồi chạy lại; bước khôi phục bằng `git restore` chỉ trả lại các file đã commit, mà trace bị `.gitignore` (`*.zip`) chặn nên chưa từng được commit. HTML report, ảnh lúc fail và `results.json` của lần chạy chính thức vẫn nguyên (khôi phục từ commit); chỉ nút mở trace của 5 test fail không mở được. Trace của lần quay video không được đưa lên vì không khớp report chính thức. FR-01, FR-07 có đủ trace.
 - Không chạy lại trình duyệt nào; mỗi report là lần chạy đầu của lệnh trên.
 - Lỗi worker thoát bất thường (mã 134) từng gặp một lần trên Firefox ở lượt chạy thử (`02_review.md` mục 2.2) không xảy ra ở lần chạy chính thức.
 - F-02 phân loại theo CH-select-02 a: Test khẳng định theo giả định A01 của HW02 và ghi mã giả định trong annotation `Assumption`; fail ở đây là hệ thống khác giả định, không phải sai câu chữ của đặc tả. HW02 đã thành bug riêng (#56, Medium) với lý do suy từ công thức FR-09.

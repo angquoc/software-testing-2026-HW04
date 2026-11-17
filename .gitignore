@@ -33,6 +33,10 @@ playwright/.cache/
 *.zip
 *.zip.*
 HW04_submit/
+# Ngoại lệ: Trace Playwright (.zip) đính kèm trong HTML report là một phần của report
+!reports/**/*.zip
+# Trace FR-17 hiện có là của lần quay video Task 2 (không khớp report chính thức), không đưa lên
+reports/C_FR-17_QuanLyCoupon/**/*.zip
 
 # Python cache của tools/
 __pycache__/
