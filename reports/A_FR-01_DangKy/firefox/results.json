@@ -1,0 +1,1380 @@
+{
+  "config": {
+    "argv": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "D:\\Dang\\Test\\Homeworks\\HW04\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/A_FR-01_DangKy/",
+      "--project=firefox"
+    ],
+    "configFile": "D:\\Dang\\Test\\Homeworks\\HW04\\playwright.config.ts",
+    "rootDir": "D:/Dang/Test/Homeworks/HW04/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\support\\globalSetup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/A_FR-01_DangKy/firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/A_FR-01_DangKy/firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/A_FR-01_DangKy/firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "D:\\Dang\\Test\\Homeworks\\HW04\\tests",
+        "snapshotDir": "D:\\Dang\\Test\\Homeworks\\HW04\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "video": "off",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:159.0) Gecko/20100101 Firefox/159.0",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/A_FR-01_DangKy/firefox",
+          "open": "never",
+          "title": "Run by: 23120061 | 2026-11-18T01:22:16+07:00 | A_FR-01_DangKy x firefox"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/A_FR-01_DangKy/firefox/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "A_FR-01_DangKy\\01_register_valid.spec.ts",
+      "file": "A_FR-01_DangKy/01_register_valid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-01 Register: valid data redirects to login (P1)",
+          "file": "A_FR-01_DangKy/01_register_valid.spec.ts",
+          "line": 11,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-REG-01: registers with valid base data and redirects to login",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    },
+                    {
+                      "type": "Bỏ qua",
+                      "description": "Không ở /login (đang ở /register): Không kiểm form đăng nhập"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8545,
+                      "error": {
+                        "message": "Error: chuyển tới /login\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: predicate to succeed\nReceived: \u001b[31m\"http://localhost:5173/register\"\u001b[39m\nTimeout:  5000ms\n",
+                        "stack": "Error: chuyển tới /login\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: predicate to succeed\nReceived: \u001b[31m\"http://localhost:5173/register\"\u001b[39m\nTimeout:  5000ms\n\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts:34:64",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                          "column": 64,
+                          "line": 34
+                        },
+                        "snippet": " \u001b[90m 32 |\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[90m// OUT1: Đường dẫn đổi thành /login.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m,\u001b[39m \u001b[32m`chuyển tới ${c.expected.path}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL((url) \u001b[33m=>\u001b[39m url\u001b[33m.\u001b[39mpathname \u001b[33m===\u001b[39m c\u001b[33m.\u001b[39mexpected\u001b[33m.\u001b[39mpath)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[90m// Hệ quả của đăng ký thành công: Đúng 1 request đăng ký được gửi và nhận phản hồi 2xx.\u001b[39m\n \u001b[90m 37 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(registerResponses\u001b[33m,\u001b[39m \u001b[32m'số request POST /api/register'\u001b[39m)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                            "column": 64,
+                            "line": 34
+                          },
+                          "message": "Error: chuyển tới /login\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: predicate to succeed\nReceived: \u001b[31m\"http://localhost:5173/register\"\u001b[39m\nTimeout:  5000ms\n\n\n \u001b[90m 32 |\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[90m// OUT1: Đường dẫn đổi thành /login.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m,\u001b[39m \u001b[32m`chuyển tới ${c.expected.path}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL((url) \u001b[33m=>\u001b[39m url\u001b[33m.\u001b[39mpathname \u001b[33m===\u001b[39m c\u001b[33m.\u001b[39mexpected\u001b[33m.\u001b[39mpath)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[90m// Hệ quả của đăng ký thành công: Đúng 1 request đăng ký được gửi và nhận phản hồi 2xx.\u001b[39m\n \u001b[90m 37 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(registerResponses\u001b[33m,\u001b[39m \u001b[32m'số request POST /api/register'\u001b[39m)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts:34:64\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                            "column": 71,
+                            "line": 37
+                          },
+                          "message": "Error: số request POST /api/register\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m0\u001b[39m\nReceived array:  \u001b[31m[]\u001b[39m\n\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[90m// Hệ quả của đăng ký thành công: Đúng 1 request đăng ký được gửi và nhận phản hồi 2xx.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(registerResponses\u001b[33m,\u001b[39m \u001b[32m'số request POST /api/register'\u001b[39m)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (registerResponses\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mconst\u001b[39m res \u001b[33m=\u001b[39m registerResponses[\u001b[35m0\u001b[39m]\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(res\u001b[33m.\u001b[39mok()\u001b[33m,\u001b[39m \u001b[32m`phản hồi đăng ký HTTP ${res.status()}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts:37:71\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:18.783Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        },
+                        {
+                          "type": "Bỏ qua",
+                          "description": "Không ở /login (đang ở /register): Không kiểm form đăng nhập"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-01_register-b8ebd-data-and-redirects-to-login-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-01_register-b8ebd-data-and-redirects-to-login-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-01_register-b8ebd-data-and-redirects-to-login-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                        "column": 64,
+                        "line": 34
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c7636f1a9fedeeaef5a8-26b6fb4598fda2506e3b",
+              "file": "A_FR-01_DangKy/01_register_valid.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-108: registers with a 9-character password and redirects to login",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    },
+                    {
+                      "type": "Bỏ qua",
+                      "description": "Không ở /login (đang ở /register): Không kiểm form đăng nhập"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8381,
+                      "error": {
+                        "message": "Error: chuyển tới /login\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: predicate to succeed\nReceived: \u001b[31m\"http://localhost:5173/register\"\u001b[39m\nTimeout:  5000ms\n",
+                        "stack": "Error: chuyển tới /login\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: predicate to succeed\nReceived: \u001b[31m\"http://localhost:5173/register\"\u001b[39m\nTimeout:  5000ms\n\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts:34:64",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                          "column": 64,
+                          "line": 34
+                        },
+                        "snippet": " \u001b[90m 32 |\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[90m// OUT1: Đường dẫn đổi thành /login.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m,\u001b[39m \u001b[32m`chuyển tới ${c.expected.path}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL((url) \u001b[33m=>\u001b[39m url\u001b[33m.\u001b[39mpathname \u001b[33m===\u001b[39m c\u001b[33m.\u001b[39mexpected\u001b[33m.\u001b[39mpath)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[90m// Hệ quả của đăng ký thành công: Đúng 1 request đăng ký được gửi và nhận phản hồi 2xx.\u001b[39m\n \u001b[90m 37 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(registerResponses\u001b[33m,\u001b[39m \u001b[32m'số request POST /api/register'\u001b[39m)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                            "column": 64,
+                            "line": 34
+                          },
+                          "message": "Error: chuyển tới /login\n\n\u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: predicate to succeed\nReceived: \u001b[31m\"http://localhost:5173/register\"\u001b[39m\nTimeout:  5000ms\n\n\n \u001b[90m 32 |\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[90m// OUT1: Đường dẫn đổi thành /login.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(page\u001b[33m,\u001b[39m \u001b[32m`chuyển tới ${c.expected.path}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveURL((url) \u001b[33m=>\u001b[39m url\u001b[33m.\u001b[39mpathname \u001b[33m===\u001b[39m c\u001b[33m.\u001b[39mexpected\u001b[33m.\u001b[39mpath)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[90m// Hệ quả của đăng ký thành công: Đúng 1 request đăng ký được gửi và nhận phản hồi 2xx.\u001b[39m\n \u001b[90m 37 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(registerResponses\u001b[33m,\u001b[39m \u001b[32m'số request POST /api/register'\u001b[39m)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts:34:64\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                            "column": 71,
+                            "line": 37
+                          },
+                          "message": "Error: số request POST /api/register\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m0\u001b[39m\nReceived array:  \u001b[31m[]\u001b[39m\n\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[90m// Hệ quả của đăng ký thành công: Đúng 1 request đăng ký được gửi và nhận phản hồi 2xx.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(registerResponses\u001b[33m,\u001b[39m \u001b[32m'số request POST /api/register'\u001b[39m)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (registerResponses\u001b[33m.\u001b[39mlength \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mconst\u001b[39m res \u001b[33m=\u001b[39m registerResponses[\u001b[35m0\u001b[39m]\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(res\u001b[33m.\u001b[39mok()\u001b[33m,\u001b[39m \u001b[32m`phản hồi đăng ký HTTP ${res.status()}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts:37:71\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:29.245Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        },
+                        {
+                          "type": "Bỏ qua",
+                          "description": "Không ở /login (đang ở /register): Không kiểm form đăng nhập"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-01_register-9cf44-word-and-redirects-to-login-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-01_register-9cf44-word-and-redirects-to-login-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-01_register-9cf44-word-and-redirects-to-login-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\01_register_valid.spec.ts",
+                        "column": 64,
+                        "line": 34
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c7636f1a9fedeeaef5a8-9c0f9b4abaa3b5200880",
+              "file": "A_FR-01_DangKy/01_register_valid.spec.ts",
+              "line": 13,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A_FR-01_DangKy\\02_required_fields.spec.ts",
+      "file": "A_FR-01_DangKy/02_required_fields.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-01 Register: empty required field is blocked by the browser (P2)",
+          "file": "A_FR-01_DangKy/02_required_fields.spec.ts",
+          "line": 13,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-REG-30: blocks submit when full name is empty",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3426,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:39.023Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b9785d17af20797863ab-d3dd577c36e5648f93b7",
+              "file": "A_FR-01_DangKy/02_required_fields.spec.ts",
+              "line": 15,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-32: blocks submit when email is empty",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2738,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:42.963Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b9785d17af20797863ab-1972039a0a6a8ec6b1ab",
+              "file": "A_FR-01_DangKy/02_required_fields.spec.ts",
+              "line": 15,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-49: blocks submit when password is empty",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2804,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:45.710Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b9785d17af20797863ab-5ca8a75578ace012323f",
+              "file": "A_FR-01_DangKy/02_required_fields.spec.ts",
+              "line": 15,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A_FR-01_DangKy\\03_weak_password.spec.ts",
+      "file": "A_FR-01_DangKy/03_weak_password.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-01 Register: weak password is rejected with a page message (P3)",
+          "file": "A_FR-01_DangKy/03_weak_password.spec.ts",
+          "line": 22,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-REG-56: rejects password without a special character",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Giới hạn quan sát",
+                      "description": "Mật khẩu hợp lệ cũng nhận thông báo về mật khẩu (#42; 02_review.md, thử M4): Test qua không chứng minh quy tắc mật khẩu được kiểm đúng. Đọc kết quả cùng TC-REG-01, TC-REG-108"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2688,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:48.533Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Giới hạn quan sát",
+                          "description": "Mật khẩu hợp lệ cũng nhận thông báo về mật khẩu (#42; 02_review.md, thử M4): Test qua không chứng minh quy tắc mật khẩu được kiểm đúng. Đọc kết quả cùng TC-REG-01, TC-REG-108"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9203f90980cd5467a58-0b689ed447212a872e56",
+              "file": "A_FR-01_DangKy/03_weak_password.spec.ts",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-107: rejects 7-character password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Giới hạn quan sát",
+                      "description": "Mật khẩu hợp lệ cũng nhận thông báo về mật khẩu (#42; 02_review.md, thử M4): Test qua không chứng minh quy tắc mật khẩu được kiểm đúng. Đọc kết quả cùng TC-REG-01, TC-REG-108"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2697,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:51.233Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Giới hạn quan sát",
+                          "description": "Mật khẩu hợp lệ cũng nhận thông báo về mật khẩu (#42; 02_review.md, thử M4): Test qua không chứng minh quy tắc mật khẩu được kiểm đúng. Đọc kết quả cùng TC-REG-01, TC-REG-108"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9203f90980cd5467a58-c0884860e3c302516c32",
+              "file": "A_FR-01_DangKy/03_weak_password.spec.ts",
+              "line": 24,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A_FR-01_DangKy\\04_form_checklist.spec.ts",
+      "file": "A_FR-01_DangKy/04_form_checklist.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-01 Register: form checklist (P4)",
+          "file": "A_FR-01_DangKy/04_form_checklist.spec.ts",
+          "line": 93,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-REG-90: shows a confirm password field",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7662,
+                      "error": {
+                        "message": "Error: số ô đi cùng nhãn \"Xác nhận mật khẩu\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - số ô đi cùng nhãn \"Xác nhận mật khẩu\" getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                        "stack": "Error: số ô đi cùng nhãn \"Xác nhận mật khẩu\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - số ô đi cùng nhãn \"Xác nhận mật khẩu\" getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at checkConfirmPasswordField (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:28:67)\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:100:17",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                          "column": 67,
+                          "line": 28
+                        },
+                        "snippet": " \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m expected \u001b[33m=\u001b[39m c\u001b[33m.\u001b[39mexpected \u001b[36mas\u001b[39m { present\u001b[33m:\u001b[39m boolean }\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[36mconst\u001b[39m field \u001b[33m=\u001b[39m register\u001b[33m.\u001b[39mfield(target\u001b[33m.\u001b[39mlabel)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(field\u001b[33m,\u001b[39m \u001b[32m`số ô đi cùng nhãn \"${target.label}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(expected\u001b[33m.\u001b[39mpresent \u001b[33m?\u001b[39m \u001b[35m1\u001b[39m \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mif\u001b[39m (expected\u001b[33m.\u001b[39mpresent \u001b[33m&&\u001b[39m (\u001b[36mawait\u001b[39m field\u001b[33m.\u001b[39mcount()) \u001b[33m===\u001b[39m \u001b[35m1\u001b[39m) {\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(field\u001b[33m,\u001b[39m \u001b[32m`ô \"${target.label}\" hiển thị`\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m   }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                            "column": 67,
+                            "line": 28
+                          },
+                          "message": "Error: số ô đi cùng nhãn \"Xác nhận mật khẩu\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - số ô đi cùng nhãn \"Xác nhận mật khẩu\" getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Xác nhận mật khẩu\\s*\\*?\\s*$/u }).locator('..').locator('input')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m expected \u001b[33m=\u001b[39m c\u001b[33m.\u001b[39mexpected \u001b[36mas\u001b[39m { present\u001b[33m:\u001b[39m boolean }\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[36mconst\u001b[39m field \u001b[33m=\u001b[39m register\u001b[33m.\u001b[39mfield(target\u001b[33m.\u001b[39mlabel)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(field\u001b[33m,\u001b[39m \u001b[32m`số ô đi cùng nhãn \"${target.label}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(expected\u001b[33m.\u001b[39mpresent \u001b[33m?\u001b[39m \u001b[35m1\u001b[39m \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mif\u001b[39m (expected\u001b[33m.\u001b[39mpresent \u001b[33m&&\u001b[39m (\u001b[36mawait\u001b[39m field\u001b[33m.\u001b[39mcount()) \u001b[33m===\u001b[39m \u001b[35m1\u001b[39m) {\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(field\u001b[33m,\u001b[39m \u001b[32m`ô \"${target.label}\" hiển thị`\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m   }\n\u001b[2m    at checkConfirmPasswordField (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:28:67)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:100:17\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:22:53.947Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-3ecfe-ws-a-confirm-password-field-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-3ecfe-ws-a-confirm-password-field-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-3ecfe-ws-a-confirm-password-field-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                        "column": 67,
+                        "line": 28
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7bc57423ac558aa91cd2-1e6a26384f3bed066886",
+              "file": "A_FR-01_DangKy/04_form_checklist.spec.ts",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-92: shows the register button in blue",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3424,
+                      "error": {
+                        "message": "Error: hue ≥ 200° (rgb(239, 68, 68) = hue 0.0°, S 84.2%, L 60.2%)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m200\u001b[39m\nReceived:    \u001b[31m0\u001b[39m",
+                        "stack": "Error: hue ≥ 200° (rgb(239, 68, 68) = hue 0.0°, S 84.2%, L 60.2%)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m200\u001b[39m\nReceived:    \u001b[31m0\u001b[39m\n    at checkSubmitButtonColor (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:47:64)\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:103:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                          "column": 64,
+                          "line": 47
+                        },
+                        "snippet": " \u001b[90m 45 |\u001b[39m   \u001b[36mif\u001b[39m (hsl\u001b[33m.\u001b[39malpha \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) \u001b[36mreturn\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 46 |\u001b[39m   \u001b[36mconst\u001b[39m shown \u001b[33m=\u001b[39m \u001b[32m`${css} = hue ${hsl.hue.toFixed(1)}°, S ${hsl.saturationPercent.toFixed(1)}%, L ${hsl.lightnessPercent.toFixed(1)}%`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(hsl\u001b[33m.\u001b[39mhue\u001b[33m,\u001b[39m \u001b[32m`hue ≥ ${expected.hueMin}° (${shown})`\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(expected\u001b[33m.\u001b[39mhueMin)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(hsl\u001b[33m.\u001b[39mhue\u001b[33m,\u001b[39m \u001b[32m`hue ≤ ${expected.hueMax}° (${shown})`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(expected\u001b[33m.\u001b[39mhueMax)\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m   expect\n \u001b[90m 50 |\u001b[39m     \u001b[33m.\u001b[39msoft(hsl\u001b[33m.\u001b[39msaturationPercent\u001b[33m,\u001b[39m \u001b[32m`độ bão hòa ≥ ${expected.saturationMinPercent}% (${shown})`\u001b[39m)"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                            "column": 64,
+                            "line": 47
+                          },
+                          "message": "Error: hue ≥ 200° (rgb(239, 68, 68) = hue 0.0°, S 84.2%, L 60.2%)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m200\u001b[39m\nReceived:    \u001b[31m0\u001b[39m\n\n \u001b[90m 45 |\u001b[39m   \u001b[36mif\u001b[39m (hsl\u001b[33m.\u001b[39malpha \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) \u001b[36mreturn\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 46 |\u001b[39m   \u001b[36mconst\u001b[39m shown \u001b[33m=\u001b[39m \u001b[32m`${css} = hue ${hsl.hue.toFixed(1)}°, S ${hsl.saturationPercent.toFixed(1)}%, L ${hsl.lightnessPercent.toFixed(1)}%`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(hsl\u001b[33m.\u001b[39mhue\u001b[33m,\u001b[39m \u001b[32m`hue ≥ ${expected.hueMin}° (${shown})`\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(expected\u001b[33m.\u001b[39mhueMin)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m   expect\u001b[33m.\u001b[39msoft(hsl\u001b[33m.\u001b[39mhue\u001b[33m,\u001b[39m \u001b[32m`hue ≤ ${expected.hueMax}° (${shown})`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(expected\u001b[33m.\u001b[39mhueMax)\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m   expect\n \u001b[90m 50 |\u001b[39m     \u001b[33m.\u001b[39msoft(hsl\u001b[33m.\u001b[39msaturationPercent\u001b[33m,\u001b[39m \u001b[32m`độ bão hòa ≥ ${expected.saturationMinPercent}% (${shown})`\u001b[39m)\n\u001b[2m    at checkSubmitButtonColor (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:47:64)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:103:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:23:02.530Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-c0f33-the-register-button-in-blue-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-c0f33-the-register-button-in-blue-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-c0f33-the-register-button-in-blue-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                        "column": 64,
+                        "line": 47
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7bc57423ac558aa91cd2-ccc0500ecfaf60b37d36",
+              "file": "A_FR-01_DangKy/04_form_checklist.spec.ts",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-93: has exactly one h1 describing the page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8273,
+                      "error": {
+                        "message": "Error: số thẻ h1 trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('h1')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - số thẻ h1 trên trang locator('h1') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                        "stack": "Error: số thẻ h1 trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('h1')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - số thẻ h1 trên trang locator('h1') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at checkH1 (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:58:49)\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:106:17",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                          "column": 49,
+                          "line": 58
+                        },
+                        "snippet": " \u001b[90m 56 |\u001b[39m   \u001b[36mconst\u001b[39m expected \u001b[33m=\u001b[39m c\u001b[33m.\u001b[39mexpected \u001b[36mas\u001b[39m { count\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m textContains\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m caseInsensitive\u001b[33m:\u001b[39m boolean }\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m h1 \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(h1\u001b[33m,\u001b[39m \u001b[32m'số thẻ h1 trên trang'\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(expected\u001b[33m.\u001b[39mcount)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m   \u001b[36mif\u001b[39m ((\u001b[36mawait\u001b[39m h1\u001b[33m.\u001b[39mcount()) \u001b[33m!==\u001b[39m \u001b[35m1\u001b[39m) \u001b[36mreturn\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[36mconst\u001b[39m pattern \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mRegExp\u001b[39m(escapeRegExp(expected\u001b[33m.\u001b[39mtextContains)\u001b[33m,\u001b[39m expected\u001b[33m.\u001b[39mcaseInsensitive \u001b[33m?\u001b[39m \u001b[32m'iu'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m'u'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(h1\u001b[33m,\u001b[39m \u001b[32m`thẻ h1 chứa \"${expected.textContains}\"`\u001b[39m)\u001b[33m.\u001b[39mtoContainText(pattern)\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                            "column": 49,
+                            "line": 58
+                          },
+                          "message": "Error: số thẻ h1 trên trang\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('h1')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - số thẻ h1 trên trang locator('h1') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n \u001b[90m 56 |\u001b[39m   \u001b[36mconst\u001b[39m expected \u001b[33m=\u001b[39m c\u001b[33m.\u001b[39mexpected \u001b[36mas\u001b[39m { count\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m textContains\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m caseInsensitive\u001b[33m:\u001b[39m boolean }\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m h1 \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(h1\u001b[33m,\u001b[39m \u001b[32m'số thẻ h1 trên trang'\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(expected\u001b[33m.\u001b[39mcount)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m   \u001b[36mif\u001b[39m ((\u001b[36mawait\u001b[39m h1\u001b[33m.\u001b[39mcount()) \u001b[33m!==\u001b[39m \u001b[35m1\u001b[39m) \u001b[36mreturn\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[36mconst\u001b[39m pattern \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mRegExp\u001b[39m(escapeRegExp(expected\u001b[33m.\u001b[39mtextContains)\u001b[33m,\u001b[39m expected\u001b[33m.\u001b[39mcaseInsensitive \u001b[33m?\u001b[39m \u001b[32m'iu'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m'u'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(h1\u001b[33m,\u001b[39m \u001b[32m`thẻ h1 chứa \"${expected.textContains}\"`\u001b[39m)\u001b[33m.\u001b[39mtoContainText(pattern)\u001b[33m;\u001b[39m\n\u001b[2m    at checkH1 (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:58:49)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:106:17\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:23:07.376Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-b0c7b--one-h1-describing-the-page-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-b0c7b--one-h1-describing-the-page-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-b0c7b--one-h1-describing-the-page-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                        "column": 49,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7bc57423ac558aa91cd2-01cb779418eea112aea2",
+              "file": "A_FR-01_DangKy/04_form_checklist.spec.ts",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-95: marks required field labels with an asterisk",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3362,
+                      "error": {
+                        "message": "Error: nhãn \"Họ Tên\" có \"*\" trong nhãn hoặc ngay cạnh nhãn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: nhãn \"Họ Tên\" có \"*\" trong nhãn hoặc ngay cạnh nhãn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at checkRequiredMarker (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:77:98)\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:109:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                          "column": 98,
+                          "line": 77
+                        },
+                        "snippet": " \u001b[90m 75 |\u001b[39m       \u001b[36mreturn\u001b[39m texts\u001b[33m.\u001b[39msome((t) \u001b[33m=>\u001b[39m (t \u001b[33m??\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m.\u001b[39mincludes(marker))\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m     }\u001b[33m,\u001b[39m expected\u001b[33m.\u001b[39mmarker)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(found\u001b[33m,\u001b[39m \u001b[32m`nhãn \"${label}\" có \"${expected.marker}\" trong nhãn hoặc ngay cạnh nhãn`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m   }\n \u001b[90m 79 |\u001b[39m }\n \u001b[90m 80 |\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                            "column": 98,
+                            "line": 77
+                          },
+                          "message": "Error: nhãn \"Họ Tên\" có \"*\" trong nhãn hoặc ngay cạnh nhãn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 75 |\u001b[39m       \u001b[36mreturn\u001b[39m texts\u001b[33m.\u001b[39msome((t) \u001b[33m=>\u001b[39m (t \u001b[33m??\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m.\u001b[39mincludes(marker))\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m     }\u001b[33m,\u001b[39m expected\u001b[33m.\u001b[39mmarker)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(found\u001b[33m,\u001b[39m \u001b[32m`nhãn \"${label}\" có \"${expected.marker}\" trong nhãn hoặc ngay cạnh nhãn`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m   }\n \u001b[90m 79 |\u001b[39m }\n \u001b[90m 80 |\u001b[39m\n\u001b[2m    at checkRequiredMarker (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:77:98)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:109:11\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                            "column": 98,
+                            "line": 77
+                          },
+                          "message": "Error: nhãn \"Email\" có \"*\" trong nhãn hoặc ngay cạnh nhãn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 75 |\u001b[39m       \u001b[36mreturn\u001b[39m texts\u001b[33m.\u001b[39msome((t) \u001b[33m=>\u001b[39m (t \u001b[33m??\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m.\u001b[39mincludes(marker))\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m     }\u001b[33m,\u001b[39m expected\u001b[33m.\u001b[39mmarker)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(found\u001b[33m,\u001b[39m \u001b[32m`nhãn \"${label}\" có \"${expected.marker}\" trong nhãn hoặc ngay cạnh nhãn`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m   }\n \u001b[90m 79 |\u001b[39m }\n \u001b[90m 80 |\u001b[39m\n\u001b[2m    at checkRequiredMarker (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:77:98)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:109:11\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                            "column": 98,
+                            "line": 77
+                          },
+                          "message": "Error: nhãn \"Mật khẩu\" có \"*\" trong nhãn hoặc ngay cạnh nhãn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 75 |\u001b[39m       \u001b[36mreturn\u001b[39m texts\u001b[33m.\u001b[39msome((t) \u001b[33m=>\u001b[39m (t \u001b[33m??\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m.\u001b[39mincludes(marker))\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m     }\u001b[33m,\u001b[39m expected\u001b[33m.\u001b[39mmarker)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(found\u001b[33m,\u001b[39m \u001b[32m`nhãn \"${label}\" có \"${expected.marker}\" trong nhãn hoặc ngay cạnh nhãn`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m   }\n \u001b[90m 79 |\u001b[39m }\n \u001b[90m 80 |\u001b[39m\n\u001b[2m    at checkRequiredMarker (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:77:98)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:109:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:23:17.090Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-90c4e-eld-labels-with-an-asterisk-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-90c4e-eld-labels-with-an-asterisk-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-90c4e-eld-labels-with-an-asterisk-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                        "column": 98,
+                        "line": 77
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7bc57423ac558aa91cd2-6bd2def46726a16f36fe",
+              "file": "A_FR-01_DangKy/04_form_checklist.spec.ts",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-96: uses email and password input types",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8253,
+                      "error": {
+                        "message": "Error: ô \"Email\" có type=\"email\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input')\nExpected: \u001b[32m\"email\"\u001b[39m\nReceived: \u001b[31m\"text\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - ô \"Email\" có type=\"email\" getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input')\u001b[22m\n\u001b[2m    14 × locator resolved to <input value=\"\" required=\"\" type=\"text\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"text\"\u001b[22m\n",
+                        "stack": "Error: ô \"Email\" có type=\"email\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input')\nExpected: \u001b[32m\"email\"\u001b[39m\nReceived: \u001b[31m\"text\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - ô \"Email\" có type=\"email\" getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input')\u001b[22m\n\u001b[2m    14 × locator resolved to <input value=\"\" required=\"\" type=\"text\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"text\"\u001b[22m\n\n    at checkInputTypes (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:86:101)\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:112:17",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                          "column": 101,
+                          "line": 86
+                        },
+                        "snippet": " \u001b[90m 84 |\u001b[39m   \u001b[36mconst\u001b[39m expected \u001b[33m=\u001b[39m c\u001b[33m.\u001b[39mexpected \u001b[36mas\u001b[39m { types\u001b[33m:\u001b[39m \u001b[33mRecord\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m,\u001b[39m string\u001b[33m>\u001b[39m }\u001b[33m;\u001b[39m\n \u001b[90m 85 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m f \u001b[36mof\u001b[39m target\u001b[33m.\u001b[39mfields) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 86 |\u001b[39m     \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(register\u001b[33m.\u001b[39mfield(f\u001b[33m.\u001b[39mlabel)\u001b[33m,\u001b[39m \u001b[32m`ô \"${f.label}\" có type=\"${expected.types[f.key]}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveAttribute(\n \u001b[90m    |\u001b[39m                                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 87 |\u001b[39m       \u001b[32m'type'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 88 |\u001b[39m       expected\u001b[33m.\u001b[39mtypes[f\u001b[33m.\u001b[39mkey]\u001b[33m,\u001b[39m\n \u001b[90m 89 |\u001b[39m     )\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                            "column": 101,
+                            "line": 86
+                          },
+                          "message": "Error: ô \"Email\" có type=\"email\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input')\nExpected: \u001b[32m\"email\"\u001b[39m\nReceived: \u001b[31m\"text\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - ô \"Email\" có type=\"email\" getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('form').locator('label').filter({ hasText: /^\\s*Email\\s*\\*?\\s*$/u }).locator('..').locator('input')\u001b[22m\n\u001b[2m    14 × locator resolved to <input value=\"\" required=\"\" type=\"text\" class=\"w-full border p-2 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"text\"\u001b[22m\n\n\n \u001b[90m 84 |\u001b[39m   \u001b[36mconst\u001b[39m expected \u001b[33m=\u001b[39m c\u001b[33m.\u001b[39mexpected \u001b[36mas\u001b[39m { types\u001b[33m:\u001b[39m \u001b[33mRecord\u001b[39m\u001b[33m<\u001b[39m\u001b[33mstring\u001b[39m\u001b[33m,\u001b[39m string\u001b[33m>\u001b[39m }\u001b[33m;\u001b[39m\n \u001b[90m 85 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m f \u001b[36mof\u001b[39m target\u001b[33m.\u001b[39mfields) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 86 |\u001b[39m     \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(register\u001b[33m.\u001b[39mfield(f\u001b[33m.\u001b[39mlabel)\u001b[33m,\u001b[39m \u001b[32m`ô \"${f.label}\" có type=\"${expected.types[f.key]}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveAttribute(\n \u001b[90m    |\u001b[39m                                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 87 |\u001b[39m       \u001b[32m'type'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 88 |\u001b[39m       expected\u001b[33m.\u001b[39mtypes[f\u001b[33m.\u001b[39mkey]\u001b[33m,\u001b[39m\n \u001b[90m 89 |\u001b[39m     )\u001b[33m;\u001b[39m\n\u001b[2m    at checkInputTypes (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:86:101)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts:112:17\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:23:21.868Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-a8239-il-and-password-input-types-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-a8239-il-and-password-input-types-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\A_FR-01_DangKy\\firefox\\A_FR-01_DangKy-04_form_che-a8239-il-and-password-input-types-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\A_FR-01_DangKy\\04_form_checklist.spec.ts",
+                        "column": 101,
+                        "line": 86
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7bc57423ac558aa91cd2-20d2919a6a29543ef62b",
+              "file": "A_FR-01_DangKy/04_form_checklist.spec.ts",
+              "line": 95,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A_FR-01_DangKy\\05_focus_and_error_position.spec.ts",
+      "file": "A_FR-01_DangKy/05_focus_and_error_position.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-01 Register: tab order and error message position (P5)",
+          "file": "A_FR-01_DangKy/05_focus_and_error_position.spec.ts",
+          "line": 110,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-REG-94: moves focus through the form in top-to-bottom order with Tab",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3333,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:23:31.522Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "17870ccdb35f5d386c35-271a3ecdc646ac08a21f",
+              "file": "A_FR-01_DangKy/05_focus_and_error_position.spec.ts",
+              "line": 112,
+              "column": 5
+            },
+            {
+              "title": "TC-REG-97: shows the page error message above the register button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "firefox (firefox 159.0)"
+                    },
+                    {
+                      "type": "Xác nhận mật khẩu",
+                      "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2798,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T18:23:35.369Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-18T01:22:16+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "firefox (firefox 159.0)"
+                        },
+                        {
+                          "type": "Xác nhận mật khẩu",
+                          "description": "Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập (CH-select-06 a)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "17870ccdb35f5d386c35-91dcfb5d997c44126ade",
+              "file": "A_FR-01_DangKy/05_focus_and_error_position.spec.ts",
+              "line": 112,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-17T18:22:18.114Z",
+    "duration": 80479.027,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  }
+}
