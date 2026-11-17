@@ -61,6 +61,8 @@ export class RegisterPage {
 
   // Ghi lại chữ đang có trong vùng main ngay trước khi bấm, để sau đó tìm thông báo của trang là chữ mới
   // (quyết định P3: Chữ mới xuất hiện sau khi bấm). So theo chữ, không theo phần tử: React có thể vẽ lại phần tử cũ.
+  // Chỉ ghi chữ đang hiển thị, cùng điều kiện với newTexts: Khung thông báo có sẵn nhưng ẩn, bấm mới hiện
+  // thì chữ của nó phải được tính là mới.
   async recordTexts(): Promise<void> {
     await this.main.evaluate((root) => {
       const ownText = (el: Element) =>
@@ -72,6 +74,7 @@ export class RegisterPage {
           .trim();
       const seen: string[] = [];
       root.querySelectorAll('*').forEach((el) => {
+        if (typeof el.checkVisibility === 'function' && !el.checkVisibility()) return;
         const t = ownText(el);
         if (t) seen.push(t);
       });
