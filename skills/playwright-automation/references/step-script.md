@@ -17,6 +17,8 @@
 - Dùng API để chuẩn bị / kiểm chứng phụ không (`playwright-patterns.md` mục 12).
 - Phạm vi "≥ 3 kiểu assertion": Mỗi file spec tự gọi đủ, mỗi feature, hay toàn suite; kiểu nằm trong hàm dùng chung (`lib/`, page object) có tính cho spec gọi nó không (`playwright-patterns.md` mục 5). Feature có spec chỉ gọi API (không có giao diện): Spec này thường chỉ có 2 kiểu (phản hồi mạng, giá trị so sánh), nên hỏi luôn có tính ngoại lệ cho spec API không; nếu chưa hỏi trước phần đầu thì hỏi trước phần API đầu tiên.
 - Kiểm nhiều điểm trong một test (từng ô của một dòng, từng ô tiền): Dừng ở điểm sai đầu tiên (assertion thường) hay dùng `expect.soft` để một lần chạy liệt kê đủ các điểm sai.
+- So chữ của nhãn, nút, liên kết: Đúng chữ hoa thường theo đặc tả (lệch chữ là lỗi, test fail ở bước tìm phần tử) hay không phân biệt hoa thường (dễ chạy nhưng có thể che lệch đặc tả). Playwright mặc định so `name` không phân biệt hoa thường; muốn so đúng thì dùng `exact: true`.
+- Giả định dạng "test qua không chứng minh được ..." (bug khác che kết quả): Chỉ ghi trong `ai_raw/`, hay đưa thành annotation trong report để người đọc report thấy.
 
 Các câu này áp cho **mọi phần** của feature, nên hỏi ngay trước khi viết phần đầu tiên. Hỏi sau khi đã giao phần đầu thì phần đó phải sinh lại (`_v2`) hoặc sửa ở bước `review`.
 
@@ -37,7 +39,7 @@ Các phần sau dùng lại quyết định của phần đầu; chỉ hỏi khi
    - `npx tsc --noEmit`
    - `check_automation.py spec tests/<feature>/<file>.spec.ts`
    - `check_automation.py same features/<feature>/ai_raw/script_<nn>_<nội dung>.md`
-   Lỗi tĩnh sửa trước khi giao và ghi ở đầu file `ai_raw/` ("Đã sửa trước khi giao"). Lỗi không sửa được mà không phạm quy tắc khác (ví dụ phải thêm assertion không có trong test case để đủ số kiểu): Để nguyên, ghi dòng "Lỗi kiểm còn lại: <lệnh, lỗi>; xem CH-script-nn" ở đầu file `ai_raw/` và hỏi sinh viên. **Không chạy trên giao diện** (thuộc bước `review`).
+   Lỗi tĩnh sửa trước khi giao và ghi ở đầu file `ai_raw/` ("Đã sửa trước khi giao"). Lỗi không sửa được mà không phạm quy tắc khác (ví dụ phải thêm assertion không có trong test case để đủ số kiểu): Để nguyên, ghi dòng "Lỗi kiểm còn lại: <lệnh, lỗi>; xem CH-script-nn" ở đầu file `ai_raw/` và hỏi sinh viên. **Không chạy trên giao diện** (thuộc bước `review`). Nếu sinh viên cho phép, được kiểm riêng locator hay hàm dùng chung trên HTML dựng tại chỗ (`page.setContent`) hoặc bằng `node -e`, không mở hệ thống đang test; ghi ở đầu file `ai_raw/` đã kiểm gì, kết quả, và sửa gì nếu có ("Đã sửa trước khi giao").
 
 ## Tự kiểm
 

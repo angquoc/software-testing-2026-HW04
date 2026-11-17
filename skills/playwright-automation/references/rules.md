@@ -81,7 +81,7 @@ Tên test: `<mã TC>: <mô tả tiếng Anh>`, ví dụ `TC-REG-07: rejects pass
 
 - Đầu file theo `assets/templates/ai_raw_header.md`: Bước, thời gian tạo, công cụ và model, căn cứ (file đã đọc, snapshot đã dùng).
 - Code nằm trong khối code; ngay trước mỗi khối là dòng `File: \`<đường dẫn trong dự án>\``. Ở commit bản AI, file trong `tests/` phải **giống hệt** khối code (`check_automation.py same`).
-- Kiểm tĩnh trước khi giao (`tsc`, `check_automation.py`) được phép; lỗi tĩnh đã sửa trước khi giao ghi ở đầu file ("Đã sửa trước khi giao: ..."). **Không** chạy trên giao diện rồi sửa trước khi giao.
+- Kiểm tĩnh trước khi giao (`tsc`, `check_automation.py`) được phép; lỗi tĩnh đã sửa trước khi giao ghi ở đầu file ("Đã sửa trước khi giao: ..."). **Không** chạy trên giao diện rồi sửa trước khi giao. Nếu sinh viên cho phép, được kiểm riêng locator hay hàm dùng chung trên HTML dựng tại chỗ (`page.setContent`) hoặc bằng `node -e`, không mở hệ thống đang test; ghi ở đầu file `ai_raw/` đã kiểm gì, kết quả, và sửa gì nếu có ("Đã sửa trước khi giao").
 - Không chép prompt vào file (prompt đã có trong prompt log).
 - Sau khi giao, không sửa, không ghi đè. Lỡ sửa thì khôi phục bằng `git checkout -- <file>`.
 - Bản viết lại `_v2`, `_v3`: Ghi lần sửa, thời gian, lý do, bản trước. File trong `tests/` lúc đó được thay bằng code của bản viết lại (commit riêng, "AI revision n").
