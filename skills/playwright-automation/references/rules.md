@@ -110,6 +110,7 @@ Tên test: `<mã TC>: <mô tả tiếng Anh>`, ví dụ `TC-REG-07: rejects pass
 
 - Theo quy ước của dự án. Mặc định: `[<phạm vi>][<bước>] <Verb> <nội dung>`, tiếng Anh, động từ mệnh lệnh, không dấu chấm cuối.
 - Tách commit để lịch sử cho thấy phần AI viết và phần sinh viên sửa: Bản AI một commit (đuôi `(AI draft)`), bản review / sửa một commit riêng; bước `script` mỗi phần một commit.
+- Trước khi sửa bất kỳ file nào của bản AI (file trong `tests/` vừa chép từ `ai_raw/`) theo câu trả lời hoặc nhận xét của sinh viên: Kiểm bản AI đã commit chưa (`git status --short <file>`, `git log -1 -- <file>`). Chưa commit thì **dừng**, đưa lệnh commit bản AI, chờ sinh viên commit xong rồi mới sửa; không sửa trước rồi đưa file về bản AI sau.
 - AI không tự commit; đưa message và lệnh `git add` / `git commit` cho sinh viên.
 
 ## 9. Định dạng văn bản

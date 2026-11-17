@@ -21,6 +21,8 @@
 
 ## Bản review
 
+Trước khi sửa file dữ liệu theo câu trả lời hoặc nhận xét của sinh viên: Kiểm bản AI (`ai_raw/data.md` và `tests/<feature>/data/*`) đã commit chưa; chưa thì dừng và đưa lệnh commit bản AI trước (`rules.md` mục 8).
+
 Sinh viên đối chiếu từng dòng với test case gốc và đặc tả. Mục "Dữ liệu" trong `02_review.md`: Schema đã chốt, quyết định cho câu hỏi, bảng "Thay đổi so với bản AI" (cột "Loại lỗi script" thường là `Dữ liệu`).
 
 ## Tự kiểm
