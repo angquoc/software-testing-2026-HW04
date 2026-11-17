@@ -1,10 +1,13 @@
 // Mẫu so số tiền hiển thị với số nguyên trong dữ liệu (quyết định của SV: Số tiền ghi bằng số nguyên).
-// Không kèm ký tự phân cách: Chữ số đúng thứ tự, giữa hai chữ số có thể có một ký tự phân cách; hai đầu không dính chữ số.
+// Không kèm ký tự phân cách: Chữ số đúng thứ tự, giữa hai chữ số có thể có một ký tự phân cách.
 // Có số phân cách (TC-CART-104, 105): Nhóm 3 chữ số từ phải sang, cùng một ký tự "," hoặc "." giữa các nhóm.
+// Hai đầu không dính chữ số hay dấu "," "." (để "1,996,000,000" không khớp mẫu của 996000000).
+const LEFT = '(^|[^\\d.,])';
+const RIGHT = '([^\\d.,]|$)';
 export function moneyPattern(value: number, thousandSeparators?: number): RegExp {
   const digits = String(value);
   if (thousandSeparators === undefined) {
-    return new RegExp(`(^|\\D)${digits.split('').join('[.,\\s\\u00a0]?')}(\\D|$)`);
+    return new RegExp(`${LEFT}${digits.split('').join('[.,\\s\\u00a0]?')}${RIGHT}`);
   }
   const groups: string[] = [];
   for (let end = digits.length; end > 0; end -= 3) groups.unshift(digits.slice(Math.max(0, end - 3), end));
@@ -14,7 +17,8 @@ export function moneyPattern(value: number, thousandSeparators?: number): RegExp
   const [first, ...rest] = groups;
   // Backreference bọc trong (?:...): Viết liền "\2000" thì JavaScript đọc thành escape bát phân "\200" + "0".
   const tail = rest.map((g, k) => (k === 0 ? `([.,])${g}` : `(?:\\2)${g}`)).join('');
-  return new RegExp(`(^|\\D)${first}${tail}(\\D|$)`);
+  // LEFT là nhóm 1 nên ký tự phân cách là nhóm 2.
+  return new RegExp(`${LEFT}${first}${tail}${RIGHT}`);
 }
 
 // Định dạng tiền của TC-CART-94 (không xét giá trị): Nhóm đầu 1 đến 3 chữ số, các nhóm sau đúng 3 chữ số,

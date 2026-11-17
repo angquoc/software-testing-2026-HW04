@@ -8,6 +8,7 @@
 - Cập nhật lần 4: 2026-11-17 15:33 (UTC+07:00). Bản AI P4, P5 (`ai_raw/script_04_continue_shopping.md`, `script_05_cart_gui.md`): Thêm CH-script-04, 05 vào mục 2.2, kiểu assertion P4, P5 vào mục 2.4; thêm 2 dòng vào bảng thay đổi
 - Cập nhật lần 5: 2026-11-17 15:50 (UTC+07:00). Bản AI P6 (`ai_raw/script_06_api_invalid.md`): Thêm D17 vào mục 2.1, CH-script-06 vào mục 2.2, kiểu assertion P6 và ngoại lệ vào mục 2.4; không có thay đổi code nên không thêm dòng vào bảng thay đổi
 - Cập nhật lần 6: 2026-11-17 16:38 (UTC+07:00). Bước `review`: Mục 2.3 (lượt chạy thử 1, 2), mục 2.5 (test fail do hệ thống sai đặc tả); thêm 2 dòng vào bảng thay đổi (S1, S2)
+- Cập nhật lần 7: 2026-11-17 16:47 (UTC+07:00). Lượt rà test qua (AI chỉ chỗ nghi ngờ khi SV hỏi): Sửa N1 (biên của `moneyPattern`), N2 (tiền điều kiện TC-CART-54); thêm lượt chạy thử 3 vào mục 2.3 và 2 dòng vào bảng thay đổi
 
 ## 1. Dữ liệu
 
@@ -90,6 +91,7 @@ Cách làm (quyết định của SV ở đầu bước `review`): AI chạy th�
 |---|---|---|---|---|---|---|
 | 1 | 2026-11-17 16:10 đến 16:15 | Cả 7 spec | 6 qua, 21 fail | 1 qua, 14 fail, 12 skipped (API, D17) | 1 qua, 14 fail, 12 skipped | 15 test giao diện fail giống nhau ở 3 trình duyệt. Tìm ra lỗi script S1, S2 (mục 3) |
 | 2 | 2026-11-17 16:32 đến 16:35 | P1, P2 (sau khi sửa S1, S2) | 7 fail | 7 fail | 7 fail | Mọi điểm fail còn lại là hệ thống sai đặc tả (mục 2.5); TC-CART-104, 105 hết fail ở giá trị tiền; OUT15 fail đúng ở TC-CART-01, 101, 02; TC-CART-100 hết fail nhầm ở A31 |
+| 3 | 2026-11-17 16:46 đến 16:47 | TC-CART-104, 105 (3 trình duyệt), TC-CART-54 (Chrome), sau khi sửa N1, N2 | 104, 105: 2 fail; 54: Qua | 2 fail | 2 fail | TC-CART-104, 105 chỉ còn fail ở lần bấm đầu (#73), phần giá trị qua với mẫu chặt hơn; TC-CART-54 qua, bước 1 thêm đúng 1 dòng |
 
 Mỗi lượt chạy một lần mỗi trình duyệt, chưa lặp để bắt flaky; không có test flaky trong 2 lượt.
 
@@ -142,6 +144,8 @@ Theo lượt 2 (P1, P2) và lượt 1 (P3 đến P7); giống nhau ở 3 trình 
 | `lib/money.ts` `currencyFormatPattern` (TC-CART-94) | Nhận `₫` đứng trước hoặc sau số → chỉ nhận đứng sau số | Quyết định của SV | Assertion yếu / thiếu | | CH-script-05: Theo cách test case HW02 viết ("30,000,000 ₫") |
 | ★ `lib/money.ts` `moneyPattern` (TC-CART-104, 105) | Backreference viết liền chữ số (`\2000`) → bọc `(?:\2)000` | Sai | Assertion yếu / thiếu | Giới hạn model: AI ghép chuỗi regex mà không lường tới việc JavaScript đọc `\2000` thành escape bát phân `\200` + "0", nên mẫu không bao giờ khớp "996,000,000 ₫" | AI phát hiện khi chạy thử lượt 1 trên Chrome (SV nhờ AI chạy thử trước), cùng lỗi ở Edge, Firefox; HW02 chạy tay TC-CART-105 Pass nên fail này không phải bug. Sửa đã được SV duyệt; lượt 2 hết fail ở giá trị tiền |
 | ★ `lib/feedback.ts` `startFeedbackRecorder` (OUT15, A31) | Ghi mọi chữ mới ngoài vùng sản phẩm → chỉ ghi chữ chưa có trên trang lúc cài bộ ghi | Sai | Assertion yếu / thiếu | Đặc thù feature: Khi đã đăng nhập, Header vẽ lại câu chào "Chào, Test User" (`dangerouslySetInnerHTML`) mỗi khi giỏ đổi; snapshot chỉ chụp trạng thái tĩnh nên AI không thấy, bộ ghi coi câu chào là toast | AI phát hiện khi chạy thử lượt 1 (OUT15 qua ở TC-CART-01, 101, 02 dù hệ thống không có toast, #78), xác nhận bằng script thăm dò có đăng nhập. Sửa đã được SV duyệt; lượt 2: OUT15 fail đúng, TC-CART-100 hết fail nhầm ở A31 |
+| `lib/money.ts` `moneyPattern` (biên hai đầu) | `(^\|\D)` ... `(\D\|$)` → `(^\|[^\d.,])` ... `([^\d.,]\|$)`: Hai đầu không dính chữ số hay dấu "," "." | Sai | Assertion yếu / thiếu | Giới hạn model: AI chỉ chặn chữ số ở hai đầu, quên rằng dấu phân cách cũng nối số, nên "1,996,000,000 ₫" khớp mẫu của 996,000,000 (số lớn hơn vẫn qua) | AI chỉ ra khi SV hỏi (lượt rà test qua sau lượt 2), thử bằng chuỗi sai có chủ đích. Sửa đã được SV duyệt; lượt 3: Chuỗi đúng vẫn khớp, "1,996,000,000 ₫" không còn khớp; TC-CART-104, 105 qua phần giá trị trên 3 trình duyệt |
+| `07_api_valid.spec.ts` TC-CART-54 | Thêm kiểm tiền điều kiện: Bước 1 (`POST` của `test@eshop.com`) phải thêm đúng 1 dòng, không thì ném lỗi "Chuẩn bị không đạt" | Thiếu | Thiếu edge case | Giới hạn model: AI chỉ kiểm "giỏ admin không có dòng mới", không xét nhánh bước 1 thất bại, khi đó test vẫn qua mà không chứng minh được gì | AI chỉ ra khi SV hỏi (lượt rà test qua), làm hỏng có chủ đích: Gửi bước 1 không token (HTTP 401, 0 dòng mới) thì phần kiểm cũ vẫn qua. Sửa đã được SV duyệt; lượt 3 trên Chrome: Qua, bước 1 thêm đúng 1 dòng (HTTP 200) |
 
 CH-data-02 a và CH-data-03 a giữ nguyên dữ liệu của bản AI, không có dòng thay đổi.
 

@@ -60,6 +60,12 @@ test.describe('FR-07 Cart P7: cart API with valid requests and security checks',
 
       // TC-CART-54: Người dùng khác không thấy dòng vừa thêm (CH-data-04 b, GĐ-04).
       if (adminToken) {
+        // Bước 1 phải thêm đúng 1 dòng vào giỏ của test@eshop.com, nếu không thì bước 2 không chứng minh được gì.
+        if (added.length !== 1) {
+          throw new Error(
+            `Chuẩn bị không đạt (setup not met): Step 1 POST by ${USER_ACCOUNT.email} added ${added.length} line(s), expected 1 (HTTP ${res.status})`,
+          );
+        }
         const adminAdded = newRows(adminBefore, await getCartRows(request, adminToken));
         softExpect(adminAdded, "The admin's cart gets no new line from the test user's POST").toHaveLength(
           exp.adminCartNewRowCount ?? 0,
