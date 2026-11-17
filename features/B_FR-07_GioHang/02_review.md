@@ -4,6 +4,7 @@
 - Thời gian tạo: 2026-11-17 13:14 (UTC+07:00)
 - Cập nhật lần 1: 2026-11-17 14:13 (UTC+07:00). Thêm mục 2 (P1: Quyết định cấu trúc, CH-script-01, 02) và 3 dòng vào bảng thay đổi
 - Cập nhật lần 2: 2026-11-17 14:39 (UTC+07:00). Bản AI P2 (`ai_raw/script_02_add_to_existing_cart.md`): Thêm quyết định trước khi viết P2 vào mục 2.1, kiểu assertion P2 vào mục 2.4; thêm 1 dòng vào bảng thay đổi (thông báo lỗi lần bấm đầu)
+- Cập nhật lần 3: 2026-11-17 14:53 (UTC+07:00). Bản AI P3 (`ai_raw/script_03_remove_item.md`): Thêm CH-script-03 vào mục 2.2, kiểu assertion P3 vào mục 2.4; thêm 1 dòng vào bảng thay đổi
 
 ## 1. Dữ liệu
 
@@ -59,7 +60,7 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 - Thông tin giao diện: `aria_snapshot` (4 snapshot ở `ai_raw/`) và mã nguồn frontend, chỉ để lấy selector và luồng.
 - Đăng nhập: `storageState` `.auth/user.json` do `tests/B_FR-07_GioHang/setup/globalSetup.ts` ghi một lần mỗi lượt chạy FR-07.
 - Ô tổng tiền và ô trong dòng tìm theo vị trí; nhãn "Tổng cộng" và tiêu đề cột chỉ kiểm ở TC-CART-90.
-- ≥ 3 kiểu assertion tính theo từng file spec.
+- ≥ 3 kiểu assertion: P1 tính theo từng file spec; từ P2 đổi sang tính cả kiểu trong `lib/` mà spec gọi (dòng "Trước P2" bên dưới).
 - `expect.soft` cho các điểm kiểm độc lập, kể cả số dòng của một sản phẩm (CH-script-02).
 - Lần bấm "Thêm vào giỏ hàng" đầu tiên không phản hồi trong 1,5 giây: Ghi lỗi `soft` và bấm thêm một lần (trừ test case mong đợi bị từ chối, GĐ-09 của bản AI P1).
 - Test API chạy trên mấy trình duyệt (D17): ⏳ chốt ở P6.
@@ -72,6 +73,7 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 |---|---|---|
 | CH-script-01 | Khoảng chờ "có phản hồi" (3 giây) và "không có phản hồi" (2 giây) | Đặt bằng nhau, cùng 2 giây (`FEEDBACK_WINDOW_MS = 2_000`) |
 | CH-script-02 | Không có đúng 1 dòng sản phẩm thì dừng test hay `soft` | `soft` cho số dòng; không có dòng nào thì bỏ qua các ô của dòng đó; có từ 2 dòng thì đọc ô của dòng đầu tiên khớp tên, để bug #70 ở P2 không làm dừng sớm mà vẫn kiểm được tổng tiền và badge |
+| CH-script-03 | Khoảng chờ dialog sau khi bấm "Xóa" dùng chung `FEEDBACK_WINDOW_MS` hay hằng riêng | Hằng riêng `DIALOG_WINDOW_MS = 2_000` trong `lib/removeDialog.ts`, để tách ngữ nghĩa với phản hồi khi thêm vào giỏ, dễ bảo trì; giá trị 2 giây do SV chọn |
 
 ### 2.3 Các lượt chạy thử
 
@@ -83,6 +85,7 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 
 - P1: 5 kiểu: Giá trị tính toán / so sánh (`toBe`, `toEqual`), Giá trị ô nhập (`toHaveValue`) trong spec; Nội dung chữ (`toHaveText`), Số lượng (`toHaveCount`) trong `lib/cartChecks.ts`; Chờ điều kiện (`expect.poll`) trong `lib/feedback.ts`.
 - P2: 5 kiểu, cùng các kiểu như P1 (spec có `toBe`, `toHaveValue`; phần còn lại từ `lib/`).
+- P3: 5 kiểu: Giá trị tính toán / so sánh (`not.toBe`, `toBeGreaterThan`) trong spec; Nội dung chữ (`toHaveText`, `toContainText`), Số lượng (`toHaveCount`), Hiển thị (`toBeVisible`) trong `lib/cartChecks.ts`; Chờ điều kiện (`expect.poll`) trong `lib/feedback.ts` qua `lib/removeDialog.ts`.
 
 ## 3. Thay đổi so với bản AI
 
@@ -96,6 +99,7 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 | `01_add_from_detail.spec.ts` `checkCartState` | Bỏ tham số `rowPresence` và nhánh dừng test (`expect(...).toHaveCount(1)` thường); mọi điểm trong hàm là `soft` | Quyết định của SV | Assertion yếu / thiếu | | CH-script-02 |
 | `lib/feedback.ts`, `01_add_from_detail.spec.ts` | `FEEDBACK_WINDOW_MS` 3000 và `NO_FEEDBACK_WINDOW_MS` 2000 → một hằng `FEEDBACK_WINDOW_MS` 2000 cho cả "có phản hồi" và "không có phản hồi" | Quyết định của SV | Wait gây flaky | | CH-script-01: "Có" và "không có" phản hồi đo trên cùng một khoảng |
 | `01_add_from_detail.spec.ts`, `02_add_to_existing_cart.spec.ts` (thông báo lỗi lần bấm đầu) | Chuỗi viết cứng "within 1.5 s" → dựng từ hằng `FIRST_CLICK_WINDOW_MS / 1000` | Quyết định của SV | Khác | | SV hỏi vì tưởng câu thông báo chưa theo CH-script-01; AI chỉ ra khi SV hỏi rằng 1,5 giây là khoảng chờ lần bấm đầu (`FIRST_CLICK_WINDOW_MS`, không đổi ở CH-script-01) nên câu đang đúng, nhưng số viết cứng tách khỏi hằng sẽ sai nếu đổi hằng; SV chọn dựng từ hằng |
+| `lib/removeDialog.ts` | Chờ dialog bằng `FEEDBACK_WINDOW_MS` (2 giây, hằng của phản hồi khi thêm vào giỏ) → hằng riêng `DIALOG_WINDOW_MS = 2_000` | Quyết định của SV | Wait gây flaky | | CH-script-03; giá trị giữ 2 giây (SV chọn), hành vi không đổi |
 
 CH-data-02 a và CH-data-03 a giữ nguyên dữ liệu của bản AI, không có dòng thay đổi.
 

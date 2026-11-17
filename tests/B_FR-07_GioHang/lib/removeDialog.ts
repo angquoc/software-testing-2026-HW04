@@ -1,6 +1,9 @@
 import type { Dialog, Page } from '@playwright/test';
 import type { CartPage } from '../../support/pages/CartPage';
-import { becomesTrueWithin, FEEDBACK_WINDOW_MS } from './feedback';
+import { becomesTrueWithin } from './feedback';
+
+// Khoảng chờ dialog xác nhận sau khi bấm "Xóa"; tách khỏi FEEDBACK_WINDOW_MS (phản hồi khi thêm vào giỏ), CH-script-03.
+export const DIALOG_WINDOW_MS = 2_000;
 
 export interface RemoveResult {
   // native: Hộp thoại của trình duyệt (confirm); modal: Hộp thoại trên trang (role dialog / alertdialog); none: Không có.
@@ -33,7 +36,7 @@ export async function removeWithDialog(
     await cart.deleteButton(cart.row(productName).first()).click();
     const shown = await becomesTrueWithin(
       async () => nativeMessage !== undefined || (await modal.count()) > 0,
-      FEEDBACK_WINDOW_MS,
+      DIALOG_WINDOW_MS,
     );
     if (!shown) return { kind: 'none' };
     if (nativeMessage !== undefined) return { kind: 'native', message: nativeMessage };
