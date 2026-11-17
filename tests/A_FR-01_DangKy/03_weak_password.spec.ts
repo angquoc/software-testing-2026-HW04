@@ -9,6 +9,12 @@ type WeakPasswordCase = (typeof cases)[number];
 
 const softExpect = expect.configure({ soft: true });
 
+// Giới hạn quan sát hiện trong report (CH-review-01 b): Thử làm hỏng M4 (02_review.md) cho thấy mật khẩu hợp lệ
+// cũng nhận thông báo về mật khẩu (#42), nên test P3 qua không chứng minh quy tắc mật khẩu được kiểm đúng.
+const OBSERVATION_LIMIT =
+  'Mật khẩu hợp lệ cũng nhận thông báo về mật khẩu (#42; 02_review.md, thử M4): Test qua không chứng minh quy tắc ' +
+  'mật khẩu được kiểm đúng. Đọc kết quả cùng TC-REG-01, TC-REG-108';
+
 function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -16,6 +22,7 @@ function escapeRegExp(s: string): string {
 test.describe('FR-01 Register: weak password is rejected with a page message (P3)', () => {
   for (const c of cases as WeakPasswordCase[]) {
     test(`${c.id}: ${c.title}`, async ({ page }, testInfo) => {
+      testInfo.annotations.push({ type: 'Giới hạn quan sát', description: OBSERVATION_LIMIT });
       const register = new RegisterPage(page);
 
       // Ghi phản hồi của request đăng ký (quan sát thụ động).
