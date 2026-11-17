@@ -13,6 +13,13 @@ export interface RegisterInput {
 // Page object chỉ gói selector và thao tác; assertion nằm trong spec.
 export class RegisterPage {
   static readonly path = '/register';
+  // Nhãn của từng ô theo đặc tả FR-01 (khóa trùng tên trường trong `input` của file dữ liệu).
+  static readonly labels: Record<keyof RegisterInput, string> = {
+    fullName: 'Họ Tên',
+    email: 'Email',
+    password: 'Mật khẩu',
+    confirmPassword: 'Xác nhận mật khẩu',
+  };
   readonly main: Locator;
   readonly form: Locator;
   readonly submitButton: Locator;
@@ -36,10 +43,11 @@ export class RegisterPage {
   // Điền form theo dữ liệu. Ô Xác nhận mật khẩu: Có thì nhập, không có thì bỏ qua (CH-select-06 a).
   // Trả về true nếu đã nhập ô Xác nhận mật khẩu.
   async fillForm(input: RegisterInput): Promise<boolean> {
-    await this.field('Họ Tên').fill(input.fullName);
-    await this.field('Email').fill(input.email);
-    await this.field('Mật khẩu').fill(input.password);
-    const confirm = this.field('Xác nhận mật khẩu');
+    const labels = RegisterPage.labels;
+    await this.field(labels.fullName).fill(input.fullName);
+    await this.field(labels.email).fill(input.email);
+    await this.field(labels.password).fill(input.password);
+    const confirm = this.field(labels.confirmPassword);
     if ((await confirm.count()) === 0) return false;
     await confirm.fill(input.confirmPassword);
     return true;
