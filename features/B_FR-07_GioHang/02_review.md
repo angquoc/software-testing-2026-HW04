@@ -9,6 +9,7 @@
 - Cập nhật lần 5: 2026-11-17 15:50 (UTC+07:00). Bản AI P6 (`ai_raw/script_06_api_invalid.md`): Thêm D17 vào mục 2.1, CH-script-06 vào mục 2.2, kiểu assertion P6 và ngoại lệ vào mục 2.4; không có thay đổi code nên không thêm dòng vào bảng thay đổi
 - Cập nhật lần 6: 2026-11-17 16:38 (UTC+07:00). Bước `review`: Mục 2.3 (lượt chạy thử 1, 2), mục 2.5 (test fail do hệ thống sai đặc tả); thêm 2 dòng vào bảng thay đổi (S1, S2)
 - Cập nhật lần 7: 2026-11-17 16:47 (UTC+07:00). Lượt rà test qua (AI chỉ chỗ nghi ngờ khi SV hỏi): Sửa N1 (biên của `moneyPattern`), N2 (tiền điều kiện TC-CART-54); thêm lượt chạy thử 3 vào mục 2.3 và 2 dòng vào bảng thay đổi
+- Cập nhật lần 8: 2026-11-17 17:21 (UTC+07:00). Thêm lượt chạy thử 4 (`--repeat-each=3` cho P1 đến P5, 3 trình duyệt, không có test flaky) vào mục 2.3; không đổi code
 
 ## 1. Dữ liệu
 
@@ -92,8 +93,9 @@ Cách làm (quyết định của SV ở đầu bước `review`): AI chạy th�
 | 1 | 2026-11-17 16:10 đến 16:15 | Cả 7 spec | 6 qua, 21 fail | 1 qua, 14 fail, 12 skipped (API, D17) | 1 qua, 14 fail, 12 skipped | 15 test giao diện fail giống nhau ở 3 trình duyệt. Tìm ra lỗi script S1, S2 (mục 3) |
 | 2 | 2026-11-17 16:32 đến 16:35 | P1, P2 (sau khi sửa S1, S2) | 7 fail | 7 fail | 7 fail | Mọi điểm fail còn lại là hệ thống sai đặc tả (mục 2.5); TC-CART-104, 105 hết fail ở giá trị tiền; OUT15 fail đúng ở TC-CART-01, 101, 02; TC-CART-100 hết fail nhầm ở A31 |
 | 3 | 2026-11-17 16:46 đến 16:47 | TC-CART-104, 105 (3 trình duyệt), TC-CART-54 (Chrome), sau khi sửa N1, N2 | 104, 105: 2 fail; 54: Qua | 2 fail | 2 fail | TC-CART-104, 105 chỉ còn fail ở lần bấm đầu (#73), phần giá trị qua với mẫu chặt hơn; TC-CART-54 qua, bước 1 thêm đúng 1 dòng |
+| 4 | 2026-11-17 16:56 đến 17:21 | P1 đến P5 (15 test giao diện), `--repeat-each=3` (theo yêu cầu của SV) | 3 qua, 42 fail, 0 flaky (7,2 phút) | 3 qua, 42 fail, 0 flaky (7,4 phút) | 3 qua, 42 fail, 0 flaky (10,2 phút) | Mỗi test cho cùng trạng thái và cùng tập lỗi ở cả 3 lần lặp, và giống nhau ở 3 trình duyệt; test qua duy nhất là TC-CART-94. Mọi điểm fail như mục 2.5 |
 
-Mỗi lượt chạy một lần mỗi trình duyệt, chưa lặp để bắt flaky; không có test flaky trong 2 lượt.
+Lượt 1 đến 3 chạy một lần mỗi trình duyệt. Lượt 4 lặp 3 lần cho P1 đến P5 (`--repeat-each` dùng được vì test giao diện không để lại dữ liệu trên server: Giỏ Web nằm trong bộ nhớ trang, GĐ-01 của `select`); không có test flaky. Test API (P6, P7) không chạy lặp: Mỗi lần thêm dòng vào giỏ API, và đã chạy ở lượt 1, 3.
 
 ### 2.4 Kiểu assertion
 
