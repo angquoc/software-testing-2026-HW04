@@ -29,6 +29,7 @@ SESSIONS = [
     "27ccb594-33fb-4161-bb0b-3de1364349ab",  # 15/11/2026: đọc đề, chốt quyết định, dựng khung HW04 (phiên điều phối)
     "051b68d8-99bd-448b-a46f-f52b2cd6f033",  # 15/11/2026: dùng skill playwright-automation làm FR-17 (phiên làm bài, D14)
     "8897e5a5-2acf-4101-982a-c80750ce5708",  # 17/11/2026: dùng skill playwright-automation làm FR-07 (phiên làm bài, trước FR-01)
+    "8a6f8ed4-c558-4e96-bb6c-418dd8368e0c",  # 17/11/2026: dùng skill playwright-automation làm FR-01, quay video skill (phiên làm bài)
 ]
 
 # Ghi chú của sinh viên cho từng phiên (8 ký tự đầu của session id), hiển thị dưới tiêu đề mỗi mục
