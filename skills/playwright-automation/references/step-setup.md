@@ -26,7 +26,7 @@ Kiểm từng điểm, báo điểm thiếu; **không** ghi đè file của dự
 
 - Bộ trình duyệt, phiên bản Playwright.
 - Chạy tuần tự (`workers: 1`) hay song song: Phụ thuộc cách cô lập dữ liệu (`playwright-patterns.md` mục 3). Mặc định tuần tự cho đến khi dự án chốt.
-- Kèm gì khi test fail (ảnh, trace, video): Ảnh hưởng dung lượng report (một test fail có ảnh + trace khoảng 2 MB).
+- Kèm gì khi test fail (ảnh, trace, video): Ảnh hưởng dung lượng report (một test fail có ảnh + trace khoảng 2 MB). Ảnh mặc định chỉ chụp khung nhìn; trang dài (bảng nhiều dòng) thì có thể chọn `screenshot: { mode: 'only-on-failure', fullPage: true }` để ảnh dùng được làm bằng chứng ở bước `bugs`.
 
 ## Tự kiểm
 

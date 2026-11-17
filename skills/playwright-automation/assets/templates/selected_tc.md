@@ -4,6 +4,7 @@
 - Thời gian: <YYYY-MM-DD HH:MM> (<múi giờ>)
 - Nguồn test case: <đường dẫn bộ test case thủ công>; đặc tả: <đường dẫn>
 - Tiêu chí chọn: <Quyết định của sinh viên>
+- Điều kiện tiên quyết chung: <server cần chạy, trạng thái dữ liệu (ví dụ vừa reset), tài khoản>
 
 ## 1. Toàn bộ test case của feature
 
@@ -17,6 +18,8 @@
 |---|---|---|---|---|---|---|---|
 
 Thống kê: <n> positive, <n> negative, <n> edge; <n> EP, <n> BVA.
+
+Dự phòng (2 đến 3 mã, mỗi mã một lý do): <Mã>: <lý do>.
 
 ## 3. Kế hoạch sinh script
 

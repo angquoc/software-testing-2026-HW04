@@ -29,7 +29,7 @@ Bảng đề xuất: `B-nn`, các `F-nn`, mã TC, trình duyệt, tiêu đề, s
 
 - **Issue mới**: Thân issue viết đúng các trường của template (mỗi trường một tiêu đề `### <nhãn trường>`, vì tạo bằng `gh` thì form không hiện). Trường "Test case": Mã TC và tên script (`tests/<feature>/<file>.spec.ts`). Trường "Các bước": Bước tái hiện bằng tay (người đọc issue không cần chạy Playwright), kèm lệnh chạy test. "Kết quả mong đợi": Trích đặc tả. "Kết quả thực tế": Chép thông báo lỗi assertion (Expected / Received) và những gì thấy trên giao diện. "Môi trường": Trình duyệt và phiên bản, OS, timestamp lần chạy.
 - **Bình luận vào issue cũ**: "Tái hiện bằng automation (<bài>, <MSSV>)": Script và mã TC, trình duyệt bị lỗi, kết quả assertion, timestamp lần chạy, ảnh.
-- Ảnh: Lấy ảnh Playwright chụp khi fail (đường dẫn trong `results.json`, mục `attachments`, thường nằm trong `test-results/`), hoặc sinh viên tự chụp thêm. Không chỉnh nội dung ảnh.
+- Ảnh: Lấy ảnh Playwright chụp khi fail (đường dẫn trong `results.json`, mục `attachments`, thường nằm trong `test-results/`), hoặc sinh viên tự chụp thêm. Không chỉnh nội dung ảnh. Mở xem từng ảnh trước khi dùng: Ảnh mặc định chỉ có khung nhìn và chụp sau khi hộp thoại đã bị tự đóng, nên có thể không thấy lỗi; khi đó sinh viên tái hiện bằng tay và tự chụp (`lessons.md`, "Rút từ lần làm thật").
 
 Sinh viên duyệt nội dung. **Dừng.**
 

@@ -11,6 +11,8 @@
 - [ ] Lý do "không tự động hóa được" cụ thể (thiếu trạng thái gì, cần dịch vụ gì), không ghi "phức tạp".
 - [ ] Kế hoạch sinh script: Mỗi phần là một luồng thao tác; không có phần nào gom mọi thứ.
 - [ ] Đã hỏi tiêu chí chọn, không tự chọn tiêu chí.
+- [ ] Ràng buộc áp chung cho nhiều giá trị của trường khác (ví dụ "giá trị dương" cho cả loại phần trăm và loại cố định): Có ít nhất một test case cho mỗi giá trị; ưu tiên test case cùng lớp với bug đã biết.
+- [ ] Có mục "Điều kiện tiên quyết" chung (server, trạng thái dữ liệu, tài khoản); dự phòng 2 đến 3 mã, mỗi mã một lý do.
 
 ### `data`
 
@@ -30,6 +32,7 @@
 - [ ] Selector theo thứ tự ưu tiên; không class sinh tự động, không `nth-child`.
 - [ ] Hộp thoại (`alert`, `confirm`) được bắt và kiểm chữ.
 - [ ] Validation trình duyệt kiểm bằng `validity`, không so chữ bong bóng.
+- [ ] Test kiểm "bị từ chối" có xét nhánh hệ thống nhận nhầm: Chữ mới trên trang có thể là dữ liệu vừa tạo, form có thể tự xóa; kiểm quan sát (thông báo) đặt trước và dùng `soft` để report ghi đủ. Bước "sau khi tải lại" là bằng chứng quan trọng thì cân nhắc cho bước "ngay sau khi bấm" là `soft` để bước tải lại vẫn chạy.
 - [ ] Code trong `tests/` giống hệt khối code trong `ai_raw/` (`check_automation.py same`).
 - [ ] Không chạy trên giao diện trước khi giao.
 
@@ -75,6 +78,7 @@
 | `page.goto` lỗi kết nối chỉ ở một máy | Server dev nghe trên `::1` / `127.0.0.1` khác với `localhost` phân giải | Dùng đúng host server đang nghe |
 | Test ghi nhận "có bong bóng" dù hệ thống đã nhận dữ liệu (FR-17, 16/11/2026) | Đọc `validity` **sau** khi bấm gửi; gửi thành công thì form tự xóa, ô trống có `required` báo không hợp lệ | Đọc `validity` của ô vi phạm **trước** khi bấm gửi: Ô không hợp lệ lúc bấm thì trình duyệt chặn gửi và hiện bong bóng |
 | Test kẹt tới hết thời gian của test (30 giây) thay vì fail ở assertion (FR-17, 16/11/2026) | Gọi `boundingBox()`, `getAttribute()`, `textContent()` trên locator không khớp phần tử nào: Các hàm này chờ phần tử xuất hiện, không theo thời gian chờ của `expect` | Kiểm `count()` (hoặc web-first assertion có thời gian chờ) trước; không có phần tử thì ghi lỗi `soft` rõ ràng và bỏ qua bước đo |
+| Test ghi nhận "có thông báo" dù hệ thống không báo gì (FR-17, 16/11/2026) | Tìm chữ mới trên trang mà không bỏ vùng dữ liệu (bảng, danh sách): Hệ thống tạo nhầm dữ liệu thì dòng vừa tạo cũng là chữ mới | Bỏ chữ của vùng dữ liệu khi tìm thông báo; đọc chữ của trang và của vùng dữ liệu trong cùng một lần `page.evaluate` để không lệch thời điểm |
 
 ## Rút từ lần làm thật
 
@@ -83,3 +87,4 @@ Mỗi mục: Hiện tượng, feature và ngày, nguyên nhân, cách xử lý.
 - **Setup project chạy cả khi lọc feature khác** (FR-17, 16/11/2026, bước `script` P1). Project `setup` khai báo làm `dependencies` của 3 trình duyệt vẫn chạy khi lệnh chỉ lọc thư mục của feature khác (`npx playwright test tests/<feature khác>/ --project=chrome`), vì Playwright luôn chạy project phụ thuộc. Phần chuẩn bị riêng của một feature (reset DB, đăng nhập) vì vậy chạy cả khi chạy feature khác, và hiện thành một test trong report của feature đó. Cách xử lý: Dùng `globalSetup` chung, trong đó chỉ gọi phần chuẩn bị của feature khi lượt chạy là feature đó (theo `RUN_LABEL` của `run.mjs` hoặc tham số đường dẫn trên dòng lệnh). Lỗi chuẩn bị ném lỗi rõ ràng kèm log, vì `globalSetup` không hiện trong report. Muốn thử nhanh thì dựng cấu hình tạm và chạy `--list`.
 - **Phần sau sửa file dùng chung của phần trước** (FR-17, 16/11/2026, bước `script` P2). P2 mở rộng page object và hàm hỗ trợ do P1 sinh, nên `check_automation.py same` với bản P1 từng báo khác. Cách xử lý: Bản AI của phần sau chép **đủ** file dùng chung đã sửa và ghi ở đầu file là đã đổi gì so với phần trước; `same` coi bản AI mới nhất (xếp theo tên file) là bản để so.
 - **Không chạy lặp được test có dữ liệu cố định** (FR-17, 16/11/2026, bước `review`). Bước review yêu cầu `--repeat-each=3` để bắt flaky, nhưng test tạo coupon mã cố định và xóa coupon có sẵn; DB chỉ reset một lần trong `globalSetup` mỗi lượt, nên lần lặp thứ 2 chắc chắn fail vì dữ liệu của lần 1. Cách xử lý: Chạy lại nguyên lượt (có reset) trên từng trình duyệt thay cho `--repeat-each`; ghi số lần chạy trong bảng chạy thử của `02_review.md`.
+- **Ảnh Playwright chụp khi fail không làm được bằng chứng** (FR-17, 17/11/2026, bước `bugs`). `screenshot: 'only-on-failure'` chỉ chụp khung nhìn (dòng dữ liệu sai ở cuối bảng nằm ngoài ảnh) và chụp sau khi hộp thoại đã bị Playwright tự đóng, nên cả 5 ảnh fail đều không thấy lỗi. Cách xử lý: Sinh viên tái hiện bằng tay và tự chụp (đồng thời kiểm những bước test không chạy tới, như sau khi tải lại trang); ở bước `setup` có thể chọn `screenshot: { mode: 'only-on-failure', fullPage: true }`. Chữ của hộp thoại vẫn phải lấy từ annotation hoặc ảnh tự chụp.
