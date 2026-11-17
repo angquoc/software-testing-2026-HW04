@@ -30,11 +30,11 @@ test.describe('FR-07 Cart P5: cart page GUI checklist', () => {
       await nav.openCart();
 
       // TC-CART-90: Tiêu đề cột, nút xóa mỗi dòng, nhãn tổng tiền.
-      for (const name of exp.columns ?? []) {
-        await softExpect(
-          cart.table.getByRole('columnheader', { name, exact: true }),
-          `FR-07: column "${name}" in the cart table`,
-        ).toHaveCount(1);
+      // Đủ cột, đúng chữ và đúng thứ tự FR-07 liệt kê (CH-script-04): Khóa giả định đọc ô theo vị trí cột của P1 đến P4.
+      if (exp.columns) {
+        await softExpect(cart.columnHeaders, `FR-07: cart table columns in order ${exp.columns.join(', ')}`).toHaveText(
+          exp.columns,
+        );
       }
       if (exp.rowCount !== undefined) await checkCartState(cart, { rowCount: exp.rowCount }, 'Cart page');
       if (exp.deleteButtonPerRow) {

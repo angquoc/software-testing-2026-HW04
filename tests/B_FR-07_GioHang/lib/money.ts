@@ -17,14 +17,12 @@ export function moneyPattern(value: number, thousandSeparators?: number): RegExp
 }
 
 // Định dạng tiền của TC-CART-94 (không xét giá trị): Nhóm đầu 1 đến 3 chữ số, các nhóm sau đúng 3 chữ số,
-// cùng một ký tự "," hoặc "." giữa các nhóm; ký hiệu tiền đứng trước hoặc sau số (GĐ-04 của ai_raw/script_05_cart_gui.md).
+// cùng một ký tự "," hoặc "." giữa các nhóm; ký hiệu tiền đứng sau số như test case HW02 viết (CH-script-05).
 // whole: Chuỗi chỉ gồm số tiền (ô của bảng); không whole: Chứa một số tiền đúng định dạng (khối tổng có cả nhãn).
 export function currencyFormatPattern(symbol: string, whole: boolean): RegExp {
   const sym = symbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const sp = '[\\s\\u00a0]*';
-  const before = `${sym}${sp}\\d{1,3}(?:([.,])\\d{3}(?:\\1\\d{3})*)?`;
-  const after = `\\d{1,3}(?:([.,])\\d{3}(?:\\2\\d{3})*)?${sp}${sym}`;
-  const body = `(?:${before}|${after})`;
+  const body = `\\d{1,3}(?:([.,])\\d{3}(?:\\1\\d{3})*)?${sp}${sym}`;
   return whole
     ? new RegExp(`^${sp}${body}${sp}$`)
     : new RegExp(`(?:^|[^\\d.,${sym}])${body}(?:$|[^\\d.,${sym}])`);
