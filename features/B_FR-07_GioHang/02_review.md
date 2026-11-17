@@ -6,6 +6,7 @@
 - Cập nhật lần 2: 2026-11-17 14:39 (UTC+07:00). Bản AI P2 (`ai_raw/script_02_add_to_existing_cart.md`): Thêm quyết định trước khi viết P2 vào mục 2.1, kiểu assertion P2 vào mục 2.4; thêm 1 dòng vào bảng thay đổi (thông báo lỗi lần bấm đầu)
 - Cập nhật lần 3: 2026-11-17 14:53 (UTC+07:00). Bản AI P3 (`ai_raw/script_03_remove_item.md`): Thêm CH-script-03 vào mục 2.2, kiểu assertion P3 vào mục 2.4; thêm 1 dòng vào bảng thay đổi
 - Cập nhật lần 4: 2026-11-17 15:33 (UTC+07:00). Bản AI P4, P5 (`ai_raw/script_04_continue_shopping.md`, `script_05_cart_gui.md`): Thêm CH-script-04, 05 vào mục 2.2, kiểu assertion P4, P5 vào mục 2.4; thêm 2 dòng vào bảng thay đổi
+- Cập nhật lần 5: 2026-11-17 15:50 (UTC+07:00). Bản AI P6 (`ai_raw/script_06_api_invalid.md`): Thêm D17 vào mục 2.1, CH-script-06 vào mục 2.2, kiểu assertion P6 và ngoại lệ vào mục 2.4; không có thay đổi code nên không thêm dòng vào bảng thay đổi
 
 ## 1. Dữ liệu
 
@@ -67,6 +68,7 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 - Test API chạy trên mấy trình duyệt (D17): ⏳ chốt ở P6.
 - Trước P2: `checkCartState` chuyển sang `lib/cartChecks.ts`; kiểu assertion trong hàm `lib` được tính cho spec gọi nó (kiểm bằng `check_automation.py spec --with-imports`).
 - Trước P2: Bước chuẩn bị giỏ (D-04) được kiểm bằng `prepareCart`: Mở Giỏ hàng, kiểm số dòng và Số lượng 1 của từng sản phẩm; không đạt thì ném lỗi "Chuẩn bị không đạt", đạt thì về trang chủ bằng link "EShop".
+- Trước P6 (D17): Test API (P6, P7) chỉ chạy trên project `chrome`; Edge, Firefox bỏ qua bằng `test.skip` trong `beforeEach` của spec, lý do "D17: API tests run on Chrome only" (report Edge, Firefox hiện các test này là skipped).
 
 ### 2.2 Quyết định cho câu hỏi
 
@@ -77,6 +79,7 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 | CH-script-03 | Khoảng chờ dialog sau khi bấm "Xóa" dùng chung `FEEDBACK_WINDOW_MS` hay hằng riêng | Hằng riêng `DIALOG_WINDOW_MS = 2_000` trong `lib/removeDialog.ts`, để tách ngữ nghĩa với phản hồi khi thêm vào giỏ, dễ bảo trì; giá trị 2 giây do SV chọn |
 | CH-script-04 | TC-CART-90 có kiểm thứ tự 5 cột không | Có: Kiểm đúng thứ tự Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác, để khóa chặt giả định chỉ số cột mà P1 đến P4 dùng khi đọc ô |
 | CH-script-05 | Ký hiệu `₫` đứng trước hay sau số | Chỉ chấp nhận đứng sau, như test case HW02 viết ("30,000,000 ₫") |
+| CH-script-06 | Spec API chỉ có 2 kiểu assertion (Phản hồi mạng, Giá trị tính toán / so sánh) | a. Ngoại lệ cho spec API (P6, P7): Mỗi spec giao diện đủ ≥ 3 kiểu, spec API 2 kiểu, cả feature vẫn đủ; không thêm assertion ngoài test case để đủ kiểu |
 
 ### 2.3 Các lượt chạy thử
 
@@ -91,6 +94,7 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 - P3: 5 kiểu: Giá trị tính toán / so sánh (`not.toBe`, `toBeGreaterThan`) trong spec; Nội dung chữ (`toHaveText`, `toContainText`), Số lượng (`toHaveCount`), Hiển thị (`toBeVisible`) trong `lib/cartChecks.ts`; Chờ điều kiện (`expect.poll`) trong `lib/feedback.ts` qua `lib/removeDialog.ts`.
 - P4: 5 kiểu: Điều hướng (`toHaveURL`), Hiển thị (`toBeVisible`), Giá trị tính toán / so sánh (`toContain`) trong spec; Nội dung chữ, Số lượng trong `lib/cartChecks.ts`.
 - P5 (sau CH-script-04, 05): 4 kiểu: Nội dung chữ (`toHaveText`, `toContainText`), Số lượng (`toHaveCount`), Giá trị tính toán / so sánh (`toBe`) trong spec (3 kiểu riêng spec); Hiển thị (`toBeVisible`) trong `lib/cartChecks.ts`.
+- P6: 2 kiểu: Phản hồi mạng (`toBeOK`, `not.toBeOK`), Giá trị tính toán / so sánh (`toHaveLength`, `toBeNull`). `check_automation.py spec --min-assert 3` báo ERROR cho file này; chấp nhận theo ngoại lệ CH-script-06 a. Bản AI P6 ghi "Đã sửa trước khi giao: Không" mà không nêu ERROR còn lại (quy tắc "Lỗi kiểm còn lại" của skill có sau khi giao P6; `ai_raw/` không sửa sau khi giao).
 
 ## 3. Thay đổi so với bản AI
 
