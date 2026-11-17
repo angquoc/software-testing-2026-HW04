@@ -20,7 +20,8 @@ export class RegisterPage {
   constructor(private readonly page: Page) {
     this.main = page.getByRole('main');
     this.form = this.main.locator('form');
-    this.submitButton = this.form.getByRole('button', { name: 'Đăng Ký' });
+    // exact: So đúng chữ hoa thường theo đặc tả (CH-script-04 a).
+    this.submitButton = this.form.getByRole('button', { name: 'Đăng Ký', exact: true });
   }
 
   field(label: string): Locator {

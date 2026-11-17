@@ -1,7 +1,7 @@
 # A: FR-01 Đăng ký tài khoản: Review dữ liệu và script AI sinh
 
 - Bản AI: `ai_raw/data.md` (commit `930079a`); `ai_raw/script_01_register_valid.md` (P1, commit `4b7b001`)
-- Thời gian tạo: 2026-11-17 23:44 (+07:00). Cập nhật: 2026-11-18 00:16 (+07:00), quyết định CH-script-01 đến 03 và sửa `fieldByLabel.ts` sau review P1
+- Thời gian tạo: 2026-11-17 23:44 (+07:00). Cập nhật: 2026-11-18 00:16 (+07:00), quyết định CH-script-01 đến 03 và sửa `fieldByLabel.ts` sau review P1; 2026-11-18 00:25 (+07:00), sinh viên sửa lại quyết định chữ hoa thường (mục 1), CH-script-04
 
 ## 1. Dữ liệu
 
@@ -17,7 +17,8 @@
 | CH-data-02 | TC-REG-97: Cách hiểu "thông báo lỗi xuất hiện trên nút submit" | a. Cạnh dưới của khung thông báo không thấp hơn cạnh trên của nút: Thông báo hoàn toàn ở trên nút. Ghi `"rule": "messageBottomAtOrAboveButtonTop"` |
 | CH-data-03 | TC-REG-94: Liên kết "Đăng nhập" nào là phần tử cuối của thứ tự Tab | a. Liên kết trong vùng form (dưới nút "Đăng Ký"), không phải liên kết trên thanh điều hướng; kiểm tới liên kết đó là dừng. Ghi `"scope": "form"` |
 
-- Ghi chú để bước `script` (sinh viên, 2026-11-17): Tên nhãn, nút, liên kết trong dữ liệu lấy theo đặc tả và test case HW02 (ví dụ "Họ Tên", "Đăng Ký"). Khi đọc DOM thật, nếu giao diện viết khác hoa thường (ví dụ "Họ tên" thay vì "Họ Tên"), cần cập nhật cho khớp hoặc cho locator so khớp không phân biệt hoa thường, để test không fail vì lệch chữ hoa. Chọn cách nào: ⏳ chốt ở bước `script` khi đã có snapshot DOM. Với TC-REG-93 (chữ trong `h1` chứa "Đăng ký") dữ liệu đã ghi `caseInsensitive: true`.
+- Ghi chú để bước `script` (sinh viên, 2026-11-17): Tên nhãn, nút, liên kết trong dữ liệu lấy theo đặc tả và test case HW02 (ví dụ "Họ Tên", "Đăng Ký"). Khi đọc DOM thật, nếu giao diện viết khác hoa thường (ví dụ "Họ tên" thay vì "Họ Tên"), cần cập nhật cho khớp hoặc cho locator so khớp không phân biệt hoa thường, để test không fail vì lệch chữ hoa. Với TC-REG-93 (chữ trong `h1` chứa "Đăng ký") dữ liệu đã ghi `caseInsensitive: true`.
+- Quyết định sửa lại ghi chú trên (sinh viên, 2026-11-18 00:20): Dữ liệu JSON **giữ nguyên** tên nhãn, nút theo đặc tả ("Họ Tên", "Đăng Ký"), **không** sửa chạy theo giao diện, để không che mất lỗi lệch đặc tả nếu có. Căn cứ: Snapshot DOM `/register` của P1 (`ai_raw/snapshot_register.txt`) khớp đúng chữ hoa thường với đặc tả ("Họ Tên", "Email", "Mật khẩu", nút "Đăng Ký"), nên không có dòng dữ liệu nào phải đổi. Cách so khớp chữ hoa thường của locator: Xem mục 2 (CH-script-04).
 
 ## 2. Script
 
@@ -29,6 +30,7 @@
 | CH-script-01 | `/login` ghi nhãn "Username" thay vì "Email" (FR-02); test P1 sẽ fail vì lệch nhãn khi #42 được sửa | a. Giữ theo dữ liệu (FR-02: Email, Mật khẩu); fail đó ghi rõ là lệch của trang Đăng nhập khi phân loại |
 | CH-script-02 | Kiểm "đúng 1 request `POST /api/register`, phản hồi 2xx" không có chữ trong OUT1 | a. Giữ (hệ quả của "đăng ký thành công") |
 | CH-script-03 | `resetDb.ts` trùng logic với FR-17 | a. Giữ như vậy; không sửa FR-17 |
+| CH-script-04 | Sau quyết định giữ tên nhãn, nút theo đặc tả (mục 1, 2026-11-18): Locator so tên không phân biệt hoa thường (GĐ-script-01) có che lệch đặc tả không | a. So đúng chữ hoa thường: Bỏ cờ `i` trong `labelPattern`, nút "Đăng Ký" dùng `exact: true`. Giao diện đổi chữ thì test fail ở bước tìm phần tử. Áp cho P1 đến P5 |
 
 - Các lượt chạy thử: Chưa chạy trên giao diện thật. Kiểm locator `fieldByLabel` trên trang HTML dựng bằng `page.setContent` (2026-11-18 00:15, Chrome, không phải EShop): Xem dòng `fieldByLabel.ts` ở mục 3.
 - Kiểu assertion dùng: Chưa có.
@@ -42,6 +44,7 @@
 | `tests/A_FR-01_DangKy/data/focus_and_error_position.json:29` (TC-REG-97) | Thêm `"rule": "messageBottomAtOrAboveButtonTop"` vào `expected`, ghi cách so tọa độ vào `note` | Quyết định của SV | Dữ liệu | | Sinh viên chọn CH-data-02 a (2026-11-17); SRS FR-22: Thông báo lỗi xuất hiện trên nút submit, không phải bên dưới |
 | `tests/A_FR-01_DangKy/data/focus_and_error_position.json:12` (TC-REG-94) | Thêm `"scope": "form"` cho liên kết "Đăng nhập" cuối thứ tự Tab, ghi rõ vào `note` | Quyết định của SV | Dữ liệu | | Sinh viên chọn CH-data-03 a (2026-11-17); trang có thêm liên kết "Đăng nhập" trên thanh điều hướng (HW02 `06_results.md`, TC-REG-94) |
 | ★ `tests/support/pages/fieldByLabel.ts:13` (P1, dùng cho P1 đến P5) | `scope.locator('div').filter({ has: <label khớp> }).locator('input')` → `scope.locator('label').filter({ hasText }).locator('xpath=..').locator('input')`: Đi từ nhãn lên phần tử cha trực tiếp rồi lấy ô, thay vì lọc mọi `div` có chứa nhãn | Sai | Selector dễ vỡ | Giới hạn model: AI đã đọc `Register.jsx` và thấy mỗi trường là một `div` riêng, nhưng không nghĩ tới `div` tổ tiên khác cũng chứa nhãn; với DOM hiện tại locator cũ vẫn đúng nên kiểm tĩnh không lộ ra | Sinh viên tự thấy khi đọc bản AI P1 (2026-11-18). AI kiểm khi sinh viên nhờ, trên HTML dựng bằng `page.setContent` (Chrome): Form có `div` bọc chung 3 trường thì locator cũ khớp 3 ô (lỗi strict mode khi `fill`), locator mới khớp 1; form hiện tại và ô nằm trong `div` con của khối trường: Cả hai khớp 1. DOM EShop hiện tại không đổi kết quả, không đổi ý nghĩa test |
+| `tests/support/pages/fieldByLabel.ts:10`, `tests/support/pages/RegisterPage.ts:24` (P1, dùng cho P1 đến P5) | `labelPattern` cờ `'iu'` → `'u'` (so nhãn đúng chữ hoa thường); nút `getByRole('button', { name: 'Đăng Ký' })` → thêm `exact: true` | Quyết định của SV | Selector dễ vỡ | | Sinh viên sửa lại quyết định về chữ hoa thường (2026-11-18 00:20): Giữ tên theo đặc tả, không để locator che lệch đặc tả (CH-script-04 a). Bản AI làm đúng ghi chú cũ của sinh viên ở `02_review.md` mục 1 (GĐ-script-01). Snapshot `/register` khớp đúng chữ với đặc tả nên kết quả hiện tại không đổi |
 
 ## 4. Chỗ sửa sẽ kể trong video
 

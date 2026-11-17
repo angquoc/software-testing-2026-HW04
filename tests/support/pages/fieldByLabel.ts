@@ -4,10 +4,10 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// Mẫu so nhãn: Không phân biệt hoa thường, bỏ qua khoảng trắng hai đầu và một dấu * phía sau
-// (FR-01 02_review.md mục 1: Tránh fail vì lệch chữ hoa; FR-22 có thể thêm * vào nhãn).
+// Mẫu so nhãn: Đúng chữ hoa thường theo đặc tả (FR-01 02_review.md, CH-script-04 a: Không che lệch đặc tả),
+// chỉ bỏ qua khoảng trắng hai đầu và một dấu * phía sau (FR-22 có thể thêm * vào nhãn).
 export function labelPattern(label: string): RegExp {
-  return new RegExp(`^\\s*${escapeRegExp(label)}\\s*\\*?\\s*$`, 'iu');
+  return new RegExp(`^\\s*${escapeRegExp(label)}\\s*\\*?\\s*$`, 'u');
 }
 
 // Ô nhập đi cùng nhãn khi <label> không gắn với ô bằng for/id: Tìm nhãn trong phạm vi `scope`, đi lên phần tử cha
