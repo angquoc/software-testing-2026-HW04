@@ -7,6 +7,7 @@
 - Cập nhật lần 3: 2026-11-17 14:53 (UTC+07:00). Bản AI P3 (`ai_raw/script_03_remove_item.md`): Thêm CH-script-03 vào mục 2.2, kiểu assertion P3 vào mục 2.4; thêm 1 dòng vào bảng thay đổi
 - Cập nhật lần 4: 2026-11-17 15:33 (UTC+07:00). Bản AI P4, P5 (`ai_raw/script_04_continue_shopping.md`, `script_05_cart_gui.md`): Thêm CH-script-04, 05 vào mục 2.2, kiểu assertion P4, P5 vào mục 2.4; thêm 2 dòng vào bảng thay đổi
 - Cập nhật lần 5: 2026-11-17 15:50 (UTC+07:00). Bản AI P6 (`ai_raw/script_06_api_invalid.md`): Thêm D17 vào mục 2.1, CH-script-06 vào mục 2.2, kiểu assertion P6 và ngoại lệ vào mục 2.4; không có thay đổi code nên không thêm dòng vào bảng thay đổi
+- Cập nhật lần 6: 2026-11-17 16:38 (UTC+07:00). Bước `review`: Mục 2.3 (lượt chạy thử 1, 2), mục 2.5 (test fail do hệ thống sai đặc tả); thêm 2 dòng vào bảng thay đổi (S1, S2)
 
 ## 1. Dữ liệu
 
@@ -83,7 +84,14 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 
 ### 2.3 Các lượt chạy thử
 
-(Chưa chạy. Điền ở bước `review`.)
+Cách làm (quyết định của SV ở đầu bước `review`): AI chạy thử trước và phân loại test fail; SV duyệt từng chỗ sửa; sau khi SV review, AI chỉ thêm chỗ nghi ngờ. Cô lập dữ liệu (D10) cho FR-07: Reset dữ liệu thủ công trước mỗi lượt chạy chính thức (WORKFLOW mục 4.1); các lượt chạy thử dưới đây không reset (test API đánh giá theo dòng mới). Report thử ở `playwright-report/trial*-<trình duyệt>/` (không nộp).
+
+| Lượt | Thời gian bắt đầu | Phạm vi | Chrome | Edge | Firefox | Ghi chú |
+|---|---|---|---|---|---|---|
+| 1 | 2026-11-17 16:10 đến 16:15 | Cả 7 spec | 6 qua, 21 fail | 1 qua, 14 fail, 12 skipped (API, D17) | 1 qua, 14 fail, 12 skipped | 15 test giao diện fail giống nhau ở 3 trình duyệt. Tìm ra lỗi script S1, S2 (mục 3) |
+| 2 | 2026-11-17 16:32 đến 16:35 | P1, P2 (sau khi sửa S1, S2) | 7 fail | 7 fail | 7 fail | Mọi điểm fail còn lại là hệ thống sai đặc tả (mục 2.5); TC-CART-104, 105 hết fail ở giá trị tiền; OUT15 fail đúng ở TC-CART-01, 101, 02; TC-CART-100 hết fail nhầm ở A31 |
+
+Mỗi lượt chạy một lần mỗi trình duyệt, chưa lặp để bắt flaky; không có test flaky trong 2 lượt.
 
 ### 2.4 Kiểu assertion
 
@@ -95,6 +103,27 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 - P4: 5 kiểu: Điều hướng (`toHaveURL`), Hiển thị (`toBeVisible`), Giá trị tính toán / so sánh (`toContain`) trong spec; Nội dung chữ, Số lượng trong `lib/cartChecks.ts`.
 - P5 (sau CH-script-04, 05): 4 kiểu: Nội dung chữ (`toHaveText`, `toContainText`), Số lượng (`toHaveCount`), Giá trị tính toán / so sánh (`toBe`) trong spec (3 kiểu riêng spec); Hiển thị (`toBeVisible`) trong `lib/cartChecks.ts`.
 - P6: 2 kiểu: Phản hồi mạng (`toBeOK`, `not.toBeOK`), Giá trị tính toán / so sánh (`toHaveLength`, `toBeNull`). `check_automation.py spec --min-assert 3` báo ERROR cho file này; chấp nhận theo ngoại lệ CH-script-06 a. Bản AI P6 ghi "Đã sửa trước khi giao: Không" mà không nêu ERROR còn lại (quy tắc "Lỗi kiểm còn lại" của skill có sau khi giao P6; `ai_raw/` không sửa sau khi giao).
+
+### 2.5 Test fail do hệ thống sai đặc tả (giữ nguyên, báo ở bước `bugs`)
+
+Theo lượt 2 (P1, P2) và lượt 1 (P3 đến P7); giống nhau ở 3 trình duyệt (API chỉ Chrome).
+
+| Test case | Điểm fail | Căn cứ | Issue HW02 |
+|---|---|---|---|
+| TC-CART-01, 101, 104, 105, 03 | Lần bấm "Thêm vào giỏ hàng" đầu tiên không phản hồi | FR-06, FR07-R33; HW02 ghi nhận 2 | #73 |
+| TC-CART-01, 101, 02 | Không có toast hay badge sau khi thêm (OUT15) | FR-06, FR-24, FR07-R33 | #78 |
+| TC-CART-01 | K1: Giỏ API không có dòng mới; tải lại trang thì giỏ trống | FR07-R28; K1 | #74 |
+| TC-CART-100 | Nhập "Số lượng:" = 0 vẫn thêm vào giỏ (1 dòng) | FR-06, FR07-R27 | Chưa có (HW02 không chạy TC-CART-100); SV tái hiện bằng tay ở bước `bugs` |
+| TC-CART-02, 03 | Không có badge số lượng | FR-23, FR07-R24 | #79 |
+| TC-CART-03 | Thêm lại tạo dòng iPhone thứ hai; dòng đầu Số lượng 1 | FR07-R08, R09 | #70 |
+| TC-CART-07, 08, 09 | Không có dialog xác nhận; TC-CART-07 còn 1 dòng sau "hủy" | FR07-R11, FR-24 | #72 |
+| TC-CART-09, 10 | Giỏ trống không có hình minh họa | FR07-R15, FR-24 | #80 |
+| TC-CART-11 | Không có nút "Tiếp tục mua sắm" (test đi tiếp bằng "← Mua tiếp", R13 đạt) | FR07-R12 | #77 |
+| TC-CART-90 | Cột 2 là "Giá"; nhãn tổng là "Tổng tạm tính" | FR-07, FR07-R14 | #76, #75 |
+| TC-CART-95 | Không highlight "Giỏ hàng"; không có breadcrumb | FR-23 | #83, #84 |
+| TC-CART-30 | API nhận sản phẩm không tồn tại | FR07-R29; A24 | #69 |
+| TC-CART-31, 32, 33, 34, 102 | API nhận số lượng 0, 1.5, "abc", thiếu, -1 | FR-06, FR07-R27, R29 | #67 |
+| TC-CART-51 | API lưu giá do client gửi (1) | FR07-R29; A24 | #68 |
 
 ## 3. Thay đổi so với bản AI
 
@@ -111,6 +140,8 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 | `lib/removeDialog.ts` | Chờ dialog bằng `FEEDBACK_WINDOW_MS` (2 giây, hằng của phản hồi khi thêm vào giỏ) → hằng riêng `DIALOG_WINDOW_MS = 2_000` | Quyết định của SV | Wait gây flaky | | CH-script-03; giá trị giữ 2 giây (SV chọn), hành vi không đổi |
 | `05_cart_gui.spec.ts` TC-CART-90 (tiêu đề cột) | Mỗi tiêu đề kiểm riêng `toHaveCount(1)`, không xét thứ tự → một assertion `toHaveText(exp.columns)` trên `cart.columnHeaders` (đủ cột, đúng chữ, đúng thứ tự) | Quyết định của SV | Assertion yếu / thiếu | | CH-script-04: Khóa giả định đọc ô theo vị trí cột (GĐ-03 của bản AI P1) |
 | `lib/money.ts` `currencyFormatPattern` (TC-CART-94) | Nhận `₫` đứng trước hoặc sau số → chỉ nhận đứng sau số | Quyết định của SV | Assertion yếu / thiếu | | CH-script-05: Theo cách test case HW02 viết ("30,000,000 ₫") |
+| ★ `lib/money.ts` `moneyPattern` (TC-CART-104, 105) | Backreference viết liền chữ số (`\2000`) → bọc `(?:\2)000` | Sai | Assertion yếu / thiếu | Giới hạn model: AI ghép chuỗi regex mà không lường tới việc JavaScript đọc `\2000` thành escape bát phân `\200` + "0", nên mẫu không bao giờ khớp "996,000,000 ₫" | AI phát hiện khi chạy thử lượt 1 trên Chrome (SV nhờ AI chạy thử trước), cùng lỗi ở Edge, Firefox; HW02 chạy tay TC-CART-105 Pass nên fail này không phải bug. Sửa đã được SV duyệt; lượt 2 hết fail ở giá trị tiền |
+| ★ `lib/feedback.ts` `startFeedbackRecorder` (OUT15, A31) | Ghi mọi chữ mới ngoài vùng sản phẩm → chỉ ghi chữ chưa có trên trang lúc cài bộ ghi | Sai | Assertion yếu / thiếu | Đặc thù feature: Khi đã đăng nhập, Header vẽ lại câu chào "Chào, Test User" (`dangerouslySetInnerHTML`) mỗi khi giỏ đổi; snapshot chỉ chụp trạng thái tĩnh nên AI không thấy, bộ ghi coi câu chào là toast | AI phát hiện khi chạy thử lượt 1 (OUT15 qua ở TC-CART-01, 101, 02 dù hệ thống không có toast, #78), xác nhận bằng script thăm dò có đăng nhập. Sửa đã được SV duyệt; lượt 2: OUT15 fail đúng, TC-CART-100 hết fail nhầm ở A31 |
 
 CH-data-02 a và CH-data-03 a giữ nguyên dữ liệu của bản AI, không có dòng thay đổi.
 
@@ -118,3 +149,5 @@ CH-data-02 a và CH-data-03 a giữ nguyên dữ liệu của bản AI, không c
 
 1. TC-CART-08 `afterReAdd`: Bản AI chỉ kiểm dòng Samsung vừa thêm lại, nên nếu thao tác thêm lại ghi đè mất dòng iPhone thì test vẫn qua. Sửa: Kiểm thêm `rowCount` 2 và `total` 58,000,000. Kiểm lại ở bước `review` bằng cách làm hỏng có chủ đích (ví dụ đổi `rowCount` thành 1) để chắc assertion bắt được.
 2. `checkCartState` khi có dòng trùng: Bản AI gặp từ 2 dòng cùng tên thì bỏ qua mọi ô, nên với bug #70 report chỉ ghi "số dòng sai" mà không cho thấy dòng iPhone cũ vẫn Số lượng 1. Sửa: Ghi lỗi số dòng bằng `soft`, vẫn đọc ô của dòng đầu tiên. Kiểm lại khi chạy TC-CART-03 (P2): Report phải có cả lỗi số dòng lẫn lỗi "Số lượng 4".
+3. Bộ ghi phản hồi OUT15 (`lib/feedback.ts`): Bản AI coi mọi chữ mới ngoài vùng sản phẩm là toast; khi đã đăng nhập, Header vẽ lại câu chào mỗi khi giỏ đổi nên OUT15 qua nhầm ở TC-CART-01, 101, 02 (hệ thống không có toast, #78). Sửa: Chỉ tính chữ chưa có trên trang lúc bấm. Kiểm lại: Lượt 2 trên 3 trình duyệt, OUT15 fail đúng.
+4. Mẫu so tiền `moneyPattern`: `\2000` bị JavaScript đọc thành escape bát phân nên TC-CART-104, 105 fail dù hệ thống hiển thị đúng. Sửa: Bọc backreference `(?:\2)`. Kiểm lại: Lượt 2, hai test chỉ còn fail ở lần bấm đầu (#73).

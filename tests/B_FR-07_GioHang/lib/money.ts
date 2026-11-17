@@ -12,7 +12,8 @@ export function moneyPattern(value: number, thousandSeparators?: number): RegExp
     throw new Error(`Test data error: ${value} has ${groups.length - 1} thousands separators, data says ${thousandSeparators}`);
   }
   const [first, ...rest] = groups;
-  const tail = rest.map((g, k) => (k === 0 ? `([.,])${g}` : `\\2${g}`)).join('');
+  // Backreference bọc trong (?:...): Viết liền "\2000" thì JavaScript đọc thành escape bát phân "\200" + "0".
+  const tail = rest.map((g, k) => (k === 0 ? `([.,])${g}` : `(?:\\2)${g}`)).join('');
   return new RegExp(`(^|\\D)${first}${tail}(\\D|$)`);
 }
 
