@@ -351,6 +351,27 @@ def change_tables(text: str):
             i += 1
 
 
+def orphan_table_rows(text: str):
+    """Khối dòng bảng không có dòng tiêu đề + dòng phân cách (thường do dòng trống chen giữa khi chèn thêm
+    dòng vào bảng có sẵn). Markdown không hiện khối này thành bảng và `change_tables` không đếm."""
+    lines = text.splitlines()
+    in_fence = False
+    i = 0
+    while i < len(lines):
+        if lines[i].lstrip().startswith("```"):
+            in_fence = not in_fence
+            i += 1
+            continue
+        if in_fence or not lines[i].startswith("|"):
+            i += 1
+            continue
+        start = i
+        while i < len(lines) and lines[i].startswith("|"):
+            i += 1
+        if not (start + 1 < i and re.match(r"^\|[\s:|-]+\|?$", lines[start + 1])):
+            yield start + 1, i - start
+
+
 def col(header: list[str], *names: str) -> int | None:
     for k, h in enumerate(header):
         if any(h.strip() == n or h.strip().startswith(n) for n in names):
@@ -363,6 +384,8 @@ def cmd_changes(args) -> None:
     loai_count: Counter = Counter()
     for f in args.files:
         found = False
+        for ln, n in orphan_table_rows(read(f)):
+            out("ERROR", f"{f}:{ln}", f"{n} dòng bảng không thuộc bảng nào (thiếu dòng tiêu đề; có dòng trống chen giữa?)")
         for header, rows in change_tables(read(f)):
             found = True
             c_loai = col(header, "Loại")

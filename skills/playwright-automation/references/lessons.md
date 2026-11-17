@@ -46,6 +46,7 @@
 - [ ] Test fail do hệ thống sai đặc tả được giữ nguyên, không sửa assertion cho xanh.
 - [ ] Mỗi thay đổi một dòng bảng; cột "Vì sao" bắt đầu đúng giá trị; ghi ai phát hiện.
 - [ ] Đánh dấu `★` chỗ sửa sẽ kể trong video.
+- [ ] Thêm dòng vào bảng có sẵn: Chèn ngay sau dòng cuối của bảng, không để dòng trống chen giữa (`check_automation.py changes` báo "dòng bảng không thuộc bảng nào").
 
 ### `run`
 
@@ -93,3 +94,4 @@ Mỗi mục: Hiện tượng, feature và ngày, nguyên nhân, cách xử lý.
 - **Ảnh Playwright chụp khi fail không làm được bằng chứng** (FR-17, 17/11/2026, bước `bugs`). `screenshot: 'only-on-failure'` chỉ chụp khung nhìn (dòng dữ liệu sai ở cuối bảng nằm ngoài ảnh) và chụp sau khi hộp thoại đã bị Playwright tự đóng, nên cả 5 ảnh fail đều không thấy lỗi. Cách xử lý: Sinh viên tái hiện bằng tay và tự chụp (đồng thời kiểm những bước test không chạy tới, như sau khi tải lại trang); ở bước `setup` có thể chọn `screenshot: { mode: 'only-on-failure', fullPage: true }`. Chữ của hộp thoại vẫn phải lấy từ annotation hoặc ảnh tự chụp.
 - **Dữ liệu chuẩn bị mơ hồ và test case bị bug chặn điều kiện** (FR-07, 17/11/2026, bước `select`). Bản AI ghi TC-CART-90 cần "giỏ 2 dòng" mà không chốt sản phẩm (dù đã đọc ảnh HW02 có giỏ cụ thể), bước sau có thể tự chọn hoặc bịa; TC-CART-93 (màu nút xác nhận xóa) ghi "Có, cần tiêu chí" dù đã biết hộp thoại xác nhận không hiện (#72), nên test chỉ lặp lại #72. Cả hai do sinh viên phát hiện khi review. Cách xử lý: Hai ý tương ứng trong checklist bước `select`.
 - **Sửa dữ liệu trước khi bản AI được commit** (FR-07, 17/11/2026, bước `data`). Sinh viên trả lời câu hỏi và nhờ sửa 2 điểm khi bản AI chưa commit; AI sửa thẳng 4 file JSON, rồi mới nhận ra commit "(AI draft)" sẽ lẫn phần đã sửa. Phải đưa `tests/` về bản AI và để bản đã sửa ở scratchpad cho sinh viên chép lại sau. Cách xử lý: Kiểm trạng thái commit trước khi sửa (`rules.md` mục 8). Cùng bước: Bản AI của TC-CART-08 chỉ ghi dòng Samsung sau khi thêm lại, không ghi số dòng và tổng (sinh viên thêm `rowCount`, `total`); thêm ý vào checklist bước `data`.
+- **Dòng thay đổi mới bị tách khỏi bảng** (FR-07, 17/11/2026, bước `script` P1). Khi ghi 3 dòng thay đổi của P1 vào bảng mục 3 của `02_review.md` (đã có 4 dòng của bước `data`), AI thay đoạn văn ngay sau bảng bằng các dòng mới nên còn một dòng trống ở giữa. Khối 3 dòng không có tiêu đề: Không hiện thành bảng, `changes --stats` không đếm mà không báo gì. Phiên điều phối phát hiện khi số liệu không đổi. Cách xử lý: `changes` báo ERROR cho khối dòng bảng không có tiêu đề; checklist bước `review` thêm 1 ý.
