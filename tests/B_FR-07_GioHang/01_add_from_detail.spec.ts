@@ -9,46 +9,15 @@ import { NavBar } from '../support/pages/NavBar';
 import { ProductDetailPage } from '../support/pages/ProductDetailPage';
 import cases from './data/add_from_detail.json';
 import { getCartRows, loginToken, newRows } from './lib/cartApi';
+import { checkCartState, prepareCart } from './lib/cartChecks';
 import { becomesTrueWithin, clickAddWithRetry, feedbackSeen, FEEDBACK_WINDOW_MS } from './lib/feedback';
-import { moneyPattern } from './lib/money';
 import { productByKey } from './lib/products';
-import type { AddFromDetailCase, CartStateExpected } from './lib/types';
+import type { AddFromDetailCase } from './lib/types';
 import { USER_STATE } from './setup/globalSetup';
 
 const softExpect = expect.configure({ soft: true });
 
 test.use({ storageState: USER_STATE });
-
-// Kiểm trạng thái trang Giỏ hàng. Mọi điểm là soft: Có nhiều dòng cùng tên (#70) thì ghi lỗi số dòng
-// và vẫn đọc ô của dòng đầu tiên; không có dòng nào thì bỏ qua các ô của dòng đó. Tổng tiền luôn được kiểm.
-async function checkCartState(cart: CartPage, exp: CartStateExpected, label: string): Promise<void> {
-  if (exp.rowCount !== undefined) {
-    await softExpect(cart.rows, `${label}: number of cart lines`).toHaveCount(exp.rowCount);
-  }
-  for (const r of exp.rows ?? []) {
-    const name = productByKey(r.product).name;
-    const rows = cart.row(name);
-    await softExpect(rows, `${label}: exactly one line "${name}"`).toHaveCount(1);
-    if ((await rows.count()) === 0) continue;
-    const row = rows.first();
-    if (r.unitPrice !== undefined) {
-      await softExpect(cart.cell(row, 'unitPrice'), `${label}: Đơn giá of "${name}"`).toHaveText(moneyPattern(r.unitPrice));
-    }
-    if (r.quantity !== undefined) {
-      await softExpect(cart.cell(row, 'quantity'), `${label}: Số lượng of "${name}"`).toHaveText(String(r.quantity));
-    }
-    if (r.lineTotal !== undefined) {
-      await softExpect(cart.cell(row, 'lineTotal'), `${label}: Thành tiền of "${name}"`).toHaveText(
-        moneyPattern(r.lineTotal, exp.thousandSeparators),
-      );
-    }
-  }
-  if (exp.total !== undefined) {
-    await softExpect(cart.totalValue, `${label}: cart total (found by position; label checked in TC-CART-90)`).toHaveText(
-      moneyPattern(exp.total, exp.thousandSeparators),
-    );
-  }
-}
 
 test.describe('FR-07 Cart P1: add to cart from the product detail page', () => {
   for (const c of cases as unknown as AddFromDetailCase[]) {
@@ -65,7 +34,7 @@ test.describe('FR-07 Cart P1: add to cart from the product detail page', () => {
       const apiBefore = token ? await getCartRows(request, token) : [];
 
       await home.goto();
-      for (const key of c.setup.cart) await home.addToCart(productByKey(key).name);
+      await prepareCart(home, nav, cart, c.setup.cart);
       await home.openDetail(product.name);
 
       if (c.input.fillQuantity) {

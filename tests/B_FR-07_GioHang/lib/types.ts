@@ -37,3 +37,16 @@ export interface AddFromDetailCase {
   oracle: string;
   note?: string;
 }
+
+export interface AddToExistingCartCase {
+  id: string;
+  title: string;
+  setup: { cart: string[] };
+  input: { from: 'home' | 'detail'; product: string; quantity?: number; fillQuantity?: boolean };
+  expected: CartStateExpected & {
+    feedback?: 'toastOrBadge';
+    badge?: number;
+  };
+  oracle: string;
+  note?: string;
+}

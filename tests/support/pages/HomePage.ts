@@ -24,8 +24,12 @@ export class HomePage {
       .last();
   }
 
+  addButton(name: string): Locator {
+    return this.card(name).getByRole('button', { name: 'Thêm vào giỏ', exact: true });
+  }
+
   async addToCart(name: string): Promise<void> {
-    await this.card(name).getByRole('button', { name: 'Thêm vào giỏ', exact: true }).click();
+    await this.addButton(name).click();
   }
 
   async openDetail(name: string): Promise<void> {
