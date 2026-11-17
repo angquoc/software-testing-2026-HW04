@@ -11,6 +11,7 @@ Bỏ qua: _NOTES.md (không nộp), thư mục .git, forms/ (PDF của form xu�
 import glob
 import html
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -47,8 +48,43 @@ def browser():
     sys.exit("Không tìm thấy Chrome hoặc Edge")
 
 
+LIST_ITEM = re.compile(r"^( *)([-*+]|\d+\.)\s+")
+
+
+def normalize_nested_lists(text):
+    """python-markdown cần mục con thụt 4 dấu cách; file viết tay hay dùng 2 (hoặc 3 dưới mục số).
+    Đổi thụt lề của mục danh sách theo cấp lồng nhau (cấp n thành 4n dấu cách) và dòng nối tiếp của mục;
+    chỉ để xuất PDF, không sửa file MD. Bỏ qua khối code."""
+    out, stack, fence, item_indent = [], [], False, None
+    for line in text.split("\n"):
+        if line.lstrip().startswith(("```", "~~~")):
+            fence = not fence
+            out.append(line)
+            continue
+        if fence:
+            out.append(line)
+            continue
+        m = LIST_ITEM.match(line)
+        if m:
+            indent = len(m.group(1))
+            while stack and stack[-1] >= indent:
+                stack.pop()
+            level = len(stack)
+            stack.append(indent)
+            item_indent = level * 4
+            out.append(" " * item_indent + line[indent:])
+        elif line.strip() and line.startswith(" ") and stack:
+            # Dòng nối tiếp của mục danh sách: Thụt sâu hơn mục một bậc
+            out.append(" " * (item_indent + 4) + line.lstrip())
+        else:
+            if line.strip() and not line.startswith(" "):
+                stack, item_indent = [], None
+            out.append(line)
+    return "\n".join(out)
+
+
 def convert(md_path, exe):
-    text = open(md_path, encoding="utf-8").read()
+    text = normalize_nested_lists(open(md_path, encoding="utf-8").read())
     body = markdown.markdown(text, extensions=["tables", "fenced_code", "sane_lists", "toc"])
     title = html.escape(os.path.basename(md_path))
     page = f'<!doctype html><html><head><meta charset="utf-8"><title>{title}</title><style>{CSS}</style></head><body>{body}</body></html>'

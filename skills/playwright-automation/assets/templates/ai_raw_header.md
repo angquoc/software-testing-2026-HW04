@@ -8,6 +8,7 @@
 - Lỗi kiểm còn lại: <Lỗi tĩnh để nguyên vì sửa sẽ phạm quy tắc khác, kèm mã câu hỏi; không có thì bỏ dòng này>
 
 <!-- Chỉ dùng cho bản viết lại `_vN`, xóa nếu là bản đầu -->
+
 - Lần sửa: <N>. Thời gian: <YYYY-MM-DD HH:MM>. Lý do: <Sinh viên yêu cầu gì>. Bản trước: `ai_raw/<file trước>`
 
 ## Giả định

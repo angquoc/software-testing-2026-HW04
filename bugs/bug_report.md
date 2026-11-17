@@ -21,7 +21,6 @@
 |---|---|---|---|---|---|---|
 | B-04 | [#114](https://github.com/angquoc/software-testing-2026-HW02-group/issues/114) | [23120061][FR-17][Admin] Form Tạo mã giảm giá: Tạo được mã loại số tiền cố định có giá trị giảm 0 ₫ | C FR-17 | TC-CPN-39 (F-04), script `tests/C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts` | Chrome, Edge, Firefox | High |
 | B-05 | [#115](https://github.com/angquoc/software-testing-2026-HW02-group/issues/115) | [23120061][FR-17][Admin] Form Tạo mã giảm giá: Tạo được mã có đơn tối thiểu âm (-1 ₫) | C FR-17 | TC-CPN-41 (F-05), script `tests/C_FR-17_QuanLyCoupon/03_create_invalid.spec.ts` | Chrome, Edge, Firefox | High |
-
 | B-21 | [#118](https://github.com/angquoc/software-testing-2026-HW02-group/issues/118) | [23120061][FR-07][Web] Trang chi tiết sản phẩm: Nhập Số lượng 0 vẫn thêm sản phẩm vào giỏ | B FR-07 | TC-CART-100 (F-07), script `tests/B_FR-07_GioHang/01_add_from_detail.spec.ts` | Chrome, Edge, Firefox (tái hiện bằng tay trên Chrome 17/11/2026 22:07) | Medium |
 
 Label của #114, #115: `bug`, `severity: high`, `platform: admin`, `technique: EP`, `pool: C`, `hw: HW04`. #114 ghi "Related #55" (cùng quy tắc `discount_value` dương, khác loại mã).
