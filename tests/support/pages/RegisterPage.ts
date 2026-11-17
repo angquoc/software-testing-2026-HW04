@@ -8,6 +8,8 @@ export interface RegisterInput {
   confirmPassword: string;
 }
 
+type TextsWindow = Window & { __fr01TextsBefore?: string[] };
+
 // Trang Đăng ký của Web (FR-01). Selector lấy từ snapshot features/A_FR-01_DangKy/ai_raw/snapshot_register.txt
 // và frontend-web/src/pages/Register.jsx: Nhãn không gắn với ô nên tìm ô theo khối chứa nhãn (fieldByLabel).
 // Page object chỉ gói selector và thao tác; assertion nằm trong spec.
@@ -55,5 +57,53 @@ export class RegisterPage {
 
   async submit(): Promise<void> {
     await this.submitButton.click();
+  }
+
+  // Ghi lại chữ đang có trong vùng main ngay trước khi bấm, để sau đó tìm thông báo của trang là chữ mới
+  // (quyết định P3: Chữ mới xuất hiện sau khi bấm). So theo chữ, không theo phần tử: React có thể vẽ lại phần tử cũ.
+  async recordTexts(): Promise<void> {
+    await this.main.evaluate((root) => {
+      const ownText = (el: Element) =>
+        Array.from(el.childNodes)
+          .filter((n) => n.nodeType === Node.TEXT_NODE)
+          .map((n) => n.textContent ?? '')
+          .join(' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      const seen: string[] = [];
+      root.querySelectorAll('*').forEach((el) => {
+        const t = ownText(el);
+        if (t) seen.push(t);
+      });
+      (window as TextsWindow).__fr01TextsBefore = seen;
+    });
+  }
+
+  // Chữ đang hiển thị trong main mà chưa có lúc recordTexts (mỗi phần tử lấy chữ của chính nó, không gồm phần tử con).
+  async newTexts(): Promise<string[]> {
+    return this.main.evaluate((root) => {
+      const before = (window as TextsWindow).__fr01TextsBefore;
+      if (!before) throw new Error('Chưa gọi recordTexts() trước khi bấm');
+      const seen = new Set(before);
+      const ownText = (el: Element) =>
+        Array.from(el.childNodes)
+          .filter((n) => n.nodeType === Node.TEXT_NODE)
+          .map((n) => n.textContent ?? '')
+          .join(' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      const found: string[] = [];
+      root.querySelectorAll('*').forEach((el) => {
+        if (typeof el.checkVisibility === 'function' && !el.checkVisibility()) return;
+        const t = ownText(el);
+        if (t && !seen.has(t) && !found.includes(t)) found.push(t);
+      });
+      return found;
+    });
+  }
+
+  // Phần tử có đúng chữ đó trong main, để dùng assertion web-first cho thông báo đã tìm được bằng newTexts.
+  messageByText(text: string): Locator {
+    return this.main.getByText(text, { exact: true });
   }
 }
