@@ -1,0 +1,38 @@
+# Snapshot 2026-11-17T16:57:05.978Z | chrome 157.0.8103.79
+# URL: http://localhost:5173/login | Title: frontend-web
+
+## ARIA
+- banner:
+  - link "EShop":
+    - /url: /
+  - navigation:
+    - link "Giỏ hàng":
+      - /url: /cart
+    - link "Đăng nhập":
+      - /url: /login
+    - link "Đăng ký":
+      - /url: /register
+- main:
+  - heading "Đăng Ký" [level=2]
+  - text: Username
+  - textbox
+  - text: Mật khẩu
+  - textbox
+  - link "Quên mật khẩu?":
+    - /url: /forgot-password
+  - button "Sign In"
+  - text: Chưa có tài khoản?
+  - link "Đăng ký ngay":
+    - /url: /register
+- contentinfo: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+
+## Phần tử tương tác
+a href="/" text="EShop"
+a href="/cart" text="Giỏ hàng"
+a href="/login" text="Đăng nhập"
+a href="/register" text="Đăng ký"
+input type="text" required
+input type="text" required
+a href="/forgot-password" text="Quên mật khẩu?"
+button type="submit" text="Sign In"
+a href="/register" text="Đăng ký ngay"

@@ -1,11 +1,13 @@
 import { setupFr17 } from '../C_FR-17_QuanLyCoupon/setup/globalSetup';
 import { setupFr07 } from '../B_FR-07_GioHang/setup/globalSetup';
+import { setupFr01 } from '../A_FR-01_DangKy/setup/globalSetup';
 
 // globalSetup chung của dự án: Chỉ chạy phần chuẩn bị của feature có trong lượt chạy hiện tại.
 // tools/run.mjs chạy mỗi trình duyệt bằng một lệnh riêng, nên hàm này chạy một lần trước mỗi trình duyệt.
 const FEATURE_SETUPS: Record<string, () => Promise<void>> = {
   'C_FR-17_QuanLyCoupon': setupFr17,
   'B_FR-07_GioHang': setupFr07,
+  'A_FR-01_DangKy': setupFr01,
 };
 
 // Tham số đường dẫn trên dòng lệnh (bỏ tùy chọn và giá trị của tùy chọn viết tách, ví dụ `--project chrome`).

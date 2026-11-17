@@ -1,0 +1,39 @@
+# Snapshot 2026-11-17T16:57:04.885Z | chrome 157.0.8103.79
+# URL: http://localhost:5173/register | Title: frontend-web
+
+## ARIA
+- banner:
+  - link "EShop":
+    - /url: /
+  - navigation:
+    - link "Giỏ hàng":
+      - /url: /cart
+    - link "Đăng nhập":
+      - /url: /login
+    - link "Đăng ký":
+      - /url: /register
+- main:
+  - heading "Đăng Ký Tài Khoản" [level=2]
+  - text: Họ Tên
+  - textbox
+  - text: Email
+  - textbox
+  - text: Mật khẩu
+  - textbox
+  - paragraph: "Yêu cầu: Tối thiểu 8 ký tự, có chữ hoa, chữ thường, số và ký tự đặc biệt."
+  - button "Đăng Ký"
+  - text: Đã có tài khoản?
+  - link "Đăng nhập":
+    - /url: /login
+- contentinfo: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+
+## Phần tử tương tác
+a href="/" text="EShop"
+a href="/cart" text="Giỏ hàng"
+a href="/login" text="Đăng nhập"
+a href="/register" text="Đăng ký"
+input type="text" required
+input type="text" required
+input type="password" required
+button type="submit" text="Đăng Ký"
+a href="/login" text="Đăng nhập"
