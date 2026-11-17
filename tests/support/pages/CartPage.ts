@@ -33,4 +33,11 @@ export class CartPage {
   deleteButton(row: Locator): Locator {
     return this.cell(row, 'actions').getByRole('button', { name: 'Xóa', exact: true });
   }
+
+  // Link hoặc nút trong vùng nội dung có đúng tên (đặc tả gọi là "nút" nhưng không nói là phần tử nào).
+  action(name: string): Locator {
+    return this.main
+      .getByRole('link', { name, exact: true })
+      .or(this.main.getByRole('button', { name, exact: true }));
+  }
 }

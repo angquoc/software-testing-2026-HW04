@@ -14,6 +14,10 @@ export class HomePage {
     await this.main.getByRole('heading', { level: 2 }).first().waitFor();
   }
 
+  heading(name: string): Locator {
+    return this.main.getByRole('heading', { name, exact: true });
+  }
+
   // Thẻ sản phẩm: div trong cùng chứa cả tên sản phẩm (heading cấp 2) và nút "Thêm vào giỏ".
   // Lưới sản phẩm cũng chứa cả hai nên khớp trước; thẻ là phần tử khớp cuối theo thứ tự DOM.
   card(name: string): Locator {

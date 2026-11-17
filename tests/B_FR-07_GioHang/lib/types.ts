@@ -72,3 +72,19 @@ export interface RemoveItemCase {
   oracle: string;
   note?: string;
 }
+
+export interface ContinueShoppingCase {
+  id: string;
+  title: string;
+  setup: { cart: string[] };
+  input: { button: string; fallbackButton?: string };
+  expected: {
+    emptyState?: EmptyStateExpected;
+    badge?: 'hiddenOrZero';
+    continueButton?: 'present';
+    home: { path: string; heading: string };
+    afterReturn?: CartStateExpected;
+  };
+  oracle: string;
+  note?: string;
+}
