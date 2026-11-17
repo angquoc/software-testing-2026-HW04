@@ -1,7 +1,7 @@
 # A: FR-01 Đăng ký tài khoản: Review dữ liệu và script AI sinh
 
-- Bản AI: `ai_raw/data.md` (commit `930079a`); script: Chưa có (bước `script`)
-- Thời gian tạo: 2026-11-17 23:44 (+07:00)
+- Bản AI: `ai_raw/data.md` (commit `930079a`); `ai_raw/script_01_register_valid.md` (P1, commit `4b7b001`)
+- Thời gian tạo: 2026-11-17 23:44 (+07:00). Cập nhật: 2026-11-18 00:16 (+07:00), quyết định CH-script-01 đến 03 và sửa `fieldByLabel.ts` sau review P1
 
 ## 1. Dữ liệu
 
@@ -21,8 +21,16 @@
 
 ## 2. Script
 
-- Cấu trúc đã chốt (POM, đăng nhập, dùng API, cô lập dữ liệu): ⏳ Chốt ở bước `script` P1. Đã biết: Chỉ test qua UI; reset DB mỗi lượt trong `globalSetup` của FR-01; không cần đăng nhập.
-- Các lượt chạy thử: Chưa có.
+- Cấu trúc đã chốt (trước P1, 2026-11-17, áp cho P1 đến P5): POM (`tests/support/pages/RegisterPage.ts`, `LoginPage.ts`, `fieldByLabel.ts`), assertion nằm trong spec; thông tin giao diện lấy bằng snapshot (`ai_raw/snapshot_register.txt`, `ai_raw/snapshot_login.txt`) và mã frontend `Register.jsx`, `Login.jsx` (chỉ để lấy selector); mỗi spec tự đủ ≥ 3 kiểu assertion, kiểu trong page object không tính; `expect.soft` cho các điểm quan sát; không cần đăng nhập; chỉ test qua UI (nghe request là quan sát thụ động); reset DB mỗi lượt trong `tests/A_FR-01_DangKy/setup/globalSetup.ts` qua `tests/support/resetDb.ts` (logic của FR-17).
+- Quyết định sau bản AI P1:
+
+| Mã | Câu hỏi | Quyết định của SV |
+|---|---|---|
+| CH-script-01 | `/login` ghi nhãn "Username" thay vì "Email" (FR-02); test P1 sẽ fail vì lệch nhãn khi #42 được sửa | a. Giữ theo dữ liệu (FR-02: Email, Mật khẩu); fail đó ghi rõ là lệch của trang Đăng nhập khi phân loại |
+| CH-script-02 | Kiểm "đúng 1 request `POST /api/register`, phản hồi 2xx" không có chữ trong OUT1 | a. Giữ (hệ quả của "đăng ký thành công") |
+| CH-script-03 | `resetDb.ts` trùng logic với FR-17 | a. Giữ như vậy; không sửa FR-17 |
+
+- Các lượt chạy thử: Chưa chạy trên giao diện thật. Kiểm locator `fieldByLabel` trên trang HTML dựng bằng `page.setContent` (2026-11-18 00:15, Chrome, không phải EShop): Xem dòng `fieldByLabel.ts` ở mục 3.
 - Kiểu assertion dùng: Chưa có.
 - Test fail do hệ thống sai đặc tả (giữ nguyên, báo ở bước bugs): Chưa có.
 
@@ -33,6 +41,7 @@
 | `tests/A_FR-01_DangKy/data/form_checklist.json:33` (TC-REG-95) | Thêm `"markerPlacement": "labelOrAdjacent"` vào `expected`, ghi cách hiểu vào `note` | Quyết định của SV | Dữ liệu | | Sinh viên chọn CH-data-01 b (2026-11-17); SRS FR-22: Ký hiệu `*` bên cạnh nhãn |
 | `tests/A_FR-01_DangKy/data/focus_and_error_position.json:29` (TC-REG-97) | Thêm `"rule": "messageBottomAtOrAboveButtonTop"` vào `expected`, ghi cách so tọa độ vào `note` | Quyết định của SV | Dữ liệu | | Sinh viên chọn CH-data-02 a (2026-11-17); SRS FR-22: Thông báo lỗi xuất hiện trên nút submit, không phải bên dưới |
 | `tests/A_FR-01_DangKy/data/focus_and_error_position.json:12` (TC-REG-94) | Thêm `"scope": "form"` cho liên kết "Đăng nhập" cuối thứ tự Tab, ghi rõ vào `note` | Quyết định của SV | Dữ liệu | | Sinh viên chọn CH-data-03 a (2026-11-17); trang có thêm liên kết "Đăng nhập" trên thanh điều hướng (HW02 `06_results.md`, TC-REG-94) |
+| ★ `tests/support/pages/fieldByLabel.ts:13` (P1, dùng cho P1 đến P5) | `scope.locator('div').filter({ has: <label khớp> }).locator('input')` → `scope.locator('label').filter({ hasText }).locator('xpath=..').locator('input')`: Đi từ nhãn lên phần tử cha trực tiếp rồi lấy ô, thay vì lọc mọi `div` có chứa nhãn | Sai | Selector dễ vỡ | Giới hạn model: AI đã đọc `Register.jsx` và thấy mỗi trường là một `div` riêng, nhưng không nghĩ tới `div` tổ tiên khác cũng chứa nhãn; với DOM hiện tại locator cũ vẫn đúng nên kiểm tĩnh không lộ ra | Sinh viên tự thấy khi đọc bản AI P1 (2026-11-18). AI kiểm khi sinh viên nhờ, trên HTML dựng bằng `page.setContent` (Chrome): Form có `div` bọc chung 3 trường thì locator cũ khớp 3 ô (lỗi strict mode khi `fill`), locator mới khớp 1; form hiện tại và ô nằm trong `div` con của khối trường: Cả hai khớp 1. DOM EShop hiện tại không đổi kết quả, không đổi ý nghĩa test |
 
 ## 4. Chỗ sửa sẽ kể trong video
 
