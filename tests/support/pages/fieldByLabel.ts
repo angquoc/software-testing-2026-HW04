@@ -10,9 +10,14 @@ export function labelPattern(label: string): RegExp {
   return new RegExp(`^\\s*${escapeRegExp(label)}\\s*\\*?\\s*$`, 'u');
 }
 
+// Thẻ <label> có chữ khớp labelPattern(label) trong phạm vi `scope`.
+export function labelByText(scope: Locator, label: string): Locator {
+  return scope.locator('label').filter({ hasText: labelPattern(label) });
+}
+
 // Ô nhập đi cùng nhãn khi <label> không gắn với ô bằng for/id: Tìm nhãn trong phạm vi `scope`, đi lên phần tử cha
 // trực tiếp của nhãn (khối của trường đó), lấy ô nhập trong khối. Không lọc mọi div có chứa nhãn, vì div bọc chung
 // nhiều trường cũng chứa nhãn và làm locator khớp nhiều ô (strict mode).
 export function fieldByLabel(scope: Locator, label: string): Locator {
-  return scope.locator('label').filter({ hasText: labelPattern(label) }).locator('xpath=..').locator('input');
+  return labelByText(scope, label).locator('xpath=..').locator('input');
 }
