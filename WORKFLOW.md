@@ -82,7 +82,6 @@ HW04/
 │   ├── bug_report.md           Danh sách bug và số issue
 │   └── screenshots/            Ảnh danh sách issue trên GitHub
 ├── skills/                     Agent Skill (nguồn chính)
-├── demo/                       Kết quả chạy skill trong video demo (nếu không nằm trong thư mục feature)
 ├── playwright.config.ts        3 project chrome / edge / firefox, reporter HTML có Run by + ISO
 └── tools/run.mjs               Chạy 1 feature trên 1 hoặc 3 trình duyệt, mỗi trình duyệt 1 report
 ```
