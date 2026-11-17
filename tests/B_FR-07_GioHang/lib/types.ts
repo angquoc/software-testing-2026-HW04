@@ -132,3 +132,22 @@ export interface ApiInvalidCase {
   oracle: string;
   note?: string;
 }
+
+export interface ApiValidCase {
+  id: string;
+  title: string;
+  request: ApiRequestSpec;
+  thenGet?: { auth: 'admin'; compare: 'beforeAndAfter' };
+  expected: {
+    success?: boolean;
+    noServerError?: boolean;
+    newRowCount?: number;
+    newRows?: Record<string, unknown>[];
+    noNewRowWithPrice?: number;
+    ifAdded?: Record<string, unknown>;
+    oldRowsUnchanged?: boolean;
+    adminCartNewRowCount?: number;
+  };
+  oracle: string;
+  note?: string;
+}
