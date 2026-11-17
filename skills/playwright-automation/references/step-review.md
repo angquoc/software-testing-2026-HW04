@@ -41,7 +41,7 @@ Mỗi thay đổi về nội dung một dòng (`assets/templates/changes_table.m
 
 ## Tự kiểm
 
-- `npx tsc --noEmit`; `check_automation.py spec tests/<feature>/*.spec.ts --min-assert 3`; `check_automation.py changes features/<feature>/02_review.md`.
+- `npx tsc --noEmit`; `check_automation.py spec tests/<feature>/*.spec.ts --min-assert 3` (thêm `--with-imports` nếu dự án tính kiểu trong `lib/` cho spec gọi nó); `check_automation.py changes features/<feature>/02_review.md`.
 - Mọi test fail còn lại đều là "hệ thống sai đặc tả" có ghi chú, hoặc đã có quyết định của sinh viên.
 - Checklist bước `review` trong `lessons.md`.
 

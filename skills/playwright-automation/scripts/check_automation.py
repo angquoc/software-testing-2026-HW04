@@ -1,7 +1,7 @@
 """Kiểm tra máy móc cho skill playwright-automation (không đánh giá nội dung).
 
 Cách dùng (chạy từ thư mục gốc của dự án):
-  python -I check_automation.py spec <file.spec.ts>... [--min-assert 3] [--id-pattern REGEX]
+  python -I check_automation.py spec <file.spec.ts>... [--min-assert 3] [--with-imports] [--id-pattern REGEX]
   python -I check_automation.py data <file.json|file.csv>... [--min 12] [--ids-from 01_selected_tc.md] [--id-pattern REGEX]
   python -I check_automation.py same <ai_raw/script_xx.md>... [--root .]
   python -I check_automation.py changes <file.md>... [--stats]
@@ -87,6 +87,7 @@ def cmd_spec(args) -> None:
     id_re = re.compile(args.id_pattern)
     union_kinds: Counter = Counter()
     union_matchers: Counter = Counter()
+    spec_totals: list[tuple[str, int, Counter]] = []
     for f in args.files:
         raw = read(f)
         code = strip_comments(raw)
@@ -122,28 +123,74 @@ def cmd_spec(args) -> None:
             if re.search(r"\.describe\s*\($", code[max(0, m.start() - 12):m.start() + 5]):
                 continue
             out("WARN", f"{f}:{line_of(code, m.start())}", f"Tên test không bắt đầu bằng mã TC: {title[:60]!r}")
-        matchers = Counter(MATCHER.findall(code))
-        kinds: Counter = Counter()
-        for mname, n in matchers.items():
-            kinds[MATCHER_TO_KIND.get(mname, GENERIC_KIND)] += n
+        kinds, matchers = assertion_kinds(code)
         # expect.soft là cách chạy (không dừng ở điểm sai đầu tiên), không phải một kiểu kiểm: Matcher đi sau nó đã được
-        # đếm theo kiểu ở trên. Chỉ báo số lần dùng, không tính vào số kiểu.
+        # đếm theo kiểu. Chỉ báo số lần dùng, không tính vào số kiểu.
         soft = len(re.findall(r"expect\.soft\s*\(", code))
-        if re.search(r"expect\.poll\s*\(", code):
-            kinds["Chờ điều kiện"] += len(re.findall(r"expect\.poll\s*\(", code))
-        if re.search(r"waitForResponse\s*\(", code) and re.search(r"\.status\(\)", code):
-            kinds["Phản hồi mạng"] += 1
-        if "validity" in code:
-            kinds["Validation trình duyệt"] += 1
         union_kinds.update(kinds)
         union_matchers.update(matchers)
         out("INFO", f, f"{len(kinds)} kiểu assertion: " + ", ".join(f"{k} ({n})" for k, n in kinds.most_common())
             + " | matcher: " + ", ".join(sorted(matchers)) + (f" | expect.soft: {soft} lần (không tính là kiểu)" if soft else ""))
+        if args.with_imports and f.endswith(".spec.ts"):
+            own = Counter(kinds)
+            total = Counter(kinds)
+            used = []
+            for dep in local_imports(Path(f)):
+                dk, _ = assertion_kinds(strip_comments(read(str(dep))))
+                if dk:
+                    used.append(dep.as_posix())
+                    total.update(dk)
+            spec_totals.append((f, len(own), total))
+            out("INFO", f, f"Kể cả file được import: {len(total)} kiểu: "
+                + ", ".join(f"{k} ({n})" for k, n in total.most_common())
+                + (f" | từ: {', '.join(used)}" if used else " | không file import nào có assertion"))
     if len(args.files) > 1:
         out("INFO", "Tổng các file", f"{len(union_kinds)} kiểu assertion: "
             + ", ".join(f"{k} ({n})" for k, n in union_kinds.most_common()))
-    if args.min_assert and len(union_kinds) < args.min_assert:
+    if args.min_assert and args.with_imports:
+        # Mỗi spec phải đủ, tính cả kiểu trong file cục bộ nó import (lib/, page object).
+        for f, _own, total in spec_totals:
+            if len(total) < args.min_assert:
+                out("ERROR", f, f"Kể cả file được import chỉ có {len(total)} kiểu assertion, cần ≥ {args.min_assert}")
+    elif args.min_assert and len(union_kinds) < args.min_assert:
         out("ERROR", "Tổng các file", f"Chỉ có {len(union_kinds)} kiểu assertion, cần ≥ {args.min_assert}")
+
+
+def assertion_kinds(code: str) -> tuple[Counter, Counter]:
+    """Đếm kiểu assertion và matcher trong một đoạn code đã bỏ comment."""
+    matchers = Counter(MATCHER.findall(code))
+    kinds: Counter = Counter()
+    for mname, n in matchers.items():
+        kinds[MATCHER_TO_KIND.get(mname, GENERIC_KIND)] += n
+    if re.search(r"expect\.poll\s*\(", code):
+        kinds["Chờ điều kiện"] += len(re.findall(r"expect\.poll\s*\(", code))
+    if re.search(r"waitForResponse\s*\(", code) and re.search(r"\.status\(\)", code):
+        kinds["Phản hồi mạng"] += 1
+    if "validity" in code:
+        kinds["Validation trình duyệt"] += 1
+    return kinds, matchers
+
+
+LOCAL_IMPORT = re.compile(r"""^\s*import\s+(?!type\b)[^'"]*?from\s+['"](\.{1,2}/[^'"]+)['"]""", re.M)
+
+
+def local_imports(spec: Path) -> list[Path]:
+    """File .ts cục bộ mà spec import (đệ quy, bỏ `import type`, bỏ fixtures vì không chứa assertion của test)."""
+    seen: set[Path] = set()
+    order: list[Path] = []
+    stack = [spec]
+    while stack:
+        cur = stack.pop()
+        for m in LOCAL_IMPORT.finditer(strip_comments(read(str(cur)))):
+            target = (cur.parent / m.group(1))
+            cand = [target] if target.suffix == ".ts" else [target.with_name(target.name + ".ts"), target / "index.ts"]
+            dep = next((c.resolve() for c in cand if c.is_file()), None)
+            if dep is None or dep in seen or dep.name == "fixtures.ts":
+                continue
+            seen.add(dep)
+            order.append(Path(dep.relative_to(Path.cwd().resolve())) if dep.is_relative_to(Path.cwd().resolve()) else dep)
+            stack.append(dep)
+    return order
 
 
 # ---------------------------------------------------------------- data
@@ -456,6 +503,8 @@ def main() -> int:
     s = sub.add_parser("spec")
     s.add_argument("files", nargs="+")
     s.add_argument("--min-assert", type=int, default=0)
+    s.add_argument("--with-imports", action="store_true",
+                   help="Cộng kiểu assertion trong file cục bộ mà spec import; --min-assert áp cho từng spec")
     s.add_argument("--id-pattern", default=DEFAULT_ID)
     s.set_defaults(fn=cmd_spec)
     s = sub.add_parser("data")

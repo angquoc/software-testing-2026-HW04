@@ -127,7 +127,7 @@ Chi tiết ở `references/rules.md`. Tóm tắt:
 - `scripts/check_automation.py`: Kiểm tra máy móc (không đánh giá nội dung):
 
   ```bash
-  python -I <skill>/scripts/check_automation.py spec tests/<feature>/*.spec.ts [--min-assert 3]
+  python -I <skill>/scripts/check_automation.py spec tests/<feature>/*.spec.ts [--min-assert 3] [--with-imports]   # --with-imports: tính cả kiểu trong lib/ được import
   python -I <skill>/scripts/check_automation.py data tests/<feature>/data/* [--min 12] [--ids-from features/<feature>/01_selected_tc.md]
   python -I <skill>/scripts/check_automation.py same features/<feature>/ai_raw/script_01.md     # code trong tests/ còn giống bản AI không
   python -I <skill>/scripts/check_automation.py changes features/<feature>/02_review.md

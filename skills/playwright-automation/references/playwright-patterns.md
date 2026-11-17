@@ -124,7 +124,7 @@ Thứ tự ưu tiên (bền nhất trước):
 
 Ưu tiên **web-first assertion** (`await expect(locator).toX()`), vì nó tự chờ và thử lại. Tránh `expect(await locator.textContent()).toBe(...)` (đọc một lần, dễ flaky).
 
-Phạm vi "≥ 3 kiểu" (toàn suite hay mỗi feature): **Quyết định** của dự án. `check_automation.py spec` đếm theo file và theo tập file được truyền vào.
+Phạm vi "≥ 3 kiểu" (toàn suite hay mỗi feature): **Quyết định** của dự án. `check_automation.py spec` đếm theo file và theo tập file được truyền vào. Dự án chốt "kiểu nằm trong `lib/` hoặc page object tính cho spec gọi nó" thì thêm `--with-imports`: Mỗi spec được cộng kiểu của các file cục bộ nó `import` (đệ quy, bỏ `import type` và `fixtures`), và `--min-assert` áp cho **từng** spec.
 
 ## 6. Assertion khi đặc tả không ghi nguyên văn
 
