@@ -1,0 +1,62 @@
+[
+  {
+    "id": "TC-REG-30",
+    "title": "blocks submit when full name is empty",
+    "input": {
+      "fullName": "",
+      "email": "tc30@domain.com",
+      "password": "Abcdef1!",
+      "confirmPassword": "Abcdef1!"
+    },
+    "expected": {
+      "outcome": "blockedByBrowser",
+      "errorCode": "ERR1",
+      "invalidField": "fullName",
+      "validity": "valueMissing",
+      "path": "/register",
+      "registerRequestSent": false
+    },
+    "oracle": "HW02 TC-REG-30, OUT2 ERR1 (thiếu Họ Tên); SRS FR-01 (FR01-R01): Người dùng phải cung cấp Họ Tên",
+    "note": "Bong bóng của trình duyệt tính là thông báo lỗi (GĐ-02 của select); không so chữ bong bóng vì khác nhau giữa trình duyệt"
+  },
+  {
+    "id": "TC-REG-32",
+    "title": "blocks submit when email is empty",
+    "input": {
+      "fullName": "Nguyen Van A",
+      "email": "",
+      "password": "Abcdef1!",
+      "confirmPassword": "Abcdef1!"
+    },
+    "expected": {
+      "outcome": "blockedByBrowser",
+      "errorCode": "ERR2",
+      "invalidField": "email",
+      "validity": "valueMissing",
+      "path": "/register",
+      "registerRequestSent": false
+    },
+    "oracle": "HW02 TC-REG-32, OUT2 ERR2 (thiếu Email); SRS FR-01 (FR01-R02): Người dùng phải cung cấp Email",
+    "note": "Như TC-REG-30"
+  },
+  {
+    "id": "TC-REG-49",
+    "title": "blocks submit when password is empty",
+    "input": {
+      "fullName": "Nguyen Van A",
+      "email": "tc49@domain.com",
+      "password": "",
+      "confirmPassword": ""
+    },
+    "expected": {
+      "outcome": "blockedByBrowser",
+      "errorCode": "ERR5",
+      "invalidField": "password",
+      "validity": "valueMissing",
+      "path": "/register",
+      "registerRequestSent": false
+    },
+    "oracle": "HW02 TC-REG-49, OUT2 ERR5 (thiếu Mật khẩu); SRS FR-01 (FR01-R03): Người dùng phải cung cấp Mật khẩu",
+    "note": "Xác nhận mật khẩu cũng để trống, đúng như HW02"
+  }
+]

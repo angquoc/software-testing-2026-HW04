@@ -1,0 +1,33 @@
+[
+  {
+    "id": "TC-REG-94",
+    "title": "moves focus through the form in top-to-bottom order with Tab",
+    "check": "tabOrder",
+    "target": { "startField": "Họ Tên" },
+    "expected": {
+      "order": [
+        { "kind": "field", "label": "Email" },
+        { "kind": "field", "label": "Mật khẩu" },
+        { "kind": "button", "name": "Đăng Ký" },
+        { "kind": "link", "name": "Đăng nhập" }
+      ]
+    },
+    "oracle": "HW02 TC-REG-94; SRS FR-21 (FR01-R17): Thứ tự focus theo Tab đi từ trên xuống dưới, trái sang phải",
+    "note": "Bắt đầu bằng focus vào ô Họ Tên, mỗi phần tử trong order là một lần nhấn Tab; không tính ô Xác nhận mật khẩu (CH-select-03 a). Liên kết Đăng nhập là liên kết trong form (CH-data-03). HW02: Pass"
+  },
+  {
+    "id": "TC-REG-97",
+    "title": "shows the page error message above the register button",
+    "check": "errorPosition",
+    "input": {
+      "fullName": "Nguyen Van A",
+      "email": "tc107@domain.com",
+      "password": "Abcde1!",
+      "confirmPassword": "Abcde1!"
+    },
+    "target": { "buttonName": "Đăng Ký" },
+    "expected": { "messageShown": true, "position": "above" },
+    "oracle": "HW02 TC-REG-97; SRS FR-22 (FR01-R21): Thông báo lỗi phải xuất hiện trên nút submit, không phải bên dưới",
+    "note": "Dùng dữ liệu của TC-REG-107 thay dữ liệu TC-REG-30 để có thông báo của trang (CH-select-04 a); bong bóng của trình duyệt không nằm trong DOM nên không đo. Cách so tọa độ: CH-data-02. HW02: Pass"
+  }
+]

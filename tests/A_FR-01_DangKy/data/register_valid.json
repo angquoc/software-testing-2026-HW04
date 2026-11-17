@@ -1,0 +1,36 @@
+[
+  {
+    "id": "TC-REG-01",
+    "title": "registers with valid base data and redirects to login",
+    "input": {
+      "fullName": "Nguyen Van A",
+      "email": "tc01@domain.com",
+      "password": "Abcdef1!",
+      "confirmPassword": "Abcdef1!"
+    },
+    "expected": {
+      "outcome": "success",
+      "path": "/login",
+      "loginForm": { "fields": ["Email", "Mật khẩu"], "submitButton": true }
+    },
+    "oracle": "HW02 TC-REG-01, OUT1 (05_final_tc.md mục 1.2); SRS FR-01 (FR01-R01 đến R10, R13): Sau khi đăng ký thành công, người dùng được chuyển tới trang Đăng nhập; FR-02: Người dùng nhập Email và Mật khẩu",
+    "note": "Giá trị cơ sở của mọi lớp hợp lệ. Mật khẩu 8 ký tự, ký tự đặc biệt `!`. HW02: Fail do #42"
+  },
+  {
+    "id": "TC-REG-108",
+    "title": "registers with a 9-character password and redirects to login",
+    "input": {
+      "fullName": "Nguyen Van A",
+      "email": "tc108@domain.com",
+      "password": "Abcdefg1!",
+      "confirmPassword": "Abcdefg1!"
+    },
+    "expected": {
+      "outcome": "success",
+      "path": "/login",
+      "loginForm": { "fields": ["Email", "Mật khẩu"], "submitButton": true }
+    },
+    "oracle": "HW02 TC-REG-108, OUT1; SRS FR-01 (FR01-R06, R13): Mật khẩu tối thiểu 8 ký tự; sau khi đăng ký thành công chuyển tới trang Đăng nhập",
+    "note": "Mật khẩu 9 ký tự (A, b, c, d, e, f, g, 1, !): Biên LB+1 của độ dài, cặp với TC-REG-107. HW02: Fail do #42"
+  }
+]

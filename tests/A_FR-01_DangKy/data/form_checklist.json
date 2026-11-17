@@ -1,0 +1,46 @@
+[
+  {
+    "id": "TC-REG-90",
+    "title": "shows a confirm password field",
+    "check": "confirmPasswordField",
+    "target": { "label": "Xác nhận mật khẩu" },
+    "expected": { "present": true },
+    "oracle": "HW02 TC-REG-90; SRS FR-01 (FR01-R11): Phải có trường Xác nhận mật khẩu",
+    "note": "HW02: Fail, issue #43"
+  },
+  {
+    "id": "TC-REG-92",
+    "title": "shows the register button in blue",
+    "check": "submitButtonColor",
+    "target": { "buttonName": "Đăng Ký" },
+    "expected": { "hueMin": 200, "hueMax": 250, "saturationMinPercent": 40 },
+    "oracle": "HW02 TC-REG-92; SRS FR-21 (FR01-R15): Các nút hành động tích cực (Submit) dùng màu xanh dương. Khoảng hue và độ bão hòa do sinh viên chốt (CH-select-01 a, 2026-11-17)",
+    "note": "Đo màu nền tính được (getComputedStyle) của nút, đổi sang HSL. HW02: Fail (nền đỏ), issue #52"
+  },
+  {
+    "id": "TC-REG-93",
+    "title": "has exactly one h1 describing the page",
+    "check": "h1",
+    "expected": { "count": 1, "textContains": "Đăng ký", "caseInsensitive": true },
+    "oracle": "HW02 TC-REG-93; SRS FR-21 (FR01-R16): Mỗi trang có đúng 1 thẻ <h1> mô tả nội dung trang. Từ khóa theo CH-select-02 b",
+    "note": "HW02: Fail (0 thẻ h1), issue #53"
+  },
+  {
+    "id": "TC-REG-95",
+    "title": "marks required field labels with an asterisk",
+    "check": "requiredMarker",
+    "target": { "labels": ["Họ Tên", "Email", "Mật khẩu"] },
+    "expected": { "marker": "*" },
+    "oracle": "HW02 TC-REG-95; SRS FR-22 (FR01-R18): Tất cả trường bắt buộc phải có ký hiệu * bên cạnh nhãn; FR-01: Họ Tên, Email, Mật khẩu là bắt buộc",
+    "note": "Chỉ 3 nhãn đang có trên giao diện; nhãn Xác nhận mật khẩu không kiểm ở đây vì ô thiếu (#43, đo ở TC-REG-90), theo 01_selected_tc.md mục 6. HW02: Fail, issue #51"
+  },
+  {
+    "id": "TC-REG-96",
+    "title": "uses email and password input types",
+    "check": "inputTypes",
+    "target": { "fields": [{ "label": "Email", "key": "email" }, { "label": "Mật khẩu", "key": "password" }] },
+    "expected": { "types": { "email": "email", "password": "password" } },
+    "oracle": "HW02 TC-REG-96; SRS FR-22 (FR01-R19, R20): Trường Email phải dùng type=\"email\"; trường Mật khẩu phải dùng type=\"password\"",
+    "note": "Ký tự bị che coi là hệ quả của type=\"password\" (GĐ-data-03). HW02: Email là type=\"text\", issue #50"
+  }
+]
