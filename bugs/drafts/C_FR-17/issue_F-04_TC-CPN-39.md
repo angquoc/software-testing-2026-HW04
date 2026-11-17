@@ -42,7 +42,7 @@ Từ chối, không tạo mã vì `discount_value` phải dương, với cả lo
 
 ### Kết quả thực tế
 
-Không có thông báo nào (không bong bóng, không hộp thoại, không chữ báo lỗi trên trang). Mã `FR17TC39` được tạo, bảng hiện "Cố định", `0 ₫`, `300,000 ₫`, `2099-12-31`, `3 lần`. ⏳ Sau khi tải lại trang: (kiểm tay khi chụp ảnh)
+Không có thông báo nào (không bong bóng, không hộp thoại, không chữ báo lỗi trên trang). Mã `FR17TC39` được tạo, bảng hiện "Cố định", `0 ₫`, `300,000 ₫`, `2099-12-31`, `3 lần`. Sau khi tải lại trang và bấm lại menu "Mã Giảm Giá", dòng `FR17TC39` vẫn còn với cùng giá trị (tái hiện bằng tay trên Chrome, 17/11/2026).
 
 Kết quả assertion, giống nhau ở Chrome, Edge, Firefox:
 
@@ -59,7 +59,17 @@ Received: 1
 
 ### Ảnh chụp
 
-<!-- ⏳ Chèn ảnh tự chụp: Form đã điền, dòng FR17TC39 trên bảng, dòng đó sau khi tải lại -->
+**C-FR17_F-04_TC-CPN-39_form.png**
+
+<img width="1059" height="218" alt="C-FR17_F-04_TC-CPN-39_form.png" src="https://github.com/user-attachments/assets/98b18cbe-eafa-4aee-9c94-25801c303379" />
+
+**C-FR17_F-04_TC-CPN-39_row.png**
+
+<img width="1063" height="337" alt="C-FR17_F-04_TC-CPN-39_row.png" src="https://github.com/user-attachments/assets/56e99532-37c7-484f-9280-6165869c9f32" />
+
+**C-FR17_F-02-05_after_reload.png** (sau khi tải lại trang)
+
+<img width="1280" height="719" alt="C-FR17_F-02-05_after_reload.png" src="https://github.com/user-attachments/assets/516a9773-258f-4b75-bd7f-c2ddffa62808" />
 
 ### Môi trường
 

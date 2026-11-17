@@ -21,4 +21,12 @@ Received: 1
 
 **Ảnh chụp**
 
-<!-- ⏳ Chèn ảnh tự chụp khi tái hiện bằng tay: Dòng FR17TC38 trên bảng (và sau khi tải lại trang) -->
+Tự chụp khi tái hiện bằng tay trên Chrome (17/11/2026). Sau khi tải lại trang và bấm lại menu "Mã Giảm Giá", dòng `FR17TC38` vẫn còn với cùng giá trị.
+
+**C-FR17_F-03_TC-CPN-38_row.png**
+
+<img width="1059" height="293" alt="C-FR17_F-03_TC-CPN-38_row.png" src="https://github.com/user-attachments/assets/e9352d50-dc3f-4661-97e0-a7c3ea9b8872" />
+
+**C-FR17_F-02-05_after_reload.png**
+
+<img width="1280" height="719" alt="C-FR17_F-02-05_after_reload.png" src="https://github.com/user-attachments/assets/516a9773-258f-4b75-bd7f-c2ddffa62808" />

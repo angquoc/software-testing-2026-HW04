@@ -42,7 +42,7 @@ Từ chối, không tạo mã vì `min_order_amount` phải lớn hơn hoặc b�
 
 ### Kết quả thực tế
 
-Không có thông báo nào (không bong bóng, không hộp thoại, không chữ báo lỗi trên trang); ô "Đơn tối thiểu (₫)" không có ràng buộc `min` nên trình duyệt không chặn. Mã `FR17TC41` được tạo, bảng hiện "Phần trăm", `15%`, `-1 ₫`, `2099-12-31`, `3 lần`. ⏳ Sau khi tải lại trang: (kiểm tay khi chụp ảnh)
+Không có thông báo nào (không bong bóng, không hộp thoại, không chữ báo lỗi trên trang); ô "Đơn tối thiểu (₫)" không có ràng buộc `min` nên trình duyệt không chặn. Mã `FR17TC41` được tạo, bảng hiện "Phần trăm", `15%`, `-1 ₫`, `2099-12-31`, `3 lần`. Sau khi tải lại trang và bấm lại menu "Mã Giảm Giá", dòng `FR17TC41` vẫn còn với cùng giá trị (tái hiện bằng tay trên Chrome, 17/11/2026).
 
 Kết quả assertion, giống nhau ở Chrome, Edge, Firefox:
 
@@ -59,7 +59,17 @@ Received: 1
 
 ### Ảnh chụp
 
-<!-- ⏳ Chèn ảnh tự chụp: Form đã điền, dòng FR17TC41 trên bảng (cột "Đơn tối thiểu" hiện -1 ₫), dòng đó sau khi tải lại -->
+**C-FR17_F-05_TC-CPN-41_form.png**
+
+<img width="1055" height="226" alt="C-FR17_F-05_TC-CPN-41_form.png" src="https://github.com/user-attachments/assets/794d5c50-7282-4933-b328-c8bd548da4f7" />
+
+**C-FR17_F-05_TC-CPN-41_row.png**
+
+<img width="1048" height="374" alt="C-FR17_F-05_TC-CPN-41_row.png" src="https://github.com/user-attachments/assets/f42e4d71-78ea-4a37-9be3-f43b826aea49" />
+
+**C-FR17_F-02-05_after_reload.png** (sau khi tải lại trang)
+
+<img width="1280" height="719" alt="C-FR17_F-02-05_after_reload.png" src="https://github.com/user-attachments/assets/516a9773-258f-4b75-bd7f-c2ddffa62808" />
 
 ### Môi trường
 

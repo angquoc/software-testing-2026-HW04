@@ -19,4 +19,8 @@ Các phần khác của issue này (tiêu đề tab, menu "Dashboard", bong bón
 
 **Ảnh chụp**
 
-<!-- ⏳ Chèn ảnh tự chụp khi tái hiện bằng tay: Hộp thoại "Lỗi: SQLITE_CONSTRAINT..." (Playwright tự đóng hộp thoại nên ảnh của report không có) -->
+Tự chụp khi tái hiện bằng tay trên Chrome (17/11/2026), vì Playwright tự đóng hộp thoại nên ảnh của report không có hộp thoại.
+
+**C-FR17_F-01_TC-CPN-32_dialog.png**
+
+<img width="1280" height="719" alt="C-FR17_F-01_TC-CPN-32_dialog.png" src="https://github.com/user-attachments/assets/8a5cfaec-5a42-4601-8dac-6b83094d9ec9" />
