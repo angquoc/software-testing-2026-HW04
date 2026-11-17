@@ -9,6 +9,7 @@ export class CartPage {
   readonly table: Locator;
   readonly rows: Locator;
   readonly totalValue: Locator;
+  readonly illustrations: Locator;
 
   constructor(private readonly page: Page) {
     this.main = page.getByRole('main');
@@ -17,6 +18,8 @@ export class CartPage {
     this.rows = this.table.getByRole('row').filter({ has: page.getByRole('cell') });
     // Dòng tổng: Phần tử con đầu tiên của khối ngay sau bảng.
     this.totalValue = this.main.locator('table + div > :first-child');
+    // Hình minh họa của giỏ trống: Ảnh hoặc biểu tượng đang hiển thị trong vùng nội dung (D-03).
+    this.illustrations = this.main.locator('img, svg').filter({ visible: true });
   }
 
   row(productName: string): Locator {
@@ -25,5 +28,9 @@ export class CartPage {
 
   cell(row: Locator, column: keyof typeof CartPage.COLUMN): Locator {
     return row.getByRole('cell').nth(CartPage.COLUMN[column]);
+  }
+
+  deleteButton(row: Locator): Locator {
+    return this.cell(row, 'actions').getByRole('button', { name: 'Xóa', exact: true });
   }
 }

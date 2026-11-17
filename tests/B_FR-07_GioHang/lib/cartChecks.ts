@@ -4,7 +4,7 @@ import type { HomePage } from '../../support/pages/HomePage';
 import type { NavBar } from '../../support/pages/NavBar';
 import { moneyPattern } from './money';
 import { productByKey } from './products';
-import type { CartStateExpected } from './types';
+import type { CartStateExpected, EmptyStateExpected } from './types';
 
 const softExpect = expect.configure({ soft: true });
 
@@ -36,6 +36,19 @@ export async function checkCartState(cart: CartPage, exp: CartStateExpected, lab
     await softExpect(cart.totalValue, `${label}: cart total (found by position; label checked in TC-CART-90)`).toHaveText(
       moneyPattern(exp.total, exp.thousandSeparators),
     );
+  }
+}
+
+// OUT9 theo D-03: Hình minh họa (img hoặc svg đang hiển thị trong main), thông báo có từ đã chốt, không còn bảng.
+export async function checkEmptyState(cart: CartPage, exp: EmptyStateExpected, label: string): Promise<void> {
+  if (exp.illustration) {
+    await softExpect(cart.illustrations.first(), `${label}: illustration (img or svg) in the main content (OUT9, D-03)`).toBeVisible();
+  }
+  await softExpect(cart.main, `${label}: message says the cart is empty (OUT9, D-03)`).toContainText(exp.messageContains, {
+    ignoreCase: true,
+  });
+  if (!exp.table) {
+    await softExpect(cart.table, `${label}: no cart table (OUT9)`).toHaveCount(0);
   }
 }
 

@@ -23,6 +23,12 @@ export interface CartStateExpected {
   thousandSeparators?: number;
 }
 
+export interface EmptyStateExpected {
+  illustration: boolean;
+  messageContains: string;
+  table: boolean;
+}
+
 export interface AddFromDetailCase {
   id: string;
   title: string;
@@ -46,6 +52,22 @@ export interface AddToExistingCartCase {
   expected: CartStateExpected & {
     feedback?: 'toastOrBadge';
     badge?: number;
+  };
+  oracle: string;
+  note?: string;
+}
+
+export interface RemoveItemCase {
+  id: string;
+  title: string;
+  setup: { cart: string[] };
+  input: { remove: string; dialogChoice: 'accept' | 'dismiss'; thenAddFromHome?: string };
+  expected: CartStateExpected & {
+    dialog: 'shown';
+    rowPresentWhileDialogOpen?: string;
+    afterRemove?: CartStateExpected;
+    afterReAdd?: CartStateExpected;
+    emptyState?: EmptyStateExpected;
   };
   oracle: string;
   note?: string;
