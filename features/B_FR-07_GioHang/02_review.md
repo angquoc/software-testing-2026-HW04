@@ -1,7 +1,8 @@
 # FR-07 Giỏ hàng: Review dữ liệu và script AI sinh
 
-- Bản AI: `ai_raw/data.md` (mục 1). Mục script (từ `ai_raw/script_01_<...>.md`) điền ở bước `review`
+- Bản AI: `ai_raw/data.md` (mục 1), `ai_raw/script_01_add_from_detail.md` (mục 2, P1)
 - Thời gian tạo: 2026-11-17 13:14 (UTC+07:00)
+- Cập nhật lần 1: 2026-11-17 14:13 (UTC+07:00). Thêm mục 2 (P1: Quyết định cấu trúc, CH-script-01, 02) và 3 dòng vào bảng thay đổi
 
 ## 1. Dữ liệu
 
@@ -51,7 +52,31 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 
 ## 2. Script
 
-(Điền ở bước `review`.)
+### 2.1 Cấu trúc đã chốt (trước khi viết P1, áp cho P1 đến P7)
+
+- Page object trong `tests/support/pages/`: `NavBar`, `HomePage`, `ProductDetailPage`, `CartPage`. Hàm riêng của feature trong `tests/B_FR-07_GioHang/lib/`.
+- Thông tin giao diện: `aria_snapshot` (4 snapshot ở `ai_raw/`) và mã nguồn frontend, chỉ để lấy selector và luồng.
+- Đăng nhập: `storageState` `.auth/user.json` do `tests/B_FR-07_GioHang/setup/globalSetup.ts` ghi một lần mỗi lượt chạy FR-07.
+- Ô tổng tiền và ô trong dòng tìm theo vị trí; nhãn "Tổng cộng" và tiêu đề cột chỉ kiểm ở TC-CART-90.
+- ≥ 3 kiểu assertion tính theo từng file spec.
+- `expect.soft` cho các điểm kiểm độc lập, kể cả số dòng của một sản phẩm (CH-script-02).
+- Lần bấm "Thêm vào giỏ hàng" đầu tiên không phản hồi trong 1,5 giây: Ghi lỗi `soft` và bấm thêm một lần (trừ test case mong đợi bị từ chối, GĐ-09 của bản AI P1).
+- Test API chạy trên mấy trình duyệt (D17): ⏳ chốt ở P6.
+
+### 2.2 Quyết định cho câu hỏi
+
+| Mã | Câu hỏi | Quyết định của SV |
+|---|---|---|
+| CH-script-01 | Khoảng chờ "có phản hồi" (3 giây) và "không có phản hồi" (2 giây) | Đặt bằng nhau, cùng 2 giây (`FEEDBACK_WINDOW_MS = 2_000`) |
+| CH-script-02 | Không có đúng 1 dòng sản phẩm thì dừng test hay `soft` | `soft` cho số dòng; không có dòng nào thì bỏ qua các ô của dòng đó; có từ 2 dòng thì đọc ô của dòng đầu tiên khớp tên, để bug #70 ở P2 không làm dừng sớm mà vẫn kiểm được tổng tiền và badge |
+
+### 2.3 Các lượt chạy thử
+
+(Chưa chạy. Điền ở bước `review`.)
+
+### 2.4 Kiểu assertion
+
+P1 (`check_automation.py spec`): 4 kiểu: Giá trị tính toán / so sánh (`toBe`, `toEqual`), Nội dung chữ (`toHaveText`), Số lượng (`toHaveCount`), Giá trị ô nhập (`toHaveValue`); thêm `expect.poll` (chờ phản hồi OUT15).
 
 ## 3. Thay đổi so với bản AI
 
@@ -61,9 +86,13 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 | `data/cart_gui.json` TC-CART-94 `note` | "Mỗi nhóm 3 chữ số tính từ phải có một ký tự không phải chữ số đứng trước" → các chữ số phần nguyên nhóm từ phải sang trái, mỗi nhóm tối đa 3 chữ số (chỉ nhóm ngoài cùng bên trái được ít hơn 3), ngăn cách bằng cùng một ký tự phân cách là dấu phẩy hoặc dấu chấm | Mơ hồ | Dữ liệu | Giới hạn model: Câu của AI không nói nhóm ngoài cùng bên trái được ít hơn 3 chữ số (dễ hiểu sai với số 7 đến 8 chữ số như 30,000,000), và nhận mọi ký tự không phải chữ số, kể cả trộn nhiều loại phân cách trong một số | SV tự phát hiện khi review bản AI. Căn cứ: FR-21 (phân cách hàng nghìn); chọn dấu phẩy hoặc dấu chấm là quyết định của SV vì đặc tả không nêu ký tự |
 | `data/api_valid.json` TC-CART-54 | `expected.adminCartNoRowWithId: 1` → `thenGet.compare: "beforeAndAfter"`, `expected.adminCartNewRowCount: 0` | Quyết định của SV | Assertion yếu / thiếu | | CH-data-04 b |
 | `data/add_from_detail.json` TC-CART-01 `note` | Ghi cách so `k1.apiCart`: Đúng 1 dòng mới iPhone 15 Pro Max số lượng 1 giữa trước và sau thao tác thêm | Quyết định của SV | Assertion yếu / thiếu | | CH-data-01 a; ghi vào dữ liệu để bước `script` không phải đọc lại bản review |
+| ★ `01_add_from_detail.spec.ts` `checkCartState` (nhánh `soft`) | `if ((await row.count()) !== 1) continue` → `if ((await rows.count()) === 0) continue`, rồi đọc ô từ `rows.first()` | Thiếu | Thiếu edge case | Giới hạn model: AI đã biết bug #70 (thêm trùng tạo dòng mới) và tự nêu CH-script-02 cho nhánh dừng test, nhưng nhánh `soft` vẫn bỏ qua mọi ô khi có từ 2 dòng cùng tên, làm mất đúng số liệu chứng minh dòng cũ không được tăng số lượng (TC-CART-03) | SV tự phát hiện khi đọc code bản AI P1. Căn cứ: TC-CART-03 (FR07-R08, R09), HW02 `06_results.md` ghi nhận 3 |
+| `01_add_from_detail.spec.ts` `checkCartState` | Bỏ tham số `rowPresence` và nhánh dừng test (`expect(...).toHaveCount(1)` thường); mọi điểm trong hàm là `soft` | Quyết định của SV | Assertion yếu / thiếu | | CH-script-02 |
+| `lib/feedback.ts`, `01_add_from_detail.spec.ts` | `FEEDBACK_WINDOW_MS` 3000 và `NO_FEEDBACK_WINDOW_MS` 2000 → một hằng `FEEDBACK_WINDOW_MS` 2000 cho cả "có phản hồi" và "không có phản hồi" | Quyết định của SV | Wait gây flaky | | CH-script-01: "Có" và "không có" phản hồi đo trên cùng một khoảng |
 
 CH-data-02 a và CH-data-03 a giữ nguyên dữ liệu của bản AI, không có dòng thay đổi.
 
 ## 4. Chỗ sửa sẽ kể trong video
 
 1. TC-CART-08 `afterReAdd`: Bản AI chỉ kiểm dòng Samsung vừa thêm lại, nên nếu thao tác thêm lại ghi đè mất dòng iPhone thì test vẫn qua. Sửa: Kiểm thêm `rowCount` 2 và `total` 58,000,000. Kiểm lại ở bước `review` bằng cách làm hỏng có chủ đích (ví dụ đổi `rowCount` thành 1) để chắc assertion bắt được.
+2. `checkCartState` khi có dòng trùng: Bản AI gặp từ 2 dòng cùng tên thì bỏ qua mọi ô, nên với bug #70 report chỉ ghi "số dòng sai" mà không cho thấy dòng iPhone cũ vẫn Số lượng 1. Sửa: Ghi lỗi số dòng bằng `soft`, vẫn đọc ô của dòng đầu tiên. Kiểm lại khi chạy TC-CART-03 (P2): Report phải có cả lỗi số dòng lẫn lỗi "Số lượng 4".

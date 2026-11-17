@@ -3,10 +3,9 @@ import { expect } from '../../support/fixtures';
 import type { NavBar } from '../../support/pages/NavBar';
 import type { ProductDetailPage } from '../../support/pages/ProductDetailPage';
 
-// Khoảng chờ (GĐ-07, GĐ-08 của ai_raw/script_01_add_from_detail.md).
+// Khoảng chờ: Lần bấm đầu 1,5 giây; "có phản hồi" và "không có phản hồi" cùng đo trên 2 giây (CH-script-01).
 export const FIRST_CLICK_WINDOW_MS = 1_500;
-export const FEEDBACK_WINDOW_MS = 3_000;
-export const NO_FEEDBACK_WINDOW_MS = 2_000;
+export const FEEDBACK_WINDOW_MS = 2_000;
 
 declare global {
   interface Window {

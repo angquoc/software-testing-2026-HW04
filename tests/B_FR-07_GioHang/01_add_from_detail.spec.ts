@@ -9,13 +9,7 @@ import { NavBar } from '../support/pages/NavBar';
 import { ProductDetailPage } from '../support/pages/ProductDetailPage';
 import cases from './data/add_from_detail.json';
 import { getCartRows, loginToken, newRows } from './lib/cartApi';
-import {
-  becomesTrueWithin,
-  clickAddWithRetry,
-  feedbackSeen,
-  FEEDBACK_WINDOW_MS,
-  NO_FEEDBACK_WINDOW_MS,
-} from './lib/feedback';
+import { becomesTrueWithin, clickAddWithRetry, feedbackSeen, FEEDBACK_WINDOW_MS } from './lib/feedback';
 import { moneyPattern } from './lib/money';
 import { productByKey } from './lib/products';
 import type { AddFromDetailCase, CartStateExpected } from './lib/types';
@@ -25,25 +19,18 @@ const softExpect = expect.configure({ soft: true });
 
 test.use({ storageState: USER_STATE });
 
-// Kiểm trạng thái trang Giỏ hàng. rowPresence "hard": Không có đúng một dòng sản phẩm thì dừng test (đọc ô vô nghĩa).
-async function checkCartState(
-  cart: CartPage,
-  exp: CartStateExpected,
-  label: string,
-  rowPresence: 'hard' | 'soft',
-): Promise<void> {
+// Kiểm trạng thái trang Giỏ hàng. Mọi điểm là soft: Có nhiều dòng cùng tên (#70) thì ghi lỗi số dòng
+// và vẫn đọc ô của dòng đầu tiên; không có dòng nào thì bỏ qua các ô của dòng đó. Tổng tiền luôn được kiểm.
+async function checkCartState(cart: CartPage, exp: CartStateExpected, label: string): Promise<void> {
   if (exp.rowCount !== undefined) {
     await softExpect(cart.rows, `${label}: number of cart lines`).toHaveCount(exp.rowCount);
   }
   for (const r of exp.rows ?? []) {
     const name = productByKey(r.product).name;
-    const row = cart.row(name);
-    if (rowPresence === 'hard') {
-      await expect(row, `${label}: exactly one line "${name}"`).toHaveCount(1);
-    } else {
-      await softExpect(row, `${label}: exactly one line "${name}"`).toHaveCount(1);
-      if ((await row.count()) !== 1) continue;
-    }
+    const rows = cart.row(name);
+    await softExpect(rows, `${label}: exactly one line "${name}"`).toHaveCount(1);
+    if ((await rows.count()) === 0) continue;
+    const row = rows.first();
     if (r.unitPrice !== undefined) {
       await softExpect(cart.cell(row, 'unitPrice'), `${label}: Đơn giá of "${name}"`).toHaveText(moneyPattern(r.unitPrice));
     }
@@ -107,7 +94,7 @@ test.describe('FR-07 Cart P1: add to cart from the product detail page', () => {
       }
       if (exp.feedback === 'noSuccess') {
         softExpect(
-          await becomesTrueWithin(seen, NO_FEEDBACK_WINDOW_MS),
+          await becomesTrueWithin(seen, FEEDBACK_WINDOW_MS),
           'A31: no success toast and no badge change after a rejected add',
         ).toBe(false);
       }
@@ -116,7 +103,7 @@ test.describe('FR-07 Cart P1: add to cart from the product detail page', () => {
       }
 
       await nav.openCart();
-      await checkCartState(cart, exp, 'Cart page', 'hard');
+      await checkCartState(cart, exp, 'Cart page');
 
       if (token) {
         const added = newRows(apiBefore, await getCartRows(request, token));
@@ -127,7 +114,7 @@ test.describe('FR-07 Cart P1: add to cart from the product detail page', () => {
       }
       if (exp.k1?.afterReload) {
         await page.reload();
-        await checkCartState(cart, exp, 'K1 after reload', 'soft');
+        await checkCartState(cart, exp, 'K1 after reload');
       }
     });
   }
