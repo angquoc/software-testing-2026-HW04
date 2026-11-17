@@ -3,6 +3,7 @@
 - Bản AI: `ai_raw/data.md` (mục 1), `ai_raw/script_01_add_from_detail.md` (mục 2, P1)
 - Thời gian tạo: 2026-11-17 13:14 (UTC+07:00)
 - Cập nhật lần 1: 2026-11-17 14:13 (UTC+07:00). Thêm mục 2 (P1: Quyết định cấu trúc, CH-script-01, 02) và 3 dòng vào bảng thay đổi
+- Cập nhật lần 2: 2026-11-17 14:39 (UTC+07:00). Bản AI P2 (`ai_raw/script_02_add_to_existing_cart.md`): Thêm quyết định trước khi viết P2 vào mục 2.1, kiểu assertion P2 vào mục 2.4; thêm 1 dòng vào bảng thay đổi (thông báo lỗi lần bấm đầu)
 
 ## 1. Dữ liệu
 
@@ -62,6 +63,8 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 - `expect.soft` cho các điểm kiểm độc lập, kể cả số dòng của một sản phẩm (CH-script-02).
 - Lần bấm "Thêm vào giỏ hàng" đầu tiên không phản hồi trong 1,5 giây: Ghi lỗi `soft` và bấm thêm một lần (trừ test case mong đợi bị từ chối, GĐ-09 của bản AI P1).
 - Test API chạy trên mấy trình duyệt (D17): ⏳ chốt ở P6.
+- Trước P2: `checkCartState` chuyển sang `lib/cartChecks.ts`; kiểu assertion trong hàm `lib` được tính cho spec gọi nó (kiểm bằng `check_automation.py spec --with-imports`).
+- Trước P2: Bước chuẩn bị giỏ (D-04) được kiểm bằng `prepareCart`: Mở Giỏ hàng, kiểm số dòng và Số lượng 1 của từng sản phẩm; không đạt thì ném lỗi "Chuẩn bị không đạt", đạt thì về trang chủ bằng link "EShop".
 
 ### 2.2 Quyết định cho câu hỏi
 
@@ -76,7 +79,10 @@ Giả định GĐ-01 đến GĐ-08 của `ai_raw/data.md` giữ nguyên.
 
 ### 2.4 Kiểu assertion
 
-P1 (`check_automation.py spec`): 4 kiểu: Giá trị tính toán / so sánh (`toBe`, `toEqual`), Nội dung chữ (`toHaveText`), Số lượng (`toHaveCount`), Giá trị ô nhập (`toHaveValue`); thêm `expect.poll` (chờ phản hồi OUT15).
+Đếm bằng `check_automation.py spec --with-imports` (tính cả `lib/cartChecks.ts` từ P2):
+
+- P1: 5 kiểu: Giá trị tính toán / so sánh (`toBe`, `toEqual`), Giá trị ô nhập (`toHaveValue`) trong spec; Nội dung chữ (`toHaveText`), Số lượng (`toHaveCount`) trong `lib/cartChecks.ts`; Chờ điều kiện (`expect.poll`) trong `lib/feedback.ts`.
+- P2: 5 kiểu, cùng các kiểu như P1 (spec có `toBe`, `toHaveValue`; phần còn lại từ `lib/`).
 
 ## 3. Thay đổi so với bản AI
 
@@ -89,6 +95,7 @@ P1 (`check_automation.py spec`): 4 kiểu: Giá trị tính toán / so sánh (`t
 | ★ `01_add_from_detail.spec.ts` `checkCartState` (nhánh `soft`) | `if ((await row.count()) !== 1) continue` → `if ((await rows.count()) === 0) continue`, rồi đọc ô từ `rows.first()` | Thiếu | Thiếu edge case | Giới hạn model: AI đã biết bug #70 (thêm trùng tạo dòng mới) và tự nêu CH-script-02 cho nhánh dừng test, nhưng nhánh `soft` vẫn bỏ qua mọi ô khi có từ 2 dòng cùng tên, làm mất đúng số liệu chứng minh dòng cũ không được tăng số lượng (TC-CART-03) | SV tự phát hiện khi đọc code bản AI P1. Căn cứ: TC-CART-03 (FR07-R08, R09), HW02 `06_results.md` ghi nhận 3 |
 | `01_add_from_detail.spec.ts` `checkCartState` | Bỏ tham số `rowPresence` và nhánh dừng test (`expect(...).toHaveCount(1)` thường); mọi điểm trong hàm là `soft` | Quyết định của SV | Assertion yếu / thiếu | | CH-script-02 |
 | `lib/feedback.ts`, `01_add_from_detail.spec.ts` | `FEEDBACK_WINDOW_MS` 3000 và `NO_FEEDBACK_WINDOW_MS` 2000 → một hằng `FEEDBACK_WINDOW_MS` 2000 cho cả "có phản hồi" và "không có phản hồi" | Quyết định của SV | Wait gây flaky | | CH-script-01: "Có" và "không có" phản hồi đo trên cùng một khoảng |
+| `01_add_from_detail.spec.ts`, `02_add_to_existing_cart.spec.ts` (thông báo lỗi lần bấm đầu) | Chuỗi viết cứng "within 1.5 s" → dựng từ hằng `FIRST_CLICK_WINDOW_MS / 1000` | Quyết định của SV | Khác | | SV hỏi vì tưởng câu thông báo chưa theo CH-script-01; AI chỉ ra khi SV hỏi rằng 1,5 giây là khoảng chờ lần bấm đầu (`FIRST_CLICK_WINDOW_MS`, không đổi ở CH-script-01) nên câu đang đúng, nhưng số viết cứng tách khỏi hằng sẽ sai nếu đổi hằng; SV chọn dựng từ hằng |
 
 CH-data-02 a và CH-data-03 a giữ nguyên dữ liệu của bản AI, không có dòng thay đổi.
 

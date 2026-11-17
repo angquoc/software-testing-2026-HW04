@@ -10,7 +10,13 @@ import { ProductDetailPage } from '../support/pages/ProductDetailPage';
 import cases from './data/add_from_detail.json';
 import { getCartRows, loginToken, newRows } from './lib/cartApi';
 import { checkCartState, prepareCart } from './lib/cartChecks';
-import { becomesTrueWithin, clickAddWithRetry, feedbackSeen, FEEDBACK_WINDOW_MS } from './lib/feedback';
+import {
+  becomesTrueWithin,
+  clickAddWithRetry,
+  feedbackSeen,
+  FEEDBACK_WINDOW_MS,
+  FIRST_CLICK_WINDOW_MS,
+} from './lib/feedback';
 import { productByKey } from './lib/products';
 import type { AddFromDetailCase } from './lib/types';
 import { USER_STATE } from './setup/globalSetup';
@@ -51,7 +57,7 @@ test.describe('FR-07 Cart P1: add to cart from the product detail page', () => {
       if (exp.outcome === 'added') {
         softExpect(
           firstClickResponded,
-          'First click on "Thêm vào giỏ hàng" gave no response within 1.5 s; clicked again (HW02 observation 2)',
+          `First click on "Thêm vào giỏ hàng" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`,
         ).toBe(true);
       }
 
