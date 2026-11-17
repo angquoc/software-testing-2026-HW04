@@ -21,7 +21,7 @@
       "thousandsSeparated": ["unitPrice", "lineTotal", "total"]
     },
     "oracle": "HW02 TC-CART-94; FR-21 (luôn dùng ký hiệu ₫ với định dạng phân cách hàng nghìn), FR07-R20",
-    "note": "Giỏ chốt ở D-08. Không quy định ký tự phân cách là dấu phẩy hay dấu chấm (đặc tả không nêu): Mỗi nhóm 3 chữ số tính từ phải có một ký tự không phải chữ số đứng trước"
+    "note": "Giỏ chốt ở D-08. Các chữ số phần nguyên được nhóm từ phải sang trái, mỗi nhóm tối đa 3 chữ số (chỉ nhóm ngoài cùng bên trái được ít hơn 3, ví dụ \"30\" trong 30,000,000), các nhóm ngăn cách bằng cùng một ký tự phân cách là dấu phẩy hoặc dấu chấm. Đặc tả không nêu ký tự phân cách nào nên chấp nhận cả hai, nhưng không trộn lẫn trong một số"
   },
   {
     "id": "TC-CART-95",

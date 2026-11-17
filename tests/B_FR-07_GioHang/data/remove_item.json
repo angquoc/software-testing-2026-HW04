@@ -26,11 +26,13 @@
         "total": 30000000
       },
       "afterReAdd": {
-        "rows": [{ "product": "samsungs24ultra", "quantity": 1 }]
+        "rowCount": 2,
+        "rows": [{ "product": "samsungs24ultra", "quantity": 1 }],
+        "total": 58000000
       }
     },
     "oracle": "HW02 TC-CART-08; FR07-R10, R11, R14",
-    "note": "Bước xác nhận của test case cần có dialog (R11). Không có K1 (D-01)"
+    "note": "Bước xác nhận của test case cần có dialog (R11). Không có K1 (D-01). afterReAdd: Giỏ iPhone 15 Pro Max và dòng Samsung mới, 30,000,000 + 28,000,000 = 58,000,000; rowCount, total bắt trường hợp thêm lại ghi đè mất dòng iPhone"
   },
   {
     "id": "TC-CART-09",

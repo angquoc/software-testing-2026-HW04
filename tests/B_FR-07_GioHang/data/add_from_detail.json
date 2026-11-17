@@ -13,7 +13,7 @@
       "k1": { "afterReload": true, "apiCart": true }
     },
     "oracle": "HW02 TC-CART-01; FR-06 (nút Thêm vào giỏ hàng có phản hồi trực quan), FR07-R01 đến R07, R14, R33; OUT15 (D-02); K1 (D-01)",
-    "note": "P1 LB = 1. Giữ giá trị sẵn có của ô Số lượng (GĐ-04)"
+    "note": "P1 LB = 1. Giữ giá trị sẵn có của ô Số lượng (GĐ-04). k1.apiCart: Giữa ngay trước và ngay sau thao tác thêm trên giao diện, giỏ API có đúng 1 dòng mới iPhone 15 Pro Max số lượng 1 (CH-data-01 a)"
   },
   {
     "id": "TC-CART-101",

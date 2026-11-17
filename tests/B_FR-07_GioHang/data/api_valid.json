@@ -26,10 +26,10 @@
     "id": "TC-CART-54",
     "title": "API does not show the test user's cart line to another user",
     "request": { "method": "POST", "auth": "user", "bodyOverride": {}, "bodyOmit": [] },
-    "thenGet": { "auth": "admin" },
-    "expected": { "adminCartNoRowWithId": 1 },
+    "thenGet": { "auth": "admin", "compare": "beforeAndAfter" },
+    "expected": { "adminCartNewRowCount": 0 },
     "oracle": "HW02 TC-CART-54; FR07-R28, R30; A16 (mỗi người dùng một giỏ)",
-    "note": "Cách so xem CH-data-04"
+    "note": "Đọc giỏ bằng token admin ngay trước và ngay sau POST của test@eshop.com; giỏ admin không có dòng mới (CH-data-04 b)"
   },
   {
     "id": "TC-CART-53",
