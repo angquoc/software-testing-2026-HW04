@@ -88,3 +88,21 @@ export interface ContinueShoppingCase {
   oracle: string;
   note?: string;
 }
+
+export interface CartGuiCase {
+  id: string;
+  title: string;
+  setup: { cart: string[] };
+  expected: {
+    columns?: string[];
+    rowCount?: number;
+    deleteButtonPerRow?: boolean;
+    totalLabel?: string;
+    currencySymbol?: string;
+    thousandsSeparated?: Array<'unitPrice' | 'lineTotal' | 'total'>;
+    navHighlight?: { link: string; ariaCurrent: string; orStyleDiffersFrom: 'home' };
+    breadcrumb?: { landmarkNameContains: string; orLinksInOrder: [string, string] };
+  };
+  oracle: string;
+  note?: string;
+}

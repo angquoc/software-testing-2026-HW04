@@ -1,5 +1,13 @@
 import type { Locator, Page } from '@playwright/test';
 
+export interface LinkStyle {
+  ariaCurrent: string | null;
+  color: string;
+  backgroundColor: string;
+  fontWeight: string;
+  textDecorationLine: string;
+}
+
 // Thanh điều hướng của Web (dùng chung cho mọi trang).
 export class NavBar {
   readonly cartLink: Locator;
@@ -33,6 +41,22 @@ export class NavBar {
         next && !next.matches('a, button') && !next.querySelector('a, button') ? (next.textContent ?? '') : '';
       const m = `${own} ${nextText}`.match(/\d+/);
       return m ? Number(m[0]) : null;
+    });
+  }
+
+  // aria-current và style tính toán của link "Giỏ hàng" (D-06). Đưa con trỏ vào vùng nội dung trước,
+  // để hiệu ứng hover của link (sau khi vừa bấm vào nó) không bị đọc nhầm thành highlight.
+  async cartLinkStyle(): Promise<LinkStyle> {
+    await this.page.getByRole('main').hover({ position: { x: 1, y: 1 } });
+    return this.cartLink.evaluate((link) => {
+      const s = getComputedStyle(link);
+      return {
+        ariaCurrent: link.getAttribute('aria-current'),
+        color: s.color,
+        backgroundColor: s.backgroundColor,
+        fontWeight: s.fontWeight,
+        textDecorationLine: s.textDecorationLine,
+      };
     });
   }
 }
