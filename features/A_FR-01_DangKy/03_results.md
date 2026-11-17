@@ -1,6 +1,6 @@
 # A: FR-01 Đăng ký tài khoản: Kết quả chạy chính thức
 
-- Bước: `[A-FR01][run]`. Bản nháp do AI tóm tắt từ `reports/A_FR-01_DangKy/<trình duyệt>/results.json` bằng `summarize_results.py` (2026-11-18 01:27 (+07:00)); sinh viên xác nhận phân loại
+- Bước: `[A-FR01][run]`. AI tóm tắt từ `reports/A_FR-01_DangKy/<trình duyệt>/results.json` bằng `summarize_results.py` (2026-11-18 01:27 (+07:00)); sinh viên xác nhận phân loại F-01 đến F-07 giống lượt chạy thử đã chốt, và xác nhận terminal có in dòng reset DB ở cả 3 trình duyệt (2026-11-18 01:30)
 - Người chạy: 23120061 (chạy trên máy của sinh viên)
 - Lệnh: `node tools/run.mjs A all`
 - Commit của script khi chạy: `4c93617` (`tests/` sạch lúc chạy; report tạo lúc 01:20 đến 01:23, sau commit này)
@@ -46,4 +46,4 @@ Không có fail loại "Khác biệt trình duyệt", "Script" hay "Flaky": Kế
 - Giới hạn quan sát của TC-REG-56, TC-REG-107 (annotation "Giới hạn quan sát" có trong report của cả 3 trình duyệt, CH-review-01 b): Thử làm hỏng M4 ở `02_review.md` cho thấy mật khẩu hợp lệ cũng nhận thông báo về mật khẩu (#42). Hai test này qua không chứng minh quy tắc mật khẩu được kiểm đúng; phải đọc cùng F-01, F-02.
 - TC-REG-01, TC-REG-108: Phần kiểm form đăng nhập không chạy (annotation "Bỏ qua: Không ở /login") vì trang không chuyển tới `/login`. Khi #42 được sửa, phần này có thể fail vì nhãn "Username" của trang Đăng nhập (CH-script-01 a: Ghi là lệch của trang Đăng nhập, FR-02).
 - Mọi test có nhập form có annotation "Xác nhận mật khẩu: Form không có ô Xác nhận mật khẩu (#43): Bỏ qua bước nhập" (CH-select-06 a).
-- Việc reset DB trước mỗi trình duyệt in ra terminal (`[FR-01 setup] Reset DB xong`), không nằm trong report; AI không thấy được terminal của lần chạy chính thức. Sinh viên xác nhận dòng này có ở cả 3 trình duyệt.
+- Việc reset DB trước mỗi trình duyệt in ra terminal (`[FR-01 setup] Reset DB xong`), không nằm trong report; AI không thấy được terminal của lần chạy chính thức. Sinh viên xác nhận terminal có in dòng này ở cả 3 trình duyệt.
