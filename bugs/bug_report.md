@@ -13,6 +13,7 @@
 - Severity chọn theo câu hỏi của nhóm (README repo nhóm mục 4.3), sinh viên chốt.
 - Ảnh Playwright chụp khi fail không dùng được làm bằng chứng cho FR-17: Ảnh chỉ có phần trên của trang nên không thấy dòng lỗi ở cuối bảng, và hộp thoại đã bị tự đóng trước khi chụp. Sinh viên tái hiện bằng tay trên Chrome và tự chụp, đồng thời kiểm mã còn sau khi tải lại trang.
 - FR-07: Một bình luận cho mỗi issue HW02, gom mọi test fail cùng lỗi gốc (một test có nhiều điểm fail có mặt ở nhiều bình luận, mỗi bình luận một điểm). AI mở xem từng ảnh Playwright (Chrome): Dùng 9 ảnh thấy được lỗi (bảng giỏ, nhãn, cột, giỏ trống); sinh viên tự chụp 11 ảnh cho chỗ ảnh Playwright không thể hiện được (lần bấm đầu, không có toast, annotation "Response" của test API, tái hiện TC-CART-100). Bản nháp ở `bugs/drafts/B_FR-07/`.
+- FR-01: Cả 7 test fail (F-01 đến F-07) trùng bug HW02, nên một bình luận cho mỗi issue HW02 (#42, #43, #50, #51, #52, #53), không tạo issue mới; F-01, F-02 (cùng lỗi gốc #42) gộp một bình luận. Mỗi bình luận có ảnh Chrome và Firefox (ảnh Edge giống hệt Chrome, cùng MD5). AI mở xem từng ảnh Playwright: Dùng ảnh thấy được lỗi cho #42, #43, #51, #52 (form và thông báo "Mật khẩu quá yếu!"); với #53 (không có thẻ `h1`) và #50 (`type="text"`), ảnh màn hình không thể hiện được lỗi nên dùng ảnh trang chi tiết test trong HTML report chính thức (AI chụp theo nhờ của sinh viên, report không đổi). Trước khi đăng, AI tải từng link ảnh GitHub về so MD5 với file trên máy (10 ảnh khớp). Sinh viên duyệt nội dung và cho phép đăng; AI đăng bằng `gh issue comment` (18/11/2026, 01:47). Bản nháp ở `bugs/drafts/A_FR-01/`.
 
 ## 2. Issue mới
 
@@ -49,6 +50,12 @@ Label của #118: `bug`, `severity: medium`, `platform: web`, `technique: BVA`, 
 | B-18 | #69 (HW02, High) | TC-CART-30 (F-14): API nhận sản phẩm không tồn tại | Chrome (test API, D17) | https://github.com/angquoc/software-testing-2026-HW02-group/issues/69#issuecomment-6952550335 |
 | B-19 | #67 (HW02, High) | TC-CART-31, 32, 33, 34, 102 (F-15 đến F-18, F-09): API nhận số lượng không hợp lệ | Chrome (test API, D17) | https://github.com/angquoc/software-testing-2026-HW02-group/issues/67#issuecomment-6952550989 |
 | B-20 | #68 (HW02, High) | TC-CART-51 (F-19): API lưu giá do client gửi | Chrome (test API, D17) | https://github.com/angquoc/software-testing-2026-HW02-group/issues/68#issuecomment-6952551697 |
+| B-22 | #42 (HW02, Critical) | TC-REG-01, 108 (F-01, F-02), `01_register_valid.spec.ts`: Mật khẩu hợp lệ bị báo "Mật khẩu quá yếu", không chuyển tới `/login` | Chrome, Edge, Firefox | https://github.com/angquoc/software-testing-2026-HW02-group/issues/42#issuecomment-6957550569 |
+| B-23 | #43 (HW02, High) | TC-REG-90 (F-03), `04_form_checklist.spec.ts`: Không có ô Xác nhận mật khẩu | Chrome, Edge, Firefox | https://github.com/angquoc/software-testing-2026-HW02-group/issues/43#issuecomment-6957551201 |
+| B-24 | #52 (HW02, Low) | TC-REG-92 (F-04), `04_form_checklist.spec.ts`: Nút "Đăng Ký" màu đỏ | Chrome, Edge, Firefox | https://github.com/angquoc/software-testing-2026-HW02-group/issues/52#issuecomment-6957551767 |
+| B-25 | #53 (HW02, Low) | TC-REG-93 (F-05), `04_form_checklist.spec.ts`: Không có thẻ `h1` | Chrome, Edge, Firefox | https://github.com/angquoc/software-testing-2026-HW02-group/issues/53#issuecomment-6957552467 |
+| B-26 | #51 (HW02, Low) | TC-REG-95 (F-06), `04_form_checklist.spec.ts`: Nhãn bắt buộc không có `*` | Chrome, Edge, Firefox | https://github.com/angquoc/software-testing-2026-HW02-group/issues/51#issuecomment-6957553137 |
+| B-27 | #50 (HW02, Medium) | TC-REG-96 (F-07), `04_form_checklist.spec.ts`: Ô Email `type="text"` | Chrome, Edge, Firefox | https://github.com/angquoc/software-testing-2026-HW02-group/issues/50#issuecomment-6957553767 |
 
 ## 4. Test fail không báo
 
@@ -56,9 +63,11 @@ Label của #118: `bug`, `severity: medium`, `platform: web`, `technique: BVA`, 
 |---|---|---|
 | (không có) | | FR-17: Cả 5 test fail (F-01 đến F-05) đều đã báo ở mục 2 hoặc 3 |
 | (không có) | | FR-07: Cả 21 test fail (F-01 đến F-21) đều đã báo ở mục 2 (#118) hoặc mục 3 (B-06 đến B-20). Issue HW02 #71, #81, #82 không có bình luận HW04 vì TC-CART-04 đến 06, 92, 93 không được tự động hóa (`features/B_FR-07_GioHang/01_selected_tc.md` mục 4, D-05, D-07) |
+| (không có) | | FR-01: Cả 7 test fail (F-01 đến F-07) đều đã báo ở mục 3 (B-22 đến B-27). Issue HW02 #44 đến #49 (API) không có bình luận HW04 vì test case API không được tự động hóa (chỉ test qua giao diện web); #54 (ngôn ngữ trang, TC-REG-91) không có bình luận vì TC-REG-91 cần người đọc đánh giá (`features/A_FR-01_DangKy/01_selected_tc.md` mục 4) |
 
 ## 5. Ảnh danh sách issue
 
 - `bugs/screenshots/issues_list_hw04.png`: Bộ lọc `is:issue label:"hw: HW04" author:angquoc` (chụp lại 17/11/2026, 22:56, thay ảnh lúc 9:54): 3 issue mới #118 (FR-07), #115, #114 (FR-17) với đủ label
 - `bugs/screenshots/issues_list_C-FR17_commented.png`: Bộ lọc `is:issue 55 56 57 state:open` (17/11/2026, 9:56): 3 issue HW02 đã bình luận, mỗi issue có 1 bình luận
 - `bugs/screenshots/issues_list_B-FR07_commented.png`: Bộ lọc `is:issue 67 68 69 70 72 73 74 75 76 77 78 79 80 83 84` (17/11/2026, 22:57): 15 issue HW02 của FR-07 đã bình luận HW04, mỗi issue có 1 bình luận, label giữ nguyên như HW02
+- `bugs/screenshots/issues_list_A-FR01_commented.png`: Bộ lọc `is:issue 42 43 50 51 52 53 state:open` (18/11/2026, 1:48): 6 issue HW02 của FR-01 đã bình luận HW04 (Open 6, Closed 0), mỗi issue có 1 bình luận, label giữ nguyên như HW02 (AI cũng kiểm bằng `gh` lúc 01:48: Đủ 6 bình luận có chữ "HW04")

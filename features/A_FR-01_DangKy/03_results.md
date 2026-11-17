@@ -23,17 +23,17 @@ Test qua trên cả 3 trình duyệt (7): TC-REG-30, TC-REG-32, TC-REG-49 (ô b�
 
 ## 2. Test fail
 
-7 test fail giống hệt nhau trên cả 3 trình duyệt, ở cùng assertion, và khớp với kết quả chạy thử T1 đến T3 cùng phân loại sinh viên đã chốt ở `02_review.md` mục 2 (2026-11-18 01:14). Cả 7 trùng bug đã có issue từ HW02 (`06_results.md`), nên ở bước `bugs` sẽ bình luận vào issue cũ (WORKFLOW mục 6).
+7 test fail giống hệt nhau trên cả 3 trình duyệt, ở cùng assertion, và khớp với kết quả chạy thử T1 đến T3 cùng phân loại sinh viên đã chốt ở `02_review.md` mục 2 (2026-11-18 01:14). Cả 7 trùng bug đã có issue từ HW02 (`06_results.md`), nên ở bước `bugs` đã bình luận vào issue cũ (WORKFLOW mục 6; `bugs/bug_report.md` mục 3, B-22 đến B-27, 2026-11-18 01:47).
 
 | Mã | Test case | Trình duyệt | Lỗi (dòng đầu) | Phân loại | Bằng chứng | Issue |
 |---|---|---|---|---|---|---|
-| F-01 | TC-REG-01 | Chrome, Edge, Firefox | "chuyển tới /login": Received `http://localhost:5173/register`; "số request POST /api/register": 0 (mong đợi 1) | Bug | FR-01: Mật khẩu `Abcdef1!` đạt yêu cầu mạnh (8 ký tự, hoa, thường, số, `!`); sau khi đăng ký thành công phải chuyển tới trang Đăng nhập. Trang chặn ngay, không gửi request | #42 |
-| F-02 | TC-REG-108 | Chrome, Edge, Firefox | Như F-01, mật khẩu 9 ký tự `Abcdefg1!` | Bug | Như F-01 (FR01-R06, R13; biên LB+1) | #42 |
-| F-03 | TC-REG-90 | Chrome, Edge, Firefox | "số ô đi cùng nhãn "Xác nhận mật khẩu"": Expected 1, Received 0 | Bug | FR-01: Phải có trường Xác nhận mật khẩu | #43 |
-| F-04 | TC-REG-92 | Chrome, Edge, Firefox | "hue ≥ 200°": `rgb(239, 68, 68)` = hue 0,0°, S 84,2%, L 60,2% | Bug | FR-21: Nút hành động tích cực (Submit) dùng màu xanh dương; nút có nền đỏ | #52 |
-| F-05 | TC-REG-93 | Chrome, Edge, Firefox | "số thẻ h1 trên trang": Expected 1, Received 0 | Bug | FR-21: Mỗi trang có đúng 1 thẻ `<h1>` | #53 |
-| F-06 | TC-REG-95 | Chrome, Edge, Firefox | 3 lỗi soft: Nhãn "Họ Tên", "Email", "Mật khẩu" đều không có `*` trong nhãn hay ngay cạnh nhãn | Bug | FR-22: Trường bắt buộc phải có ký hiệu `*` bên cạnh nhãn | #51 |
-| F-07 | TC-REG-96 | Chrome, Edge, Firefox | "ô "Email" có type="email"": Received `"text"` (ô Mật khẩu đạt `type="password"`) | Bug | FR-22: Trường Email phải dùng `type="email"` | #50 |
+| F-01 | TC-REG-01 | Chrome, Edge, Firefox | "chuyển tới /login": Received `http://localhost:5173/register`; "số request POST /api/register": 0 (mong đợi 1) | Bug | FR-01: Mật khẩu `Abcdef1!` đạt yêu cầu mạnh (8 ký tự, hoa, thường, số, `!`); sau khi đăng ký thành công phải chuyển tới trang Đăng nhập. Trang chặn ngay, không gửi request | #42, bình luận HW04 B-22: https://github.com/angquoc/software-testing-2026-HW02-group/issues/42#issuecomment-6957550569 |
+| F-02 | TC-REG-108 | Chrome, Edge, Firefox | Như F-01, mật khẩu 9 ký tự `Abcdefg1!` | Bug | Như F-01 (FR01-R06, R13; biên LB+1) | #42, bình luận HW04 B-22: https://github.com/angquoc/software-testing-2026-HW02-group/issues/42#issuecomment-6957550569 |
+| F-03 | TC-REG-90 | Chrome, Edge, Firefox | "số ô đi cùng nhãn "Xác nhận mật khẩu"": Expected 1, Received 0 | Bug | FR-01: Phải có trường Xác nhận mật khẩu | #43, bình luận HW04 B-23: https://github.com/angquoc/software-testing-2026-HW02-group/issues/43#issuecomment-6957551201 |
+| F-04 | TC-REG-92 | Chrome, Edge, Firefox | "hue ≥ 200°": `rgb(239, 68, 68)` = hue 0,0°, S 84,2%, L 60,2% | Bug | FR-21: Nút hành động tích cực (Submit) dùng màu xanh dương; nút có nền đỏ | #52, bình luận HW04 B-24: https://github.com/angquoc/software-testing-2026-HW02-group/issues/52#issuecomment-6957551767 |
+| F-05 | TC-REG-93 | Chrome, Edge, Firefox | "số thẻ h1 trên trang": Expected 1, Received 0 | Bug | FR-21: Mỗi trang có đúng 1 thẻ `<h1>` | #53, bình luận HW04 B-25: https://github.com/angquoc/software-testing-2026-HW02-group/issues/53#issuecomment-6957552467 |
+| F-06 | TC-REG-95 | Chrome, Edge, Firefox | 3 lỗi soft: Nhãn "Họ Tên", "Email", "Mật khẩu" đều không có `*` trong nhãn hay ngay cạnh nhãn | Bug | FR-22: Trường bắt buộc phải có ký hiệu `*` bên cạnh nhãn | #51, bình luận HW04 B-26: https://github.com/angquoc/software-testing-2026-HW02-group/issues/51#issuecomment-6957553137 |
+| F-07 | TC-REG-96 | Chrome, Edge, Firefox | "ô "Email" có type="email"": Received `"text"` (ô Mật khẩu đạt `type="password"`) | Bug | FR-22: Trường Email phải dùng `type="email"` | #50, bình luận HW04 B-27: https://github.com/angquoc/software-testing-2026-HW02-group/issues/50#issuecomment-6957553767 |
 
 Không có fail loại "Khác biệt trình duyệt", "Script" hay "Flaky": Kết quả giống nhau trên 3 trình duyệt, khớp lượt chạy thử, không có lỗi selector hay hết thời gian.
 
