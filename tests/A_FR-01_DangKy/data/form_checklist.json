@@ -30,9 +30,9 @@
     "title": "marks required field labels with an asterisk",
     "check": "requiredMarker",
     "target": { "labels": ["Họ Tên", "Email", "Mật khẩu"] },
-    "expected": { "marker": "*" },
+    "expected": { "marker": "*", "markerPlacement": "labelOrAdjacent" },
     "oracle": "HW02 TC-REG-95; SRS FR-22 (FR01-R18): Tất cả trường bắt buộc phải có ký hiệu * bên cạnh nhãn; FR-01: Họ Tên, Email, Mật khẩu là bắt buộc",
-    "note": "Chỉ 3 nhãn đang có trên giao diện; nhãn Xác nhận mật khẩu không kiểm ở đây vì ô thiếu (#43, đo ở TC-REG-90), theo 01_selected_tc.md mục 6. HW02: Fail, issue #51"
+    "note": "markerPlacement labelOrAdjacent: `*` nằm trong nhãn (kể cả phần tử con) hoặc trong phần tử đứng ngay cạnh nhãn, cùng phần tử cha (CH-data-01 b). Chỉ 3 nhãn đang có trên giao diện; nhãn Xác nhận mật khẩu không kiểm ở đây vì ô thiếu (#43, đo ở TC-REG-90), theo 01_selected_tc.md mục 6. HW02: Fail, issue #51"
   },
   {
     "id": "TC-REG-96",
