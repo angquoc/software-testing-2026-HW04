@@ -27,6 +27,8 @@ OUT_DIR = os.path.join(HW, "HW04_submit")
 PART = 19922944  # 19 MB, giống HW02, HW03
 # File có trong bản nộp nhưng không đưa lên repo public (.gitignore chặn)
 EXTRA = ["prompt_log.md", "prompt_log.pdf"]
+# File có trên repo nhưng không cần trong bản nộp (chỉ phục vụ git)
+SKIP = {".gitignore"}
 
 
 def main():
@@ -37,7 +39,7 @@ def main():
     with open(os.path.join(HW, "git_log.txt"), "wb") as f:
         f.write(log)
     files = subprocess.run(["git", "ls-files", "-z"], cwd=HW, capture_output=True, check=True).stdout
-    files = [p for p in files.decode("utf-8").split("\0") if p] + ["git_log.txt"] + EXTRA
+    files = [p for p in files.decode("utf-8").split("\0") if p and p not in SKIP] + ["git_log.txt"] + EXTRA
     os.makedirs(OUT_DIR, exist_ok=True)
     for old in os.listdir(OUT_DIR):
         if old.startswith("23120061_HW04_AI_Automation_"):
