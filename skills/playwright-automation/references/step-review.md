@@ -13,7 +13,7 @@ Bước này là của **sinh viên**. AI hỗ trợ khi được nhờ: Chạy 
 
 ## Vòng chạy thử
 
-1. Chạy thử từng trình duyệt: `npx playwright test tests/<feature>/ --project=chrome` (rồi `edge`, `firefox`). Report thử ở `playwright-report/`.
+1. Chạy thử từng trình duyệt: `npx playwright test tests/<feature>/ --project=chrome` (rồi `edge`, `firefox`). Report thử ở `playwright-report/`. Không thêm `--reporter=...` trên dòng lệnh (thay mất reporter JSON của config, không còn `results.json` để phân loại); muốn mỗi trình duyệt một report thử thì đặt `RUN_REPORT_DIR=playwright-report/trial-<trình duyệt>` và `RUN_RESULTS_DIR` tương ứng (ngoài `reports/`).
 2. Mỗi test fail: Đọc thông báo lỗi, ảnh, trace (`npx playwright show-trace <trace.zip>`). Phân loại:
    - **Lỗi script**: Selector không tìm thấy / khớp nhiều phần tử, chờ sai, dữ liệu sai, assertion sai so với đặc tả.
    - **Hệ thống sai đặc tả**: Assertion đúng với đặc tả mà hệ thống làm khác. **Giữ nguyên test**, ghi để báo bug ở bước `bugs`.

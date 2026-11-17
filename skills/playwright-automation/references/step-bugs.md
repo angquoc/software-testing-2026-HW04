@@ -41,7 +41,7 @@ gh issue create -R <owner>/<repo> --title "<tiêu đề>" --body-file <file> \
 gh issue comment <số> -R <owner>/<repo> --body-file <file>
 ```
 
-Chèn ảnh: `gh` không tải ảnh lên được. Kéo nhiều ảnh cùng lúc vào **một ô bình luận** trên GitHub (không gửi), chép các link GitHub sinh ra, ghép với tên file theo **thứ tự kéo thả** đã ghi sẵn; chèn vào issue bằng `gh issue edit <số> --body-file <file>` (hoặc vào bình luận bằng cách sửa bình luận trên web), mỗi ảnh có tên file in đậm ngay trên. Kiểm lại từng ảnh sau khi chèn.
+Chèn ảnh: `gh` không tải ảnh lên được. Kéo nhiều ảnh cùng lúc vào **một ô bình luận** trên GitHub (không gửi), chép các link GitHub sinh ra, ghép với tên file theo **thứ tự kéo thả** đã ghi sẵn; chèn vào issue bằng `gh issue edit <số> --body-file <file>` (hoặc vào bình luận bằng cách sửa bình luận trên web), mỗi ảnh có tên file in đậm ngay trên. Kiểm lại từng ảnh sau khi chèn. Link ảnh vừa kéo thả trả 404 khi chưa đăng; muốn kiểm ghép đúng file trước khi đăng thì tải bằng `curl -sL -H "Authorization: token $(gh auth token)" <link> -o <file tạm>` (không in token ra) rồi so MD5 với file trên máy. Ảnh chụp màn hình HiDPI hiện bằng nửa kích thước gốc trong thẻ `<img>` GitHub sinh ra; không phải lỗi.
 
 ## Pha 4: Bug report
 
