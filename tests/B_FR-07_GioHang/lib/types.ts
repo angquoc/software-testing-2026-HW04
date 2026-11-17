@@ -106,3 +106,29 @@ export interface CartGuiCase {
   oracle: string;
   note?: string;
 }
+
+// Test API (P6, P7): Schema ở ai_raw/data.md mục "Test API".
+export type ApiAuth = 'user' | 'admin' | 'none' | 'userTampered';
+
+export interface ApiRequestSpec {
+  method: 'POST' | 'GET';
+  auth: ApiAuth;
+  bodyOverride?: Record<string, unknown>;
+  bodyOmit?: string[];
+}
+
+export interface CartApiBase {
+  baseBody: Record<string, unknown>;
+  oracle: string;
+}
+
+export interface ApiInvalidCase {
+  id: string;
+  title: string;
+  precheck?: { productMissing: number };
+  setupPost?: boolean;
+  request: ApiRequestSpec;
+  expected: { success: boolean; newRowCount?: number; cartData?: boolean };
+  oracle: string;
+  note?: string;
+}
