@@ -1,0 +1,25 @@
+# Snapshot 2026-11-17T06:58:04.674Z | chrome 157.0.8103.52
+# URL: http://localhost:5173/cart | Title: frontend-web | Setup: C:/Users/Lenovo/AppData/Local/Temp/claude/1ee42ba0f2ad5af7/8897e5a5-2acf-4101-982a-c80750ce5708/scratchpad/snap/login.mjs
+
+## ARIA
+- banner:
+  - link "EShop":
+    - /url: /
+  - navigation:
+    - link "Giỏ hàng":
+      - /url: /cart
+    - link "Chào, Test User":
+      - /url: /profile
+    - button "Thoát"
+- main:
+  - heading "Giỏ hàng của bạn đang trống" [level=2]
+  - link "Tiếp tục mua sắm":
+    - /url: /
+- contentinfo: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+
+## Phần tử tương tác
+a href="/" text="EShop"
+a href="/cart" text="Giỏ hàng"
+a href="/profile" text="Chào, Test User"
+button  text="Thoát"
+a href="/" text="Tiếp tục mua sắm"

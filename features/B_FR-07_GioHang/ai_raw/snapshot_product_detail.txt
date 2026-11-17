@@ -1,0 +1,30 @@
+# Snapshot 2026-11-17T06:57:25.106Z | chrome 157.0.8103.52
+# URL: http://localhost:5173/product/1 | Title: frontend-web | Setup: C:/Users/Lenovo/AppData/Local/Temp/claude/1ee42ba0f2ad5af7/8897e5a5-2acf-4101-982a-c80750ce5708/scratchpad/snap/login.mjs
+
+## ARIA
+- banner:
+  - link "EShop":
+    - /url: /
+  - navigation:
+    - link "Giỏ hàng":
+      - /url: /cart
+    - link "Chào, Test User":
+      - /url: /profile
+    - button "Thoát"
+- main:
+  - img "iPhone 15 Pro Max"
+  - heading "iPhone 15 Pro Max" [level=1]
+  - paragraph: 30,000,000 ₫
+  - paragraph: Điện thoại cao cấp của Apple
+  - text: "Số lượng:"
+  - spinbutton: "1"
+  - button "Thêm vào giỏ hàng"
+- contentinfo: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+
+## Phần tử tương tác
+a href="/" text="EShop"
+a href="/cart" text="Giỏ hàng"
+a href="/profile" text="Chào, Test User"
+button  text="Thoát"
+input type="number" text="1"
+button  text="Thêm vào giỏ hàng"

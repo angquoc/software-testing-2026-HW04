@@ -1,0 +1,17 @@
+// Mẫu so số tiền hiển thị với số nguyên trong dữ liệu (quyết định của SV: Số tiền ghi bằng số nguyên).
+// Không kèm ký tự phân cách: Chữ số đúng thứ tự, giữa hai chữ số có thể có một ký tự phân cách; hai đầu không dính chữ số.
+// Có số phân cách (TC-CART-104, 105): Nhóm 3 chữ số từ phải sang, cùng một ký tự "," hoặc "." giữa các nhóm.
+export function moneyPattern(value: number, thousandSeparators?: number): RegExp {
+  const digits = String(value);
+  if (thousandSeparators === undefined) {
+    return new RegExp(`(^|\\D)${digits.split('').join('[.,\\s\\u00a0]?')}(\\D|$)`);
+  }
+  const groups: string[] = [];
+  for (let end = digits.length; end > 0; end -= 3) groups.unshift(digits.slice(Math.max(0, end - 3), end));
+  if (groups.length - 1 !== thousandSeparators) {
+    throw new Error(`Test data error: ${value} has ${groups.length - 1} thousands separators, data says ${thousandSeparators}`);
+  }
+  const [first, ...rest] = groups;
+  const tail = rest.map((g, k) => (k === 0 ? `([.,])${g}` : `\\2${g}`)).join('');
+  return new RegExp(`(^|\\D)${first}${tail}(\\D|$)`);
+}

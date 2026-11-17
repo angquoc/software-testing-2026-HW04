@@ -1,0 +1,53 @@
+# Snapshot 2026-11-17T06:58:06.464Z | chrome 157.0.8103.52
+# URL: http://localhost:5173/cart | Title: frontend-web | Setup: C:/Users/Lenovo/AppData/Local/Temp/claude/1ee42ba0f2ad5af7/8897e5a5-2acf-4101-982a-c80750ce5708/scratchpad/snap/cart_items.mjs
+
+## ARIA
+- banner:
+  - link "EShop":
+    - /url: /
+  - navigation:
+    - link "Giỏ hàng":
+      - /url: /cart
+    - link "Chào, Test User":
+      - /url: /profile
+    - button "Thoát"
+- main:
+  - heading "Giỏ Hàng" [level=2]
+  - table:
+    - rowgroup:
+      - row "Sản phẩm Giá Số lượng Thành tiền Thao tác":
+        - columnheader "Sản phẩm"
+        - columnheader "Giá"
+        - columnheader "Số lượng"
+        - columnheader "Thành tiền"
+        - columnheader "Thao tác"
+    - rowgroup:
+      - row "iPhone 15 Pro Max 30,000,000 ₫ 1 30,000,000 ₫ Xóa":
+        - cell "iPhone 15 Pro Max"
+        - cell "30,000,000 ₫"
+        - cell "1"
+        - cell "30,000,000 ₫"
+        - cell "Xóa":
+          - button "Xóa"
+      - row "Samsung Galaxy S24 Ultra 28,000,000 ₫ 1 28,000,000 ₫ Xóa":
+        - cell "Samsung Galaxy S24 Ultra"
+        - cell "28,000,000 ₫"
+        - cell "1"
+        - cell "28,000,000 ₫"
+        - cell "Xóa":
+          - button "Xóa"
+  - text: "Tổng tạm tính: 58,000,000 ₫"
+  - link "← Mua tiếp":
+    - /url: /
+  - button "Tiến hành thanh toán"
+- contentinfo: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+
+## Phần tử tương tác
+a href="/" text="EShop"
+a href="/cart" text="Giỏ hàng"
+a href="/profile" text="Chào, Test User"
+button  text="Thoát"
+button  text="Xóa"
+button  text="Xóa"
+a href="/" text="← Mua tiếp"
+button  text="Tiến hành thanh toán"
