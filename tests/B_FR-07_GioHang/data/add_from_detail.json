@@ -1,0 +1,75 @@
+[
+  {
+    "id": "TC-CART-01",
+    "title": "adds a new product to an empty cart from the detail page keeping quantity 1",
+    "setup": { "cart": [] },
+    "input": { "product": "iphone15promax", "quantity": 1, "fillQuantity": false },
+    "expected": {
+      "outcome": "added",
+      "feedback": "toastOrBadge",
+      "rowCount": 1,
+      "rows": [{ "product": "iphone15promax", "unitPrice": 30000000, "quantity": 1, "lineTotal": 30000000 }],
+      "total": 30000000,
+      "k1": { "afterReload": true, "apiCart": true }
+    },
+    "oracle": "HW02 TC-CART-01; FR-06 (nút Thêm vào giỏ hàng có phản hồi trực quan), FR07-R01 đến R07, R14, R33; OUT15 (D-02); K1 (D-01)",
+    "note": "P1 LB = 1. Giữ giá trị sẵn có của ô Số lượng (GĐ-04)"
+  },
+  {
+    "id": "TC-CART-101",
+    "title": "adds quantity 2 from the detail page",
+    "setup": { "cart": [] },
+    "input": { "product": "iphone15promax", "quantity": 2, "fillQuantity": true },
+    "expected": {
+      "outcome": "added",
+      "feedback": "toastOrBadge",
+      "rowCount": 1,
+      "rows": [{ "product": "iphone15promax", "quantity": 2, "lineTotal": 60000000 }],
+      "total": 60000000
+    },
+    "oracle": "HW02 TC-CART-101; FR07-R14, R27, R33; OUT15 (D-02)",
+    "note": "P1 LB+1 = 2. 2 x 30,000,000 = 60,000,000"
+  },
+  {
+    "id": "TC-CART-104",
+    "title": "shows line total and cart total just below one billion",
+    "setup": { "cart": [] },
+    "input": { "product": "keychronq1", "quantity": 249, "fillQuantity": true },
+    "expected": {
+      "outcome": "added",
+      "rows": [{ "product": "keychronq1", "lineTotal": 996000000 }],
+      "total": 996000000,
+      "thousandSeparators": 2
+    },
+    "oracle": "HW02 TC-CART-104; FR07-R14, FR-21 (định dạng phân cách hàng nghìn)",
+    "note": "P4 LB-1 gần nhất tạo được: 249 x 4,000,000 = 996,000,000 (9 chữ số, 2 dấu phân cách). thousandSeparators xem CH-data-02"
+  },
+  {
+    "id": "TC-CART-105",
+    "title": "shows line total and cart total of exactly one billion",
+    "setup": { "cart": [] },
+    "input": { "product": "keychronq1", "quantity": 250, "fillQuantity": true },
+    "expected": {
+      "outcome": "added",
+      "rows": [{ "product": "keychronq1", "lineTotal": 1000000000 }],
+      "total": 1000000000,
+      "thousandSeparators": 3
+    },
+    "oracle": "HW02 TC-CART-105; FR07-R14, FR-21 (định dạng phân cách hàng nghìn)",
+    "note": "P4 LB: 250 x 4,000,000 = 1,000,000,000 (10 chữ số, 3 dấu phân cách). thousandSeparators xem CH-data-02"
+  },
+  {
+    "id": "TC-CART-100",
+    "title": "rejects quantity 0 on the detail page",
+    "setup": { "cart": [] },
+    "input": { "product": "iphone15promax", "quantity": 0, "fillQuantity": true },
+    "expected": {
+      "outcome": "rejected",
+      "feedback": "noSuccess",
+      "badge": "unchanged",
+      "rowCount": 0
+    },
+    "oracle": "HW02 TC-CART-100 (ERR2); FR-06 (Số lượng chỉ nhận số nguyên dương, tối thiểu là 1), FR07-R27; A31 (D-02)",
+    "note": "P1 LB-1 = 0. Giỏ vẫn trống: Không có dòng nào. GH3: Kết quả phản ánh cả trình duyệt"
+  }
+]

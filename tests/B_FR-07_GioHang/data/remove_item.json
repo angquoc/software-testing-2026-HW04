@@ -1,0 +1,47 @@
+[
+  {
+    "id": "TC-CART-07",
+    "title": "keeps the line when the delete confirmation is cancelled",
+    "setup": { "cart": ["iphone15promax", "samsungs24ultra"] },
+    "input": { "remove": "samsungs24ultra", "dialogChoice": "dismiss" },
+    "expected": {
+      "dialog": "shown",
+      "rowPresentWhileDialogOpen": "samsungs24ultra",
+      "rowCount": 2,
+      "total": 58000000
+    },
+    "oracle": "HW02 TC-CART-07; FR07-R10, R11 (nút Xóa sản phẩm phải có dialog xác nhận), FR-24; A10",
+    "note": "rowCount, total là trạng thái sau khi hủy. Không có K1 (D-01). Hệ quả của #72 xem CH-data-03"
+  },
+  {
+    "id": "TC-CART-08",
+    "title": "removes one line of two after confirming and re-adds it as a new line",
+    "setup": { "cart": ["iphone15promax", "samsungs24ultra"] },
+    "input": { "remove": "samsungs24ultra", "dialogChoice": "accept", "thenAddFromHome": "samsungs24ultra" },
+    "expected": {
+      "dialog": "shown",
+      "afterRemove": {
+        "rowCount": 1,
+        "rows": [{ "product": "iphone15promax" }],
+        "total": 30000000
+      },
+      "afterReAdd": {
+        "rows": [{ "product": "samsungs24ultra", "quantity": 1 }]
+      }
+    },
+    "oracle": "HW02 TC-CART-08; FR07-R10, R11, R14",
+    "note": "Bước xác nhận của test case cần có dialog (R11). Không có K1 (D-01)"
+  },
+  {
+    "id": "TC-CART-09",
+    "title": "shows the empty cart state right after removing the last line",
+    "setup": { "cart": ["iphone15promax"] },
+    "input": { "remove": "iphone15promax", "dialogChoice": "accept" },
+    "expected": {
+      "dialog": "shown",
+      "emptyState": { "illustration": true, "messageContains": "trống", "table": false }
+    },
+    "oracle": "HW02 TC-CART-09; FR07-R11, R15, R16 (giỏ trống có hình minh họa và thông báo rõ ràng); OUT9 (D-03); A11",
+    "note": "Trạng thái giỏ trống phải hiện ngay sau khi xóa, không tải lại trang (A11)"
+  }
+]

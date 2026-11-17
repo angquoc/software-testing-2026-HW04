@@ -1,0 +1,47 @@
+[
+  {
+    "id": "TC-CART-50",
+    "title": "API adds the base product and returns it in the cart",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": {}, "bodyOmit": [] },
+    "expected": {
+      "success": true,
+      "newRowCount": 1,
+      "newRows": [{ "id": 1, "quantity": 1 }]
+    },
+    "oracle": "HW02 TC-CART-50; FR07-R28, R29; api_specification.md mục 4.1, 4.2",
+    "note": "Chỉ phần API; phần trang Giỏ hàng không tự động hóa được (01_selected_tc.md mục 4)"
+  },
+  {
+    "id": "TC-CART-51",
+    "title": "API keeps the catalogue price when the client sends a different price",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": { "price": 1 }, "bodyOmit": [] },
+    "expected": {
+      "noNewRowWithPrice": 1,
+      "ifAdded": { "price": 30000000 }
+    },
+    "oracle": "HW02 TC-CART-51; FR07-R29; A24 (giỏ dùng giá trong CSDL)",
+    "note": "Đơn giá trong CSDL của iPhone 15 Pro Max theo products.json"
+  },
+  {
+    "id": "TC-CART-54",
+    "title": "API does not show the test user's cart line to another user",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": {}, "bodyOmit": [] },
+    "thenGet": { "auth": "admin" },
+    "expected": { "adminCartNoRowWithId": 1 },
+    "oracle": "HW02 TC-CART-54; FR07-R28, R30; A16 (mỗi người dùng một giỏ)",
+    "note": "Cách so xem CH-data-04"
+  },
+  {
+    "id": "TC-CART-53",
+    "title": "API stores a product name with SQL characters without corrupting the cart",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": { "name": "X' OR '1'='1" }, "bodyOmit": [] },
+    "expected": {
+      "noServerError": true,
+      "newRowCount": 1,
+      "newRows": [{ "id": 1, "quantity": 1 }],
+      "oldRowsUnchanged": true
+    },
+    "oracle": "HW02 TC-CART-53; FR07-R32 (Parameterized Query), quan sát gián tiếp (GH4)",
+    "note": "Chạy cuối cùng (GĐ-08); HW02 dặn reset dữ liệu ngay sau (⏳ D10)"
+  }
+]

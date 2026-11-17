@@ -1,0 +1,4 @@
+{
+  "baseBody": { "id": 1, "name": "iPhone 15 Pro Max", "price": 30000000, "quantity": 1 },
+  "oracle": "HW02 05_final_tc.md mục 1.4 (Body API cơ sở); api_specification.md mục 4.2 (các trường id, name, price, quantity)"
+}

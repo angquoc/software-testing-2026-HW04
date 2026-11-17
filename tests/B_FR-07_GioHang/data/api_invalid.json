@@ -1,0 +1,66 @@
+[
+  {
+    "id": "TC-CART-30",
+    "title": "API rejects adding a product that does not exist",
+    "precheck": { "productMissing": 9999 },
+    "request": { "method": "POST", "auth": "user", "bodyOverride": { "id": 9999 }, "bodyOmit": [] },
+    "expected": { "success": false, "newRowCount": 0 },
+    "oracle": "HW02 TC-CART-30 (ERR3, KQ-KH-API); FR07-R29; A24, A25",
+    "note": "precheck: GET /api/products/9999 không trả về sản phẩm (bước 1 của test case)"
+  },
+  {
+    "id": "TC-CART-31",
+    "title": "API rejects quantity 0",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": { "quantity": 0 }, "bodyOmit": [] },
+    "expected": { "success": false, "newRowCount": 0 },
+    "oracle": "HW02 TC-CART-31 (ERR2, KQ-KH-API); FR-06 (số nguyên dương, tối thiểu là 1), FR07-R27, R29",
+    "note": "P1 LB-1 qua API"
+  },
+  {
+    "id": "TC-CART-32",
+    "title": "API rejects a decimal quantity",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": { "quantity": 1.5 }, "bodyOmit": [] },
+    "expected": { "success": false, "newRowCount": 0 },
+    "oracle": "HW02 TC-CART-32 (ERR2, KQ-KH-API); FR-06 (số nguyên), FR07-R27, R29"
+  },
+  {
+    "id": "TC-CART-33",
+    "title": "API rejects a non-numeric quantity",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": { "quantity": "abc" }, "bodyOmit": [] },
+    "expected": { "success": false, "newRowCount": 0 },
+    "oracle": "HW02 TC-CART-33 (ERR2, KQ-KH-API); FR07-R29",
+    "note": "quantity là chuỗi JSON \"abc\""
+  },
+  {
+    "id": "TC-CART-34",
+    "title": "API rejects a body without quantity",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": {}, "bodyOmit": ["quantity"] },
+    "expected": { "success": false, "newRowCount": 0 },
+    "oracle": "HW02 TC-CART-34 (ERR3, KQ-KH-API); FR07-R29; A25"
+  },
+  {
+    "id": "TC-CART-35",
+    "title": "API rejects adding to cart without an Authorization header",
+    "request": { "method": "POST", "auth": "none", "bodyOverride": {}, "bodyOmit": [] },
+    "expected": { "success": false, "newRowCount": 0 },
+    "oracle": "HW02 TC-CART-35 (ERR1, KQ-KH-API); FR07-R30; api_specification.md mục 4 (Yêu cầu Header Authorization: Bearer <token>)",
+    "note": "Giỏ trước và sau đọc bằng token hợp lệ"
+  },
+  {
+    "id": "TC-CART-102",
+    "title": "API rejects a negative quantity",
+    "request": { "method": "POST", "auth": "user", "bodyOverride": { "quantity": -1 }, "bodyOmit": [] },
+    "expected": { "success": false, "newRowCount": 0 },
+    "oracle": "HW02 TC-CART-102 (ERR2, KQ-KH-API); FR-06 (số nguyên dương), FR07-R29",
+    "note": "Số âm qua API"
+  },
+  {
+    "id": "TC-CART-36",
+    "title": "API rejects viewing the cart with a tampered token",
+    "setupPost": true,
+    "request": { "method": "GET", "auth": "userTampered" },
+    "expected": { "success": false, "cartData": false },
+    "oracle": "HW02 TC-CART-36 (ERR1); FR07-R28, R30; api_specification.md mục 4",
+    "note": "setupPost: Bước 1 của test case (POST body cơ sở bằng token hợp lệ). Cách sửa token: GĐ-05"
+  }
+]

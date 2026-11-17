@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC-CART-90",
+    "title": "shows all required columns, a delete button per line and the Tổng cộng label",
+    "setup": { "cart": ["iphone15promax", "samsungs24ultra"] },
+    "expected": {
+      "columns": ["Sản phẩm", "Đơn giá", "Số lượng", "Thành tiền", "Thao tác"],
+      "rowCount": 2,
+      "deleteButtonPerRow": true,
+      "totalLabel": "Tổng cộng"
+    },
+    "oracle": "HW02 TC-CART-90; FR07-R01 đến R03, R06, R07 (các cột), R10 (nút xóa), R14 (nhãn chính xác \"Tổng cộng\", không phải \"Tổng tạm tính\")",
+    "note": "Giỏ chốt ở D-08"
+  },
+  {
+    "id": "TC-CART-94",
+    "title": "formats unit price, line total and cart total with the dong sign and thousands separators",
+    "setup": { "cart": ["iphone15promax", "samsungs24ultra"] },
+    "expected": {
+      "currencySymbol": "₫",
+      "thousandsSeparated": ["unitPrice", "lineTotal", "total"]
+    },
+    "oracle": "HW02 TC-CART-94; FR-21 (luôn dùng ký hiệu ₫ với định dạng phân cách hàng nghìn), FR07-R20",
+    "note": "Giỏ chốt ở D-08. Không quy định ký tự phân cách là dấu phẩy hay dấu chấm (đặc tả không nêu): Mỗi nhóm 3 chữ số tính từ phải có một ký tự không phải chữ số đứng trước"
+  },
+  {
+    "id": "TC-CART-95",
+    "title": "highlights the cart link in the navbar and shows a breadcrumb",
+    "setup": { "cart": [] },
+    "expected": {
+      "navHighlight": { "link": "Giỏ hàng", "ariaCurrent": "page", "orStyleDiffersFrom": "home" },
+      "breadcrumb": { "landmarkNameContains": "breadcrumb", "orLinksInOrder": ["Trang chủ", "Giỏ hàng"] }
+    },
+    "oracle": "HW02 TC-CART-95; FR-23 (Navbar highlight trang đang chọn; breadcrumb bắt buộc ở trang Giỏ hàng); cách đo D-06",
+    "note": "Highlight đạt khi link có aria-current=\"page\" hoặc style tính toán (màu chữ, nền, độ đậm, gạch chân) khác chính link đó ở trang chủ. Breadcrumb đạt khi có vùng navigation có tên chứa \"breadcrumb\" (không phân biệt hoa thường) hoặc dãy liên kết có \"Trang chủ\" trước \"Giỏ hàng\" ở đầu vùng nội dung"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "TC-CART-10",
+    "title": "shows the empty cart state and returns home via continue shopping",
+    "setup": { "cart": [] },
+    "input": { "button": "Tiếp tục mua sắm" },
+    "expected": {
+      "emptyState": { "illustration": true, "messageContains": "trống", "table": false },
+      "badge": "hiddenOrZero",
+      "home": { "path": "/", "heading": "Danh sách sản phẩm" }
+    },
+    "oracle": "HW02 TC-CART-10; FR07-R12, R13 (nút Tiếp tục mua sắm quay về trang chủ), R15, R16, R24; OUT9 (D-03), OUT10, A18",
+    "note": "P3 0 dòng"
+  },
+  {
+    "id": "TC-CART-11",
+    "title": "returns home via continue shopping and keeps the cart",
+    "setup": { "cart": ["iphone15promax"] },
+    "input": { "button": "Tiếp tục mua sắm", "fallbackButton": "← Mua tiếp" },
+    "expected": {
+      "continueButton": "present",
+      "home": { "path": "/", "heading": "Danh sách sản phẩm" },
+      "afterReturn": {
+        "rowCount": 1,
+        "rows": [{ "product": "iphone15promax", "quantity": 1 }]
+      }
+    },
+    "oracle": "HW02 TC-CART-11; FR07-R12, R13; OUT10",
+    "note": "Không có nút Tiếp tục mua sắm thì ghi nhận (R12) rồi bấm fallbackButton để kiểm R13, theo bước của test case (GĐ-06 của select). afterReturn: Mở lại Giỏ hàng bằng link navbar"
+  }
+]

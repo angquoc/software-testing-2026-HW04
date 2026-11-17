@@ -1,0 +1,28 @@
+[
+  {
+    "key": "iphone15promax",
+    "name": "iPhone 15 Pro Max",
+    "price": 30000000,
+    "apiId": 1,
+    "oracle": "HW02 05_final_tc.md mục 1.4 (Giá trị cơ sở: id 1, Đơn giá 30,000,000)"
+  },
+  {
+    "key": "samsungs24ultra",
+    "name": "Samsung Galaxy S24 Ultra",
+    "price": 28000000,
+    "oracle": "HW02 05_final_tc.md mục 1.4 (Sản phẩm thứ hai, Đơn giá 28,000,000)"
+  },
+  {
+    "key": "keychronq1",
+    "name": "Bàn phím cơ Keychron Q1",
+    "price": 4000000,
+    "oracle": "HW02 TC-CART-103 (1000 x đơn giá = 4,000,000,000), khớp TC-CART-104 (249 -> 996,000,000), TC-CART-105 (250 -> 1,000,000,000)"
+  },
+  {
+    "key": "macbookprom3",
+    "name": "MacBook Pro M3",
+    "price": 45000000,
+    "oracle": "HW02 TC-CART-12 (23 x đơn giá = 1,035,000,000)",
+    "note": "Chỉ dùng cho dự phòng TC-CART-12"
+  }
+]

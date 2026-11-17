@@ -1,0 +1,31 @@
+[
+  {
+    "id": "TC-CART-02",
+    "title": "adds a new product from the home page when the cart has one line",
+    "setup": { "cart": ["iphone15promax"] },
+    "input": { "from": "home", "product": "samsungs24ultra" },
+    "expected": {
+      "feedback": "toastOrBadge",
+      "rowCount": 2,
+      "rows": [{ "product": "samsungs24ultra", "quantity": 1, "lineTotal": 28000000 }],
+      "total": 58000000,
+      "badge": 2
+    },
+    "oracle": "HW02 TC-CART-02; FR07-R14, R24 (FR-23 badge số lượng), R33; OUT15 (D-02); A17",
+    "note": "P3 2 dòng. 30,000,000 + 28,000,000 = 58,000,000. Không có K1 (D-01)"
+  },
+  {
+    "id": "TC-CART-03",
+    "title": "increases quantity instead of adding a line when re-adding a product with quantity 3",
+    "setup": { "cart": ["iphone15promax", "samsungs24ultra"] },
+    "input": { "from": "detail", "product": "iphone15promax", "quantity": 3, "fillQuantity": true },
+    "expected": {
+      "rowCount": 2,
+      "rows": [{ "product": "iphone15promax", "quantity": 4, "lineTotal": 120000000 }],
+      "total": 148000000,
+      "badge": 5
+    },
+    "oracle": "HW02 TC-CART-03; FR07-R08, R09 (thêm cùng sản phẩm tăng số lượng, không tạo dòng mới), R24, R27; A08, A17",
+    "note": "iPhone 1 + 3 = 4; 4 x 30,000,000 = 120,000,000; tổng 120,000,000 + 28,000,000 = 148,000,000; badge 4 + 1 = 5. Không có K1 (D-01)"
+  }
+]
