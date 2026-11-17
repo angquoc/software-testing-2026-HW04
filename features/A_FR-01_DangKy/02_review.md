@@ -1,7 +1,7 @@
 # A: FR-01 Đăng ký tài khoản: Review dữ liệu và script AI sinh
 
-- Bản AI: `ai_raw/data.md` (commit `930079a`); `ai_raw/script_01_register_valid.md` (P1, commit `4b7b001`)
-- Thời gian tạo: 2026-11-17 23:44 (+07:00). Cập nhật: 2026-11-18 00:16 (+07:00), quyết định CH-script-01 đến 03 và sửa `fieldByLabel.ts` sau review P1; 2026-11-18 00:25 (+07:00), sinh viên sửa lại quyết định chữ hoa thường (mục 1), CH-script-04
+- Bản AI: `ai_raw/data.md` (commit `930079a`); `ai_raw/script_01_register_valid.md` (P1, commit `4b7b001`); `ai_raw/script_02_required_fields.md` (P2, commit `7b6292b`)
+- Thời gian tạo: 2026-11-17 23:44 (+07:00). Cập nhật: 2026-11-18 00:16 (+07:00), quyết định CH-script-01 đến 03 và sửa `fieldByLabel.ts` sau review P1; 2026-11-18 00:25 (+07:00), sinh viên sửa lại quyết định chữ hoa thường (mục 1), CH-script-04; 2026-11-18 00:38 (+07:00), CH-script-05, P2 duyệt không sửa
 
 ## 1. Dữ liệu
 
@@ -31,6 +31,7 @@
 | CH-script-02 | Kiểm "đúng 1 request `POST /api/register`, phản hồi 2xx" không có chữ trong OUT1 | a. Giữ (hệ quả của "đăng ký thành công") |
 | CH-script-03 | `resetDb.ts` trùng logic với FR-17 | a. Giữ như vậy; không sửa FR-17 |
 | CH-script-04 | Sau quyết định giữ tên nhãn, nút theo đặc tả (mục 1, 2026-11-18): Locator so tên không phân biệt hoa thường (GĐ-script-01) có che lệch đặc tả không | a. So đúng chữ hoa thường: Bỏ cờ `i` trong `labelPattern`, nút "Đăng Ký" dùng `exact: true`. Giao diện đổi chữ thì test fail ở bước tìm phần tử. Áp cho P1 đến P5 |
+| CH-script-05 | P2: Kiểm sự kiện `invalid` trên ô vi phạm (quan sát thêm, không có chữ trong test case HW02) | a. Giữ: Bằng chứng trình duyệt chặn do đúng ô, tránh qua nhầm khi #42 cũng chặn gửi. Sinh viên duyệt P2 (2026-11-18 00:38) |
 
 - Các lượt chạy thử: Chưa chạy trên giao diện thật. Kiểm locator `fieldByLabel` trên trang HTML dựng bằng `page.setContent` (2026-11-18 00:15, Chrome, không phải EShop): Xem dòng `fieldByLabel.ts` ở mục 3.
 - Kiểu assertion dùng: Chưa có.
