@@ -19,7 +19,6 @@ Repo: https://github.com/angquoc/software-testing-2026-HW04
 | `reports/` | HTML report của Playwright: Mỗi feature trên mỗi trình duyệt một report (`reports/<feature>/<trình duyệt>/index.html`), có "Run by: 23120061" và timestamp ISO ở tiêu đề và ở từng test |
 | `bugs/` | Bug report, liên kết tới GitHub Issues của nhóm, ảnh trang Issues |
 | `skills/` | Agent Skill `playwright-automation`: Sinh và bảo trì script Playwright data-driven, đa trình duyệt, đi từng bước |
-| `demo/` | Kết quả chạy Agent Skill trong video demo |
 | `forms/` | [AI-02] Audit Report, [AI-03] Disclosure, [AI-05] Privacy Checklist |
 | `tools/` | `run.mjs` (chạy 1 feature trên 1 hoặc 3 trình duyệt), script hỗ trợ (xuất prompt log, xuất PDF, đóng gói) |
 | `git_log.txt` | Git commit log (chỉ có trong file nộp) |
@@ -48,27 +47,33 @@ Trình duyệt: Chrome, Edge, Firefox. Mỗi feature chạy trên cả 3 trình 
 
 ## Test Summary Report
 
-| Feature | TC tự động hóa | Đã chạy | Pass | Fail | Lần chạy trình duyệt | Bug |
+Số liệu từ lần chạy chính thức (`features/<feature>/03_results.md`, 9 HTML report trong `reports/`). "Đã chạy", "Pass", "Fail" đếm lượt test trên cả 3 trình duyệt.
+
+| Feature | TC tự động hóa | Đã chạy | Pass | Fail | Lần chạy trình duyệt | Bug (issue mới / bình luận vào issue HW02) |
 |---|---|---|---|---|---|---|
-| A: FR-01 | | | | | | |
-| B: FR-07 | | | | | | |
-| C: FR-17 | | | | | | |
-| **Tổng** | | | | | | |
+| A: FR-01 | 14 | 42 | 21 | 21 | 3 (Chrome, Edge, Firefox) | 0 / 6 |
+| B: FR-07 | 27 (15 giao diện, 12 API chỉ chạy trên Chrome) | 57 (24 bỏ qua theo D17) | 8 | 49 | 3 (Chrome, Edge, Firefox) | 1 / 15 |
+| C: FR-17 | 18 | 54 | 39 | 15 | 3 (Chrome, Edge, Firefox) | 2 / 3 |
+| **Tổng** | **59** | **153** | **68** | **85** | **9** | **3 / 24** |
+
+- Số feature: 3. Mọi test fail đều do hệ thống sai đặc tả; không có test fail do script, khác biệt trình duyệt hay flaky.
+- Issue mới: #114, #115 (FR-17), #118 (FR-07). Chi tiết: `bugs/bug_report.md`.
+- Commit có sửa `.spec.ts`: 24 (đề yêu cầu ≥ 8); git log trong `git_log.txt` của file nộp.
 
 ## Video demo
 
 | Nội dung | Link |
 |---|---|
-| Task 2: Chạy script automation đa trình duyệt, HTML report | |
-| Agent Skill | |
+| Task 2: Chạy script automation đa trình duyệt (FR-17), HTML report, kể chỗ sửa script AI | https://youtu.be/nfzV6JFvdG0 (7:00, Unlisted) |
+| Agent Skill: Dùng skill `playwright-automation` trọn feature FR-01 | https://youtu.be/jYuCvhagSy0 (19:33, Unlisted) |
 
 ## Self-Assessment
 
 | No. | Criteria | Grade | Self-Assessed Grade |
 |---|---|---|---|
-| 1 | Task 1: Feature A (FR-01) | 25 | |
-| 1 | Task 1: Feature B (FR-07) | 25 | |
-| 1 | Task 1: Feature C (FR-17) | 25 | |
-| 2 | Task 2: Demo video | 15 | |
-| 3 | Agent Skills | 10 | |
-| | **Total** | **100** | |
+| 1 | Task 1: Feature A (FR-01) | 25 | 25 |
+| 1 | Task 1: Feature B (FR-07) | 25 | 25 |
+| 1 | Task 1: Feature C (FR-17) | 25 | 25 |
+| 2 | Task 2: Demo video | 15 | 15 |
+| 3 | Agent Skills | 10 | 10 |
+| | **Total** | **100** | **100** |
