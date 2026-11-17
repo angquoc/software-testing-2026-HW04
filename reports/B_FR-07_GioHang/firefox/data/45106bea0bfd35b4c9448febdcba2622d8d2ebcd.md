@@ -1,0 +1,134 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: B_FR-07_GioHang\03_remove_item.spec.ts >> FR-07 Cart P3: remove a line with a confirmation dialog >> TC-CART-09: shows the empty cart state right after removing the last line
+- Location: tests\B_FR-07_GioHang\03_remove_item.spec.ts:21:5
+
+# Error details
+
+```
+Error: R11 / FR-24: confirmation dialog appears before removing
+
+expect(received).not.toBe(expected) // Object.is equality
+
+Expected: not "none"
+```
+
+```
+Error: After confirming the dialog (no reload, A11): illustration (img or svg) in the main content (OUT9, D-03)
+
+expect(locator).toBeVisible() failed
+
+Locator: getByRole('main').locator('img, svg').visible().first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - After confirming the dialog (no reload, A11): illustration (img or svg) in the main content (OUT9, D-03) getByRole('main').locator('img, svg').visible().first() with timeout 5000ms
+  - waiting for getByRole('main').locator('img, svg').visible().first()
+
+```
+
+```yaml
+- banner:
+  - link "EShop":
+    - /url: /
+  - navigation:
+    - link "Giỏ hàng":
+      - /url: /cart
+    - link "Chào, Test User":
+      - /url: /profile
+    - button "Thoát"
+- main:
+  - heading "Giỏ hàng của bạn đang trống" [level=2]
+  - link "Tiếp tục mua sắm":
+    - /url: /
+- contentinfo: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+```
+
+# Test source
+
+```ts
+  1  | import { expect } from '../../support/fixtures';
+  2  | import type { CartPage } from '../../support/pages/CartPage';
+  3  | import type { HomePage } from '../../support/pages/HomePage';
+  4  | import type { NavBar } from '../../support/pages/NavBar';
+  5  | import { moneyPattern } from './money';
+  6  | import { productByKey } from './products';
+  7  | import type { CartStateExpected, EmptyStateExpected } from './types';
+  8  | 
+  9  | const softExpect = expect.configure({ soft: true });
+  10 | 
+  11 | // Kiểm trạng thái trang Giỏ hàng. Mọi điểm là soft: Có nhiều dòng cùng tên (#70) thì ghi lỗi số dòng
+  12 | // và vẫn đọc ô của dòng đầu tiên; không có dòng nào thì bỏ qua các ô của dòng đó. Tổng tiền luôn được kiểm.
+  13 | export async function checkCartState(cart: CartPage, exp: CartStateExpected, label: string): Promise<void> {
+  14 |   if (exp.rowCount !== undefined) {
+  15 |     await softExpect(cart.rows, `${label}: number of cart lines`).toHaveCount(exp.rowCount);
+  16 |   }
+  17 |   for (const r of exp.rows ?? []) {
+  18 |     const name = productByKey(r.product).name;
+  19 |     const rows = cart.row(name);
+  20 |     await softExpect(rows, `${label}: exactly one line "${name}"`).toHaveCount(1);
+  21 |     if ((await rows.count()) === 0) continue;
+  22 |     const row = rows.first();
+  23 |     if (r.unitPrice !== undefined) {
+  24 |       await softExpect(cart.cell(row, 'unitPrice'), `${label}: Đơn giá of "${name}"`).toHaveText(moneyPattern(r.unitPrice));
+  25 |     }
+  26 |     if (r.quantity !== undefined) {
+  27 |       await softExpect(cart.cell(row, 'quantity'), `${label}: Số lượng of "${name}"`).toHaveText(String(r.quantity));
+  28 |     }
+  29 |     if (r.lineTotal !== undefined) {
+  30 |       await softExpect(cart.cell(row, 'lineTotal'), `${label}: Thành tiền of "${name}"`).toHaveText(
+  31 |         moneyPattern(r.lineTotal, exp.thousandSeparators),
+  32 |       );
+  33 |     }
+  34 |   }
+  35 |   if (exp.total !== undefined) {
+  36 |     await softExpect(cart.totalValue, `${label}: cart total (found by position; label checked in TC-CART-90)`).toHaveText(
+  37 |       moneyPattern(exp.total, exp.thousandSeparators),
+  38 |     );
+  39 |   }
+  40 | }
+  41 | 
+  42 | // OUT9 theo D-03: Hình minh họa (img hoặc svg đang hiển thị trong main), thông báo có từ đã chốt, không còn bảng.
+  43 | export async function checkEmptyState(cart: CartPage, exp: EmptyStateExpected, label: string): Promise<void> {
+  44 |   if (exp.illustration) {
+> 45 |     await softExpect(cart.illustrations.first(), `${label}: illustration (img or svg) in the main content (OUT9, D-03)`).toBeVisible();
+     |                                                                                                                          ^ Error: After confirming the dialog (no reload, A11): illustration (img or svg) in the main content (OUT9, D-03)
+  46 |   }
+  47 |   await softExpect(cart.main, `${label}: message says the cart is empty (OUT9, D-03)`).toContainText(exp.messageContains, {
+  48 |     ignoreCase: true,
+  49 |   });
+  50 |   if (!exp.table) {
+  51 |     await softExpect(cart.table, `${label}: no cart table (OUT9)`).toHaveCount(0);
+  52 |   }
+  53 | }
+  54 | 
+  55 | // D-04: Tạo giỏ bằng nút "Thêm vào giỏ" ở trang chủ, mỗi sản phẩm bấm một lần; mở Giỏ hàng kiểm lại rồi về trang chủ
+  56 | // bằng link "EShop". Bắt đầu và kết thúc ở trang chủ. Không đạt thì ném lỗi "Chuẩn bị không đạt": Test dừng,
+  57 | // không tính là kết quả của test case.
+  58 | export async function prepareCart(home: HomePage, nav: NavBar, cart: CartPage, keys: string[]): Promise<void> {
+  59 |   if (keys.length === 0) return;
+  60 |   for (const key of keys) await home.addToCart(productByKey(key).name);
+  61 |   await nav.openCart();
+  62 |   try {
+  63 |     await expect(cart.rows).toHaveCount(keys.length);
+  64 |     for (const key of keys) {
+  65 |       const row = cart.row(productByKey(key).name);
+  66 |       await expect(row).toHaveCount(1);
+  67 |       await expect(cart.cell(row, 'quantity')).toHaveText('1');
+  68 |     }
+  69 |   } catch (err) {
+  70 |     const first = String(err).split('\n')[0];
+  71 |     throw new Error(`Chuẩn bị không đạt (setup not met): Cart after adding ${keys.join(', ')} from the home page (D-04): ${first}`);
+  72 |   }
+  73 |   await nav.openHome();
+  74 | }
+  75 | 
+```

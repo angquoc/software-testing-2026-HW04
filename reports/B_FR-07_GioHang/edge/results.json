@@ -1,0 +1,2611 @@
+{
+  "config": {
+    "argv": [
+      "C:\\nvm4w\\nodejs\\node.exe",
+      "D:\\Dang\\Test\\Homeworks\\HW04\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/B_FR-07_GioHang/",
+      "--project=edge"
+    ],
+    "configFile": "D:\\Dang\\Test\\Homeworks\\HW04\\playwright.config.ts",
+    "rootDir": "D:/Dang/Test/Homeworks/HW04/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\support\\globalSetup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/B_FR-07_GioHang/edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/B_FR-07_GioHang/edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Dang/Test/Homeworks/HW04/test-results/B_FR-07_GioHang/edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Dang/Test/Homeworks/HW04/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "edge",
+        "testDir": "D:\\Dang\\Test\\Homeworks\\HW04\\tests",
+        "snapshotDir": "D:\\Dang\\Test\\Homeworks\\HW04\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "video": "off",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36 Edg/158.0.8127.18",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "edge"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/B_FR-07_GioHang/edge",
+          "open": "never",
+          "title": "Run by: 23120061 | 2026-11-17T17:26:36+07:00 | B_FR-07_GioHang x edge"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/B_FR-07_GioHang/edge/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+      "file": "B_FR-07_GioHang/01_add_from_detail.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-07 Cart P1: add to cart from the product detail page",
+          "file": "B_FR-07_GioHang/01_add_from_detail.spec.ts",
+          "line": 28,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-01: adds a new product to an empty cart from the detail page keeping quantity 1",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19821,
+                      "error": {
+                        "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                          "column": 11,
+                          "line": 61
+                        },
+                        "snippet": " \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                            "column": 11,
+                            "line": 61
+                          },
+                          "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                            "column": 12,
+                            "line": 68
+                          },
+                          "message": "Error: OUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\nOUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 2000ms exceeded while waiting on the predicate\n\n \u001b[90m 66 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect\n \u001b[90m 67 |\u001b[39m           \u001b[33m.\u001b[39mpoll(seen\u001b[33m,\u001b[39m { message\u001b[33m:\u001b[39m \u001b[32m'OUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[33mFEEDBACK_WINDOW_MS\u001b[39m })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m       }\n \u001b[90m 70 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mfeedback \u001b[33m===\u001b[39m \u001b[32m'noSuccess'\u001b[39m) {\n \u001b[90m 71 |\u001b[39m         softExpect(\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:68:12\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                            "column": 11,
+                            "line": 88
+                          },
+                          "message": "Error: K1: GET /api/cart has exactly the expected new line (CH-data-01 a)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"id\": 1,\u001b[39m\n\u001b[32m-     \"quantity\": 1,\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n \u001b[90m 86 |\u001b[39m           added\u001b[33m.\u001b[39mmap((r) \u001b[33m=>\u001b[39m ({ id\u001b[33m:\u001b[39m r\u001b[33m.\u001b[39mid\u001b[33m,\u001b[39m quantity\u001b[33m:\u001b[39m r\u001b[33m.\u001b[39mquantity }))\u001b[33m,\u001b[39m\n \u001b[90m 87 |\u001b[39m           \u001b[32m'K1: GET /api/cart has exactly the expected new line (CH-data-01 a)'\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 88 |\u001b[39m         )\u001b[33m.\u001b[39mtoEqual((exp\u001b[33m.\u001b[39mrows \u001b[33m??\u001b[39m [])\u001b[33m.\u001b[39mmap((r) \u001b[33m=>\u001b[39m ({ id\u001b[33m:\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mapiId\u001b[33m,\u001b[39m quantity\u001b[33m:\u001b[39m r\u001b[33m.\u001b[39mquantity })))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 89 |\u001b[39m       }\n \u001b[90m 90 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mk1\u001b[33m?.\u001b[39mafterReload) {\n \u001b[90m 91 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mreload()\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:88:11\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 67,
+                            "line": 15
+                          },
+                          "message": "Error: K1 after reload: number of cart lines\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - K1 after reload: number of cart lines getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:15\n\n \u001b[90m 13 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkCartState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mCartStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCount \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mrows\u001b[33m,\u001b[39m \u001b[32m`${label}: number of cart lines`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(exp\u001b[33m.\u001b[39mrowCount)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m exp\u001b[33m.\u001b[39mrows \u001b[33m??\u001b[39m []) {\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m name \u001b[33m=\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mname\u001b[33m;\u001b[39m\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:15:67)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:92:15\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 68,
+                            "line": 20
+                          },
+                          "message": "Error: K1 after reload: exactly one line \"iPhone 15 Pro Max\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) })\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - K1 after reload: exactly one line \"iPhone 15 Pro Max\" getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) })\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:20\n\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m name \u001b[33m=\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mname\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mconst\u001b[39m rows \u001b[33m=\u001b[39m cart\u001b[33m.\u001b[39mrow(name)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(rows\u001b[33m,\u001b[39m \u001b[32m`${label}: exactly one line \"${name}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mif\u001b[39m ((\u001b[36mawait\u001b[39m rows\u001b[33m.\u001b[39mcount()) \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) \u001b[36mcontinue\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mconst\u001b[39m row \u001b[33m=\u001b[39m rows\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mif\u001b[39m (r\u001b[33m.\u001b[39munitPrice \u001b[33m!==\u001b[39m undefined) {\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:20:68)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:92:9\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 112,
+                            "line": 36
+                          },
+                          "message": "Error: K1 after reload: cart total (found by position; label checked in TC-CART-90)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('table + div > :first-child')\nExpected pattern: \u001b[32m/(^|[^\\d.,])3[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0([^\\d.,]|$)/\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - K1 after reload: cart total (found by position; label checked in TC-CART-90) getByRole('main').locator('table + div > :first-child') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('table + div > :first-child')\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:36\n\n \u001b[90m 34 |\u001b[39m   }\n \u001b[90m 35 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mtotal \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mtotalValue\u001b[33m,\u001b[39m \u001b[32m`${label}: cart total (found by position; label checked in TC-CART-90)`\u001b[39m)\u001b[33m.\u001b[39mtoHaveText(\n \u001b[90m    |\u001b[39m                                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m       moneyPattern(exp\u001b[33m.\u001b[39mtotal\u001b[33m,\u001b[39m exp\u001b[33m.\u001b[39mthousandSeparators)\u001b[33m,\u001b[39m\n \u001b[90m 38 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m   }\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:36:112)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:92:9\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:26:38.872Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-8c091-ail-page-keeping-quantity-1-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-8c091-ail-page-keeping-quantity-1-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-8c091-ail-page-keeping-quantity-1-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                        "column": 11,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "45bcdb63ec0c009bd33e-040607ba6f68bb34d553",
+              "file": "B_FR-07_GioHang/01_add_from_detail.spec.ts",
+              "line": 30,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-101: adds quantity 2 from the detail page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4242,
+                      "error": {
+                        "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                          "column": 11,
+                          "line": 61
+                        },
+                        "snippet": " \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                            "column": 11,
+                            "line": 61
+                          },
+                          "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                            "column": 12,
+                            "line": 68
+                          },
+                          "message": "Error: OUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\nOUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 2000ms exceeded while waiting on the predicate\n\n \u001b[90m 66 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect\n \u001b[90m 67 |\u001b[39m           \u001b[33m.\u001b[39mpoll(seen\u001b[33m,\u001b[39m { message\u001b[33m:\u001b[39m \u001b[32m'OUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[33mFEEDBACK_WINDOW_MS\u001b[39m })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m       }\n \u001b[90m 70 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mfeedback \u001b[33m===\u001b[39m \u001b[32m'noSuccess'\u001b[39m) {\n \u001b[90m 71 |\u001b[39m         softExpect(\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:68:12\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:26:59.859Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-11345-tity-2-from-the-detail-page-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-11345-tity-2-from-the-detail-page-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-11345-tity-2-from-the-detail-page-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                        "column": 11,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "45bcdb63ec0c009bd33e-b700e027cd1dc3a3e6a4",
+              "file": "B_FR-07_GioHang/01_add_from_detail.spec.ts",
+              "line": 30,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-104: shows line total and cart total just below one billion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2318,
+                      "error": {
+                        "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                          "column": 11,
+                          "line": 61
+                        },
+                        "snippet": " \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                            "column": 11,
+                            "line": 61
+                          },
+                          "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:27:05.139Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-8662d-otal-just-below-one-billion-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-8662d-otal-just-below-one-billion-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-8662d-otal-just-below-one-billion-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                        "column": 11,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "45bcdb63ec0c009bd33e-ccd6d0bbb9acb0a9a6fb",
+              "file": "B_FR-07_GioHang/01_add_from_detail.spec.ts",
+              "line": 30,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-105: shows line total and cart total of exactly one billion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2382,
+                      "error": {
+                        "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                          "column": 11,
+                          "line": 61
+                        },
+                        "snippet": " \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                            "column": 11,
+                            "line": 61
+                          },
+                          "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 59 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       }\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mconst\u001b[39m seen \u001b[33m=\u001b[39m feedbackSeen(page\u001b[33m,\u001b[39m nav\u001b[33m,\u001b[39m badgeBefore)\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:61:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:27:08.485Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-1fc48-otal-of-exactly-one-billion-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-1fc48-otal-of-exactly-one-billion-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-1fc48-otal-of-exactly-one-billion-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts",
+                        "column": 11,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "45bcdb63ec0c009bd33e-3543b64794bafe55066a",
+              "file": "B_FR-07_GioHang/01_add_from_detail.spec.ts",
+              "line": 30,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-100: rejects quantity 0 on the detail page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9164,
+                      "error": {
+                        "message": "Error: Cart page: number of cart lines\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Cart page: number of cart lines getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                        "stack": "Error: Cart page: number of cart lines\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Cart page: number of cart lines getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:15:67)\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:81:13",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                          "column": 67,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:15\n\n \u001b[90m 13 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkCartState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mCartStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCount \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mrows\u001b[33m,\u001b[39m \u001b[32m`${label}: number of cart lines`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(exp\u001b[33m.\u001b[39mrowCount)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m exp\u001b[33m.\u001b[39mrows \u001b[33m??\u001b[39m []) {\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m name \u001b[33m=\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mname\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 67,
+                            "line": 15
+                          },
+                          "message": "Error: Cart page: number of cart lines\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Cart page: number of cart lines getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:15\n\n \u001b[90m 13 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkCartState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mCartStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCount \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mrows\u001b[33m,\u001b[39m \u001b[32m`${label}: number of cart lines`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(exp\u001b[33m.\u001b[39mrowCount)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m exp\u001b[33m.\u001b[39mrows \u001b[33m??\u001b[39m []) {\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m name \u001b[33m=\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mname\u001b[33m;\u001b[39m\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:15:67)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\01_add_from_detail.spec.ts:81:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:27:11.935Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-7be04-antity-0-on-the-detail-page-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-7be04-antity-0-on-the-detail-page-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-01_add_fro-7be04-antity-0-on-the-detail-page-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                        "column": 67,
+                        "line": 15
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "45bcdb63ec0c009bd33e-dd95b6e70d756501c507",
+              "file": "B_FR-07_GioHang/01_add_from_detail.spec.ts",
+              "line": 30,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+      "file": "B_FR-07_GioHang/02_add_to_existing_cart.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-07 Cart P2: add to a cart that already has lines",
+          "file": "B_FR-07_GioHang/02_add_to_existing_cart.spec.ts",
+          "line": 26,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-02: adds a new product from the home page when the cart has one line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8118,
+                      "error": {
+                        "message": "Error: OUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\nOUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 2000ms exceeded while waiting on the predicate",
+                        "stack": "Error: OUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\nOUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 2000ms exceeded while waiting on the predicate\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:65:12",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                          "column": 12,
+                          "line": 65
+                        },
+                        "snippet": " \u001b[90m 63 |\u001b[39m             timeout\u001b[33m:\u001b[39m \u001b[33mFEEDBACK_WINDOW_MS\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 64 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       }\n \u001b[90m 67 |\u001b[39m\n \u001b[90m 68 |\u001b[39m       \u001b[36mawait\u001b[39m nav\u001b[33m.\u001b[39mopenCart()\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                            "column": 12,
+                            "line": 65
+                          },
+                          "message": "Error: OUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\nOUT15: toast or \"Giỏ hàng\" badge update after adding (D-02)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 2000ms exceeded while waiting on the predicate\n\n \u001b[90m 63 |\u001b[39m             timeout\u001b[33m:\u001b[39m \u001b[33mFEEDBACK_WINDOW_MS\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 64 |\u001b[39m           })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       }\n \u001b[90m 67 |\u001b[39m\n \u001b[90m 68 |\u001b[39m       \u001b[36mawait\u001b[39m nav\u001b[33m.\u001b[39mopenCart()\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:65:12\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                            "column": 12,
+                            "line": 74
+                          },
+                          "message": "Error: R24: \"Giỏ hàng\" badge equals the total quantity in the cart (A17)\n\nR24: \"Giỏ hàng\" badge equals the total quantity in the cart (A17)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n \u001b[90m 72 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect\n \u001b[90m 73 |\u001b[39m           \u001b[33m.\u001b[39mpoll(() \u001b[33m=>\u001b[39m nav\u001b[33m.\u001b[39mbadgeCount()\u001b[33m,\u001b[39m { message\u001b[33m:\u001b[39m \u001b[32m'R24: \"Giỏ hàng\" badge equals the total quantity in the cart (A17)'\u001b[39m })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 74 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(exp\u001b[33m.\u001b[39mbadge)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 75 |\u001b[39m       }\n \u001b[90m 76 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 77 |\u001b[39m   }\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:74:12\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:27:22.094Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-02_add_to_-cad4a--when-the-cart-has-one-line-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-02_add_to_-cad4a--when-the-cart-has-one-line-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-02_add_to_-cad4a--when-the-cart-has-one-line-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                        "column": 12,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7867bdf65a7acf7d0756-c22952ab46d1c44bb778",
+              "file": "B_FR-07_GioHang/02_add_to_existing_cart.spec.ts",
+              "line": 28,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-03: increases quantity instead of adding a line when re-adding a product with quantity 3",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 26912,
+                      "error": {
+                        "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:56:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                          "column": 11,
+                          "line": 56
+                        },
+                        "snippet": " \u001b[90m 54 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 55 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m       }\n \u001b[90m 58 |\u001b[39m\n \u001b[90m 59 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mfeedback \u001b[33m===\u001b[39m \u001b[32m'toastOrBadge'\u001b[39m) {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                            "column": 11,
+                            "line": 56
+                          },
+                          "message": "Error: First click on \"Thêm vào giỏ hàng\" gave no response within 1.5 s; clicked again (HW02 observation 2)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 54 |\u001b[39m           firstClickResponded\u001b[33m,\u001b[39m\n \u001b[90m 55 |\u001b[39m           \u001b[32m`First click on \"Thêm vào giỏ hàng\" gave no response within ${FIRST_CLICK_WINDOW_MS / 1000} s; clicked again (HW02 observation 2)`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m       }\n \u001b[90m 58 |\u001b[39m\n \u001b[90m 59 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mfeedback \u001b[33m===\u001b[39m \u001b[32m'toastOrBadge'\u001b[39m) {\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:56:11\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 67,
+                            "line": 15
+                          },
+                          "message": "Error: Cart page: number of cart lines\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m3\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Cart page: number of cart lines getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\u001b[22m\n\u001b[2m    14 × locator resolved to 3 elements\u001b[22m\n\u001b[2m       - unexpected value \"3\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:15\n\n \u001b[90m 13 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkCartState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mCartStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCount \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mrows\u001b[33m,\u001b[39m \u001b[32m`${label}: number of cart lines`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(exp\u001b[33m.\u001b[39mrowCount)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m exp\u001b[33m.\u001b[39mrows \u001b[33m??\u001b[39m []) {\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m name \u001b[33m=\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mname\u001b[33m;\u001b[39m\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:15:67)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:69:13\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 68,
+                            "line": 20
+                          },
+                          "message": "Error: Cart page: exactly one line \"iPhone 15 Pro Max\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) })\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m2\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Cart page: exactly one line \"iPhone 15 Pro Max\" getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) })\u001b[22m\n\u001b[2m    14 × locator resolved to 2 elements\u001b[22m\n\u001b[2m       - unexpected value \"2\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:20\n\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m name \u001b[33m=\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mname\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mconst\u001b[39m rows \u001b[33m=\u001b[39m cart\u001b[33m.\u001b[39mrow(name)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(rows\u001b[33m,\u001b[39m \u001b[32m`${label}: exactly one line \"${name}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mif\u001b[39m ((\u001b[36mawait\u001b[39m rows\u001b[33m.\u001b[39mcount()) \u001b[33m===\u001b[39m \u001b[35m0\u001b[39m) \u001b[36mcontinue\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mconst\u001b[39m row \u001b[33m=\u001b[39m rows\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mif\u001b[39m (r\u001b[33m.\u001b[39munitPrice \u001b[33m!==\u001b[39m undefined) {\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:20:68)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:69:7\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 87,
+                            "line": 27
+                          },
+                          "message": "Error: Cart page: Số lượng of \"iPhone 15 Pro Max\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }).first().getByRole('cell').nth(2)\nExpected: \u001b[32m\"4\"\u001b[39m\nReceived: \u001b[31m\"1\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Cart page: Số lượng of \"iPhone 15 Pro Max\" getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }).first().getByRole('cell').nth(2) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }).first().getByRole('cell').nth(2)\u001b[22m\n\u001b[2m    14 × locator resolved to <td>1</td>\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:27\n\n \u001b[90m 25 |\u001b[39m     }\n \u001b[90m 26 |\u001b[39m     \u001b[36mif\u001b[39m (r\u001b[33m.\u001b[39mquantity \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m       \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mcell(row\u001b[33m,\u001b[39m \u001b[32m'quantity'\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m`${label}: Số lượng of \"${name}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveText(\u001b[33mString\u001b[39m(r\u001b[33m.\u001b[39mquantity))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m     }\n \u001b[90m 29 |\u001b[39m     \u001b[36mif\u001b[39m (r\u001b[33m.\u001b[39mlineTotal \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 30 |\u001b[39m       \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mcell(row\u001b[33m,\u001b[39m \u001b[32m'lineTotal'\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m`${label}: Thành tiền of \"${name}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveText(\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:27:87)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:69:7\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 90,
+                            "line": 30
+                          },
+                          "message": "Error: Cart page: Thành tiền of \"iPhone 15 Pro Max\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }).first().getByRole('cell').nth(3)\nExpected pattern: \u001b[32m/(^|[^\\d.,])1[.,\\s\\u00a0]?2[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0([^\\d.,]|$)/\u001b[39m\nReceived string:  \u001b[31m\"30,000,000 ₫\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Cart page: Thành tiền of \"iPhone 15 Pro Max\" getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }).first().getByRole('cell').nth(3) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }).filter({ has: getByRole('cell', { name: 'iPhone 15 Pro Max', exact: true }) }).first().getByRole('cell').nth(3)\u001b[22m\n\u001b[2m    14 × locator resolved to <td>30,000,000 ₫</td>\u001b[22m\n\u001b[2m       - unexpected value \"30,000,000 ₫\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:30\n\n \u001b[90m 28 |\u001b[39m     }\n \u001b[90m 29 |\u001b[39m     \u001b[36mif\u001b[39m (r\u001b[33m.\u001b[39mlineTotal \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m       \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mcell(row\u001b[33m,\u001b[39m \u001b[32m'lineTotal'\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m`${label}: Thành tiền of \"${name}\"`\u001b[39m)\u001b[33m.\u001b[39mtoHaveText(\n \u001b[90m    |\u001b[39m                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m         moneyPattern(r\u001b[33m.\u001b[39mlineTotal\u001b[33m,\u001b[39m exp\u001b[33m.\u001b[39mthousandSeparators)\u001b[33m,\u001b[39m\n \u001b[90m 32 |\u001b[39m       )\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m     }\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:30:90)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:69:7\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                            "column": 12,
+                            "line": 74
+                          },
+                          "message": "Error: R24: \"Giỏ hàng\" badge equals the total quantity in the cart (A17)\n\nR24: \"Giỏ hàng\" badge equals the total quantity in the cart (A17)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n \u001b[90m 72 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect\n \u001b[90m 73 |\u001b[39m           \u001b[33m.\u001b[39mpoll(() \u001b[33m=>\u001b[39m nav\u001b[33m.\u001b[39mbadgeCount()\u001b[33m,\u001b[39m { message\u001b[33m:\u001b[39m \u001b[32m'R24: \"Giỏ hàng\" badge equals the total quantity in the cart (A17)'\u001b[39m })\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 74 |\u001b[39m           \u001b[33m.\u001b[39mtoBe(exp\u001b[33m.\u001b[39mbadge)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 75 |\u001b[39m       }\n \u001b[90m 76 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 77 |\u001b[39m   }\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts:74:12\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:27:31.283Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-02_add_to_-37b01-g-a-product-with-quantity-3-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-02_add_to_-37b01-g-a-product-with-quantity-3-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-02_add_to_-37b01-g-a-product-with-quantity-3-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\02_add_to_existing_cart.spec.ts",
+                        "column": 11,
+                        "line": 56
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7867bdf65a7acf7d0756-72f1ef35a9b5b86ea9dc",
+              "file": "B_FR-07_GioHang/02_add_to_existing_cart.spec.ts",
+              "line": 28,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "B_FR-07_GioHang\\03_remove_item.spec.ts",
+      "file": "B_FR-07_GioHang/03_remove_item.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-07 Cart P3: remove a line with a confirmation dialog",
+          "file": "B_FR-07_GioHang/03_remove_item.spec.ts",
+          "line": 19,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-07: keeps the line when the delete confirmation is cancelled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13208,
+                      "error": {
+                        "message": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m",
+                        "stack": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:36:95",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                          "column": 95,
+                          "line": 36
+                        },
+                        "snippet": " \u001b[90m 34 |\u001b[39m         testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'Dialog message'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[32m`${result.kind}: ${result.message}`\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       softExpect(result\u001b[33m.\u001b[39mkind\u001b[33m,\u001b[39m \u001b[32m'R11 / FR-24: confirmation dialog appears before removing'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowPresentWhileDialogOpen \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mif\u001b[39m (result\u001b[33m.\u001b[39mkind \u001b[33m===\u001b[39m \u001b[32m'modal'\u001b[39m) {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                            "column": 95,
+                            "line": 36
+                          },
+                          "message": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m\n\n \u001b[90m 34 |\u001b[39m         testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'Dialog message'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[32m`${result.kind}: ${result.message}`\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       softExpect(result\u001b[33m.\u001b[39mkind\u001b[33m,\u001b[39m \u001b[32m'R11 / FR-24: confirmation dialog appears before removing'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowPresentWhileDialogOpen \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mif\u001b[39m (result\u001b[33m.\u001b[39mkind \u001b[33m===\u001b[39m \u001b[32m'modal'\u001b[39m) {\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:36:95\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 67,
+                            "line": 15
+                          },
+                          "message": "Error: After cancelling the dialog: number of cart lines\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - After cancelling the dialog: number of cart lines getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('row').filter({ has: getByRole('cell') })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:15\n\n \u001b[90m 13 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkCartState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mCartStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowCount \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mrows\u001b[33m,\u001b[39m \u001b[32m`${label}: number of cart lines`\u001b[39m)\u001b[33m.\u001b[39mtoHaveCount(exp\u001b[33m.\u001b[39mrowCount)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m exp\u001b[33m.\u001b[39mrows \u001b[33m??\u001b[39m []) {\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m name \u001b[33m=\u001b[39m productByKey(r\u001b[33m.\u001b[39mproduct)\u001b[33m.\u001b[39mname\u001b[33m;\u001b[39m\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:15:67)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:50:13\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 112,
+                            "line": 36
+                          },
+                          "message": "Error: After cancelling the dialog: cart total (found by position; label checked in TC-CART-90)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('table + div > :first-child')\nExpected pattern: \u001b[32m/(^|[^\\d.,])5[.,\\s\\u00a0]?8[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0[.,\\s\\u00a0]?0([^\\d.,]|$)/\u001b[39m\nReceived string:  \u001b[31m\"Tổng tạm tính: 30,000,000 ₫\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - After cancelling the dialog: cart total (found by position; label checked in TC-CART-90) getByRole('main').locator('table + div > :first-child') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('table + div > :first-child')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"text-xl font-bold\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Tổng tạm tính: 30,000,000 ₫\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:36\n\n \u001b[90m 34 |\u001b[39m   }\n \u001b[90m 35 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mtotal \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mtotalValue\u001b[33m,\u001b[39m \u001b[32m`${label}: cart total (found by position; label checked in TC-CART-90)`\u001b[39m)\u001b[33m.\u001b[39mtoHaveText(\n \u001b[90m    |\u001b[39m                                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m       moneyPattern(exp\u001b[33m.\u001b[39mtotal\u001b[33m,\u001b[39m exp\u001b[33m.\u001b[39mthousandSeparators)\u001b[33m,\u001b[39m\n \u001b[90m 38 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m   }\n\u001b[2m    at checkCartState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:36:112)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:50:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:27:59.222Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-075d0-e-confirmation-is-cancelled-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-075d0-e-confirmation-is-cancelled-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-075d0-e-confirmation-is-cancelled-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                        "column": 95,
+                        "line": 36
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1c1461227b3f2338d442-c26c6d44318671a1b633",
+              "file": "B_FR-07_GioHang/03_remove_item.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-08: removes one line of two after confirming and re-adds it as a new line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3251,
+                      "error": {
+                        "message": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m",
+                        "stack": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:36:95",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                          "column": 95,
+                          "line": 36
+                        },
+                        "snippet": " \u001b[90m 34 |\u001b[39m         testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'Dialog message'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[32m`${result.kind}: ${result.message}`\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       softExpect(result\u001b[33m.\u001b[39mkind\u001b[33m,\u001b[39m \u001b[32m'R11 / FR-24: confirmation dialog appears before removing'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowPresentWhileDialogOpen \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mif\u001b[39m (result\u001b[33m.\u001b[39mkind \u001b[33m===\u001b[39m \u001b[32m'modal'\u001b[39m) {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                            "column": 95,
+                            "line": 36
+                          },
+                          "message": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m\n\n \u001b[90m 34 |\u001b[39m         testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'Dialog message'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[32m`${result.kind}: ${result.message}`\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       softExpect(result\u001b[33m.\u001b[39mkind\u001b[33m,\u001b[39m \u001b[32m'R11 / FR-24: confirmation dialog appears before removing'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowPresentWhileDialogOpen \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mif\u001b[39m (result\u001b[33m.\u001b[39mkind \u001b[33m===\u001b[39m \u001b[32m'modal'\u001b[39m) {\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:36:95\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:28:13.484Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-77da1-nd-re-adds-it-as-a-new-line-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-77da1-nd-re-adds-it-as-a-new-line-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-77da1-nd-re-adds-it-as-a-new-line-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                        "column": 95,
+                        "line": 36
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1c1461227b3f2338d442-d9678cbd5a7c5fd196f2",
+              "file": "B_FR-07_GioHang/03_remove_item.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-09: shows the empty cart state right after removing the last line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8030,
+                      "error": {
+                        "message": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m",
+                        "stack": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:36:95",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                          "column": 95,
+                          "line": 36
+                        },
+                        "snippet": " \u001b[90m 34 |\u001b[39m         testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'Dialog message'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[32m`${result.kind}: ${result.message}`\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       softExpect(result\u001b[33m.\u001b[39mkind\u001b[33m,\u001b[39m \u001b[32m'R11 / FR-24: confirmation dialog appears before removing'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowPresentWhileDialogOpen \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mif\u001b[39m (result\u001b[33m.\u001b[39mkind \u001b[33m===\u001b[39m \u001b[32m'modal'\u001b[39m) {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                            "column": 95,
+                            "line": 36
+                          },
+                          "message": "Error: R11 / FR-24: confirmation dialog appears before removing\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m\n\n \u001b[90m 34 |\u001b[39m         testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'Dialog message'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[32m`${result.kind}: ${result.message}`\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m       softExpect(result\u001b[33m.\u001b[39mkind\u001b[33m,\u001b[39m \u001b[32m'R11 / FR-24: confirmation dialog appears before removing'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m\n \u001b[90m 38 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mrowPresentWhileDialogOpen \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 39 |\u001b[39m         \u001b[36mif\u001b[39m (result\u001b[33m.\u001b[39mkind \u001b[33m===\u001b[39m \u001b[32m'modal'\u001b[39m) {\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:36:95\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 122,
+                            "line": 45
+                          },
+                          "message": "Error: After confirming the dialog (no reload, A11): illustration (img or svg) in the main content (OUT9, D-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('img, svg').visible().first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - After confirming the dialog (no reload, A11): illustration (img or svg) in the main content (OUT9, D-03) getByRole('main').locator('img, svg').visible().first() with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('img, svg').visible().first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:45\n\n \u001b[90m 43 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkEmptyState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mEmptyStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 44 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39millustration) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39millustrations\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m \u001b[32m`${label}: illustration (img or svg) in the main content (OUT9, D-03)`\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m   }\n \u001b[90m 47 |\u001b[39m   \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mmain\u001b[33m,\u001b[39m \u001b[32m`${label}: message says the cart is empty (OUT9, D-03)`\u001b[39m)\u001b[33m.\u001b[39mtoContainText(exp\u001b[33m.\u001b[39mmessageContains\u001b[33m,\u001b[39m {\n \u001b[90m 48 |\u001b[39m     ignoreCase\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n\u001b[2m    at checkEmptyState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:45:122)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts:52:33\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:28:17.882Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-e4d19-fter-removing-the-last-line-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-e4d19-fter-removing-the-last-line-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-03_remove_-e4d19-fter-removing-the-last-line-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\03_remove_item.spec.ts",
+                        "column": 95,
+                        "line": 36
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1c1461227b3f2338d442-14fd27dbf98353b60593",
+              "file": "B_FR-07_GioHang/03_remove_item.spec.ts",
+              "line": 21,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "B_FR-07_GioHang\\04_continue_shopping.spec.ts",
+      "file": "B_FR-07_GioHang/04_continue_shopping.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-07 Cart P4: empty cart and continue shopping",
+          "file": "B_FR-07_GioHang/04_continue_shopping.spec.ts",
+          "line": 18,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-10: shows the empty cart state and returns home via continue shopping",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6007,
+                      "error": {
+                        "message": "Error: Empty cart page: illustration (img or svg) in the main content (OUT9, D-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('img, svg').visible().first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Empty cart page: illustration (img or svg) in the main content (OUT9, D-03) getByRole('main').locator('img, svg').visible().first() with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('img, svg').visible().first()\u001b[22m\n",
+                        "stack": "Error: Empty cart page: illustration (img or svg) in the main content (OUT9, D-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('img, svg').visible().first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Empty cart page: illustration (img or svg) in the main content (OUT9, D-03) getByRole('main').locator('img, svg').visible().first() with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('img, svg').visible().first()\u001b[22m\n\n    at checkEmptyState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:45:122)\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\04_continue_shopping.spec.ts:30:33",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                          "column": 122,
+                          "line": 45
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:45\n\n \u001b[90m 43 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkEmptyState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mEmptyStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 44 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39millustration) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39millustrations\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m \u001b[32m`${label}: illustration (img or svg) in the main content (OUT9, D-03)`\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m   }\n \u001b[90m 47 |\u001b[39m   \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mmain\u001b[33m,\u001b[39m \u001b[32m`${label}: message says the cart is empty (OUT9, D-03)`\u001b[39m)\u001b[33m.\u001b[39mtoContainText(exp\u001b[33m.\u001b[39mmessageContains\u001b[33m,\u001b[39m {\n \u001b[90m 48 |\u001b[39m     ignoreCase\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                            "column": 122,
+                            "line": 45
+                          },
+                          "message": "Error: Empty cart page: illustration (img or svg) in the main content (OUT9, D-03)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('img, svg').visible().first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Empty cart page: illustration (img or svg) in the main content (OUT9, D-03) getByRole('main').locator('img, svg').visible().first() with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('img, svg').visible().first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39mB_FR-07_GioHang\\lib\\cartChecks.ts:45\n\n \u001b[90m 43 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m checkEmptyState(cart\u001b[33m:\u001b[39m \u001b[33mCartPage\u001b[39m\u001b[33m,\u001b[39m exp\u001b[33m:\u001b[39m \u001b[33mEmptyStateExpected\u001b[39m\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 44 |\u001b[39m   \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39millustration) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39millustrations\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m \u001b[32m`${label}: illustration (img or svg) in the main content (OUT9, D-03)`\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m   }\n \u001b[90m 47 |\u001b[39m   \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mmain\u001b[33m,\u001b[39m \u001b[32m`${label}: message says the cart is empty (OUT9, D-03)`\u001b[39m)\u001b[33m.\u001b[39mtoContainText(exp\u001b[33m.\u001b[39mmessageContains\u001b[33m,\u001b[39m {\n \u001b[90m 48 |\u001b[39m     ignoreCase\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n\u001b[2m    at checkEmptyState (D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts:45:122)\u001b[22m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\04_continue_shopping.spec.ts:30:33\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:28:26.956Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-04_continu-99f22--home-via-continue-shopping-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-04_continu-99f22--home-via-continue-shopping-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-04_continu-99f22--home-via-continue-shopping-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\lib\\cartChecks.ts",
+                        "column": 122,
+                        "line": 45
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0fc1b239e52f92d04d88-8421c8a278670c69f6e8",
+              "file": "B_FR-07_GioHang/04_continue_shopping.spec.ts",
+              "line": 20,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-11: returns home via continue shopping and keeps the cart",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "Fallback",
+                      "description": "\"Tiếp tục mua sắm\" not found; clicked \"← Mua tiếp\" to check R13 (test case step)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6242,
+                      "error": {
+                        "message": "Error: R12: \"Tiếp tục mua sắm\" is shown on the cart page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - R12: \"Tiếp tục mua sắm\" is shown on the cart page getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first() with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first()\u001b[22m\n",
+                        "stack": "Error: R12: \"Tiếp tục mua sắm\" is shown on the cart page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - R12: \"Tiếp tục mua sắm\" is shown on the cart page getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first() with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first()\u001b[22m\n\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\04_continue_shopping.spec.ts:40:96",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\04_continue_shopping.spec.ts",
+                          "column": 96,
+                          "line": 40
+                        },
+                        "snippet": " \u001b[90m 38 |\u001b[39m       \u001b[36mconst\u001b[39m button \u001b[33m=\u001b[39m cart\u001b[33m.\u001b[39maction(c\u001b[33m.\u001b[39minput\u001b[33m.\u001b[39mbutton)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mcontinueButton \u001b[33m===\u001b[39m \u001b[32m'present'\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(button\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m \u001b[32m`R12: \"${c.input.button}\" is shown on the cart page`\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m       }\n \u001b[90m 42 |\u001b[39m       \u001b[36mif\u001b[39m ((\u001b[36mawait\u001b[39m button\u001b[33m.\u001b[39mcount()) \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\n \u001b[90m 43 |\u001b[39m         \u001b[36mawait\u001b[39m button\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\04_continue_shopping.spec.ts",
+                            "column": 96,
+                            "line": 40
+                          },
+                          "message": "Error: R12: \"Tiếp tục mua sắm\" is shown on the cart page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - R12: \"Tiếp tục mua sắm\" is shown on the cart page getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first() with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('link', { name: 'Tiếp tục mua sắm', exact: true }).or(getByRole('main').getByRole('button', { name: 'Tiếp tục mua sắm', exact: true })).first()\u001b[22m\n\n\n \u001b[90m 38 |\u001b[39m       \u001b[36mconst\u001b[39m button \u001b[33m=\u001b[39m cart\u001b[33m.\u001b[39maction(c\u001b[33m.\u001b[39minput\u001b[33m.\u001b[39mbutton)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mcontinueButton \u001b[33m===\u001b[39m \u001b[32m'present'\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(button\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m \u001b[32m`R12: \"${c.input.button}\" is shown on the cart page`\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m       }\n \u001b[90m 42 |\u001b[39m       \u001b[36mif\u001b[39m ((\u001b[36mawait\u001b[39m button\u001b[33m.\u001b[39mcount()) \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\n \u001b[90m 43 |\u001b[39m         \u001b[36mawait\u001b[39m button\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\04_continue_shopping.spec.ts:40:96\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:28:34.038Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "Fallback",
+                          "description": "\"Tiếp tục mua sắm\" not found; clicked \"← Mua tiếp\" to check R13 (test case step)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-04_continu-d542e-shopping-and-keeps-the-cart-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-04_continu-d542e-shopping-and-keeps-the-cart-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-04_continu-d542e-shopping-and-keeps-the-cart-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\04_continue_shopping.spec.ts",
+                        "column": 96,
+                        "line": 40
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0fc1b239e52f92d04d88-9798a59fc1655d39a4cc",
+              "file": "B_FR-07_GioHang/04_continue_shopping.spec.ts",
+              "line": 20,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "B_FR-07_GioHang\\05_cart_gui.spec.ts",
+      "file": "B_FR-07_GioHang/05_cart_gui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-07 Cart P5: cart page GUI checklist",
+          "file": "B_FR-07_GioHang/05_cart_gui.spec.ts",
+          "line": 18,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-90: shows all required columns, a delete button per line and the Tổng cộng label",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16153,
+                      "error": {
+                        "message": "Error: FR-07: cart table columns in order Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').getByRole('table').getByRole('columnheader')\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    \"Sản phẩm\",\u001b[22m\n\u001b[32m-   \"Đơn giá\",\u001b[39m\n\u001b[31m+   \"Giá\",\u001b[39m\n\u001b[2m    \"Số lượng\",\u001b[22m\n\u001b[2m    \"Thành tiền\",\u001b[22m\n\u001b[2m    \"Thao tác\",\u001b[22m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - FR-07: cart table columns in order Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác getByRole('main').getByRole('table').getByRole('columnheader') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('columnheader')\u001b[22m\n\u001b[2m    14 × locator resolved to 5 elements\u001b[22m\n",
+                        "stack": "Error: FR-07: cart table columns in order Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').getByRole('table').getByRole('columnheader')\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    \"Sản phẩm\",\u001b[22m\n\u001b[32m-   \"Đơn giá\",\u001b[39m\n\u001b[31m+   \"Giá\",\u001b[39m\n\u001b[2m    \"Số lượng\",\u001b[22m\n\u001b[2m    \"Thành tiền\",\u001b[22m\n\u001b[2m    \"Thao tác\",\u001b[22m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - FR-07: cart table columns in order Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác getByRole('main').getByRole('table').getByRole('columnheader') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('columnheader')\u001b[22m\n\u001b[2m    14 × locator resolved to 5 elements\u001b[22m\n\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts:35:110",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                          "column": 110,
+                          "line": 35
+                        },
+                        "snippet": " \u001b[90m 33 |\u001b[39m       \u001b[90m// Đủ cột, đúng chữ và đúng thứ tự FR-07 liệt kê (CH-script-04): Khóa giả định đọc ô theo vị trí cột của P1 đến P4.\u001b[39m\n \u001b[90m 34 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mcolumns) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mcolumnHeaders\u001b[33m,\u001b[39m \u001b[32m`FR-07: cart table columns in order ${exp.columns.join(', ')}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveText(\n \u001b[90m    |\u001b[39m                                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m           exp\u001b[33m.\u001b[39mcolumns\u001b[33m,\u001b[39m\n \u001b[90m 37 |\u001b[39m         )\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m       }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                            "column": 110,
+                            "line": 35
+                          },
+                          "message": "Error: FR-07: cart table columns in order Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').getByRole('table').getByRole('columnheader')\nTimeout: 5000ms\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    \"Sản phẩm\",\u001b[22m\n\u001b[32m-   \"Đơn giá\",\u001b[39m\n\u001b[31m+   \"Giá\",\u001b[39m\n\u001b[2m    \"Số lượng\",\u001b[22m\n\u001b[2m    \"Thành tiền\",\u001b[22m\n\u001b[2m    \"Thao tác\",\u001b[22m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - FR-07: cart table columns in order Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác getByRole('main').getByRole('table').getByRole('columnheader') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').getByRole('table').getByRole('columnheader')\u001b[22m\n\u001b[2m    14 × locator resolved to 5 elements\u001b[22m\n\n\n \u001b[90m 33 |\u001b[39m       \u001b[90m// Đủ cột, đúng chữ và đúng thứ tự FR-07 liệt kê (CH-script-04): Khóa giả định đọc ô theo vị trí cột của P1 đến P4.\u001b[39m\n \u001b[90m 34 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mcolumns) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mcolumnHeaders\u001b[33m,\u001b[39m \u001b[32m`FR-07: cart table columns in order ${exp.columns.join(', ')}`\u001b[39m)\u001b[33m.\u001b[39mtoHaveText(\n \u001b[90m    |\u001b[39m                                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m           exp\u001b[33m.\u001b[39mcolumns\u001b[33m,\u001b[39m\n \u001b[90m 37 |\u001b[39m         )\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m       }\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts:35:110\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                            "column": 94,
+                            "line": 47
+                          },
+                          "message": "Error: R14: total label is exactly \"Tổng cộng\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('table + div > :first-child')\nExpected substring: \u001b[32m\"Tổng \u001b[7mcộng\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"Tổng \u001b[7mtạm tính: 58,000,000 ₫\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - R14: total label is exactly \"Tổng cộng\" getByRole('main').locator('table + div > :first-child') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('table + div > :first-child')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"text-xl font-bold\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Tổng tạm tính: 58,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 45 |\u001b[39m       }\n \u001b[90m 46 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mtotalLabel \u001b[33m!==\u001b[39m undefined) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mtotalValue\u001b[33m,\u001b[39m \u001b[32m`R14: total label is exactly \"${exp.totalLabel}\"`\u001b[39m)\u001b[33m.\u001b[39mtoContainText(exp\u001b[33m.\u001b[39mtotalLabel)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mtotalValue\u001b[33m,\u001b[39m \u001b[32m'R14: total label is not \"Tổng tạm tính\"'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Tổng tạm tính'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m       }\n \u001b[90m 50 |\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts:47:94\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                            "column": 90,
+                            "line": 48
+                          },
+                          "message": "Error: R14: total label is not \"Tổng tạm tính\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('main').locator('table + div > :first-child')\nExpected substring: not \u001b[32m\"Tổng tạm tính\"\u001b[39m\nReceived string: \u001b[31m\"\u001b[7mTổng tạm tính\u001b[27m: 58,000,000 ₫\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - R14: total label is not \"Tổng tạm tính\" getByRole('main').locator('table + div > :first-child') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('main').locator('table + div > :first-child')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"text-xl font-bold\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Tổng tạm tính: 58,000,000 ₫\"\u001b[22m\n\n\n \u001b[90m 46 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mtotalLabel \u001b[33m!==\u001b[39m undefined) {\n \u001b[90m 47 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mtotalValue\u001b[33m,\u001b[39m \u001b[32m`R14: total label is exactly \"${exp.totalLabel}\"`\u001b[39m)\u001b[33m.\u001b[39mtoContainText(exp\u001b[33m.\u001b[39mtotalLabel)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 48 |\u001b[39m         \u001b[36mawait\u001b[39m softExpect(cart\u001b[33m.\u001b[39mtotalValue\u001b[33m,\u001b[39m \u001b[32m'R14: total label is not \"Tổng tạm tính\"'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Tổng tạm tính'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 49 |\u001b[39m       }\n \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m       \u001b[90m// TC-CART-94: Ký hiệu ₫ và phân cách hàng nghìn ở Đơn giá, Thành tiền, Tổng cộng.\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts:48:90\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:28:41.343Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-05_cart_gu-fa849-ine-and-the-Tổng-cộng-label-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-05_cart_gu-fa849-ine-and-the-Tổng-cộng-label-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-05_cart_gu-fa849-ine-and-the-Tổng-cộng-label-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                        "column": 110,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "2b1acdef196f4aca05d6-36fc9263109df3d3cbe5",
+              "file": "B_FR-07_GioHang/05_cart_gui.spec.ts",
+              "line": 20,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-94: formats unit price, line total and cart total with the dong sign and thousands separators",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1047,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:28:58.574Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2b1acdef196f4aca05d6-40a9acdd38908eeba346",
+              "file": "B_FR-07_GioHang/05_cart_gui.spec.ts",
+              "line": 20,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-95: highlights the cart link in the navbar and shows a breadcrumb",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 852,
+                      "error": {
+                        "message": "Error: FR-23: \"Giỏ hàng\" highlighted on the cart page (home {\"ariaCurrent\":null,\"color\":\"rgb(255, 255, 255)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\",\"fontWeight\":\"400\",\"textDecorationLine\":\"none\"}, cart {\"ariaCurrent\":null,\"color\":\"rgb(255, 255, 255)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\",\"fontWeight\":\"400\",\"textDecorationLine\":\"none\"})\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: FR-23: \"Giỏ hàng\" highlighted on the cart page (home {\"ariaCurrent\":null,\"color\":\"rgb(255, 255, 255)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\",\"fontWeight\":\"400\",\"textDecorationLine\":\"none\"}, cart {\"ariaCurrent\":null,\"color\":\"rgb(255, 255, 255)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\",\"fontWeight\":\"400\",\"textDecorationLine\":\"none\"})\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts:83:11",
+                        "location": {
+                          "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                          "column": 11,
+                          "line": 83
+                        },
+                        "snippet": " \u001b[90m 81 |\u001b[39m           cartStyle\u001b[33m.\u001b[39mariaCurrent \u001b[33m===\u001b[39m exp\u001b[33m.\u001b[39mnavHighlight\u001b[33m.\u001b[39mariaCurrent \u001b[33m||\u001b[39m styleDiffers\u001b[33m,\u001b[39m\n \u001b[90m 82 |\u001b[39m           \u001b[32m`FR-23: \"${exp.navHighlight.link}\" highlighted on the cart page (home ${JSON.stringify(homeStyle)}, cart ${JSON.stringify(cartStyle)})`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 84 |\u001b[39m       }\n \u001b[90m 85 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mbreadcrumb) {\n \u001b[90m 86 |\u001b[39m         \u001b[36mconst\u001b[39m [first\u001b[33m,\u001b[39m second] \u001b[33m=\u001b[39m exp\u001b[33m.\u001b[39mbreadcrumb\u001b[33m.\u001b[39morLinksInOrder\u001b[33m;\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                            "column": 11,
+                            "line": 83
+                          },
+                          "message": "Error: FR-23: \"Giỏ hàng\" highlighted on the cart page (home {\"ariaCurrent\":null,\"color\":\"rgb(255, 255, 255)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\",\"fontWeight\":\"400\",\"textDecorationLine\":\"none\"}, cart {\"ariaCurrent\":null,\"color\":\"rgb(255, 255, 255)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\",\"fontWeight\":\"400\",\"textDecorationLine\":\"none\"})\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 81 |\u001b[39m           cartStyle\u001b[33m.\u001b[39mariaCurrent \u001b[33m===\u001b[39m exp\u001b[33m.\u001b[39mnavHighlight\u001b[33m.\u001b[39mariaCurrent \u001b[33m||\u001b[39m styleDiffers\u001b[33m,\u001b[39m\n \u001b[90m 82 |\u001b[39m           \u001b[32m`FR-23: \"${exp.navHighlight.link}\" highlighted on the cart page (home ${JSON.stringify(homeStyle)}, cart ${JSON.stringify(cartStyle)})`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 84 |\u001b[39m       }\n \u001b[90m 85 |\u001b[39m       \u001b[36mif\u001b[39m (exp\u001b[33m.\u001b[39mbreadcrumb) {\n \u001b[90m 86 |\u001b[39m         \u001b[36mconst\u001b[39m [first\u001b[33m,\u001b[39m second] \u001b[33m=\u001b[39m exp\u001b[33m.\u001b[39mbreadcrumb\u001b[33m.\u001b[39morLinksInOrder\u001b[33m;\u001b[39m\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts:83:11\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                            "column": 11,
+                            "line": 92
+                          },
+                          "message": "Error: FR-23: breadcrumb on the cart page (navigation named \"breadcrumb\", or \"Trang chủ\" before \"Giỏ hàng\")\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n \u001b[90m 90 |\u001b[39m           hasLandmark \u001b[33m||\u001b[39m hasCrumbs\u001b[33m,\u001b[39m\n \u001b[90m 91 |\u001b[39m           \u001b[32m`FR-23: breadcrumb on the cart page (navigation named \"${exp.breadcrumb.landmarkNameContains}\", or \"${first}\" before \"${second}\")`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 92 |\u001b[39m         )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 93 |\u001b[39m       }\n \u001b[90m 94 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m   }\n\u001b[2m    at D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts:92:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:28:59.896Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-05_cart_gu-6b0f2-vbar-and-shows-a-breadcrumb-edge\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-05_cart_gu-6b0f2-vbar-and-shows-a-breadcrumb-edge\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Dang\\Test\\Homeworks\\HW04\\test-results\\B_FR-07_GioHang\\edge\\B_FR-07_GioHang-05_cart_gu-6b0f2-vbar-and-shows-a-breadcrumb-edge\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\05_cart_gui.spec.ts",
+                        "column": 11,
+                        "line": 83
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "2b1acdef196f4aca05d6-839eda7b96df38d149c1",
+              "file": "B_FR-07_GioHang/05_cart_gui.spec.ts",
+              "line": 20,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "B_FR-07_GioHang\\06_api_invalid.spec.ts",
+      "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-07 Cart P6: API rejects invalid cart requests",
+          "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+          "line": 25,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-30: API rejects adding a product that does not exist",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 3,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.566Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-0cdfc912dc8a34a4e1e3",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-31: API rejects quantity 0",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.849Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-688a90d9472cd35ddda5",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-32: API rejects a decimal quantity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.865Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-3549e2ee9fc92840c9bf",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-33: API rejects a non-numeric quantity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.885Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-bb43200e33c874dcafff",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-34: API rejects a body without quantity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.897Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-b82343c8cfc12b5c433c",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-35: API rejects adding to cart without an Authorization header",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.915Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-a15d2d138b47e3d9426a",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-102: API rejects a negative quantity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.924Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-a5671def8fcb47e7fd87",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-36: API rejects viewing the cart with a tampered token",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                        "line": 27,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.943Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\06_api_invalid.spec.ts",
+                            "line": 27,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "edcd3917e4318a7874e7-c2037a98fcf4b63e2338",
+              "file": "B_FR-07_GioHang/06_api_invalid.spec.ts",
+              "line": 31,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "B_FR-07_GioHang\\07_api_valid.spec.ts",
+      "file": "B_FR-07_GioHang/07_api_valid.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-07 Cart P7: cart API with valid requests and security checks",
+          "file": "B_FR-07_GioHang/07_api_valid.spec.ts",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CART-50: API adds the base product and returns it in the cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                        "line": 16,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 2,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:01.993Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                            "line": 16,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "7fe744e33246f9d85640-0d4ce91ef411109622dd",
+              "file": "B_FR-07_GioHang/07_api_valid.spec.ts",
+              "line": 20,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-51: API keeps the catalogue price when the client sends a different price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                        "line": 16,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:02.010Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                            "line": 16,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "7fe744e33246f9d85640-50dc702696b69c395427",
+              "file": "B_FR-07_GioHang/07_api_valid.spec.ts",
+              "line": 20,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-54: API does not show the test user's cart line to another user",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                        "line": 16,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:02.030Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                            "line": 16,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "7fe744e33246f9d85640-0686b159b63906f9a580",
+              "file": "B_FR-07_GioHang/07_api_valid.spec.ts",
+              "line": 20,
+              "column": 5
+            },
+            {
+              "title": "TC-CART-53: API stores a product name with SQL characters without corrupting the cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "Run by",
+                      "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                    },
+                    {
+                      "type": "Browser",
+                      "description": "edge (chromium 157.0.4341.60)"
+                    },
+                    {
+                      "type": "skip",
+                      "description": "D17: API tests run on Chrome only",
+                      "location": {
+                        "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                        "line": 16,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "edge",
+                  "projectName": "edge",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-17T10:29:02.044Z",
+                      "annotations": [
+                        {
+                          "type": "Run by",
+                          "description": "23120061 | 2026-11-17T17:26:36+07:00"
+                        },
+                        {
+                          "type": "Browser",
+                          "description": "edge (chromium 157.0.4341.60)"
+                        },
+                        {
+                          "type": "skip",
+                          "description": "D17: API tests run on Chrome only",
+                          "location": {
+                            "file": "D:\\Dang\\Test\\Homeworks\\HW04\\tests\\B_FR-07_GioHang\\07_api_valid.spec.ts",
+                            "line": 16,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "7fe744e33246f9d85640-183cec3eb8852ddef1c1",
+              "file": "B_FR-07_GioHang/07_api_valid.spec.ts",
+              "line": 20,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-17T10:26:38.335Z",
+    "duration": 143944.64800000002,
+    "expected": 1,
+    "skipped": 12,
+    "unexpected": 14,
+    "flaky": 0
+  }
+}
